@@ -38,6 +38,11 @@ By installing the appropriate apps, you can use the Sharedigm platform for a wid
 - Communicate through private direct messaging.
 - Generate images using AI.
 
+## Demo
+
+If you'd like to try the platform before installing and running your own instance, you can create an account and explore the platform at: 
+[www.sharedigm.com](https://www.sharedigm.com)
+
 ## Examples
 
 Below are some examples of web platforms that have been built on top of the Sharedigm OS.  Use Sharedigm OS to build your own web platform!
@@ -129,6 +134,11 @@ By default, Sharedigm OS comes with a limited set of apps pre-installed (shown b
 	</a>
 	<p>The Settings Manager app lets you view and modify system settings and app preferences. </p>
 </p>
+
+## Documentation
+
+A complete User Guide detailing the use of the platform is available at:
+[https://www.sharedigm.com/#help](https://www.sharedigm.com/#help)
 
 ## Installation
 
