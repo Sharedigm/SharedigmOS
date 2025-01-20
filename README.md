@@ -8,12 +8,12 @@ Sharedigm OS is an open source, cloud based operating system.  It can be used to
 
 <p align="center" style="text-align:center">
 	<img src="images/screen-shots/welcome.png" width="900" />
-    <p align="center" style="text-align:center">Welcome Screen</p>
+    <div align="center" style="text-align:center">Welcome Screen</div>
 </p>
 
 <p align="center" style="text-align:center">
 	<img src="images/screen-shots/desktop.png" width="900" />
-    <p align="center" style="text-align:center">Desktop</p>
+    <div align="center" style="text-align:center">Desktop</div>
 </p>
 
 ## Requirements
