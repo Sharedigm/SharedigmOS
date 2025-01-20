@@ -6,15 +6,15 @@
 
 Sharedigm OS is an open source, cloud based operating system.  It can be used to build cloud based community platforms for a wide variety of applications.
 
-<p align="center" style="text-align:center">
+<figure>
 	<img src="images/screen-shots/welcome.png" width="900" />
-    <div align="center" style="text-align:center">Welcome Screen</div>
-</p>
+	<figcaption>Welcome Screen</figcaption>
+</figure>
 
-<p align="center" style="text-align:center">
+<figure>
 	<img src="images/screen-shots/desktop.png" width="900" />
-    <div align="center" style="text-align:center">Desktop</div>
-</p>
+	<figcaption>Desktop</figcaption>
+</figure>
 
 ## Requirements
 
@@ -42,4 +42,4 @@ Distributed under the Sustainable Use License which allows urestricted use of th
 <!-- CONTACT -->
 ## Contact
 
-Abe Megahed - (mailto:amegahed@wisc.edu) - email
+mailto:admin@sharedigm.com
