@@ -144,7 +144,7 @@ A complete User Guide detailing the use of the platform is available at:
 
 ## Installation
 
-Please follow the instructions in [documentation/INSTALL.md](documentation/INSTALL.md) to install the software on your web server.   If you would like some pointers for configuring your web server, see:  [documentation/CONFIG.md](documentation/CONFIG.md).
+Please follow the instructions in [https://www.sharedigm.com/#installation](https://www.sharedigm.com/#installation) to install the software on your computer or web server.
 
 <!-- LICENSE -->
 ## License
