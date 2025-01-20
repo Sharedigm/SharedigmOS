@@ -7,41 +7,41 @@
 
 <div class="content">
 	<p><%= application.name %> has a continually growing collection of apps for communicating with your contacts and managing your data. </p>
-	<% let apps = config.apps; %>
-	<% let keys = Object.keys(apps); %>
+	<% let apps = []; %>
 
+	<% apps = application.getApps((app) => { return app.get('category') == 'system' && !app.get('disabled'); }); %>
+	<% if (apps.length != 0) { %>
 	<div class="section">
 		<div class="row">
 			<div class="col-sm-4">
 				<h2><i class="fa fa-desktop"></i>System Apps</h2>
-				<p>The system apps allow you to use the core functionality of the system or to configure the system to your liking. </p>
+				<p>The system apps allow you to use the core functionality of the system. </p>
 				<br />
 			</div>
 			<div class="col-sm-8">
 				<div class="app-icons large icon-grid" style="text-align:center">
-				<% for (let i = 0; i < keys.length; i++) { %>
-				<% let app = apps[keys[i]]; %>
-				<% if (app.category == 'system') { %>
-				<% if (!app.disabled) { %>
-				<a class="item" href="#apps/<%= app.app %>" style="text-decoration:none">	
+				<% for (let i = 0; i < apps.length; i++) { %>
+				<% let app = apps.at(i); %>
+				<a class="item" href="#apps/<%= app.get('app') %>" style="text-decoration:none">	
 					<div class="row">
-						<div class="icon colored <%= app.color %>">
-							<img src="images/icons/apps/<%= app.image || app.app + '.svg' %>" />
-							<i class="<%= app.icon %>"></i>
+						<div class="icon colored <%= app.get('color') %>">
+							<img src="images/icons/apps/<%= app.get('app') + '.svg' %>" />
+							<i class="<%= app.get('icon') %>"></i>
 						</div>
 					</div>
 					<div class="row">
-						<div class="name"><%= app.name %></div>
+						<div class="name"><%= app.get('name') %></div>
 					</div>
 				</a>
-				<% } %>
-				<% } %>
 				<% } %>
 				</div>
 			</div>
 		</div>
 	</div>
+	<% } %>
 
+	<% apps = application.getApps((app) => { return app.get('category') == 'social' && !app.get('disabled'); }); %>
+	<% if (apps.length != 0) { %>
 	<div class="section">
 		<div class="row">
 			<div class="col-sm-4">
@@ -51,29 +51,28 @@
 			</div>
 			<div class="col-sm-8">
 				<div class="app-icons large icon-grid" style="text-align:center">
-				<% for (let i = 0; i < keys.length; i++) { %>
-				<% let app = apps[keys[i]]; %>
-				<% if (app.category == 'social') { %>
-				<% if (!app.disabled) { %>
-				<a class="item" href="#apps/<%= app.app %>" style="text-decoration:none">	
+				<% for (let i = 0; i < apps.length; i++) { %>
+				<% let app = apps.at(i); %>
+				<a class="item" href="#apps/<%= app.get('app') %>" style="text-decoration:none">	
 					<div class="row">
-						<div class="icon colored <%= app.color %>">
-							<img src="images/icons/apps/<%= app.image || app.app + '.svg' %>" />
-							<i class="<%= app.icon %>"></i>
+						<div class="icon colored <%= app.get('color') %>">
+							<img src="images/icons/apps/<%= app.get('app') + '.svg' %>" />
+							<i class="<%= app.get('icon') %>"></i>
 						</div>
 					</div>
 					<div class="row">
-						<div class="name"><%= app.name %></div>
+						<div class="name"><%= app.get('name') %></div>
 					</div>
 				</a>
-				<% } %>
-				<% } %>
 				<% } %>
 				</div>
 			</div>
 		</div>
 	</div>
+	<% } %>
 
+	<% apps = application.getApps((app) => { return app.get('category') == 'productivity' && !app.get('disabled'); }); %>
+	<% if (apps.length != 0) { %>
 	<div class="section">
 		<div class="row">
 			<div class="col-sm-4">
@@ -83,29 +82,28 @@
 			</div>
 			<div class="col-sm-8">
 				<div class="app-icons large icon-grid" style="text-align:center">
-				<% for (let i = 0; i < keys.length; i++) { %>
-				<% let app = apps[keys[i]]; %>
-				<% if (app.category == 'productivity') { %>
-				<% if (!app.disabled) { %>
-				<a class="item" href="#apps/<%= app.app %>" style="text-decoration:none">	
+				<% for (let i = 0; i < apps.length; i++) { %>
+				<% let app = apps.at(i); %>
+				<a class="item" href="#apps/<%= app.get('app') %>" style="text-decoration:none">	
 					<div class="row">
-						<div class="icon colored <%= app.color %>">
-							<img src="images/icons/apps/<%= app.image || app.app + '.svg' %>" />
-							<i class="<%= app.icon %>"></i>
+						<div class="icon colored <%= app.get('color') %>">
+							<img src="images/icons/apps/<%= app.get('app') + '.svg' %>" />
+							<i class="<%= app.get('icon') %>"></i>
 						</div>
 					</div>
 					<div class="row">
-						<div class="name"><%= app.name %></div>
+						<div class="name"><%= app.get('name') %></div>
 					</div>
 				</a>
-				<% } %>
-				<% } %>
 				<% } %>
 				</div>
 			</div>
 		</div>
 	</div>
+	<% } %>
 
+	<% apps = application.getApps((app) => { return app.get('category') == 'multimedia' && !app.get('disabled'); }); %>
+	<% if (apps.length != 0) { %>
 	<div class="section">
 		<div class="row">
 			<div class="col-sm-4">
@@ -115,29 +113,59 @@
 			</div>
 			<div class="col-sm-8">
 				<div class="app-icons large icon-grid" style="text-align:center">
-				<% for (let i = 0; i < keys.length; i++) { %>
-				<% let app = apps[keys[i]]; %>
-				<% if (app.category == 'multimedia') { %>
-				<% if (!app.disabled) { %>
-				<a class="item" href="#apps/<%= app.app %>" style="text-decoration:none">	
+				<% for (let i = 0; i < apps.length; i++) { %>
+				<% let app = apps.at(i); %>
+				<a class="item" href="#apps/<%= app.get('app') %>" style="text-decoration:none">	
 					<div class="row">
-						<div class="icon colored <%= app.color %>">
-							<img src="images/icons/apps/<%= app.image || app.app + '.svg' %>" />
-							<i class="<%= app.icon %>"></i>
+						<div class="icon colored <%= app.get('color') %>">
+							<img src="images/icons/apps/<%= app.get('app') + '.svg' %>" />
+							<i class="<%= app.get('icon') %>"></i>
 						</div>
 					</div>
 					<div class="row">
-						<div class="name"><%= app.name %></div>
+						<div class="name"><%= app.get('name') %></div>
 					</div>
 				</a>
-				<% } %>
-				<% } %>
 				<% } %>
 				</div>
 			</div>
 		</div>
 	</div>
+	<% } %>
 
+	<% apps = application.getApps((app) => { return app.get('category') == 'configuration' && !app.get('disabled'); }); %>
+	<% if (apps.length != 0) { %>
+	<div class="section">
+		<div class="row">
+			<div class="col-sm-4">
+				<h2><i class="fa fa-gear"></i>Configuration Apps</h2>
+				<p>The configuration apps allow you to configure the system and environment to suit your needs and personal aesthetics. </p>
+				<br />
+			</div>
+			<div class="col-sm-8">
+				<div class="app-icons large icon-grid" style="text-align:center">
+				<% for (let i = 0; i < apps.length; i++) { %>
+				<% let app = apps.at(i); %>
+				<a class="item" href="#apps/<%= app.get('app') %>" style="text-decoration:none">	
+					<div class="row">
+						<div class="icon colored <%= app.get('color') %>">
+							<img src="images/icons/apps/<%= app.get('app') + '.svg' %>" />
+							<i class="<%= app.get('icon') %>"></i>
+						</div>
+					</div>
+					<div class="row">
+						<div class="name"><%= app.get('name') %></div>
+					</div>
+				</a>
+				<% } %>
+				</div>
+			</div>
+		</div>
+	</div>
+	<% } %>
+
+	<% apps = application.getApps((app) => { return app.get('category') == 'utility' && !app.get('disabled'); }); %>
+	<% if (apps.length != 0) { %>
 	<div class="section">
 		<div class="row">
 			<div class="col-sm-4">
@@ -147,26 +175,23 @@
 			</div>
 			<div class="col-sm-8">
 				<div class="app-icons large icon-grid" style="text-align:center">
-				<% for (let i = 0; i < keys.length; i++) { %>
-				<% let app = apps[keys[i]]; %>
-				<% if (app.category == 'utility') { %>
-				<% if (!app.disabled) { %>
-				<a class="item" href="#apps/<%= app.app %>" style="text-decoration:none">	
+				<% for (let i = 0; i < apps.length; i++) { %>
+				<% let app = apps.at(i); %>
+				<a class="item" href="#apps/<%= app.get('app') %>" style="text-decoration:none">	
 					<div class="row">
-						<div class="icon colored <%= app.color %>">
-							<img src="images/icons/apps/<%= app.image || app.app + '.svg' %>" />
-							<i class="<%= app.icon %>"></i>
+						<div class="icon colored <%= app.get('color') %>">
+							<img src="images/icons/apps/<%= app.get('app') + '.svg' %>" />
+							<i class="<%= app.get('icon') %>"></i>
 						</div>
 					</div>
 					<div class="row">
-						<div class="name"><%= app.name %></div>
+						<div class="name"><%= app.get('name') %></div>
 					</div>
 				</a>
-				<% } %>
-				<% } %>
 				<% } %>
 				</div>
 			</div>
 		</div>
 	</div>
+	<% } %>
 </div>
