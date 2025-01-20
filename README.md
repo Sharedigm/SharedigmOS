@@ -20,6 +20,7 @@ Sharedigm OS is an open source, cloud based operating system.  It can be used to
 
 The Sharedigm OS can be used as a cloud operating system to manage and share your files or to build cloud based platforms for a wide variety of purposes. 
 
+- It's self-hostable.
 - Manage your files.
 - View your files from any connected device (mobile, tablet, or desktop).
 - Share files and folders by link.
@@ -30,6 +31,7 @@ The Sharedigm OS can be used as a cloud operating system to manage and share you
 
 By installing the appropriate apps, you can use the Sharedigm platform for a wide variety of purposes:
 
+- Regain control over your own data.
 - View and share photos or images.
 - Manage and play your music and audio.
 - Store and play your videos and movies.
