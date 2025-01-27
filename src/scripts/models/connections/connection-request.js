@@ -15,8 +15,8 @@
 |        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
 \******************************************************************************/
 
-import Timestamped from '../../../models/utilities/timestamped.js';
-import User from '../../../models/users/user.js';
+import Timestamped from '../../models/utilities/timestamped.js';
+import User from '../../models/users/user.js';
 
 export default Timestamped.extend({
 

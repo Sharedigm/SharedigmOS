@@ -125,7 +125,6 @@ export default UserSettings.extend({
 		this.applyIconTilt(this.get('icon_tilt'));
 		this.applyIconTint(this.get('icon_tint'));
 		this.applyIconBackground(this.get('icon_background'));
-		this.applyIconSpinning(this.get('icon_spinning'));
 
 		// apply text styles
 		//
@@ -158,7 +157,7 @@ export default UserSettings.extend({
 		if (theme == 'auto') {
 			theme = Browser.isDarkModeEnabled()? 'dark' : 'medium';
 		}
-		
+
 		// load theme, if necessary
 		//
 		if (theme) {
@@ -387,7 +386,7 @@ export default UserSettings.extend({
 			case 'square':
 				$('body').removeClass('round');
 				$('body').removeClass('rounded');
-				$('body').addClass('square');	
+				$('body').addClass('square');
 				break;
 		}
 	},
@@ -451,7 +450,7 @@ export default UserSettings.extend({
 		this.removeIconTint();
 		if (iconTint && iconTint != 'none') {
 			$('body').addClass('tinted');
-			$('body').addClass(iconTint + '-tinted');			
+			$('body').addClass(iconTint + '-tinted');
 		}
 	},
 
@@ -460,14 +459,6 @@ export default UserSettings.extend({
 			$('body').addClass('icon-backgrounds');
 		} else {
 			$('body').removeClass('icon-backgrounds');
-		}
-	},
-
-	applyIconSpinning: function(iconSpinning) {
-		if (iconSpinning && iconSpinning != 'none') {
-			$('body').addClass('icon-spinning');
-		} else {
-			$('body').removeClass('icon-spinning');
 		}
 	},
 

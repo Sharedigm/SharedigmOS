@@ -270,12 +270,62 @@ export default AppView.extend(_.extend({}, Wallpaperable, AppLoadable, {
 		}
 	},
 
-	showApp: function(appName) {
-		this.loadAppView(appName, (AppView) => {
+	showAppView: function(appName, AppView) {
 
-			// check for app
+		// show app in desktop body
+		//
+		this.showChildView('body', new AppView({
+
+			// options
 			//
-			if (!AppView) {
+			preferences: this.preferences,
+			selectedPath: this.options.selectedPath,
+			hidden: {
+				'sidebar': !this.hasSideBar(appName),
+				'footer-bar': true
+			},
+
+			// callbacks
+			//
+			onload: () => this.onLoad(),
+			onchange: () => this.onChange(),
+			onchangetab: () => this.onChangeTab(),
+			onselect: () => this.onSelect(),
+			ondeselect: () => this.onDeselect(),
+			onchangeselection: () => this.onChangeSelection(),
+			onclosetab: () => this.onCloseTab()
+		}));
+
+		// append app name to header bar
+		//
+		let defaults = config.apps[appName];
+		if (this.options.show_app_name) {
+			let name = $('<div class="app-bar hidden-xs">' +
+				'<i class="' + defaults.icon + '"></i>' +
+				(defaults.alias || defaults.name) +
+				'</div>');
+			this.$el.find('.body > .app > .header-bar').prepend(name);
+		}
+
+		// make desktop apps unflickable
+		//
+		this.$el.find('.body > .app > .body').addClass('unflickable');
+
+		// remove footer bar
+		//
+		this.$el.find('.body > .app > .footer-bar').remove();
+	},
+
+	showApp: function(appName) {
+		this.loadAppView(appName, {
+
+			// callbacks
+			//
+			success: (AppView) => {
+				this.showAppView(appName, AppView);
+			},
+
+			error: () => {
 
 				// show error message
 				//
@@ -283,49 +333,6 @@ export default AppView.extend(_.extend({}, Wallpaperable, AppLoadable, {
 					message: "The app '" + appName.replace('_', ' ') + "'' could not be loaded."
 				});
 			}
-
-			// show app in desktop body
-			//
-			this.showChildView('body', new AppView({
-
-				// options
-				//
-				preferences: this.preferences,
-				selectedPath: this.options.selectedPath,
-				hidden: {
-					'sidebar': !this.hasSideBar(appName),
-					'footer-bar': true
-				},
-
-				// callbacks
-				//
-				onload: () => this.onLoad(),
-				onchange: () => this.onChange(),
-				onchangetab: () => this.onChangeTab(),
-				onselect: () => this.onSelect(),
-				ondeselect: () => this.onDeselect(),
-				onchangeselection: () => this.onChangeSelection(),
-				onclosetab: () => this.onCloseTab()
-			}));
-
-			// append app name to header bar
-			//
-			let defaults = config.apps[appName];
-			if (this.options.show_app_name) {
-				let name = $('<div class="app-bar hidden-xs">' +
-					'<i class="' + defaults.icon + '"></i>' +
-					(defaults.alias || defaults.name) +
-					'</div>');
-				this.$el.find('.body > .app > .header-bar').prepend(name);
-			}
-
-			// make desktop apps unflickable
-			//
-			this.$el.find('.body > .app > .body').addClass('unflickable');
-
-			// remove footer bar
-			//
-			this.$el.find('.body > .app > .footer-bar').remove();
 		});
 
 		// show run menu if appropriate

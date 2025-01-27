@@ -37,7 +37,7 @@ export default {
 
 					// show selected topic
 					//
-					application.showTopic(topics[0], {
+					application.showModel(topics[0], {
 						items: [item],
 						message: config.apps.file_browser.share_invitation_message
 					});
@@ -59,7 +59,7 @@ export default {
 				// callbacks
 				//
 				onopen: (topics) => {
-					application.showTopic(topics[0], {
+					application.showModel(topics[0], {
 						items: items,
 						message: config.apps.file_browser.share_invitation_message
 					});

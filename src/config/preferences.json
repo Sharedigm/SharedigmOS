@@ -1,4 +1,9 @@
 {
+	"app_launcher": {
+		"window_size": "medium",
+		"maximized": true,
+		"full_screen": true
+	},
 	"file_browser": {
 		"view_kind": {
 			"phone": "cards",
@@ -142,10 +147,5 @@
 			"tablet": "icons",
 			"desktop": "icons"
 		}
-	},
-	"app_launcher": {
-		"window_size": "medium",
-		"maximized": true,
-		"full_screen": true
 	}
 }

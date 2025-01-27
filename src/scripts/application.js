@@ -50,10 +50,6 @@ import Authenticatable from './behaviors/authenticatable.js';
 import Registerable from './behaviors/registerable.js';
 import SoundPlayable from './behaviors/sound-playable.js';
 import UserShowable from './behaviors/user-showable.js';
-import ChatShowable from './behaviors/chat-showable.js';
-import TopicShowable from './behaviors/topic-showable.js';
-import PostShowable from './behaviors/post-showable.js';
-import ProjectShowable from './behaviors/project-showable.js';
 import FullScreenable from './views/behaviors/layout/full-screenable.js';
 import Loadable from './views/behaviors/effects/loadable.js';
 import AppLoadable from './views/apps/common/behaviors/loading/app-loadable.js';
@@ -66,7 +62,7 @@ import Keyboard from './views/keyboard/keyboard.js';
 import Browser from './utilities/web/browser.js';
 import CssUtils from './utilities/web/css-utils.js';
 
-export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenticatable, Registerable, SoundPlayable, UserShowable, ChatShowable, TopicShowable, PostShowable, ProjectShowable, FullScreenable, Loadable, AppLoadable, ItemOpenable, Alertable, {
+export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenticatable, Registerable, SoundPlayable, UserShowable, FullScreenable, Loadable, AppLoadable, ItemOpenable, Alertable, {
 
 	//
 	// attributes
@@ -902,6 +898,88 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 			});
 		}
 		*/
+	},
+
+	//
+	// model showing methods
+	//
+
+	showModel: function(model, options) {
+		let appName = model.getClassName().toLowerCase() + '_viewer';
+
+		// open in app
+		//
+		if (this.desktop) {
+			if (this.desktop.hasApp(appName)) {
+
+				// open in desktop
+				//
+				this.desktop.setApp(appName, () => {
+					this.desktop.getAppView(appName).openModel(model, options);
+				});
+			} else {
+
+				// open in new window
+				//
+				this.launch(appName, _.extend({}, options, {
+					model: model
+				}));
+			}
+
+		// open in browser
+		//
+		} else if (model.getUrl) {
+
+			// open new page
+			//
+			application.showUrl(model.getUrl(), '_blank');
+		} else {
+
+			// display alert
+			//
+			application.alert({
+				message: "Can not display " + model.getClassName() + "."
+			});
+		}
+	},
+
+	showCollection: function(collection, options) {
+		let appName = collection.model.prototype.getClassName().toLowerCase() + '_viewer';
+
+		// open in app
+		//
+		if (this.desktop) {
+			if (this.desktop.hasApp(appName)) {
+
+				// open in desktop
+				//
+				this.desktop.setApp(appName, () => {
+					this.desktop.getAppView(appName).openCollection(collection, options);
+				});
+			} else {
+
+				// open in new window
+				//
+				this.launch(appName, _.extend({}, options, {
+					collection: collection
+				}));
+			}
+
+		// open in browser
+		//
+		} else if (collection.getUrl) {
+
+			// open new page
+			//
+			application.showUrl(collection.getUrl(), '_blank');
+		} else {
+
+			// display alert
+			//
+			application.alert({
+				message: "Can not display " + collection.model.getClassName() + "."
+			});
+		}
 	},
 
 	//

@@ -16,7 +16,7 @@
 \******************************************************************************/
 
 import Timestamped from '../../models/utilities/timestamped.js';
-import Connections from '../../collections/users/connections/connections.js';
+import Connections from '../../collections/connections/connections.js';
 import ChatInvitations from '../../collections/chats/sharing/chat-invitations.js';
 import DateUtils from '../../utilities/time/date-utils.js';
 import Browser from '../../utilities/web/browser.js';

@@ -13,7 +13,7 @@
 	</div>
 
 	<div class="description section">
-		<p>The <%= config.apps['app_launcher'].name %> app is used to launch (start / run) other applications. </p>
+		<p>The <%= config.apps['app_launcher'].name %> app is used to launch (start / run) other apps. </p>
 	</div>
 
 	<div class="details section">
@@ -21,14 +21,15 @@
 			<div class="col-sm-6">
 				<h2><i class="fa fa-check"></i>Features</h2>
 				<ul>
-					<li>Click icons to launch applications.</li>
+					<li>Click icons to launch apps.</li>
 					<li>On mobile devices, the launcher is the main / home app, providing a similar experience to your mobile device's native operating system.</li>
 				</ul>
 			</div>
 			<div class="col-sm-6">
 				<h2><i class="fa fa-star"></i>Benefits</h2>
 				<ul>
-					<li>Launch all apps from one place with a single click.</li>
+					<li>View all apps at a glance.</li>
+					<li>Launch apps easily with a single click.</li>
 				</ul>
 			</div>
 		</div>

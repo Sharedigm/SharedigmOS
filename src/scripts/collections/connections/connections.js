@@ -15,8 +15,8 @@
 |        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
 \******************************************************************************/
 
-import Connection from '../../../models/users/connections/connection.js';
-import Users from '../../../collections/users/users.js';
+import Connection from '../../models/connections/connection.js';
+import Users from '../../collections/users/users.js';
 
 export default Users.extend({
 

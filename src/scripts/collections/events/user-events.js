@@ -1,10 +1,10 @@
 /******************************************************************************\
 |                                                                              |
-|                                 user-event.js                                |
+|                                user-events.js                                |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines a model of a user (calendar) event.                      |
+|        This file defines a collection of user (calendar) events.             |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -15,43 +15,43 @@
 |        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
 \******************************************************************************/
 
-import Timestamped from '../../../models/utilities/timestamped.js';
-import DateUtils from '../../../utilities/time/date-utils.js';
+import UserEvent from '../../models/events/user-event.js';
+import BaseCollection from '../../collections/base-collection.js';
 
-export default Timestamped.extend({
+export default BaseCollection.extend({
 
 	//
 	// attributes
 	//
 
-	defaults: {
-		name: undefined,
-		description: undefined,
-		event_date: undefined
+	model: UserEvent,
+
+	//
+	// sorting methods
+	//
+
+	comparator : function(model) {
+		return model.get('event_date');
 	},
 
 	//
-	// ajax attributes
+	// fetching methods
 	//
 
-	urlRoot: config.servers.api + '/events',
+	fetchByCurrentUser: function(options) {
+		return this.fetch(_.extend({
+			url: config.servers.api + '/events',
 
-	//
-	// parsing (Backbone) methods
-	//
+			// callbacks
+			//
+			error: () => {
 
-	parse: function(response) {
-
-		// call superclass method
-		//
-		let data = Timestamped.prototype.parse.call(this, response);
-
-		// parse attributes
-		//
-		if (data.event_date) {
-			data.event_date = DateUtils.localToUTCDate(this.toDate(data.event_date));
-		}
-
-		return data;
+				// show error message
+				//
+				application.error({
+					message: "Could not find user's events."
+				});
+			}
+		}, options));
 	}
 });

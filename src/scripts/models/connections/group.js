@@ -15,10 +15,10 @@
 |        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
 \******************************************************************************/
 
-import Timestamped from '../../../models/utilities/timestamped.js';
-import ImageFile from '../../../models/storage/media/image-file.js';
-import Member from '../../../models/users/connections/member.js';
-import Members from '../../../collections/users/connections/members.js';
+import Timestamped from '../../models/utilities/timestamped.js';
+import ImageFile from '../../models/storage/media/image-file.js';
+import Member from '../../models/connections/member.js';
+import Members from '../../collections/connections/members.js';
 
 export default Timestamped.extend({
 

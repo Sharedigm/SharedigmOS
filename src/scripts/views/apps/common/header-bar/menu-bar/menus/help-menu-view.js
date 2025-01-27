@@ -16,7 +16,6 @@
 \******************************************************************************/
 
 import File from '../../../../../../models/storage/files/file.js';
-import Topic from '../../../../../../models/topics/topic.js';
 import MenuView from '../../../../../../views/apps/common/header-bar/menu-bar/menus/menu-view.js';
 import AddressBar from '../../../../../../utilities/web/address-bar.js';
 
@@ -121,20 +120,25 @@ export default MenuView.extend({
 	},
 
 	onClickViewTopic: function() {
-		application.launch('topic_viewer', {
-			topic: new Topic({
-				name: config.defaults.help.topic
-			}),
+		import(
+			'../../../../../../models/topics/topic.js'
+		).then((Topic) => {
 
-			// options
-			//
-			search: {
-				message: this.getAppName()
-			},
+			application.launch('topic_viewer', {
+				topic: new Topic.default({
+					name: config.defaults.help.topic
+				}),
 
-			// capabilities
-			//
-			editable: true
+				// options
+				//
+				search: {
+					message: this.getAppName()
+				},
+
+				// capabilities
+				//
+				editable: true
+			});
 		});
 	},
 

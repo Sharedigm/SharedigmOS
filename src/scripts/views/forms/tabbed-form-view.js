@@ -1,10 +1,10 @@
 /******************************************************************************\
 |                                                                              |
-|                          user-profile-form-view.js                           |
+|                             tabbed-form-view.js                              |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines a form for showing profile info about a user.            |
+|        This defines a view for showing a form having multiple tabs.          |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -78,9 +78,9 @@ export default FormView.extend(_.extend({}, Tabbed, {
 	},
 
 	getActiveTabName: function() {
-		let activeTab = this.$el.find('.active.tab');
+		let activeTab = this.$el.find('li.active');
 		let className = activeTab.attr('class');
-		let tabName = className.replace('tab', '').replace('active', '').trim();
+		let tabName = className.replace('-tab', '').replace('active', '').trim();
 		return tabName;
 	},
 

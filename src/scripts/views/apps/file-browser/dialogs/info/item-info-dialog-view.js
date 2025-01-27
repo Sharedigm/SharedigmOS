@@ -169,7 +169,7 @@ export default InfoDialogView.extend({
 
 	getTab: function(event) {
 		let className = $(event.target).closest('li').attr('class');
-		return className.replace('tab', '').replace('active', '').trim();
+		return className.replace('-tab', '').replace('active', '').trim();
 	},
 
 	getItem: function() {
@@ -214,7 +214,7 @@ export default InfoDialogView.extend({
 	},
 
 	setButtonVisibility: function() {
-		
+
 		// hide / show buttons for each tab
 		//
 		switch (this.tab) {
@@ -514,7 +514,7 @@ export default InfoDialogView.extend({
 					success: () => {
 						this.deletePlace();
 
-						// trigger file browser to show maps
+						// update view
 						//
 						this.model.parent.trigger('change');
 					}

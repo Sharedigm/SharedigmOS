@@ -15,7 +15,7 @@
 |        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
 \******************************************************************************/
 
-import Connection from '../../../../models/users/connections/connection.js';
+import Connection from '../../../../models/connections/connection.js';
 import Post from '../../../../models/topics/post.js';
 import NotificationsListItemView from '../../../../views/apps/common/notifications/lists/notifications-list-item-view.js';
 
@@ -136,7 +136,7 @@ export default NotificationsListItemView.extend({
 
 					// show liked post
 					//
-					application.showPost(model, {
+					application.showModel(model, {
 						collapsed: false,
 						selected: item
 					});

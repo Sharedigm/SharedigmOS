@@ -29,7 +29,7 @@ export default {
 
 			// show default topic
 			//
-			application.showTopic(TopicViewerView.default.default_topic, {
+			application.showModel(TopicViewerView.default.default_topic, {
 				message: (options && options.message? options.message : '') + url,
 				privacy: options? options.privacy : null
 			});
@@ -48,7 +48,7 @@ export default {
 
 					// show first chat
 					//
-					application.showChat(collection.at(0), {
+					application.showModel(collection.at(0), {
 						message: (options && options.message? options.message : '') + url
 					});
 				}

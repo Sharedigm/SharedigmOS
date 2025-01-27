@@ -1,10 +1,10 @@
 /******************************************************************************\
 |                                                                              |
-|                            connection-requests.js                            |
+|                                 user-event.js                                |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This file defines a collection of connection requests.                |
+|        This defines a model of a user (calendar) event.                      |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -15,42 +15,43 @@
 |        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
 \******************************************************************************/
 
-import ConnectionRequest from '../../../models/users/connections/connection-request.js';
-import BaseCollection from '../../../collections/base-collection.js';
+import Timestamped from '../../models/utilities/timestamped.js';
+import DateUtils from '../../utilities/time/date-utils.js';
 
-export default BaseCollection.extend({
+export default Timestamped.extend({
 
 	//
 	// attributes
 	//
 
-	model: ConnectionRequest,
+	defaults: {
+		name: undefined,
+		description: undefined,
+		event_date: undefined
+	},
 
 	//
-	// fetching methods
+	// ajax attributes
 	//
 
-	fetchPendingReceivedBy: function(user, options) {
-		return this.fetch(_.extend(options, {
-			url: user.url() + '/connection-requests/received/pending'
-		}));
-	},
+	urlRoot: config.servers.api + '/events',
 
-	fetchPendingSentBy: function(user, options) {
-		return this.fetch(_.extend(options, {
-			url: user.url() + '/connection-requests/sent/pending'
-		}));
-	},
+	//
+	// parsing (Backbone) methods
+	//
 
-	fetchReceivedBy: function(user, options) {
-		return this.fetch(_.extend(options, {
-			url: user.url() + '/connection-requests/received'
-		}));
-	},
+	parse: function(response) {
 
-	fetchSentBy: function(user, options) {
-		return this.fetch(_.extend(options, {
-			url: user.url() + '/connection-requests/sent'
-		}));
+		// call superclass method
+		//
+		let data = Timestamped.prototype.parse.call(this, response);
+
+		// parse attributes
+		//
+		if (data.event_date) {
+			data.event_date = DateUtils.localToUTCDate(this.toDate(data.event_date));
+		}
+
+		return data;
 	}
 });

@@ -33,7 +33,7 @@ export default {
 
 				// show selected chat
 				//
-				application.showChat(chats[0], {
+				application.showModel(chats[0], {
 					items: [item],
 					message: config.apps.file_browser.share_invitation_message
 				});
@@ -53,7 +53,7 @@ export default {
 
 				// show selected chat
 				//
-				application.showChat(chats[0], {
+				application.showModel(chats[0], {
 					items: items,
 					message: config.apps.file_browser.share_invitation_message
 				});

@@ -15,9 +15,9 @@
 |        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
 \******************************************************************************/
 
-import Group from '../../../models/users/connections/group.js';
-import Members from '../../../collections/users/connections/members.js';
-import BaseCollection from '../../../collections/base-collection.js';
+import Group from '../../models/connections/group.js';
+import Members from '../../collections/connections/members.js';
+import BaseCollection from '../../collections/base-collection.js';
 
 export default BaseCollection.extend({
 

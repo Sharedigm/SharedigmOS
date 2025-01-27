@@ -15,7 +15,7 @@
 |        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
 \******************************************************************************/
 
-import Connection from '../../../models/users/connections/connection.js';
+import Connection from '../../../models/connections/connection.js';
 import Reply from '../../../models/comments/reply.js';
 import UserPreferences from '../../../models/preferences/user-preferences.js';
 import Items from '../../../collections/storage/items.js';

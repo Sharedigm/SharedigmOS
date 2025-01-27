@@ -132,10 +132,10 @@ export default FileMenuView.extend({
 			"shortcut": "command-I"
 		},
 		{
-			"class": "show-on-map",
+			"class": "set-place",
 			"icon": "fa fa-map",
-			"name": "Show on Map",
-			"shortcut": "command-M"
+			"name": "Set Place",
+			"shortcut": "command-shift-P"
 		},
 		"separator",
 		{
@@ -204,7 +204,7 @@ export default FileMenuView.extend({
 		'click .open-next': 'onClickOpenNext',
 		'click .open-last': 'onClickOpenLast',
 		'click .show-info': 'onClickShowInfo',
-		'click .show-on-map': 'onClickShowOnMap',
+		'click .set-place': 'onClickSetPlace',
 		'click .rename-item': 'onClickRenameItem',
 		'click .compress-items': 'onClickCompressItems',
 		'click .expand-item': 'onClickExpandItem',
@@ -242,7 +242,7 @@ export default FileMenuView.extend({
 			'open-next': isSignedIn,
 			'open-last': isSignedIn,
 			'show-info': true,
-			'show-on-map': true,
+			'set-place': true,
 			'rename-item': true,
 			'compress-items': true,
 			'expand-item': true,
@@ -263,7 +263,6 @@ export default FileMenuView.extend({
 		let hasSelectedFile = selectedModel instanceof File;
 		let hasSelectedFolder = selectedModel instanceof Directory;
 		let hasSelectedArchive = selectedModel instanceof ArchiveFile;
-		let hasSelectedGeolocated = this.parent.app.hasSelectedGeolocated();
 		let hasSelectedFavorites = this.parent.app.hasSelectedFavorites();
 		let viewingMap = preferences.get('view_kind') == 'maps';
 		let isDialog = this.parent.app.dialog != undefined;
@@ -288,7 +287,7 @@ export default FileMenuView.extend({
 			'open-next': hasSelectedFavorites && !viewingMap,
 			'open-last': !hasSelected && !viewingMap,
 			'show-info': hasSelected,
-			'show-on-map': hasSelectedGeolocated,
+			'set-place': hasSelected,
 			'rename-item': numSelected == 1,
 			'compress-items': hasSelected,
 			'expand-item': hasSelectedArchive,
@@ -397,14 +396,12 @@ export default FileMenuView.extend({
 		this.parent.app.showInfoDialog();
 	},
 
-	onClickShowOnMap: function() {
-		application.launch('map_viewer', {
-			photos: this.parent.app.getSelectedGeolocatedModels()
-		});
+	onClickSetPlace: function() {
+		this.parent.app.showSetItemPlaceDialogView(this.parent.app.getSelected()[0]);
 	},
 
 	onClickRenameItem: function() {
-		this.parent.app.rename(this.parent.app.getChildren((item) => item.isSelected()));
+		this.parent.app.rename(this.parent.app.getSelected());
 	},
 
 	onClickCompressItems: function() {

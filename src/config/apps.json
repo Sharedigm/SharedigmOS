@@ -1,4 +1,15 @@
 {
+	"app_launcher": {
+		"name": "Apps",
+		"icon": "fa fa-rocket",
+		"category": "system",
+		"platform": "all",
+		"access": "all",
+		"disabled": false,
+		"hidden": false,
+		"args": false,
+		"color": "orange"
+	},
 	"file_browser": {
 		"name": "Files",
 		"icon": "fa fa-folder",
@@ -37,7 +48,7 @@
 	"settings_browser": {
 		"name": "Settings",
 		"icon": "fa fa-cogs",
-		"category": "system",
+		"category": "configuration",
 		"platform": "all",
 		"access": "all",
 		"disabled": false,
@@ -56,16 +67,5 @@
 		"args": false,
 		"color": "grey",
 		"upgrade_account_url": "#contact"
-	},
-	"app_launcher": {
-		"name": "Apps",
-		"icon": "fa fa-rocket",
-		"category": "system",
-		"platform": "all",
-		"access": "all",
-		"disabled": false,
-		"hidden": false,
-		"args": false,
-		"color": "orange"
 	}
 }

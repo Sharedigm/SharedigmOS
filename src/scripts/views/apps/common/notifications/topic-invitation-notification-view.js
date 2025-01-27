@@ -140,7 +140,7 @@ export default NotificationsListItemView.extend({
 
 				// show topic
 				//
-				application.showTopic(invitation.get('topic'));
+				application.showModel(invitation.get('topic'));
 			},
 
 			error: (model, response) => {

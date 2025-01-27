@@ -1,10 +1,10 @@
 /******************************************************************************\
 |                                                                              |
-|                             project-showable.js                              |
+|                                    member.js                                 |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines a behavior for displaying projects.                      |
+|        This defines a model of a group member.                               |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -15,54 +15,58 @@
 |        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
 \******************************************************************************/
 
-import Projects from '../collections/projects/projects.js';
+import Connection from '../../models/connections/connection.js';
 
-export default {
+export default Connection.extend({
 
 	//
-	// project showing methods
+	// fetching methods
 	//
+	
+	addTo: function(group, options) {
 
-	showProject: function(project, options) {
-		if (this.desktop) {
-			if (this.desktop.hasApp('project_viewer')) {
+		// add member to group
+		//
+		return $.ajax(_.extend({}, options, {
+			url: group.url() + '/members/' + this.id,
+			type: 'POST',
 
-				// open in desktop
-				//
-				this.desktop.setApp('project_viewer', () => {
-					this.desktop.getAppView('project_viewer').openProject(project, options);
-				});
-			} else {
-
-				// open in new window
-				//
-				this.launch('project_viewer', _.extend({}, options, {
-					model: project
-				}));
-			}
-		} else {
-
-			// open in new page
+			// callbacks
 			//
-			application.showUrl(project.getUrl());
-		}
+			success: () => {
+				group.get('members').add(this);
+
+				// perform callback
+				//
+				if (options && options.success) {
+					options.success(this);
+				}
+			}
+		}));
 	},
 
-	showProjects: function(projects, options) {
-		if (this.desktop.hasApp('project_viewer')) {
+	destroy: function(options) {
 
-			// open in desktop
-			//
-			this.desktop.setApp('project_viewer', () => {
-				this.desktop.getAppView('project_viewer').openProjects(projects, options);
-			});
-		} else {
+		// remove member from group
+		//
+		return $.ajax(_.extend({}, options, {
+			url: this.collection.group.url() + '/members/' + this.id,
+			type: 'DELETE',
 
-			// open in new window
+			// callbacks
 			//
-			this.launch('project_viewer', _.extend({}, options, {
-				collection: new Projects(projects)
-			}));
-		}
+			success: () => {
+
+				// remove member from its group
+				//
+				this.collection.remove(this);
+
+				// perform callback
+				//
+				if (options && options.success) {
+					options.success(this);
+				}
+			}
+		}));
 	}
-};
+});

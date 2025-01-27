@@ -15,11 +15,10 @@
 |        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
 \******************************************************************************/
 
-import Connections from '../../../../collections/users/connections/connections.js';
-import BaseView from '../../../../views/base-view.js';
-import Collapsable from '../../../../views/behaviors/expanders/collapsable.js';
-import '../../../../utilities/scripting/string-utils.js';
-import '../../../../utilities/time/date-utils.js';
+import BaseView from '../../../views/base-view.js';
+import Collapsable from '../../../views/behaviors/expanders/collapsable.js';
+import '../../../utilities/scripting/string-utils.js';
+import '../../../utilities/time/date-utils.js';
 
 export default BaseView.extend(_.extend({}, Collapsable, {
 
@@ -31,7 +30,7 @@ export default BaseView.extend(_.extend({}, Collapsable, {
 
 	template: template(`
 		<div class="content">
-		
+
 			<div class="tile">
 				<a href="<%= href %>" target="_blank">
 					<% if (url) { %>
@@ -46,7 +45,7 @@ export default BaseView.extend(_.extend({}, Collapsable, {
 					<% } %>
 				</a>
 			</div>
-		
+
 			<div class="info">
 				<div class="heading">
 					<div class="buttons">
@@ -54,12 +53,12 @@ export default BaseView.extend(_.extend({}, Collapsable, {
 							<i class="fa fa-user-plus"></i>
 						</button>
 					</div>
-		
+
 					<div class="title">
 						<a href="<%= href %>" target="_blank"><%= name %></a>
 					</div>
 				</div>
-		
+
 				<div class="fineprint">
 					<label class="form-label"><i class="fa fa-home"></i>Home</label>
 					<% if (location && (location.has('city') || location.has('state') || location.has('country'))) { %>
@@ -86,14 +85,15 @@ export default BaseView.extend(_.extend({}, Collapsable, {
 
 	showConnectionRequestDialog: function() {
 		import(
-			'../../../../views/users/connection-requests/dialogs/connection-request-dialog-view.js'
-		).then((ConnectionRequestDialogView) => {
+			'../../../../collections/connections/connections.js',
+			'../../../../views/apps/connection-manager/dialogs/connections/connection-request-dialog-view.js'
+		).then((Connections, ConnectionRequestDialogView) => {
 
 			// show connection request dialog
 			//
 			application.show(new ConnectionRequestDialogView.default({
 				model: application.session.user,
-				collection: new Connections([this.model])
+				collection: new Connections.default([this.model])
 			}));
 		});
 	},

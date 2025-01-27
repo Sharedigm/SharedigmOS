@@ -80,8 +80,8 @@ export default Timestamped.extend({
 	// getting methods
 	//
 
-	getUrl: function() {
-		return application.getUrl() + '#posts/' + this.get('id');
+	getClassName: function() {
+		return 'post';
 	},
 
 	getMessage: function(options) {

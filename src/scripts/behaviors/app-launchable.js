@@ -22,31 +22,49 @@ export default {
 	//
 
 	launch: function(appName, options, launchOptions) {
-		this.loadAppView(appName.replace(/-/g, '_'), (AppView) => {
+		if (application.hasApp(appName)) {
 
-			// check if app was found
+			// load app
 			//
-			if (!AppView) {
+			this.loadAppView(appName.replace(/-/g, '_'), {
 
-				// show alert message dialog
+				// callbacks
 				//
-				this.alert({
-					title: "Application Error",
-					message: appName.replace(/_/g, ' ').toTitleCase() +  " not installed."
-				});
+				success: (AppView) => {
+					this.launchApp(appName, AppView, options, launchOptions);
+				},
 
-				// perform callback
-				//
-				if (launchOptions && launchOptions.error) {
-					launchOptions.error();
+				error: (error) => {
+
+					// show alert message dialog
+					//
+					this.alert({
+						title: "App Loading Error",
+						message: error.stack
+					});
+
+					// perform callback
+					//
+					if (launchOptions && launchOptions.error) {
+						launchOptions.error(error);
+					}
 				}
+			});
+		} else {
 
-			// launch app
+			// show alert message dialog
 			//
-			} else {
-				this.launchApp(appName, AppView, options, launchOptions);
+			this.alert({
+				title: "Application Error",
+				message: appName.replace(/_/g, ' ').toTitleCase() +  " not installed."
+			});
+
+			// perform callback
+			//
+			if (launchOptions && launchOptions.error) {
+				launchOptions.error();
 			}
-		});
+		}
 	},
 
 	launchApp: function(appName, AppView, options, launchOptions) {

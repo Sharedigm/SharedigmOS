@@ -15,7 +15,6 @@
 |        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
 \******************************************************************************/
 
-import Connections from '../../../../../../collections/users/connections/connections.js';
 import SearchByTextView from '../../../../../../views/apps/common/header-bar/search-bar/searches/search-by-text-view.js';
 
 export default SearchByTextView.extend({
@@ -36,17 +35,6 @@ export default SearchByTextView.extend({
 	events: _.extend({}, SearchByTextView.prototype.events, {
 		'click .select-user': 'onClickSelectUser'
 	}),
-
-	//
-	// constructor
-	//
-
-	initialize: function() {
-
-		// set attributes
-		//
-		this.collection = new Connections();
-	},
 
 	//
 	// setting methods
@@ -72,36 +60,46 @@ export default SearchByTextView.extend({
 	//
 
 	showConnections: function() {
+		import(
+			'../../../../../../collections/connections/connections.js'
+		).then((Connections) => {
 
-		// fetch connections
-		//
-		if (this.collection.length == 0) {
-			this.collection.fetch({
-
-				// callbacks
-				//
-				success: () => {
-
-					// show dialog
-					//
-					this.showSelectConnectionsDialog();
-				},
-
-				error: () => {
-
-					// show error message
-					//
-					application.error({
-						message: "Could not fetch connections."
-					});
-				}
-			});
-		} else {
-
-			// show dialog
+			// create new collection
 			//
-			this.showSelectConnectionsDialog();
-		}
+			if (!this.collection) {
+				this.collection = new Connections.default();
+			}
+
+			// fetch connections
+			//
+			if (this.collection.length == 0) {
+				this.collection.fetch({
+
+					// callbacks
+					//
+					success: (collection) => {
+
+						// show dialog
+						//
+						this.showSelectConnectionsDialog();
+					},
+
+					error: () => {
+
+						// show error message
+						//
+						application.error({
+							message: "Could not fetch connections."
+						});
+					}
+				});
+			} else {
+
+				// show dialog
+				//
+				this.showSelectConnectionsDialog();
+			}
+		});
 	},
 
 	//

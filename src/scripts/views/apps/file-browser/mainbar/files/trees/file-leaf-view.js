@@ -30,7 +30,7 @@ export default LeafView.extend(_.extend({}, DirectoryTreeViewable, {
 		<div class="info">
 			
 			<div class="icon">
-				<i class="fa fa-spinner"></i>
+				<i class="fa fa-spinner spinning"></i>
 				<%= icon %>
 			</div>
 			

@@ -1482,6 +1482,36 @@ export default AppSplitView.extend(_.extend({}, MultiDoc, SelectableContainable,
 			}
 		}, delay);
 	},
+
+	showSetItemPlaceDialogView: function(item) {
+		import(
+			'../../../views/apps/file-browser/dialogs/places/set-item-place-dialog-view.js'
+		).then((SetItemPlaceDialogView) => {
+
+			// show set place dialog
+			//
+			application.show(new SetItemPlaceDialogView.default({
+				model: item.model,
+
+				// callbacks
+				//
+				onsubmit: (place) => {
+
+					// update database
+					//
+					item.model.setPlace(place);
+
+					// update model
+					//
+					item.model.set('place', place);
+
+					// update views
+					//
+					item.render();
+				}
+			}));
+		});
+	},
 	
 	showPreferencesDialog: function() {
 		import(

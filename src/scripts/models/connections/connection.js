@@ -15,9 +15,9 @@
 |        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
 \******************************************************************************/
 
-import User from '../../../models/users/user.js';
-import DateUtils from '../../../utilities/time/date-utils.js';
-import TimeUtils from '../../../utilities/time/time-utils.js';
+import User from '../../models/users/user.js';
+import DateUtils from '../../utilities/time/date-utils.js';
+import TimeUtils from '../../utilities/time/time-utils.js';
 
 export default User.extend({
 

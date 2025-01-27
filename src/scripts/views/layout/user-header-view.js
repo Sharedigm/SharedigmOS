@@ -19,8 +19,6 @@ import UserProfile from '../../models/users/profile/user-profile.js';
 import HeaderView from '../../views/layout/header-view.js';
 import StorageIndicatorView from '../../views/layout/storage-indicator-view.js';
 import AppsBarView from '../../views/apps/common/apps-bar-view.js';
-import ConnectionRequestsDropdownView from '../../views/users/connection-requests/connection-requests-dropdown-view.js';
-import NotificationsDropdownView from '../../views/apps/common/notifications/notifications-dropdown-view.js';
 import Browser from '../../utilities/web/browser.js';
 import '../../../vendor/bootstrap/js/collapse.js';
 
@@ -292,7 +290,12 @@ export default HeaderView.extend({
 			this.hideStorageIndicator();
 		}
 		if (!Browser.is_mobile) {
-			this.showConnectionRequests();
+
+			// show connection requests dropdown
+			//
+			if (application.hasApp('connection_manager')) {
+				this.showConnectionRequests();
+			}
 
 			// show notifications dropdown
 			//
@@ -359,21 +362,29 @@ export default HeaderView.extend({
 	},
 
 	showConnectionRequests: function() {
+		import(
+			'../../views/apps/connection-manager/connection-requests/connection-requests-dropdown-view.js'
+		).then((ConnectionRequestsDropdownView) => {
 
-		// show connection requests dropdown
-		//
-		this.showChildView('connection_requests', new ConnectionRequestsDropdownView({
-			model: this.model
-		}));
+			// show connection requests dropdown
+			//
+			this.showChildView('connection_requests', new ConnectionRequestsDropdownView.default({
+				model: this.model
+			}));
+		});
 	},
 
 	showNotifications: function() {
+		import(
+			'../../views/apps/common/notifications/notifications-dropdown-view.js'
+		).then((NotificationsDropdownView) => {
 
-		// show notifications dropdown
-		//
-		this.showChildView('notifications', new NotificationsDropdownView({
-			model: this.model
-		}));
+			// show notifications dropdown
+			//
+			this.showChildView('notifications', new NotificationsDropdownView.default({
+				model: this.model
+			}));
+		});
 	},
 
 	//

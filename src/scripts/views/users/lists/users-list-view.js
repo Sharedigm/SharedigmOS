@@ -15,8 +15,8 @@
 |        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
 \******************************************************************************/
 
-import CollectionView from '../../../../views/collections/collection-view.js';
-import UsersListItemView from '../../../../views/users/lists/users/users-list-item-view.js';
+import CollectionView from '../../../views/collections/collection-view.js';
+import UsersListItemView from '../../../views/users/lists/users/users-list-item-view.js';
 
 export default CollectionView.extend({
 

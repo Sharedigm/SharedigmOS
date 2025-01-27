@@ -1,10 +1,10 @@
 /******************************************************************************\
 |                                                                              |
-|                                user-events.js                                |
+|                                   members.js                                 |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This file defines a collection of user (calendar) events.             |
+|        This file defines a collection of group members.                      |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -15,8 +15,8 @@
 |        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
 \******************************************************************************/
 
-import UserEvent from '../../../models/users/events/user-event.js';
-import BaseCollection from '../../../collections/base-collection.js';
+import Member from '../../models/connections/member.js';
+import BaseCollection from '../../collections/base-collection.js';
 
 export default BaseCollection.extend({
 
@@ -24,34 +24,5 @@ export default BaseCollection.extend({
 	// attributes
 	//
 
-	model: UserEvent,
-
-	//
-	// sorting methods
-	//
-
-	comparator : function(model) {
-		return model.get('event_date');
-	},
-
-	//
-	// fetching methods
-	//
-
-	fetchByCurrentUser: function(options) {
-		return this.fetch(_.extend({
-			url: config.servers.api + '/events',
-
-			// callbacks
-			//
-			error: () => {
-
-				// show error message
-				//
-				application.error({
-					message: "Could not find user's events."
-				});
-			}
-		}, options));
-	}
+	model: Member
 });

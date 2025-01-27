@@ -386,48 +386,6 @@
   animation: wobbling-keyframes 0.3s ease-in-out;
 }
 
-.icon-spinning .icon, .icon-spinning .tile, .icon-spinning .spinning3d, .icon-spinning .profile.photo {
-  animation-name: spinning3d-keyframes;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-duration: 5s;
-  -webkit-animation-name: spinning3d-keyframes;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-duration: 5s;
-}
-
-.icon-spinning .item:nth-child(10n+0) .icon, .icon-spinning .item:nth-child(10n+0) .tile, .icon-spinning li:nth-child(10n+0) .icon, .icon-spinning li:nth-child(10n+0) .tile {
-  animation-delay: 0s;
-}
-.icon-spinning .item:nth-child(10n+1) .icon, .icon-spinning .item:nth-child(10n+1) .tile, .icon-spinning li:nth-child(10n+1) .icon, .icon-spinning li:nth-child(10n+1) .tile {
-  animation-delay: 0.3s;
-}
-.icon-spinning .item:nth-child(10n+2) .icon, .icon-spinning .item:nth-child(10n+2) .tile, .icon-spinning li:nth-child(10n+2) .icon, .icon-spinning li:nth-child(10n+2) .tile {
-  animation-delay: 0.6s;
-}
-.icon-spinning .item:nth-child(10n+3) .icon, .icon-spinning .item:nth-child(10n+3) .tile, .icon-spinning li:nth-child(10n+3) .icon, .icon-spinning li:nth-child(10n+3) .tile {
-  animation-delay: 0.9s;
-}
-.icon-spinning .item:nth-child(10n+4) .icon, .icon-spinning .item:nth-child(10n+4) .tile, .icon-spinning li:nth-child(10n+4) .icon, .icon-spinning li:nth-child(10n+4) .tile {
-  animation-delay: 1.2s;
-}
-.icon-spinning .item:nth-child(10n+5) .icon, .icon-spinning .item:nth-child(10n+5) .tile, .icon-spinning li:nth-child(10n+5) .icon, .icon-spinning li:nth-child(10n+5) .tile {
-  animation-delay: 1.5s;
-}
-.icon-spinning .item:nth-child(10n+6) .icon, .icon-spinning .item:nth-child(10n+6) .tile, .icon-spinning li:nth-child(10n+6) .icon, .icon-spinning li:nth-child(10n+6) .tile {
-  animation-delay: 1.8s;
-}
-.icon-spinning .item:nth-child(10n+7) .icon, .icon-spinning .item:nth-child(10n+7) .tile, .icon-spinning li:nth-child(10n+7) .icon, .icon-spinning li:nth-child(10n+7) .tile {
-  animation-delay: 2.1s;
-}
-.icon-spinning .item:nth-child(10n+8) .icon, .icon-spinning .item:nth-child(10n+8) .tile, .icon-spinning li:nth-child(10n+8) .icon, .icon-spinning li:nth-child(10n+8) .tile {
-  animation-delay: 2.4s;
-}
-.icon-spinning .item:nth-child(10n+9) .icon, .icon-spinning .item:nth-child(10n+9) .tile, .icon-spinning li:nth-child(10n+9) .icon, .icon-spinning li:nth-child(10n+9) .tile {
-  animation-delay: 2.7s;
-}
-
 /******************************************************************************\
 |                                                                              |
 |                              _transitions.scss                               |
@@ -3247,6 +3205,169 @@ body[device=desktop] #desktop.show-trash-in-corner .desktop.app > .body > .app .
 
 /******************************************************************************\
 |                                                                              |
+|                               _app-launcher.scss                             |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+\******************************************************************************/
+.app-launcher.app {
+  overflow: auto;
+}
+.app-launcher.app .body {
+  width: 100%;
+  height: 100%;
+  font-weight: bold;
+}
+.app-launcher.app .body .contents {
+  display: flex;
+}
+.app-launcher.app .body .contents .main-carousel {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+.app-launcher.app .body .contents .main-carousel .carousel-cell {
+  width: 100%;
+  height: 100%;
+}
+.app-launcher.app .body .contents .main-carousel .carousel-cell .items {
+  display: flex;
+  text-align: center;
+}
+.app-launcher.app .body .contents .main-carousel .flickity-page-dots {
+  bottom: 10px;
+}
+
+.full-screen .app-launcher.app .body .contents {
+  display: flex;
+}
+.full-screen .app-launcher.app .body .contents .main-carousel {
+  position: relative;
+  margin: auto;
+  display: flex;
+  width: 66%;
+  max-height: 66%;
+  transform: scale(1.25);
+}
+.full-screen .app-launcher.app .body .contents .main-carousel .carousel-cell {
+  display: flex;
+}
+.full-screen .app-launcher.app .body .contents .main-carousel .carousel-cell .items {
+  display: flex;
+}
+.full-screen .app-launcher.app .body .contents .main-carousel .carousel-cell .items .icon-grid {
+  position: relative;
+  margin: auto;
+  text-align: center;
+}
+
+@media (min-height: 360px) and (min-width: 480px) {
+  .app-launcher.app .body .contents .main-carousel {
+    width: 90%;
+  }
+  .app-launcher.app .body .icon-grid {
+    padding-right: 0;
+    min-height: 0;
+    margin: auto;
+  }
+  .app-launcher.app .body .flickity-page-dots {
+    bottom: 0;
+  }
+}
+body[device=phone] .app-launcher.app .header-bar, body[device=tablet] .app-launcher.app .header-bar {
+  display: none;
+}
+body[device=phone] .app-launcher.app .body .main-carousel, body[device=tablet] .app-launcher.app .body .main-carousel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+body[device=phone] .app-launcher.app .body .main-carousel .icon-grid, body[device=tablet] .app-launcher.app .body .main-carousel .icon-grid {
+  padding: 10px 0 !important;
+  padding-bottom: 25px !important;
+  text-align: center;
+}
+body[device=phone] .full-screen .app-launcher.app .body .contents .main-carousel, body[device=tablet] .full-screen .app-launcher.app .body .contents .main-carousel {
+  width: 75%;
+}
+@media (max-width: 360px) {
+  body[device=phone] .app-launcher.app .body .icon-grid .item, body[device=tablet] .app-launcher.app .body .icon-grid .item {
+    width: 75px;
+  }
+  body[device=phone] .app-launcher.app .body .icon-grid .item .icon, body[device=tablet] .app-launcher.app .body .icon-grid .item .icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  body[device=phone] .app-launcher.app .body .icon-grid .item, body[device=tablet] .app-launcher.app .body .icon-grid .item {
+    width: 90px;
+  }
+}
+@media (min-width: 480px) and (max-width: 768px) {
+  body[device=phone] .app-launcher.app .body .icon-grid .item, body[device=tablet] .app-launcher.app .body .icon-grid .item {
+    width: 100px;
+  }
+}
+
+body[device=tablet] .app-launcher.app .body .main-carousel .icon-grid {
+  padding: 25px !important;
+}
+
+body[device=phone][os=ios] .app-launcher.app .body .icon-grid .item > .row:first-child .icon > i {
+  font-size: 35px;
+}
+
+body[device=tablet] .app-launcher.app .body .icon-grid .item {
+  width: 125px;
+  margin: 15px 0;
+}
+body[device=tablet] .app-launcher.app .body .icon-grid .item > .row:first-child .icon {
+  width: 60px;
+  height: 60px;
+}
+body[device=tablet] .app-launcher.app .body .icon-grid .item > .row:first-child .icon i {
+  font-size: 45px;
+}
+body[device=tablet] .app-launcher.app .body .icon-grid .item > .row:first-child .icon .spinner {
+  border-width: 30px;
+  border-top-width: 30px;
+  width: 30px;
+  height: 60px;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+@media (orientation: landscape) {
+  body[device=tablet] .app-launcher.app .body .icon-grid .item {
+    margin: 15px 0;
+  }
+}
+body[device=tablet].round-icons .app-launcher.app .body .icon-grid .item > .row:first-child .icon {
+  border-radius: 40px;
+}
+body[device=tablet].rounded-cons .app-launcher.app .body .icon-grid .item > .row:first-child .icon {
+  border-radius: 20px;
+}
+
+body[device=tablet][os=ios] .app-launcher.app .body .icon-grid .item > .row:first-child .icon {
+  width: 60px;
+  height: 60px;
+}
+body[device=tablet][os=ios] .app-launcher.app .body .icon-grid .item > .row:first-child .icon i {
+  font-size: 50px;
+}
+
+/******************************************************************************\
+|                                                                              |
 |                              _file-browser.scss                              |
 |                                                                              |
 |******************************************************************************|
@@ -3642,169 +3763,6 @@ body[device=phone] .settings-manager.app .desktop.preview .app-preview.calendar 
 }
 body[device=phone] .settings-manager.app .desktop.preview .app-preview.audio_player {
   background-image: url("../images/settings/transparent/mobile/mobile-audio.png");
-}
-
-/******************************************************************************\
-|                                                                              |
-|                               _app-launcher.scss                             |
-|                                                                              |
-|******************************************************************************|
-|                                                                              |
-|        This defines various CSS styles used in this application.             |
-|                                                                              |
-|        Author(s): Abe Megahed                                                |
-|                                                                              |
-|        This file is subject to the terms and conditions defined in           |
-|        'LICENSE.txt', which is part of this source code distribution.        |
-|                                                                              |
-|******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
-\******************************************************************************/
-.app-launcher.app {
-  overflow: auto;
-}
-.app-launcher.app .body {
-  width: 100%;
-  height: 100%;
-  font-weight: bold;
-}
-.app-launcher.app .body .contents {
-  display: flex;
-}
-.app-launcher.app .body .contents .main-carousel {
-  width: 100%;
-  height: 100%;
-  margin: auto;
-}
-.app-launcher.app .body .contents .main-carousel .carousel-cell {
-  width: 100%;
-  height: 100%;
-}
-.app-launcher.app .body .contents .main-carousel .carousel-cell .items {
-  display: flex;
-  text-align: center;
-}
-.app-launcher.app .body .contents .main-carousel .flickity-page-dots {
-  bottom: 10px;
-}
-
-.full-screen .app-launcher.app .body .contents {
-  display: flex;
-}
-.full-screen .app-launcher.app .body .contents .main-carousel {
-  position: relative;
-  margin: auto;
-  display: flex;
-  width: 66%;
-  max-height: 66%;
-  transform: scale(1.25);
-}
-.full-screen .app-launcher.app .body .contents .main-carousel .carousel-cell {
-  display: flex;
-}
-.full-screen .app-launcher.app .body .contents .main-carousel .carousel-cell .items {
-  display: flex;
-}
-.full-screen .app-launcher.app .body .contents .main-carousel .carousel-cell .items .icon-grid {
-  position: relative;
-  margin: auto;
-  text-align: center;
-}
-
-@media (min-height: 360px) and (min-width: 480px) {
-  .app-launcher.app .body .contents .main-carousel {
-    width: 90%;
-  }
-  .app-launcher.app .body .icon-grid {
-    padding-right: 0;
-    min-height: 0;
-    margin: auto;
-  }
-  .app-launcher.app .body .flickity-page-dots {
-    bottom: 0;
-  }
-}
-body[device=phone] .app-launcher.app .header-bar, body[device=tablet] .app-launcher.app .header-bar {
-  display: none;
-}
-body[device=phone] .app-launcher.app .body .main-carousel, body[device=tablet] .app-launcher.app .body .main-carousel {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-body[device=phone] .app-launcher.app .body .main-carousel .icon-grid, body[device=tablet] .app-launcher.app .body .main-carousel .icon-grid {
-  padding: 10px 0 !important;
-  padding-bottom: 25px !important;
-  text-align: center;
-}
-body[device=phone] .full-screen .app-launcher.app .body .contents .main-carousel, body[device=tablet] .full-screen .app-launcher.app .body .contents .main-carousel {
-  width: 75%;
-}
-@media (max-width: 360px) {
-  body[device=phone] .app-launcher.app .body .icon-grid .item, body[device=tablet] .app-launcher.app .body .icon-grid .item {
-    width: 75px;
-  }
-  body[device=phone] .app-launcher.app .body .icon-grid .item .icon, body[device=tablet] .app-launcher.app .body .icon-grid .item .icon {
-    width: 60px;
-    height: 60px;
-  }
-}
-@media (min-width: 360px) and (max-width: 480px) {
-  body[device=phone] .app-launcher.app .body .icon-grid .item, body[device=tablet] .app-launcher.app .body .icon-grid .item {
-    width: 90px;
-  }
-}
-@media (min-width: 480px) and (max-width: 768px) {
-  body[device=phone] .app-launcher.app .body .icon-grid .item, body[device=tablet] .app-launcher.app .body .icon-grid .item {
-    width: 100px;
-  }
-}
-
-body[device=tablet] .app-launcher.app .body .main-carousel .icon-grid {
-  padding: 25px !important;
-}
-
-body[device=phone][os=ios] .app-launcher.app .body .icon-grid .item > .row:first-child .icon > i {
-  font-size: 35px;
-}
-
-body[device=tablet] .app-launcher.app .body .icon-grid .item {
-  width: 125px;
-  margin: 15px 0;
-}
-body[device=tablet] .app-launcher.app .body .icon-grid .item > .row:first-child .icon {
-  width: 60px;
-  height: 60px;
-}
-body[device=tablet] .app-launcher.app .body .icon-grid .item > .row:first-child .icon i {
-  font-size: 45px;
-}
-body[device=tablet] .app-launcher.app .body .icon-grid .item > .row:first-child .icon .spinner {
-  border-width: 30px;
-  border-top-width: 30px;
-  width: 30px;
-  height: 60px;
-  margin-left: -30px;
-  margin-top: -30px;
-}
-@media (orientation: landscape) {
-  body[device=tablet] .app-launcher.app .body .icon-grid .item {
-    margin: 15px 0;
-  }
-}
-body[device=tablet].round-icons .app-launcher.app .body .icon-grid .item > .row:first-child .icon {
-  border-radius: 40px;
-}
-body[device=tablet].rounded-cons .app-launcher.app .body .icon-grid .item > .row:first-child .icon {
-  border-radius: 20px;
-}
-
-body[device=tablet][os=ios] .app-launcher.app .body .icon-grid .item > .row:first-child .icon {
-  width: 60px;
-  height: 60px;
-}
-body[device=tablet][os=ios] .app-launcher.app .body .icon-grid .item > .row:first-child .icon i {
-  font-size: 50px;
 }
 
 /******************************************************************************\
@@ -10394,14 +10352,6 @@ hr {
   margin: 10px auto;
 }
 
-body.icon-spinning .profile.photo .buttons {
-  display: none;
-}
-
-body:not(.icon-spinning) .user-profile-header .alternate.buttons {
-  display: none;
-}
-
 .scrollable {
   overflow: auto;
 }
@@ -14916,9 +14866,14 @@ body:not(.binary):not(.flat-buttons):not(.flat.auto-buttons) .btn:active {
 
 .buttons-inline {
   display: inline-block;
+  padding: 2px;
 }
 .buttons-inline .btn {
   margin-bottom: 5px;
+}
+
+.input-group + .buttons-inline {
+  margin-left: 10px;
 }
 
 .panel + .buttons,
@@ -14938,6 +14893,9 @@ body[device=phone] .buttons .btn-sm + .btn-sm, body[device=tablet] .buttons .btn
 }
 
 @media (max-width: 480px) {
+  .input-group + .buttons-inline {
+    margin-left: 0;
+  }
   .modal-footer .buttons .btn:not(.btn-sm) {
     width: 100%;
     margin-top: 10px;

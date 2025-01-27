@@ -15,7 +15,7 @@
 |        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
 \******************************************************************************/
 
-import Connection from '../../../../models/users/connections/connection.js';
+import Connection from '../../../../models/connections/connection.js';
 import Post from '../../../../models/topics/post.js';
 import NotificationsListItemView from '../../../../views/apps/common/notifications/lists/notifications-list-item-view.js';
 
@@ -143,16 +143,12 @@ export default NotificationsListItemView.extend({
 		};
 	},
 
-	//
-	// mouse event handling methods
-	//
-
-	onClick: function() {	
+	showPost: function() {
 		let reply = this.get('reply');
 
 		// show post
-		//		
-		if (reply.has('post_id')) {
+		//
+		if (reply.has('post_id') && reply.get('post_id')) {
 			new Post({
 				id: reply.get('post_id')
 			}).fetch({
@@ -163,7 +159,7 @@ export default NotificationsListItemView.extend({
 
 					// show reply's post
 					//
-					application.showPost(model, {
+					application.showModel(model, {
 						selected: reply
 					});
 				}
@@ -176,6 +172,21 @@ export default NotificationsListItemView.extend({
 				message: "Post not found."
 			});
 		}
+	},
+
+	//
+	// mouse event handling methods
+	//
+
+	onClick: function(event) {
+
+		// show post that reply belongs to
+		//
+		this.showPost();
+
+		// prevent default click handling
+		//
+		event.preventDefault();
 	},
 
 	onClickUser: function() {

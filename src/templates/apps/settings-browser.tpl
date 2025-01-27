@@ -20,9 +20,8 @@
 			<div class="col-sm-6">
 				<h2><i class="fa fa-check"></i>Features</h2>
 				<ul>
-					<li>View and modify system settings.</li>
-					<li>View and modify app preferences.</li>
-					<li>Use arrow keys to quickly and easily step through all settings and preferences.</li>
+					<li>View your system settings.</li>
+					<li>View your app preferences.</li>
 				</ul>
 			</div>
 			<div class="col-sm-6">

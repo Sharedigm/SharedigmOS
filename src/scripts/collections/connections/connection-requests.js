@@ -1,10 +1,10 @@
 /******************************************************************************\
 |                                                                              |
-|                               post-showable.js                               |
+|                            connection-requests.js                            |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines a behavior for displaying posts.                         |
+|        This file defines a collection of connection requests.                |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -15,54 +15,42 @@
 |        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
 \******************************************************************************/
 
-export default {
+import ConnectionRequest from '../../models/connections/connection-request.js';
+import BaseCollection from '../../collections/base-collection.js';
+
+export default BaseCollection.extend({
 
 	//
-	// getting methods
+	// attributes
 	//
 
-	getPostViewer: function() {
+	model: ConnectionRequest,
 
-		// use topic viewer app
-		//
-		if (!config.apps.topic_viewer.hidden) {
-			return 'topic_viewer';
+	//
+	// fetching methods
+	//
 
-		// use message viewer app
-		//
-		} else if (!config.apps.communicator.hidden) {
-			return 'communicator';
-		}
+	fetchPendingReceivedBy: function(user, options) {
+		return this.fetch(_.extend(options, {
+			url: user.url() + '/connection-requests/received/pending'
+		}));
 	},
 
-	//
-	// post showing methods
-	//
+	fetchPendingSentBy: function(user, options) {
+		return this.fetch(_.extend(options, {
+			url: user.url() + '/connection-requests/sent/pending'
+		}));
+	},
 
-	showPost: function(post, options) {
-		let appName = this.getPostViewer();
+	fetchReceivedBy: function(user, options) {
+		return this.fetch(_.extend(options, {
+			url: user.url() + '/connection-requests/received'
+		}));
+	},
 
-		if (this.desktop) {
-			if (this.desktop.hasApp(appName)) {
-
-				// open in desktop
-				//
-				this.desktop.setApp(appName, () => {
-					this.desktop.getAppView(appName).openPost(post, options);
-				});
-			} else {
-
-				// open in new window
-				//
-				this.launch(appName, _.extend({}, options, {
-					model: post
-				}));
-			}
-		} else {
-
-			// open new page
-			//
-			application.showUrl(post.getUrl(), '_blank');
-		}
+	fetchSentBy: function(user, options) {
+		return this.fetch(_.extend(options, {
+			url: user.url() + '/connection-requests/sent'
+		}));
 	}
-};
+});

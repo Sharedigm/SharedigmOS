@@ -595,7 +595,7 @@ export default AppSplitView.extend(_.extend({}, PrefsLoadable, {
 			// check for preferences form
 			//
 			if (!PreferencesFormView) {
-				appliction.error({
+				application.error({
 					message: 'Preferences form view not found.'
 				});
 				return;
