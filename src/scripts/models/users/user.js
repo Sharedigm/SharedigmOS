@@ -97,6 +97,10 @@ export default Timestamped.extend({
 	// getting methods
 	//
 
+	getClassName: function() {
+		return 'user';
+	},
+
 	getName: function(kind) {
 		switch (kind) {
 			case 'first':

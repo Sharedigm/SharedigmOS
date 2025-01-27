@@ -84,10 +84,10 @@ export default BaseView.extend(_.extend({}, Collapsable, {
 	//
 
 	showConnectionRequestDialog: function() {
-		import(
+		Promise.all([
 			'../../../../collections/connections/connections.js',
 			'../../../../views/apps/connection-manager/dialogs/connections/connection-request-dialog-view.js'
-		).then((Connections, ConnectionRequestDialogView) => {
+		]).then(([Connections, ConnectionRequestDialogView]) => {
 
 			// show connection request dialog
 			//

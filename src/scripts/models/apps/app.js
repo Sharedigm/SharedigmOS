@@ -35,6 +35,10 @@ export default BaseModel.extend({
 	// getting methods
 	//
 
+	getClassName: function() {
+		return 'app';
+	},
+
 	getImage: function() {
 		return '<img src="images/icons/apps/' + this.get('app') + '.svg" />';
 	},

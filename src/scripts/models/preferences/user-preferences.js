@@ -33,6 +33,14 @@ export default UserKeyValues.extend({
 	urlRoot: config.servers.api + '/preferences',
 
 	//
+	// getting methods
+	//
+
+	getClassName: function() {
+		return 'user_preferences';
+	},
+
+	//
 	// setting methods
 	//
 
