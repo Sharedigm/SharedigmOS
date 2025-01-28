@@ -140,7 +140,7 @@ export default AppView.extend(_.extend({}, AppLaunchable, {
 				//
 				if (item) {						
 					window.setTimeout(() => {
-						this.openApp(item);
+						this.openItem(item);
 
 						// close dialog
 						//

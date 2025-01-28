@@ -116,7 +116,7 @@ export default {
 		item.deselect();
 	},
 
-	openAppItem: function(app, item, options) {
+	openItemWithApp: function(item, app, options) {
 		application.launch(app, options, {
 
 			// callbacks
@@ -137,7 +137,7 @@ export default {
 		});
 	},
 
-	openApp: function(item) {
+	openItem: function(item) {
 		let app = item.model.get('app') || item.model.get('app_alias');
 		let app_id = app.replace(/-/g, '_');
 		let options = item.model.get('options') || {};
@@ -148,7 +148,7 @@ export default {
 
 		// launch application
 		//
-		this.launchAppItem(app_id, item, options);
+		this.openItemWithApp(item, app_id, options);
 
 		// deselect after a pause
 		//
@@ -168,7 +168,7 @@ export default {
 			if (item.model.has('link')) {
 				this.openLink(item);
 			} else {
-				this.openApp(item);
+				this.openItem(item);
 			}
 		}
 	}
