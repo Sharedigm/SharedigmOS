@@ -153,6 +153,14 @@ export default BaseView.extend({
 		};
 	},
 
+	showMap: function() {
+		application.launch('map_viewer', {
+			model: this.model
+		}, {
+			new_window: true
+		});
+	},
+
 	//
 	// mouse event handling methods
 	//
@@ -165,11 +173,7 @@ export default BaseView.extend({
 
 		// view item on map
 		//
-		application.launch('map_viewer', {
-			model: this.model
-		}, {
-			new_window: true
-		});
+		this.showMap();
 	},
 
 	onMouseDownGeoposition: function(event) {
@@ -180,11 +184,7 @@ export default BaseView.extend({
 
 		// view item on map
 		//
-		application.launch('map_viewer', {
-			model: this.model
-		}, {
-			new_window: true
-		});
+		this.showMap();
 	},
 
 	onMouseDownShares: function(event) {

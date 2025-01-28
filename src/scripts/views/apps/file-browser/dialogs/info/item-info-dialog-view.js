@@ -585,6 +585,18 @@ export default InfoDialogView.extend({
 		});
 	},
 
+	showDirectory: function() {
+		application.launch('file_browser', {
+			model: new Directory({
+				path: FileUtils.getDirectoryPath(this.getItem().get('path'))
+			}),
+
+			// options
+			//
+			selected: this.getItem()
+		});
+	},
+
 	showLink: function() {
 
 		// show link in browser
@@ -610,15 +622,7 @@ export default InfoDialogView.extend({
 	},
 
 	onClickOpenFolder: function() {
-		application.launch('file_browser', {
-			model: new Directory({
-				path: FileUtils.getDirectoryPath(this.getItem().get('path'))
-			}),
-
-			// options
-			//
-			selected: this.getItem()
-		});
+		this.showDirectory();
 	},
 
 	onClickSave: function() {

@@ -423,6 +423,16 @@ export default AppView.extend(_.extend({}, Wallpaperable, AppLoadable, {
 		}
 	},
 
+	showLink: function(url) {
+		application.launch('web_browser', {
+			url: url
+		});
+	},
+
+	showAppByName: function(app, options) {
+		application.launch(app, options);
+	},
+
 	update: function() {
 		this.showHeaderStatusBar();
 	},
@@ -511,16 +521,14 @@ export default AppView.extend(_.extend({}, Wallpaperable, AppLoadable, {
 	onClickApp: function(view) {
 		if (view.model.has('link')) {
 
-			// go to link
+			// show link
 			//
-			application.launch('web_browser', {
-				url: view.model.get('link')
-			});
+			this.showLink(view.model.get('link'))
 		} else {
 
-			// launch app
+			// show app
 			//
-			application.launch(view.model.get('id'), view.model.get('options'));
+			this.showAppByName(view.model.get('id'), view.model.get('options'));
 
 			// deselect app icon
 			//

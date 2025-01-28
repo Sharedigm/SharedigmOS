@@ -151,7 +151,43 @@ export default EditMenuView.extend({
 			}
 		}));
 	},
-	
+
+	//
+	// rendering methods
+	//
+
+	showDirectory: function(directory) {
+		application.launch('file_browser', {
+			model: directory
+		});
+	},
+
+	showClipboardContents: function() {
+		this.parent.app.getActiveView().fetchClipboardDirectory({
+
+			// callbacks
+			//
+			success: (model) => {
+				this.showDirectory(model);
+			}
+		});
+	},
+
+	clearClipboardContents: function() {
+		this.parent.app.getActiveView().clearClipboard({
+
+			// callbacks
+			//
+			success: () => {
+				this.update();
+
+				// play delete sound
+				//
+				application.play('recycle');
+			}
+		});
+	},
+
 	//
 	// event handling methods
 	//
@@ -239,30 +275,10 @@ export default EditMenuView.extend({
 	},
 
 	onClickShowClipboard: function() {
-		this.parent.app.getActiveView().fetchClipboardDirectory({
-
-			// callbacks
-			//
-			success: (model) => {
-				application.launch('file_browser', {
-					model: model
-				});
-			}
-		});
+		this.showClipboardContents();
 	},
 
 	onClickClearClipboard: function() {
-		this.parent.app.getActiveView().clearClipboard({
-
-			// callbacks
-			//
-			success: () => {
-				this.update();
-
-				// play delete sound
-				//
-				application.play('recycle');
-			}
-		});
+		this.clearClipboardContents();
 	}
 });

@@ -589,6 +589,16 @@ export default BaseView.extend({
 		}
 	},
 
+	showVideoFile: function(file, options) {
+		application.launch('video_player', {
+			model: file,
+			preferences: UserPreferences.create('video_player', {
+				show_sidebar: false
+			}),
+			autoplay: true
+		}, options);
+	},
+
 	showVideo: function(path) {
 
 		// load video file
@@ -597,14 +607,10 @@ export default BaseView.extend({
 			path: path
 		}).fetch({
 
-			success: (model) => {
-				application.launch('video_player', {
-					model: model,
-					preferences: UserPreferences.create('video_player', {
-						show_sidebar: false
-					}),
-					autoplay: true
-				}, {
+			// callbacks
+			//
+			success: (file) => {
+				this.showVideoFile(file, {
 					maximized: true,
 					full_screen: false
 				});

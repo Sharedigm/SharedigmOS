@@ -410,6 +410,20 @@ export default HeaderView.extend({
 		});	
 	},
 
+	showMyAccount: function() {
+		application.launch('account_manager', {
+			model: this.getChildView('storage_indicator').model,
+			nav: 'general',
+		});
+	},
+
+	showMySettings: function() {
+		application.launch('settings_manager', {
+			model: this.getChildView('storage_indicator').model,
+			nav: 'Storage'
+		});
+	},
+
 	//
 	// mouse event handling methods
 	//
@@ -425,10 +439,10 @@ export default HeaderView.extend({
 	},
 
 	onClickMyAccount: function() {
-		application.launch('account_manager', {		
-			model: this.getChildView('storage_indicator').model,
-			nav: 'general',
-		});
+
+		// show current user's account
+		//
+		this.showMyAccount();
 	},
 
 	onClickMyProfile: function() {
@@ -443,10 +457,7 @@ export default HeaderView.extend({
 	},
 
 	onClickMyStorage: function() {
-		application.launch('settings_manager', {
-			model: this.getChildView('storage_indicator').model,
-			nav: 'Storage'
-		});
+		this.showMySettings();
 	},
 
 	onClickFindConnections: function() {

@@ -81,26 +81,60 @@ export default {
 	},
 
 	//
+	// rendering methods
+	//
+
+	showLink: function(url) {
+		application.navigate(url, {
+			trigger: true
+		});
+	},
+
+	showBrowser: function(url) {
+		application.launch('web_browser', {
+			url: url
+		});
+	},
+
+	//
 	// opening methods
 	//
 
 	openLink: function(item) {
+		let link = item.model.get('link');
 
 		// go to link
 		//
 		if (Browser.is_mobile) {
-			application.navigate(item.model.get('link'), {
-				trigger: true
-			});
+			this.showLink(link);
 		} else {
-			application.launch('web_browser', {
-				url: item.model.get('link')
-			});			
+			this.showBrowser(link);
 		}
 
 		// deselect item
 		//
 		item.deselect();
+	},
+
+	openAppItem: function(app, item, options) {
+		application.launch(app, options, {
+
+			// callbacks
+			//
+			success: () => {
+
+				// stop loading spinner
+				//
+				item.stopLoading();
+			},
+
+			error: () => {
+
+				// stop loading spinner
+				//
+				item.stopLoading();
+			}
+		});
 	},
 
 	openApp: function(item) {
@@ -114,24 +148,7 @@ export default {
 
 		// launch application
 		//
-		application.launch(app_id, options, {
-
-			// calllbacks
-			//
-			success: () => {
-
-				// stop loading spinner
-				//
-				item.stopLoading();
-			},
-
-			error: () => {
-
-				// stop loading spinner
-				//
-				item.stopLoading();		
-			}
-		});
+		this.launchAppItem(app_id, item, options);
 
 		// deselect after a pause
 		//

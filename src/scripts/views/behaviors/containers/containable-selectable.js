@@ -362,5 +362,15 @@ export default _.extend({}, Containable, {
 		if (!selected && bidirectional) {
 			this.selectRange(to, from, false);
 		}
+	},
+
+	//
+	// rendering methods
+	//
+
+	showSelectedGeolocatedModels: function() {
+		application.launch('map_viewer', {
+			people: this.parent.getSelectedGeolocatedModels()
+		});
 	}
 });

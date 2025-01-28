@@ -77,7 +77,7 @@ export default SearchByTextView.extend({
 
 					// callbacks
 					//
-					success: (collection) => {
+					success: () => {
 
 						// show dialog
 						//

@@ -26,14 +26,6 @@ export default Place.extend({
 	urlRoot: config.servers.api + '/check-ins',
 
 	//
-	// getting methods
-	//
-
-	getClassName: function() {
-		return 'check_in';
-	},
-
-	//
 	// converting methods
 	//
 

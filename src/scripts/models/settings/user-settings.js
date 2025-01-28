@@ -32,14 +32,6 @@ export default UserKeyValues.extend({
 	urlRoot: config.servers.api + '/settings',
 
 	//
-	// getting methods
-	//
-
-	getClassName: function() {
-		return 'user_settings';
-	},
-
-	//
 	// setting methods
 	//
 

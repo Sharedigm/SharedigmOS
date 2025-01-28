@@ -21,6 +21,26 @@ export default {
 	// sharing methods
 	//
 
+	showItemByTopic: function(item, topic) {
+		application.launch('topic_viewer', {
+			model: topic,
+			items: [item],
+			message: config.apps.file_browser.share_invitation_message
+		});
+	},
+
+	showItemsByTopic: function(items, topic) {
+		application.launch('topic_viewer', {
+			model: topic,
+			items: items,
+			message: config.apps.file_browser.share_invitation_message
+		});
+	},
+
+	//
+	// selection / sharing methods
+	//
+
 	shareItemByTopic: function(item) {
 		import(
 			'../../../../../views/apps/topic-viewer/topic-viewer-view.js'
@@ -37,10 +57,7 @@ export default {
 
 					// show selected topic
 					//
-					application.showModel(topics[0], {
-						items: [item],
-						message: config.apps.file_browser.share_invitation_message
-					});
+					this.showItemByTopic(item, topics[0]);
 				}
 			});
 		});
@@ -59,10 +76,7 @@ export default {
 				// callbacks
 				//
 				onopen: (topics) => {
-					application.showModel(topics[0], {
-						items: items,
-						message: config.apps.file_browser.share_invitation_message
-					});
+					this.showItemsByTopic(items, topics[0]);
 				}
 			});
 		});

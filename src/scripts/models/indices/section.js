@@ -42,10 +42,6 @@ export default BaseModel.extend({
 	// getting methods
 	//
 
-	getClassName: function() {
-		return 'section';
-	},
-
 	getItemByAttribute: function(key, value) {
 		let items = this.get('items');
 		for (let i = 0; i < items.length; i++) {

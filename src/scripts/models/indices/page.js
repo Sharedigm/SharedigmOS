@@ -27,13 +27,5 @@ export default BaseModel.extend({
 		icon: '<i class="fa fa-file"></i>',
 		name: 'Page',
 		url: undefined
-	},
-
-	//
-	// getting methods
-	//
-
-	getClassName: function() {
-		return 'page';
 	}
 });

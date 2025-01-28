@@ -122,6 +122,16 @@ export default MenuView.extend(_.extend({}, AppLaunchable, {
 		});
 	},
 
+	showLink: function(url) {
+		application.launch('web_browser', {
+			url: url
+		});
+	},
+
+	showApp: function(app, options) {
+		application.launch(app, options);
+	},
+
 	//
 	// mouse event handling methods
 	//
@@ -133,13 +143,14 @@ export default MenuView.extend(_.extend({}, AppLaunchable, {
 
 		if (model.has('link')) {
 
-			// go to link
+			// show link
 			//
-			application.launch('web_browser', {
-				url: model.get('link')
-			});
+			this.showLink(model.get('link'));
 		} else {
-			application.launch(model.get('id'), model.get('options'));
+
+			// show app
+			//
+			this.showApp(model.get('id'), model.get('options'));
 		}
 	},
 

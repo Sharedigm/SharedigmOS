@@ -143,6 +143,13 @@ export default NotificationsListItemView.extend({
 		};
 	},
 
+	showRepliedPost: function(reply, post) {
+		application.launch('post_viewer', {
+			model: post,
+			selected: reply
+		});
+	},
+
 	showPost: function() {
 		let reply = this.get('reply');
 
@@ -155,13 +162,11 @@ export default NotificationsListItemView.extend({
 
 				// callbacks
 				//
-				success: (model) => {
+				success: (post) => {
 
 					// show reply's post
 					//
-					application.showModel(model, {
-						selected: reply
-					});
+					this.showRepliedPost(reply, post);
 				}
 			});
 		} else {

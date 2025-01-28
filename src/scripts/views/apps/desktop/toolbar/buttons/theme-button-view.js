@@ -70,19 +70,24 @@ export default ButtonView.extend({
 		});
 	},
 
-	//
-	// mouse event methods
-	//
-
-	onClick: function() {
-		/*
+	showTheme: function() {
 		if (this.constructor.index < config.defaults.themes.length - 1) {
 			this.setThemeIndex(this.constructor.index + 1);
 		} else {
 			this.setThemeIndex(0);
 		}
-		*/
+	},
+
+	showThemePicker: function() {
 		application.launch('theme_picker');
+	},
+
+	//
+	// mouse event methods
+	//
+
+	onClick: function() {
+		this.showThemePicker();
 	}
 }, {
 

@@ -16,9 +16,8 @@
 \******************************************************************************/
 
 import FormView from '../../views/forms/form-view.js';
-import Tabbed from '../../views/forms/behaviors/tabbed.js';
 
-export default FormView.extend(_.extend({}, Tabbed, {
+export default FormView.extend({
 
 	//
 	// attributes
@@ -77,6 +76,12 @@ export default FormView.extend(_.extend({}, Tabbed, {
 		return this.$el.find('.' + tabName + '.tab-pane');
 	},
 
+	getActiveIndex: function() {
+		let tabs = this.$el.find('.tab');
+		let activeTab = this.$el.find('.active.tab');
+		return tabs.index(activeTab);
+	},
+
 	getActiveTabName: function() {
 		let activeTab = this.$el.find('li.active');
 		let className = activeTab.attr('class');
@@ -97,6 +102,25 @@ export default FormView.extend(_.extend({}, Tabbed, {
 	//
 	// setting methods
 	//
+
+	setActiveIndex: function(index) {
+		let tabs = this.$el.find('.tab');
+		let panes = this.$el.find('.tab-pane');
+
+		if (tabs.length < index - 1) {
+			return;
+		}
+
+		// set active tab
+		//
+		tabs.removeClass('active');
+		$(tabs[index]).addClass('active');
+
+		// set active pane
+		//
+		panes.removeClass('active');
+		$(panes[index]).addClass('active');
+	},
 
 	setActiveTabName: function(tabName) {
 		if (this.hasTabNamed(tabName)) {
@@ -134,4 +158,16 @@ export default FormView.extend(_.extend({}, Tabbed, {
 			this.showTab(keys[i]);
 		}
 	},
-}));
+
+	//
+	// hiding / showing methods
+	//
+
+	hideTab: function(name) {
+		this.$el.find('.' + name + '-tab').hide();
+	},
+
+	showTab: function(name) {
+		this.$el.find('.' + name + '-tab').show();
+	}
+});

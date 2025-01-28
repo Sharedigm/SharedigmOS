@@ -24,7 +24,6 @@ export default UserSettings.extend({
 	//
 
 	category: 'notifications',
-	defaults: [],
 
 	//
 	// constructor

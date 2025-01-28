@@ -1090,15 +1090,19 @@ export default BaseView.extend({
 	// json display methods
 	//
 
+	showCode: function(file) {
+		application.launch('code_editor', {
+			model: file
+		});
+	},
+
 	showJson: function() {
 		import(
 			'../../../../../../models/storage/files/file.js'
 		).then((File) => {
-			application.launch('code_editor', {
-				model: new File.default({
-					contents: this.constructor.toJson(this.el)
-				})
-			});
+			this.showCode(new File.default({
+				contents: this.constructor.toJson(this.el)
+			}));
 		});
 	}
 }, {

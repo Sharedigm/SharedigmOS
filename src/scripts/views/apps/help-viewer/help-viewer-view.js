@@ -253,9 +253,7 @@ export default AppSplitView.extend(_.extend({}, LinkShareable, {
 	//
 
 	newWindow: function() {
-		application.launch(this.name, {
-			url: this.url
-		}, {
+		this.showHelp({
 			new_window: true
 		});
 	},
@@ -302,6 +300,12 @@ export default AppSplitView.extend(_.extend({}, LinkShareable, {
 		// initialize menus
 		//
 		this.onLoad();
+	},
+
+	showHelp: function(options) {
+		application.launch(this.name, {
+			url: this.url
+		}, options);
 	},
 
 	//
@@ -451,6 +455,26 @@ export default AppSplitView.extend(_.extend({}, LinkShareable, {
 		}));
 	},
 
+	showBrowser: function(url) {
+		application.launch('web_browser', {
+			url: url
+		});
+	},
+
+	showUrl: function(url) {
+		if (url.startsWith('#')) {
+
+			// internal links
+			//
+			this.setAddress(url);
+		} else {
+
+			// external links
+			//
+			this.showBrowser(url)
+		}
+	},
+
 	//
 	// footer bar rendering methods
 	//
@@ -481,18 +505,6 @@ export default AppSplitView.extend(_.extend({}, LinkShareable, {
 	//
 
 	onClickLink: function(url) {
-		if (url.startsWith('#')) {
-
-			// internal links
-			//
-			this.setAddress(url);
-		} else {
-
-			// external links
-			//
-			application.launch('web_browser', {
-				url: url
-			});
-		}
+		this.showUrl(url);
 	}
 }));

@@ -124,6 +124,16 @@ export default NotificationsListItemView.extend({
 	},
 
 	//
+	// rendering methods
+	//
+
+	showChat: function(chat) {
+		application.launch('chat_viewer', {
+			model: chat
+		});
+	},
+
+	//
 	// accepting methods
 	//
 
@@ -143,7 +153,7 @@ export default NotificationsListItemView.extend({
 
 				// show new chat
 				//
-				application.showModel(new Chat(data.chat, {
+				this.showChat(new Chat(data.chat, {
 					parse: true
 				}));
 			},

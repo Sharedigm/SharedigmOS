@@ -201,7 +201,7 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 			this.getChildView('modals').closeNonMinimized();
 		});
 
-		// set notification channels
+		// set notification defaults
 		//
 		if (this.hasApp('notification_center')) {
 			this.settings.notifications.defaults = config.apps.notification_center.channels;
@@ -300,7 +300,7 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 	getPageOrientation: function() {
 		return $(window).width() > $(window).height()? 'landscape' : 'portrait';
 	},
-	
+
 	getUrl: function() {
 		if (config.base_url) {
 			return config.base_url + '/';
@@ -361,7 +361,7 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 	},
 
 	getDirectory: function(path) {
-		
+
 		// return home directory
 		//
 		if (!path) {
@@ -788,7 +788,7 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 			this.getView().showUserHeader(this.session.user);
 		}
 	},
-	
+
 	showMain: function(view, options) {
 
 		// show page navigation
@@ -797,7 +797,7 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 			if (options && options.nav) {
 				this.getChildView('header').setNav(options.nav);
 			} else {
-				this.getChildView('header').setNav();				
+				this.getChildView('header').setNav();
 			}
 		}
 
@@ -812,7 +812,7 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 
 	showPage: function(view, options) {
 		application.desktop = null;
-		
+
 		// show page view
 		//
 		this.showMain(new PageView({
@@ -866,7 +866,7 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 		}
 
 		// reset app
-		//				
+		//
 		if (appView.initialize) {
 			appView.initialize(options);
 			appView.onRender();
@@ -898,88 +898,6 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 			});
 		}
 		*/
-	},
-
-	//
-	// model showing methods
-	//
-
-	showModel: function(model, options) {
-		let appName = model.getClassName().toLowerCase() + '_viewer';
-
-		// open in app
-		//
-		if (this.desktop) {
-			if (this.desktop.hasApp(appName)) {
-
-				// open in desktop
-				//
-				this.desktop.setApp(appName, () => {
-					this.desktop.getAppView(appName).openModel(model, options);
-				});
-			} else {
-
-				// open in new window
-				//
-				this.launch(appName, _.extend({}, options, {
-					model: model
-				}));
-			}
-
-		// open in browser
-		//
-		} else if (model.getUrl) {
-
-			// open new page
-			//
-			application.showUrl(model.getUrl(), '_blank');
-		} else {
-
-			// display alert
-			//
-			application.alert({
-				message: "Can not display " + model.getClassName() + "."
-			});
-		}
-	},
-
-	showCollection: function(collection, options) {
-		let appName = collection.model.prototype.getClassName().toLowerCase() + '_viewer';
-
-		// open in app
-		//
-		if (this.desktop) {
-			if (this.desktop.hasApp(appName)) {
-
-				// open in desktop
-				//
-				this.desktop.setApp(appName, () => {
-					this.desktop.getAppView(appName).openCollection(collection, options);
-				});
-			} else {
-
-				// open in new window
-				//
-				this.launch(appName, _.extend({}, options, {
-					collection: collection
-				}));
-			}
-
-		// open in browser
-		//
-		} else if (collection.getUrl) {
-
-			// open new page
-			//
-			application.showUrl(collection.getUrl(), '_blank');
-		} else {
-
-			// display alert
-			//
-			application.alert({
-				message: "Can not display " + collection.model.getClassName() + "."
-			});
-		}
 	},
 
 	//

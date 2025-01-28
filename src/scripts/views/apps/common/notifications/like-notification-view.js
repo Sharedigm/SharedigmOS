@@ -116,11 +116,15 @@ export default NotificationsListItemView.extend({
 		};
 	},
 
-	//
-	// mouse event handling methods
-	//
+	showLikedPost: function(item, post) {
+		application.launch('post_viewer', {
+			model: post,
+			collapsed: false,
+			selected: item
+		});
+	},
 
-	onClick: function(event) {
+	showPost: function() {
 		let item = this.get('like').get('item');
 
 		// show post
@@ -132,14 +136,11 @@ export default NotificationsListItemView.extend({
 
 				// callbacks
 				//
-				success: (model) => {
+				success: (post) => {
 
 					// show liked post
 					//
-					application.showModel(model, {
-						collapsed: false,
-						selected: item
-					});
+					this.showLikedPost(item, post);
 				}
 			});
 		} else {
@@ -150,6 +151,17 @@ export default NotificationsListItemView.extend({
 				message: "Post not found."
 			});
 		}
+	},
+
+	//
+	// mouse event handling methods
+	//
+
+	onClick: function(event) {
+
+		// show post that like belongs to
+		//
+		this.showPost();
 
 		// prevent default click handling
 		//

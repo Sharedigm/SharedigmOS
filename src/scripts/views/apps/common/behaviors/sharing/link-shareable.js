@@ -19,21 +19,34 @@
 export default {
 
 	//
+	// rendering methods
+	//
+
+	showMessageByDefaultTopic: function(message, privacy) {
+		application.launch('topic_viewer', {
+			message: message,
+			privacy: privacy
+		});
+	},
+
+	showMessageByChat: function(message, chat) {
+		application.launch('chat_viewer', {
+			model: chat,
+			message: message
+		});
+	},
+
+	//
 	// sharing methods
 	//
 
 	shareLinkByTopic: function(url, options) {
-		import(
-			'../../../../../views/apps/topic-viewer/topic-viewer-view.js'
-		).then((TopicViewerView) => {
+		let message = (options && options.message? options.message : '') + url;
+		let privacy = options? options.privacy : null;
 
-			// show default topic
-			//
-			application.showModel(TopicViewerView.default.default_topic, {
-				message: (options && options.message? options.message : '') + url,
-				privacy: options? options.privacy : null
-			});
-		});
+		// show default topic
+		//
+		this.showMessageByDefaultTopic(message, privacy);
 	},
 
 	shareLinkByMessage: function(url, options) {
@@ -45,12 +58,12 @@ export default {
 				// callbacks
 				//
 				success: (collection) => {
+					let message = (options && options.message? options.message : '') + url;
+					let chat = collection.at(0);
 
 					// show first chat
 					//
-					application.showModel(collection.at(0), {
-						message: (options && options.message? options.message : '') + url
-					});
+					this.showMessageByChat(message, chat);
 				}
 			});
 		});

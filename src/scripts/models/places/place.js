@@ -42,10 +42,6 @@ export default Timestamped.extend({
 	// getting methods
 	//
 
-	getClassName: function() {
-		return 'place';
-	},
-
 	getName: function() {
 		return this.get('name');
 	},

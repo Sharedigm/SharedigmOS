@@ -123,6 +123,16 @@ export default NotificationsListItemView.extend({
 	},
 
 	//
+	// rendering methods
+	//
+
+	showTopic: function(topic) {
+		application.launch('topic_viewer', {
+			model: topic
+		});
+	},
+
+	//
 	// accepting methods
 	//
 
@@ -140,7 +150,7 @@ export default NotificationsListItemView.extend({
 
 				// show topic
 				//
-				application.showModel(invitation.get('topic'));
+				this.showTopic(invitation.get('topic'));
 			},
 
 			error: (model, response) => {

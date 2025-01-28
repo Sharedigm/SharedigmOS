@@ -199,6 +199,16 @@ export default MenuView.extend({
 	},
 
 	//
+	// rendering methods
+	//
+
+	showSettingsManager: function() {
+		application.launch('settings_manager', {
+			app: this.parent.app
+		});
+	},
+
+	//
 	// mouse event handling methods
 	//
 
@@ -395,9 +405,7 @@ export default MenuView.extend({
 
 	onClickViewPreferences: function() {
 		if (this.show_settings_manager != false) {
-			application.launch('settings_manager', {
-				app: this.parent.app
-			});
+			this.showSettingsManager();
 		} else {
 			this.parent.app.showPreferencesDialog();
 		}

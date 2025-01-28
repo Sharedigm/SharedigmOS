@@ -284,6 +284,17 @@ export default ContextMenuView.extend({
 	},
 
 	//
+	// rendering methods
+	//
+
+	showThemeManager: function() {
+		application.launch('theme_manager', {
+			tab: 'desktop',
+			tab2: 'background'
+		});
+	},
+
+	//
 	// mouse event handling methods
 	//
 
@@ -324,9 +335,7 @@ export default ContextMenuView.extend({
 	},
 
 	onClickShowOnMap: function() {
-		application.launch('map_viewer', {
-			photos: this.parent.getSelectedGeolocatedModels()
-		});
+		this.parent.showSelectedGeolocatedModels();
 	},
 
 	onClickShareByInvitation: function() {
@@ -380,9 +389,6 @@ export default ContextMenuView.extend({
 	},
 	
 	onClickChangeBackground: function() {
-		application.launch('theme_manager', {
-			tab: 'desktop',
-			tab2: 'background'
-		});
+		this.showThemeManager();
 	}
 });

@@ -97,21 +97,13 @@ export default MenuView.extend({
 		MenuView.prototype.render.call(this);
 	},
 
-	//
-	// mouse event handling methods
-	//
-
-	onClickViewAboutInfo: function() {
+	showHelp: function(url) {
 		application.launch('help_viewer', {
-			url: this.getUrl()
+			url: url
 		});
 	},
 
-	onClickViewApp: function() {
-		application.launch('help_viewer');
-	},
-
-	onClickViewPdf: function() {
+	showHelpFile: function() {
 		application.launch('pdf_viewer', {
 			model: new File({
 				path: config.defaults.help.docs
@@ -119,26 +111,45 @@ export default MenuView.extend({
 		});
 	},
 
+	showHelpTopic: function(topic) {
+		application.launch('topic_viewer', {
+			topic: topic,
+
+			// options
+			//
+			search: {
+				message: this.getAppName()
+			},
+
+			// capabilities
+			//
+			editable: true
+		});
+	},
+
+	//
+	// mouse event handling methods
+	//
+
+	onClickViewAboutInfo: function() {
+		this.showHelp(this.getUrl());
+	},
+
+	onClickViewApp: function() {
+		this.showHelp();
+	},
+
+	onClickViewPdf: function() {
+		this.showHelpFile();
+	},
+
 	onClickViewTopic: function() {
 		import(
 			'../../../../../../models/topics/topic.js'
 		).then((Topic) => {
-
-			application.launch('topic_viewer', {
-				topic: new Topic.default({
-					name: config.defaults.help.topic
-				}),
-
-				// options
-				//
-				search: {
-					message: this.getAppName()
-				},
-
-				// capabilities
-				//
-				editable: true
-			});
+			this.showHelpTopic(new Topic.default({
+				name: config.defaults.help.topic
+			}));
 		});
 	},
 

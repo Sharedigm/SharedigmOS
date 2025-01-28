@@ -139,6 +139,14 @@ export default NotificationsListItemView.extend({
 		};
 	},
 
+	showCommentPost: function(comment, post) {
+		application.launch('post_viewer', {
+			model: post,
+			collapsed: false,
+			selected: comment
+		});
+	},
+
 	showPost: function() {
 		let comment = this.get('comment');
 
@@ -151,14 +159,11 @@ export default NotificationsListItemView.extend({
 
 				// callbacks
 				//
-				success: (model) => {
+				success: (post) => {
 
-					// show commmented post
+					// show comment's post
 					//
-					application.showModel(model, {
-						collapsed: false,
-						selected: comment
-					});
+					this.showCommentPost(comment, post);
 				}
 			});
 		} else {

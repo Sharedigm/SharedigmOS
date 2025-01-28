@@ -152,6 +152,18 @@ export default AppSplitView.extend({
 		});
 	},
 
+	showSettings: function(nav) {
+		application.launch('settings_manager', {
+			nav: nav
+		});
+	},
+
+	showPreferences: function(app) {
+		application.launch('settings_manager', {
+			app: app
+		});
+	},
+
 	//
 	// event handling methods
 	//
@@ -165,16 +177,12 @@ export default AppSplitView.extend({
 
 				// show settings
 				//
-				application.launch('settings_manager', {
-					nav: item.model.get('name')
-				});
+				this.showSettings(item.model.get('name'));
 			} else {
 
 				// show preferences
 				//
-				application.launch('settings_manager', {
-					app: item.model
-				});
+				this.showPreferences(item.model);
 			}
 		}
 

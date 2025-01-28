@@ -184,9 +184,20 @@ export default BaseView.extend(_.extend({}, Timeable, {
 	},
 
 	update: function() {
-		// this.$el.find('.digits').html(this.getDateTime(this.options));
 		this.updateDate();
 		this.updateTime();
+	},
+
+	showDate: function() {
+		if (application.hasApp('calendar')) {
+			application.launch('calendar');
+		}
+	},
+
+	showTime: function() {
+		if (application.hasApp('clock')) {
+			application.launch('clock');
+		}
 	},
 
 	//
@@ -194,14 +205,10 @@ export default BaseView.extend(_.extend({}, Timeable, {
 	//
 
 	onClickDate: function() {
-		if (application.hasApp('calendar')) {
-			application.launch('calendar');
-		}
+		this.showDate();
 	},
 
 	onClickTime: function() {
-		if (application.hasApp('clock')) {
-			application.launch('clock');
-		}
+		this.showTime();
 	}
 }));
