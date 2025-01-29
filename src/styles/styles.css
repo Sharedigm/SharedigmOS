@@ -7168,7 +7168,7 @@ td.error {
 .items .item.highlighted::after {
   border: none;
 }
-.items.hide-image-names .png.file .name, .items.hide-image-names .jpg.file .name {
+.items.hide-image-names .image.file .name {
   display: none !important;
 }
 .items.drag-selectable {

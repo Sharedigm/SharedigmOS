@@ -376,7 +376,7 @@ export default HeaderView.extend({
 
 	showNotifications: function() {
 		import(
-			'../../views/apps/common/notifications/notifications-dropdown-view.js'
+			'../../views/apps/notification-center/mainbar/notifications/notifications-dropdown-view.js'
 		).then((NotificationsDropdownView) => {
 
 			// show notifications dropdown
