@@ -931,21 +931,6 @@ body:not(.binary).colored .colored.btn:active.red:active, body:not(.binary).colo
   background: color-mix(in srgb, rgb(0, 0, 127) 20%, hsl(0, 80%, 60%));
   border-color: color-mix(in srgb, rgb(0, 0, 127) 20%, hsl(0, 80%, 60%));
 }
-body:not(.binary).colored .colored.btn.raspberry, body:not(.binary).colored .colored.btn:focus.raspberry,
-body:not(.binary).colored .colored.btn:active.raspberry, body:not(.binary).colored .colored.btn:active:focus.raspberry {
-  background: hsl(330, 80%, 60%);
-  border-color: hsl(330, 80%, 60%);
-}
-body:not(.binary).colored .colored.btn.raspberry:hover, body:not(.binary).colored .colored.btn:focus.raspberry:hover,
-body:not(.binary).colored .colored.btn:active.raspberry:hover, body:not(.binary).colored .colored.btn:active:focus.raspberry:hover {
-  background: color-mix(in srgb, rgb(0, 0, 127) 10%, hsl(330, 80%, 60%));
-  border-color: color-mix(in srgb, rgb(0, 0, 127) 10%, hsl(330, 80%, 60%));
-}
-body:not(.binary).colored .colored.btn.raspberry:active, body:not(.binary).colored .colored.btn:focus.raspberry:active,
-body:not(.binary).colored .colored.btn:active.raspberry:active, body:not(.binary).colored .colored.btn:active:focus.raspberry:active {
-  background: color-mix(in srgb, rgb(0, 0, 127) 20%, hsl(330, 80%, 60%));
-  border-color: color-mix(in srgb, rgb(0, 0, 127) 20%, hsl(330, 80%, 60%));
-}
 body:not(.binary).colored .colored.btn.red-orange, body:not(.binary).colored .colored.btn:focus.red-orange,
 body:not(.binary).colored .colored.btn:active.red-orange, body:not(.binary).colored .colored.btn:active:focus.red-orange {
   background: hsl(15, 80%, 60%);
@@ -993,18 +978,18 @@ body:not(.binary).colored .colored.btn:active.yellow:active, body:not(.binary).c
 }
 body:not(.binary).colored .colored.btn.lime, body:not(.binary).colored .colored.btn:focus.lime,
 body:not(.binary).colored .colored.btn:active.lime, body:not(.binary).colored .colored.btn:active:focus.lime {
-  background: hsl(90, 50%, 50%);
-  border-color: hsl(90, 50%, 50%);
+  background: hsl(135, 50%, 50%);
+  border-color: hsl(135, 50%, 50%);
 }
 body:not(.binary).colored .colored.btn.lime:hover, body:not(.binary).colored .colored.btn:focus.lime:hover,
 body:not(.binary).colored .colored.btn:active.lime:hover, body:not(.binary).colored .colored.btn:active:focus.lime:hover {
-  background: color-mix(in srgb, rgb(0, 0, 127) 10%, hsl(90, 50%, 50%));
-  border-color: color-mix(in srgb, rgb(0, 0, 127) 10%, hsl(90, 50%, 50%));
+  background: color-mix(in srgb, rgb(0, 0, 127) 10%, hsl(135, 50%, 50%));
+  border-color: color-mix(in srgb, rgb(0, 0, 127) 10%, hsl(135, 50%, 50%));
 }
 body:not(.binary).colored .colored.btn.lime:active, body:not(.binary).colored .colored.btn:focus.lime:active,
 body:not(.binary).colored .colored.btn:active.lime:active, body:not(.binary).colored .colored.btn:active:focus.lime:active {
-  background: color-mix(in srgb, rgb(0, 0, 127) 20%, hsl(90, 50%, 50%));
-  border-color: color-mix(in srgb, rgb(0, 0, 127) 20%, hsl(90, 50%, 50%));
+  background: color-mix(in srgb, rgb(0, 0, 127) 20%, hsl(135, 50%, 50%));
+  border-color: color-mix(in srgb, rgb(0, 0, 127) 20%, hsl(135, 50%, 50%));
 }
 body:not(.binary).colored .colored.btn.green, body:not(.binary).colored .colored.btn:focus.green,
 body:not(.binary).colored .colored.btn:active.green, body:not(.binary).colored .colored.btn:active:focus.green {
@@ -1155,6 +1140,21 @@ body:not(.binary).colored .colored.btn.magenta:active, body:not(.binary).colored
 body:not(.binary).colored .colored.btn:active.magenta:active, body:not(.binary).colored .colored.btn:active:focus.magenta:active {
   background: color-mix(in srgb, rgb(0, 0, 127) 20%, hsl(280, 33%, 50%));
   border-color: color-mix(in srgb, rgb(0, 0, 127) 20%, hsl(280, 33%, 50%));
+}
+body:not(.binary).colored .colored.btn.raspberry, body:not(.binary).colored .colored.btn:focus.raspberry,
+body:not(.binary).colored .colored.btn:active.raspberry, body:not(.binary).colored .colored.btn:active:focus.raspberry {
+  background: hsl(330, 80%, 60%);
+  border-color: hsl(330, 80%, 60%);
+}
+body:not(.binary).colored .colored.btn.raspberry:hover, body:not(.binary).colored .colored.btn:focus.raspberry:hover,
+body:not(.binary).colored .colored.btn:active.raspberry:hover, body:not(.binary).colored .colored.btn:active:focus.raspberry:hover {
+  background: color-mix(in srgb, rgb(0, 0, 127) 10%, hsl(330, 80%, 60%));
+  border-color: color-mix(in srgb, rgb(0, 0, 127) 10%, hsl(330, 80%, 60%));
+}
+body:not(.binary).colored .colored.btn.raspberry:active, body:not(.binary).colored .colored.btn:focus.raspberry:active,
+body:not(.binary).colored .colored.btn:active.raspberry:active, body:not(.binary).colored .colored.btn:active:focus.raspberry:active {
+  background: color-mix(in srgb, rgb(0, 0, 127) 20%, hsl(330, 80%, 60%));
+  border-color: color-mix(in srgb, rgb(0, 0, 127) 20%, hsl(330, 80%, 60%));
 }
 body:not(.binary).colored .colored.btn.brown, body:not(.binary).colored .colored.btn:focus.brown,
 body:not(.binary).colored .colored.btn:active.brown, body:not(.binary).colored .colored.btn:active:focus.brown {
@@ -3477,14 +3477,6 @@ hr {
 }
 .user-profile-header hr {
   margin: 10px auto;
-}
-
-body.icon-spinning .profile.photo .buttons {
-  display: none;
-}
-
-body:not(.icon-spinning) .user-profile-header .alternate.buttons {
-  display: none;
 }
 
 .scrollable {
