@@ -23,15 +23,6 @@ export default FileMenuView.extend({
 	// attributes
 	//
 
-	items: [
-		{
-			"class": "close-window",
-			"icon": "fa fa-circle-xmark",
-			"name": "Close",
-			"shortcut": "command-L"
-		}
-	],
-
 	events: {
 		'click .close-window': 'onClickCloseWindow'
 	},

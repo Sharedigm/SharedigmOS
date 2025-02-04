@@ -26,7 +26,7 @@ export default {
 
 			// load app
 			//
-			this.loadAppView(appName.replace(/-/g, '_'), {
+			this.loadApp(appName.replace(/-/g, '_'), {
 
 				// callbacks
 				//

@@ -22,14 +22,6 @@ export default ShareMenuView.extend({
 	//
 	// attributes
 	//
-
-	items: [
-		{
-			"class": "share-by-link",
-			"icon": "fa fa-link",
-			"name": "By Link"
-		}
-	],
 	
 	events: {
 

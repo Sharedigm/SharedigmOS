@@ -62,7 +62,7 @@ export default DialogView.extend({
 	`),
 
 	regions: {
-		body: {
+		file_browser: {
 			el: '.modal-body',
 			replaceElement: true
 		},
@@ -111,7 +111,7 @@ export default DialogView.extend({
 	//
 
 	hasSelected: function() {
-		return this.getChildView('body').hasSelected() == true;
+		return this.getChildView('file_browser').hasSelected() == true;
 	},
 
 	//
@@ -142,8 +142,8 @@ export default DialogView.extend({
 
 			// update file browser view
 			//
-			this.getChildView('body').model = directory;
-			this.getChildView('body').render();
+			this.getChildView('file_browser').model = directory;
+			this.getChildView('file_browser').render();
 		}
 	},
 
@@ -175,7 +175,7 @@ export default DialogView.extend({
 	},
 
 	showFileBrowser: function() {
-		this.showChildView('body', new FileBrowserView({
+		this.showAppView('file_browser', new FileBrowserView({
 			model: this.model,
 
 			// options
@@ -227,7 +227,7 @@ export default DialogView.extend({
 		// update address
 		//
 		if (this.hasChildView('address')) {
-			this.getChildView('address').model = this.getChildView('body').getActiveModel();
+			this.getChildView('address').model = this.getChildView('file_browser').getActiveModel();
 			this.getChildView('address').onChange();
 		}
 	},
@@ -237,12 +237,12 @@ export default DialogView.extend({
 	//
 
 	onClickOpenButton: function() {
-		let selected = this.getChildView('body').getSelectedModels();
+		let selected = this.getChildView('file_browser').getSelectedModels();
 
 		// no items selected, return current directory
 		//
 		if (selected.length == 0) {
-			selected = [this.getChildView('body').getActiveModel()];
+			selected = [this.getChildView('file_browser').getActiveModel()];
 		}
 
 		// open selected item
@@ -276,6 +276,6 @@ export default DialogView.extend({
 	//
 
 	onKeyDown: function(event) {
-		this.getChildView('body').onKeyDown(event);
+		this.getChildView('file_browser').onKeyDown(event);
 	}
 });

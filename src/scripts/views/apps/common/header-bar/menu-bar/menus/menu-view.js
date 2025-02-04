@@ -214,6 +214,28 @@ export default BaseView.extend({
 		}
 	},
 
+	getItems: function() {
+		if (this.items) {
+
+			// get menu items from menu
+			//
+			return this.items;
+		} else {
+
+			// get menu items from resources
+			//
+			let appView = this.parent.parent.parent;
+			let resourceName = this.region_name + '_menu';
+			let resources = appView.getResources(resourceName);
+
+			if (resources) {
+				return resources.items;
+			} else {
+				return [];
+			}
+		}
+	},
+
 	getEnabledItems: function() {
 		return this.$el.find('li:not(.divider):not(.disabled):not([style="display:none"])');
 	},
@@ -806,7 +828,7 @@ export default BaseView.extend({
 	templateContext: function() {
 		return {
 			view: this,
-			items: this.getItems? this.getItems() : this.items,
+			items: this.getItems(),
 			icons: this.constructor.icons
 		};
 	},

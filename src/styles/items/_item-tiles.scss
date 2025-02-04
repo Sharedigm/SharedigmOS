@@ -527,7 +527,9 @@ $extra-large-tile-border-width: 4px;
 }
 
 .extra-large.tile-grid {
-	.item {		
+	.item {
+		width: $extra-large-size;
+
 		> .tile {
 			width: $extra-large-size;
 			height: $extra-large-size;

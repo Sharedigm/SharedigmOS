@@ -161,7 +161,7 @@ export default DialogView.extend({
 	},
 
 	showFileBrowser: function() {
-		this.showChildView('file_browser', new FileBrowserView({
+		this.showAppView('file_browser', new FileBrowserView({
 			model: this.model,
 
 			// options

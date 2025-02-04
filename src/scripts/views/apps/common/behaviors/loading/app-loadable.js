@@ -331,17 +331,4 @@ export default {
 				options.success();
 		}
 	}
-
-	/*
-	loadApp: function(appName, options.success() {
-		let dirname = appName.replace('_', '-');
-		let filename = dirname + '-view.js';
-
-		import(
-			'../../../' + dirname + '/' + filename
-		).then((AppView) => {
-			options.success(AppView.default);
-		});
-	}
-	*/
 };

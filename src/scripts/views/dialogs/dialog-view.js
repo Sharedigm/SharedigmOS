@@ -226,6 +226,24 @@ export default ModalView.extend(_.extend({}, Resizable, Minimizable, Maximizable
 		}
 	},
 
+	showAppView: function(region, view) {
+		application.loadResources(region, {
+
+			// callbacks
+			//
+			success: (resources) => {
+
+				// set app attributes
+				//
+				view.constructor.resources = resources;
+
+				// render app
+				//
+				this.showChildView(region, view);
+			}
+		});
+	},
+
 	//
 	// dialog event handling methods
 	//

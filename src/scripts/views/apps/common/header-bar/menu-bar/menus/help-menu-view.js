@@ -22,42 +22,6 @@ import AddressBar from '../../../../../../utilities/web/address-bar.js';
 export default MenuView.extend({
 
 	//
-	// attributes
-	//
-
-	items: [
-		{
-			"class": "view-about-info",
-			"icon": "fa fa-info-circle",
-			"name": "About"
-		},
-		"separator",
-		{
-			"class": "view-app",
-			"icon": "fa fa-question-circle",
-			"name": "View Help Pages"
-		},
-		{
-			"class": "view-topic",
-			"icon": "fa fa-newspaper",
-			"name": "Search Community Help"
-		},
-		"separator",
-		{
-			"class": "contact-us",
-			"icon": "fa fa-envelope",
-			"name": "Contact Us"
-		},
-	],
-
-	events: {
-		'click .view-about-info': 'onClickViewAboutInfo',
-		'click .view-app': 'onClickViewApp',
-		'click .view-topic': 'onClickViewTopic',
-		'click .contact-us': 'onClickContactUs'
-	},
-
-	//
 	// querying methods
 	//
 
@@ -82,20 +46,31 @@ export default MenuView.extend({
 		return config.apps[this.parent.app.name].name;
 	},
 
-	//
-	// rendering methods
-	//
-
-	render: function() {
-
-		// set app name in first menu item
-		//
-		this.items[0].name = "About " + this.getAppName();
+	getItems: function() {
+		if (this.constructor.items) {
+			return this.constructor.items;
+		}
 
 		// call superclass method
 		//
-		MenuView.prototype.render.call(this);
+		let items = MenuView.prototype.getItems.call(this);
+
+		// append app name to first item
+		//
+		if (items && items[0]) {
+			items[0].name = items[0].name + ' ' + this.getAppName();
+		}
+
+		// store for future reference
+		//
+		this.constructor.items = items;
+
+		return items;
 	},
+
+	//
+	// rendering methods
+	//
 
 	showHelp: function(url) {
 		application.launch('help_viewer', {

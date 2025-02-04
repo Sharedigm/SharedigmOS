@@ -4,15 +4,15 @@
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines the top level view of the application.                   |
+|       This defines the top level view of the application.                    |
+|		                                                                       |
+|       Author(s): Abe Megahed                                                 |
 |                                                                              |
-|        Author(s): Abe Megahed                                                |
-|                                                                              |
-|        This file is subject to the terms and conditions defined in           |
-|        'LICENSE.md', which is part of this source code distribution.         |
+|       This file is subject to the terms and conditions defined in            |
+|       'LICENSE.md', which is part of this source code distribution.          |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|       Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com         |
 \******************************************************************************/
 
 // library imports
@@ -97,7 +97,7 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 		controls: new ControlSettings(),
 		dialogs: new DialogSettings()
 	},
-	
+
 	defaults: config.defaults,
 
 	//
@@ -148,7 +148,7 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 		//
 		$.support.cors = true;
 
-		// ensure all session information is forwarded by default 
+		// ensure all session information is forwarded by default
 		// and watch for expired or fraudluent sessions
 		//
 		$.ajaxSetup({
@@ -186,7 +186,7 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 				}
 			}, false);
 		}
-	
+
 		// store handle to application
 		//
 		window.application = this;
@@ -602,6 +602,66 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 				});
 			}
 		});
+	},
+
+	loadResources: function(appName, options) {
+		fetch('resources/' + appName.replace(/_/g, '-') + '/resources.json')
+		.then(response => response.json())
+		.then(resources => {
+
+			// perform callback
+			//
+			if (options && options.success) {
+				options.success(resources);
+			}
+		})
+		.catch(error => {
+
+			// perform callback
+			//
+			if (options && options.error) {
+				options.error(error);
+			}
+		});
+	},
+
+	loadApp: function(appName, options) {
+
+		// load view
+		//
+		this.loadAppView(appName, {
+
+			// load resources
+			//
+			success: (AppView) => {
+				this.loadResources(appName, {
+
+					// callbacks
+					//
+					success: (resources) => {
+
+						// set attributes
+						//
+						AppView.resources = resources;
+
+						// perform callback
+						//
+						if (options && options.success) {
+							options.success(AppView);
+						}
+					},
+
+					error: () => {
+
+						// perform callback
+						//
+						if (options && options.success) {
+							options.success(AppView);
+						}
+					}
+				});
+			}
+		})
 	},
 
 	//

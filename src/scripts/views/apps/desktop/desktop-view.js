@@ -82,7 +82,7 @@ export default AppView.extend(_.extend({}, Wallpaperable, {
 	},
 
 	isCurrentApp: function(appName) {
-		return appName == this.getCurrentApp().appName;
+		return appName == this.getCurrentApp().getApp();
 	},
 
 	hasClock: function() {

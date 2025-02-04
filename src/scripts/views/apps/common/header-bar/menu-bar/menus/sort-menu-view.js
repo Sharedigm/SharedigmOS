@@ -23,21 +23,6 @@ export default MenuView.extend({
 	// attributes
 	//
 
-	items: [
-		{
-			"class": "sort-increasing",
-			"icon": "fa fa-sort-amount-up",
-			"name": "Increasing",
-			"select": true
-		},
-		{
-			"class": "sort-decreasing",
-			"icon": "fa fa-sort-amount-down",
-			"name": "Decreasing",
-			"select": true
-		}
-	],
-
 	events: {
 		'click .sort-by a': 'onClickSortBy',
 		'click .sort-order a': 'onClickSortOrder'

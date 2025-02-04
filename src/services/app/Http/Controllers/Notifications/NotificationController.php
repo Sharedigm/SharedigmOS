@@ -23,12 +23,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Collection;
 use Illuminate\Notifications\DatabaseNotification;
 use App\Models\Users\User;
-use App\Models\Comments\Info\LikeInfo;
-use App\Models\Comments\Info\CommentInfo;
-use App\Models\Comments\Info\ReplyInfo;
 use App\Models\Storage\Sharing\Info\ShareRequestInfo;
-use App\Models\Topics\Sharing\Info\TopicInvitationInfo;
-use App\Models\Chats\Sharing\Info\ChatInvitationInfo;
 use App\Models\Gestures\Info\GestureInfo;
 use App\Notifications\BaseNotification;
 use App\Http\Controllers\Controller;
@@ -135,18 +130,8 @@ class NotificationController extends Controller
 	 * @return object
 	 */
 	private static function getItem($data) {
-		if (array_key_exists('like_id', $data)) {
-			return LikeInfo::find($data['like_id']);
-		} else if (array_key_exists('comment_id', $data)) {
-			return CommentInfo::find($data['comment_id']);
-		} else if (array_key_exists('reply_id', $data)) {
-			return ReplyInfo::find($data['reply_id']);
-		} else if (array_key_exists('share_request_id', $data)) {
+		if (array_key_exists('share_request_id', $data)) {
 			return ShareRequestInfo::find($data['share_request_id']);
-		} else if (array_key_exists('topic_invitation_id', $data)) {
-			return TopicInvitationInfo::find($data['topic_invitation_id']);
-		} else if (array_key_exists('chat_invitation_id', $data)) {
-			return ChatInvitationInfo::find($data['chat_invitation_id']);
 		} else if (array_key_exists('gesture_id', $data)) {
 			return GestureInfo::find($data['gesture_id']);
 		}
@@ -161,57 +146,12 @@ class NotificationController extends Controller
 	private static function appended(DatabaseNotification $notification) {
 		$data = $notification->data;
 
-		// append like data
-		//
-		if (array_key_exists('like_id', $data)) {
-			$like = LikeInfo::find($data['like_id']);
-			if ($like) {
-				$notification['like'] = $like;
-				return $notification;
-			}
-
-		// append comment data
-		//
-		} else if (array_key_exists('comment_id', $data)) {
-			$comment = CommentInfo::find($data['comment_id']);
-			if ($comment) {
-				$notification['comment'] = $comment;
-				return $notification;
-			}
-
-		// append reply data
-		//
-		} else if (array_key_exists('reply_id', $data)) {
-			$reply = ReplyInfo::find($data['reply_id']);
-			if ($reply) {
-				$notification['reply'] = $reply;
-				return $notification;
-			}
-
 		// append share request data
 		//
-		} else if (array_key_exists('share_request_id', $data)) {
+		if (array_key_exists('share_request_id', $data)) {
 			$shareRequest = ShareRequestInfo::find($data['share_request_id']);
 			if ($shareRequest) {
 				$notification['share_request'] = $shareRequest;
-				return $notification;
-			}
-
-		// append topic invitation data
-		//
-		} else if (array_key_exists('topic_invitation_id', $data)) {
-			$topicInvitation = TopicInvitationInfo::find($data['topic_invitation_id']);
-			if ($topicInvitation) {
-				$notification['topic_invitation'] = $topicInvitation;
-				return $notification;
-			}
-
-		// append chat invitation data
-		//
-		} else if (array_key_exists('chat_invitation_id', $data)) {
-			$chatInvitation = ChatInvitationInfo::find($data['chat_invitation_id']);
-			if ($chatInvitation) {
-				$notification['chat_invitation'] = $chatInvitation;
 				return $notification;
 			}
 

@@ -97,7 +97,7 @@ export default FormDialogView.extend({
 	},
 
 	hasSelected: function() {
-		return this.getChildView('connection_manager').hasSelected();
+		return this.hasChildView('connection_manager') && this.getChildView('connection_manager').hasSelected();
 	},
 
 	//
@@ -234,7 +234,10 @@ export default FormDialogView.extend({
 	},
 
 	showConnectionManager: function() {
-		this.showChildView('connection_manager', new ConnectionManagerView({
+
+		// callbacks
+		//
+		this.showAppView('connection_manager', new ConnectionManagerView({
 
 			// options
 			//

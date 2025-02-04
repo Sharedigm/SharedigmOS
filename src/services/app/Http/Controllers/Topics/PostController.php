@@ -75,7 +75,7 @@ class PostController extends Controller
 		//
 		$post = new Post([
 			'id' => Guid::create(),
-			'topic_id' => $topicId != 'none'? $topicId : null,
+			'topic_id' => $topicId != 0 && $topicId != 'none'? $topicId : null,
 			'user_id' => Session::get('user_id'),
 			'message' => $message,
 			'public' => $public,

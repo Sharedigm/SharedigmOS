@@ -25,10 +25,22 @@ export default PanelsView.extend(_.extend({}, Scrollable, {
 	//
 
 	isPanelVisible: function(name) {
-		if (this.hasChildView(name)) {
-			return this.getChildView(name).isVisible();
+
+		// if shown, return current state
+		//
+		if (this.isVisible()) {
+			if (this.hasChildView(name)) {
+				return this.getChildView(name).isVisible();
+			} else {
+				return false;
+			}
+
+		// if not shown, return initial state
+		//
+		} else if (this.options.panels) {
+			return this.options.panels.includes(name);
 		} else {
-			return this.options.panels && this.options.panels.includes(name);
+			return false;
 		}
 	},
 

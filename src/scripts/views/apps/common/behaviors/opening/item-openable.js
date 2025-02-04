@@ -234,8 +234,13 @@ export default {
 			// open file
 			//
 			this.openFile(item, options);
+		} else {
+
+			// open model
+			//
+			this.openModel(item, options);
 		}
-	},		
+	},
 
 	openItems: function(items, options) {
 		if (items[0] instanceof Directory) {
@@ -248,6 +253,11 @@ export default {
 			// open files
 			//
 			this.openFiles(items, options);
+		} else {
+
+			// open model
+			//
+			this.openModels(items, options);
 		}
 	},
 

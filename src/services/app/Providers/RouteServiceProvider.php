@@ -48,22 +48,12 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->mapApiRoutes('routes/admin.php');
         $this->mapApiRoutes('routes/auth.php');
-        $this->mapApiRoutes('routes/comments.php');
-        $this->mapApiRoutes('routes/connections.php');
-        $this->mapApiRoutes('routes/events.php');
-        $this->mapApiRoutes('routes/media.php');
-        $this->mapApiRoutes('routes/messages.php');
-        $this->mapApiRoutes('routes/places.php');
         $this->mapApiRoutes('routes/profile.php');
-        $this->mapApiRoutes('routes/projects.php');
         $this->mapApiRoutes('routes/settings.php');
         $this->mapApiRoutes('routes/sharing.php');
         $this->mapApiRoutes('routes/storage.php');
-        $this->mapApiRoutes('routes/topics.php');
         $this->mapApiRoutes('routes/users.php');
         $this->mapApiRoutes('routes/utilities.php');
-        $this->mapApiRoutes('routes/test.php');
-        // $this->mapWebRoutes('routes/web.php');
     }
 
     /**

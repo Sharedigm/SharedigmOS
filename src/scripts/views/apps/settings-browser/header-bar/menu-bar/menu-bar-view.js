@@ -23,28 +23,6 @@ import HelpMenuView from '../../../../../views/apps/settings-browser/header-bar/
 export default MenuBarView.extend({
 
 	//
-	// attributes
-	//
-
-	items: [
-		{
-			"class": "file",
-			"icon": "fa fa-file",
-			"name": "File"
-		},
-		{
-			"class": "view",
-			"icon": "fa fa-eye",
-			"name": "View"
-		},
-		{
-			"class": "help",
-			"icon": "fa fa-question-circle",
-			"name": "Help"
-		}
-	],
-
-	//
 	// rendering methods
 	//
 

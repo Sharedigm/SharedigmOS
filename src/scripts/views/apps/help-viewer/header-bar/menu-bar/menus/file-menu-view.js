@@ -23,22 +23,6 @@ export default FileMenuView.extend({
 	// attributes
 	//
 
-	items: [
-		{
-			"class": "new-window",
-			"icon": "fa fa-file",
-			"name": "New Window",
-			"shortcut": "command-enter"
-		},
-		"separator",
-		{
-			"class": "close-window",
-			"icon": "fa fa-circle-xmark",
-			"name": "Close",
-			"shortcut": "command-L"
-		}
-	],
-
 	events: {
 		'click .new-window': 'onClickNewWindow',
 		'click .close-window': 'onClickCloseWindow'

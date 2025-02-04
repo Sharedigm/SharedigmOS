@@ -28,7 +28,7 @@ export default BaseView.extend({
 	tagName: 'ul',
 	className: 'nav nav-menus',
 
-	itemTemplate: template(`
+	menuTemplate: template(`
 		<li class="<%= className %> dropdown"<% if (hidden) { %> style="display:none"<% } %>>
 			<a class="dropdown-toggle" data-toggle="dropdown"><i class="<%= icon %>"></i><span class="dropdown-title"><%= name %></span></a>
 			<div class="dropdown-menu"></div>
@@ -65,11 +65,32 @@ export default BaseView.extend({
 		}
 	},
 
+	getMenus: function() {
+		if (this.menus) {
+
+			// get menus from view
+			//
+			return this.menus;
+		} else {
+
+			// get menus from resources
+			//
+			let appView = this.parent.parent;
+			let resources = appView.getResources('menu_bar');
+
+			if (resources) {
+				return resources.menus;
+			} else {
+				return [];
+			}
+		}
+	},
+
 	getMenuNames: function() {
 		return Object.keys(this.regions);
 	},
 
-	getMenus: function() {
+	getMenuViews: function() {
 		let menus = [];
 		let names = this.getMenuNames();
 		for (let i = 0; i < names.length; i++) {
@@ -179,12 +200,12 @@ export default BaseView.extend({
 	// item rendering methods
 	//
 
-	itemToHtml: function(item) {
-		return this.itemTemplate({
-			className: item.class,
-			icon: item.icon,
-			name: item.name,
-			hidden: item.hidden
+	menuToHtml: function(menu) {
+		return this.menuTemplate({
+			className: menu.class,
+			icon: menu.icon,
+			name: menu.name,
+			hidden: menu.hidden
 		});
 	},
 
@@ -193,23 +214,23 @@ export default BaseView.extend({
 	//
 
 	template: function(data) {
-		return data.view.toHtml(data.items);
+		return data.view.toHtml(data.view.getMenus());
 	},
 
 	templateContext: function() {
 		return {
 			view: this,
-			items: this.getItems? this.getItems() : this.items
+			menus: this.menus
 		};
 	},
 
-	toHtml: function(items) {
+	toHtml: function(menus) {
 		let html = '';
-		if (!items) {
+		if (!menus) {
 			return;
 		}
-		for (let i = 0; i < items.length; i++) {
-			html += this.itemToHtml(items[i]);
+		for (let i = 0; i < menus.length; i++) {
+			html += this.menuToHtml(menus[i]);
 		}
 		return html;
 	},

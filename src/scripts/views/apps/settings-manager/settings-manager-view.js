@@ -271,6 +271,35 @@ export default AppSplitView.extend(_.extend({}, PrefsLoadable, {
 		}
 	},
 
+	clearAll: function() {
+
+		// confirm delete
+		//
+		application.confirm({
+			icon: '<i class="fa fa-trash-alt"></i>',
+			title: "Delete",
+			message: "Are you sure you want to clear your preferences?",
+
+			// callbacks
+			//
+			accept: () => {
+				this.clearPreferences({
+
+					// callbacks
+					//
+					success: () => {
+
+						// notify user
+						//
+						application.alert({
+							message: "Your preferences have been cleared."
+						});
+					}
+				});
+			}
+		});
+	},
+
 	savePreferences: function(options) {
 
 		// save preferences
@@ -281,6 +310,28 @@ export default AppSplitView.extend(_.extend({}, PrefsLoadable, {
 				// callbacks
 				//
 				success: () => {
+
+					// perform callback
+					//
+					if (options && options.success) {
+						options.success();
+					}
+				}
+			});
+		}
+	},
+
+	clearPreferences: function(options) {
+
+		// clear preferences
+		//
+		if (this.options.prefs) {
+			this.options.prefs.delete({
+
+				// callbacks
+				//
+				success: () => {
+					this.options.prefs.clear();
 
 					// perform callback
 					//

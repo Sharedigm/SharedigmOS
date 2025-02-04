@@ -192,6 +192,10 @@ export default BaseView.extend(_.extend({}, ItemDroppable, Highlightable, Timeab
 		}
 	},
 
+	hasResources: function() {
+		return this.constructor.resources != undefined;
+	},
+
 	hasStatusBar: function() {
 		return this.getStatusBar() != null;
 	},
@@ -204,8 +208,12 @@ export default BaseView.extend(_.extend({}, ItemDroppable, Highlightable, Timeab
 	// getting methods
 	//
 
+	getApp: function() {
+		return this.preferences.app;
+	},
+
 	getName: function() {
-		return config.apps[this.name].name;
+		return config.apps[this.getApp()].name;
 	},
 
 	getPageOrientation: function() {
@@ -244,6 +252,19 @@ export default BaseView.extend(_.extend({}, ItemDroppable, Highlightable, Timeab
 		let id = this.getAppId();
 		if (id) {
 			return config.apps[id].color;
+		}
+	},
+
+	getResources: function(name) {
+		let resources = this.constructor.resources;
+		if (resources) {
+			if (name) {
+				return resources[name];
+			} else {
+				return resources;
+			}
+		} else {
+			return {};
 		}
 	},
 
@@ -393,58 +414,36 @@ export default BaseView.extend(_.extend({}, ItemDroppable, Highlightable, Timeab
 	},
 
 	//
-	// fetching methods
+	// loading methods
 	//
 
 	loadPreferences: function(options) {
+		if (this.preferences && !this.preferences.loaded && application.session.user) {
 
-		// check if application requires preferences
-		//
-		if (application.session.user && this.preferences) {
-
-			// check if preferences are loaded
+			// load app preferences
 			//
-			if (!this.preferences.loaded && application.session.user) {
+			this.preferences.load({
 
-				// fetch user preferences
+				// callbacks
 				//
-				this.preferences.load({
-
-					// callbacks
-					//
-					success: () => {
-						this.preferences.loaded = true;
-
-						// perform callback
-						//
-						if (options && options.success) {
-							options.success();
-						}
-					},
-
-					error: () => {
-						
-						// perform callback
-						//
-						if (options && options.error) {
-							options.error();
-						}
+				success: (preferences) => {
+					if (options && options.success) {
+						options.success(preferences);
 					}
-				});
-			} else {
+				},
 
-				// perform callback
-				//
-				if (options && options.success) {
-					options.success();
+				error: () => {
+
+					// show error message
+					//
+					application.error({
+						message: "Could not load application preferences."
+					});
 				}
-			}
+			});
 		} else {
-
-			// perform callback
-			//
 			if (options && options.success) {
-				options.success();
+				options.success(this.preferences);
 			}
 		}
 	},
@@ -472,44 +471,23 @@ export default BaseView.extend(_.extend({}, ItemDroppable, Highlightable, Timeab
 			options.maximized = true;
 		}
 
-		if (this.preferences && !this.preferences.loaded && application.session.user) {
-			
-			// load app preferences
-			//
-			this.preferences.load({
+		this.loadPreferences({
 
-				// callbacks
+			// callbacks
+			//
+			success: (preferences) => {
+
+				// set launch / window options
 				//
-				success: (preferences) => {
+				options = this.setLaunchOptions(options, preferences);
 
-					// set launch / window options
-					//
-					options = this.setLaunchOptions(options, preferences);
-
-					// show app
-					//
-					application.show(new AppDialogView(_.extend({}, options, {
-						app: this
-					})));
-				},
-
-				error: () => {
-
-					// show error message
-					//
-					application.error({
-						message: "Could not load application preferences."
-					});
-				}
-			});
-		} else {
-
-			// show app
-			//
-			application.show(new AppDialogView(_.extend({
-				app: this
-			}, options)));
-		}
+				// show app
+				//
+				application.show(new AppDialogView(_.extend({}, options, {
+					app: this
+				})));
+			}
+		});
 	},
 
 	//

@@ -145,7 +145,8 @@ export default AppView.extend(_.extend({}, Wallpaperable, AppLoadable, {
 	// loading methods
 	//
 
-	loadPreferences: function(user, appName, options) {
+	/*
+	loadPreferences: function(user, options) {
 
 		// check for user
 		//
@@ -179,6 +180,26 @@ export default AppView.extend(_.extend({}, Wallpaperable, AppLoadable, {
 			}
 		});
 	},
+	*/
+
+	loadPreferences: function(appName, options) {
+
+		// load user preferences
+		//
+		UserPreferences.create(appName).fetch({
+
+			// callbacks
+			//
+			success: (preferences) => {
+
+				// perform callback
+				//
+				if (options && options.success) {
+					options.success(preferences);
+				}
+			}
+		});
+	},
 
 	//
 	// window methods
@@ -200,7 +221,7 @@ export default AppView.extend(_.extend({}, Wallpaperable, AppLoadable, {
 
 		// show child views
 		//
-		this.loadApp(this.options.app.get('id'));
+		this.showApp(this.options.app.get('id'));
 
 		// add modals to desktop space
 		//
@@ -220,54 +241,6 @@ export default AppView.extend(_.extend({}, Wallpaperable, AppLoadable, {
 
 	showModals: function() {
 		this.showChildView('modals', new ModalsView());
-	},
-
-	loadApp: function(appName) {
-		let user = this.getUser();
-
-		// set attributes
-		//
-		if (appName != this.appName) {
-			this.appName = appName;
-		} else {
-			return;
-		}
-
-		// create default preferences
-		//
-		switch (appName) {
-			case 'app_launcher':
-				this.preferences = null;
-				break;
-			default:
-				this.preferences = UserPreferences.create(appName);
-				break;
-		}
-
-		if (this.preferences) {
-			this.loadPreferences(user, appName, {
-
-				// callbacks
-				//
-				success: () => {
-
-					// check if view still exists
-					//
-					if (this.isDestroyed()) {
-						return;
-					}
-
-					// update view
-					//
-					this.showApp(appName);
-				}
-			});
-		} else {
-
-			// update view
-			//
-			this.showApp(appName);
-		}
 	},
 
 	showAppView: function(appName, AppView) {
@@ -317,12 +290,32 @@ export default AppView.extend(_.extend({}, Wallpaperable, AppLoadable, {
 	},
 
 	showApp: function(appName) {
-		this.loadAppView(appName, {
+		application.loadApp(appName, {
 
 			// callbacks
 			//
 			success: (AppView) => {
-				this.showAppView(appName, AppView);
+
+				// load user preferences
+				//
+				this.loadPreferences(appName, {
+
+					// callbacks
+					//
+					success: (preferences) => {
+						this.preferences = preferences;
+
+						// check if view still exists
+						//
+						if (this.isDestroyed()) {
+							return;
+						}
+
+						// update view
+						//
+						this.showAppView(appName, AppView);
+					}
+				});
 			},
 
 			error: () => {

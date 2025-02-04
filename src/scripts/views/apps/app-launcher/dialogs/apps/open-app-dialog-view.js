@@ -123,7 +123,7 @@ export default DialogView.extend({
 	},
 
 	showAppLauncher: function() {
-		this.showChildView('body', new AppLauncherView({
+		this.showAppView('body', new AppLauncherView({
 			collection: this.collection,
 			
 			// options
