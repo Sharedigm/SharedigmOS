@@ -145,43 +145,6 @@ export default AppView.extend(_.extend({}, Wallpaperable, AppLoadable, {
 	// loading methods
 	//
 
-	/*
-	loadPreferences: function(user, options) {
-
-		// check for user
-		//
-		if (!user) {
-			return;
-		}
-
-		// load preferences by user
-		//
-		this.preferences.loadByUser(user, {
-
-			// callbacks
-			//
-			success: (model) => {
-
-				// perform callback
-				//
-				if (options && options.success) {
-					options.success(model);
-				}
-			},
-
-			error: (model, response) => {
-
-				// show error message
-				//
-				application.error({
-					message: "Could not fetch desktop app preferences.",
-					response: response
-				});
-			}
-		});
-	},
-	*/
-
 	loadPreferences: function(appName, options) {
 
 		// load user preferences
@@ -290,6 +253,9 @@ export default AppView.extend(_.extend({}, Wallpaperable, AppLoadable, {
 	},
 
 	showApp: function(appName) {
+
+		// show desktop app
+		//
 		application.loadApp(appName, {
 
 			// callbacks
@@ -314,6 +280,10 @@ export default AppView.extend(_.extend({}, Wallpaperable, AppLoadable, {
 						// update view
 						//
 						this.showAppView(appName, AppView);
+
+						// apply dialog styles
+						//
+						application.settings.dialogs.apply();
 					}
 				});
 			},
@@ -343,10 +313,6 @@ export default AppView.extend(_.extend({}, Wallpaperable, AppLoadable, {
 		// show app launcher
 		//
 		this.showLauncher(application.desktop.settings.get('launcher_style'));
-
-		// apply dialog styles
-		//
-		application.settings.dialogs.apply();
 
 		// set initial focus
 		//
