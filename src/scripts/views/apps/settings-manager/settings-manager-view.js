@@ -641,30 +641,44 @@ export default AppSplitView.extend(_.extend({}, PrefsLoadable, {
 	},
 
 	showPreferencesForm: function(app, preferences) {
-		this.loadPrefsFormView(app, (PreferencesFormView) => {
+		this.loadPrefsFormView(app, {
 
-			// check for preferences form
+			// callbacks
 			//
-			if (!PreferencesFormView) {
-				application.error({
-					message: 'Preferences form view not found.'
-				});
-				return;
-			}
+			success: (PreferencesFormView) => {
 
-			// make a copy of preferences
-			//
-			this.prefs = this.options.prefs.clone();
-
-			// show child view
-			//
-			this.showChildView('content', new PreferencesFormView({
-				model: preferences,
-
-				// callbacks
+				// check for preferences form
 				//
-				onchange: (key, value) => this.onChangePreferences(key, value)
-			}));
+				if (!PreferencesFormView) {
+					application.error({
+						message: 'Preferences form view not found.'
+					});
+					return;
+				}
+
+				// make a copy of preferences
+				//
+				this.prefs = this.options.prefs.clone();
+
+				// show child view
+				//
+				this.showChildView('content', new PreferencesFormView({
+					model: preferences,
+
+					// callbacks
+					//
+					onchange: (key, value) => this.onChangePreferences(key, value)
+				}));
+			},
+
+			error: () => {
+
+				// show error dialog
+				//
+				application.error({
+					message: "Preferences not found."
+				})
+			}
 		});
 	},
 

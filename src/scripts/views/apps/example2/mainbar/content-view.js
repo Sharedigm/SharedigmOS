@@ -1,10 +1,10 @@
 /******************************************************************************\
 |                                                                              |
-|                             prefs-loadable.js                                |
+|                                content-view.js                               |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines a behavior for loading application preferencess.         |
+|        This defines a view used for displaying content.                      |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -15,27 +15,14 @@
 |        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
 \******************************************************************************/
 
-export default {
+import BaseView from '../../../../views/base-view.js';
+
+export default BaseView.extend({
 
 	//
-	// dynamic loading methods
+	// attributes
 	//
 
-export default {
-
-	//
-	// dynamic loading methods
-	//
-
-	loadPrefsFormView: function(appName, options) {
-		let dirname = appName.replace('_', '-');
-
-		import(
-			'../../../' + dirname + '/forms/preferences/preferences-form-view.js'
-		).then((PrefsFormView) => {
-			options.success(PrefsFormView? PrefsFormView.default : undefined);
-		}).catch(error => {
-			options.error(error);
-		});
-	}
-};
+	template: template(`
+	`)
+});

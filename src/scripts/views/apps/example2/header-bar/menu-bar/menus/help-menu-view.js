@@ -1,10 +1,10 @@
 /******************************************************************************\
 |                                                                              |
-|                             prefs-loadable.js                                |
+|                              help-menu-view.js                               |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines a behavior for loading application preferencess.         |
+|        This is a view for displaying help dropdown menus.                    |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -15,27 +15,18 @@
 |        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
 \******************************************************************************/
 
-export default {
+import HelpMenuView from '../../../../../../views/apps/common/header-bar/menu-bar/menus/help-menu-view.js';
+
+export default HelpMenuView.extend({
 
 	//
-	// dynamic loading methods
+	// attributes
 	//
 
-export default {
-
-	//
-	// dynamic loading methods
-	//
-
-	loadPrefsFormView: function(appName, options) {
-		let dirname = appName.replace('_', '-');
-
-		import(
-			'../../../' + dirname + '/forms/preferences/preferences-form-view.js'
-		).then((PrefsFormView) => {
-			options.success(PrefsFormView? PrefsFormView.default : undefined);
-		}).catch(error => {
-			options.error(error);
-		});
+	events: {
+		'click .view-about-info': 'onClickViewAboutInfo',
+		'click .view-app': 'onClickViewApp',
+		'click .view-topic': 'onClickViewTopic',
+		'click .contact-us': 'onClickContactUs'
 	}
-};
+});

@@ -147,5 +147,27 @@
 			"tablet": "icons",
 			"desktop": "icons"
 		}
-	}
+	},
+	"example1": {
+		"window_size": "medium",
+		"maximized": false,
+		"full_screen": false
+	},
+	"example2": {
+		"window_size": "medium",
+		"maximized": false,
+		"full_screen": false,
+		"show_sidebar": true,
+		"sidebar_size": {
+			"phone": 0,
+			"tablet": 30,
+			"desktop": 30
+		},
+		"sidebar_min_size": {
+			"phone": 0,
+			"tablet": 0,
+			"desktop": 0
+		}
+	},
+	"example3": {}
 }

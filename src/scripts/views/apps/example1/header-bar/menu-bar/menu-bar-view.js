@@ -1,10 +1,10 @@
 /******************************************************************************\
 |                                                                              |
-|                             prefs-loadable.js                                |
+|                               menu-bar-view.js                               |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines a behavior for loading application preferencess.         |
+|        This defines a view used for showing an app's menu bar.               |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -15,27 +15,27 @@
 |        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
 \******************************************************************************/
 
-export default {
+import MenuBarView from '../../../../../views/apps/desktop/header-bar/menu-bar/menu-bar-view.js';
+import FileMenuView from '../../../../../views/apps/example1/header-bar/menu-bar/menus/file-menu-view.js';
+import ViewMenuView from '../../../../../views/apps/example1/header-bar/menu-bar/menus/view-menu-view.js';
+import HelpMenuView from '../../../../../views/apps/example1/header-bar/menu-bar/menus/help-menu-view.js';
+
+export default MenuBarView.extend({
 
 	//
-	// dynamic loading methods
+	// rendering methods
 	//
 
-export default {
+	onRender: function() {
 
-	//
-	// dynamic loading methods
-	//
+		// call superclass method
+		//
+		MenuBarView.prototype.onRender.call(this);
 
-	loadPrefsFormView: function(appName, options) {
-		let dirname = appName.replace('_', '-');
-
-		import(
-			'../../../' + dirname + '/forms/preferences/preferences-form-view.js'
-		).then((PrefsFormView) => {
-			options.success(PrefsFormView? PrefsFormView.default : undefined);
-		}).catch(error => {
-			options.error(error);
-		});
+		// show dropdown menus
+		//
+		this.showChildView('file', new FileMenuView());
+		this.showChildView('view', new ViewMenuView());
+		this.showChildView('help', new HelpMenuView());
 	}
-};
+});

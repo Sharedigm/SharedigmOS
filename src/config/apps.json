@@ -67,5 +67,38 @@
 		"args": false,
 		"color": "grey",
 		"upgrade_account_url": "#contact"
+	},
+	"example1": {
+		"name": "Example1",
+		"icon": "fa fa-rocket",
+		"category": "system",
+		"platform": "all",
+		"access": "all",
+		"disabled": false,
+		"hidden": false,
+		"args": false,
+		"color": "cyan"
+	},
+	"example2": {
+		"name": "Example2",
+		"icon": "fa fa-rocket",
+		"category": "system",
+		"platform": "all",
+		"access": "all",
+		"disabled": false,
+		"hidden": false,
+		"args": false,
+		"color": "cyan"
+	},
+	"example3": {
+		"name": "Example3",
+		"icon": "fa fa-rocket",
+		"category": "system",
+		"platform": "all",
+		"access": "all",
+		"disabled": false,
+		"hidden": false,
+		"args": false,
+		"color": "cyan"
 	}
 }

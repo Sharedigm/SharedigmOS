@@ -1,10 +1,10 @@
 /******************************************************************************\
 |                                                                              |
-|                             prefs-loadable.js                                |
+|                              footer-bar-view.js                              |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines a behavior for loading application preferencess.         |
+|        This defines a view used to display an app's footer bar.              |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -15,27 +15,33 @@
 |        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
 \******************************************************************************/
 
-export default {
+import FooterBarView from '../../../../views/apps/common/footer-bar/footer-bar-view.js';
+
+export default FooterBarView.extend({
 
 	//
-	// dynamic loading methods
+	// attributes
 	//
 
-export default {
+	toolbars: ['window'],
 
 	//
-	// dynamic loading methods
+	// getting methods
 	//
 
-	loadPrefsFormView: function(appName, options) {
-		let dirname = appName.replace('_', '-');
+	getStatusBarView: function() {
+		return null;
+	},
 
-		import(
-			'../../../' + dirname + '/forms/preferences/preferences-form-view.js'
-		).then((PrefsFormView) => {
-			options.success(PrefsFormView? PrefsFormView.default : undefined);
-		}).catch(error => {
-			options.error(error);
-		});
+	//
+	// rendering methods
+	//
+
+	showToolbar: function(kind) {
+		switch (kind) {
+			case 'window':
+				this.showWindowBar();
+				break;
+		}
 	}
-};
+});

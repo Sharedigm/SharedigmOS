@@ -192,6 +192,14 @@ export default BaseView.extend(_.extend({}, ItemDroppable, Highlightable, Timeab
 		}
 	},
 
+	isHeaderBarHidden: function() {
+		return this.options.hidden && this.options.hidden['header-bar'];
+	},
+
+	isFooterBarHidden: function() {
+		return this.options.hidden && this.options.hidden['footer-bar'];
+	},
+
 	hasResources: function() {
 		return this.constructor.resources != undefined;
 	},
@@ -200,10 +208,18 @@ export default BaseView.extend(_.extend({}, ItemDroppable, Highlightable, Timeab
 		return this.getStatusBar() != null;
 	},
 
+	hasHeaderBar: function() {
+		return this.$el.find('.header-bar').length > 0 && this.getHeaderBarView;
+	},
+
+	hasFooterBar: function() {
+		return this.showFooterBar != null;
+	},
+
 	numSpaces: function() {
 		return this.parent.parent.numChildren();
 	},
-	
+
 	//
 	// getting methods
 	//
@@ -244,7 +260,7 @@ export default BaseView.extend(_.extend({}, ItemDroppable, Highlightable, Timeab
 			let app = this.preferences.app;
 			if (app) {
 				return app.replace('phone_', '').replace('tablet_', '');
-			}			
+			}
 		}
 	},
 
@@ -447,7 +463,7 @@ export default BaseView.extend(_.extend({}, ItemDroppable, Highlightable, Timeab
 			}
 		}
 	},
-	
+
 	//
 	// launching methods
 	//
@@ -561,20 +577,16 @@ export default BaseView.extend(_.extend({}, ItemDroppable, Highlightable, Timeab
 
 		// show header bar
 		//
-		if (!this.options.hidden || !this.options.hidden['header-bar']) {
-			if (this.showHeaderBar) {
-				this.showHeaderBar();
-			}
+		if (this.hasHeaderBar() && !this.isHeaderBarHidden()) {
+			this.showHeaderBar();
 		} else {
 			this.$el.find('.header-bar').remove();
 		}
 
 		// show footer bar
 		//
-		if (!this.options.hidden || !this.options.hidden['footer-bar']) {
-			if (this.showFooterBar) {
-				this.showFooterBar();
-			}
+		if (this.hasFooterBar() && !this.isFooterBarHidden()) {
+			this.showFooterBar();
 		} else {
 			this.$el.find('.footer-bar').remove();
 		}
@@ -656,7 +668,7 @@ export default BaseView.extend(_.extend({}, ItemDroppable, Highlightable, Timeab
 	getMessage: function(message, options) {
 		let overlay = $('<div class="full-size message overlay"><div class="help message"></div></div>');
 		let helpMessage = overlay.find('.help.message');
-		helpMessage.html((options.icon? '<div class="icon">' + options.icon + '</div>': '') + message);
+		helpMessage.html((options && options.icon? '<div class="icon">' + options.icon + '</div>': '') + message);
 
 		// add callback
 		//

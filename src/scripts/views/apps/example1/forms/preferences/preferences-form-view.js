@@ -1,10 +1,10 @@
 /******************************************************************************\
 |                                                                              |
-|                             prefs-loadable.js                                |
+|                           preferences-form-view.js                           |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines a behavior for loading application preferencess.         |
+|        This defines a form used to specify user preferences.                 |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -15,27 +15,46 @@
 |        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
 \******************************************************************************/
 
-export default {
+import PreferencesGroupView from '../../../../../views/apps/common/forms/preferences-group-view.js';
+import WindowPrefsFormView from '../../../../../views/apps/example1/forms/preferences/window-prefs-form-view.js';
+
+export default PreferencesGroupView.extend({
 
 	//
-	// dynamic loading methods
+	// attributes
 	//
 
-export default {
-
+	tabs: [
+		{
+			"name": "Window",
+			"icon": "fa fa-window-maximize"
+		}
+	],
+	
 	//
-	// dynamic loading methods
+	// rendering methods
 	//
 
-	loadPrefsFormView: function(appName, options) {
-		let dirname = appName.replace('_', '-');
+	showRegion: function(name) {
+		switch (name) {
+			case 'item':
+				this.showAppIcon('example1');
+				break;
+			case 'window':
+				this.showWindowPrefs();
+				break;
+		}
+	},
 
-		import(
-			'../../../' + dirname + '/forms/preferences/preferences-form-view.js'
-		).then((PrefsFormView) => {
-			options.success(PrefsFormView? PrefsFormView.default : undefined);
-		}).catch(error => {
-			options.error(error);
-		});
+	showWindowPrefs: function() {
+		this.showChildView('window', new WindowPrefsFormView({
+			model: this.model,
+
+			// callbacks
+			//
+			onchange: (key, value) => {
+				this.setOption(key, value);
+			}
+		}));	
 	}
-};
+});

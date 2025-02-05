@@ -869,6 +869,7 @@ h1 .icon i {
   height: 100%;
 }
 .app.fixed-size .body {
+  height: 100%;
   flex-grow: 0 !important;
   margin: auto;
 }
@@ -3765,6 +3766,38 @@ body[device=phone] .settings-manager.app .desktop.preview .app-preview.audio_pla
   background-image: url("../images/settings/transparent/mobile/mobile-audio.png");
 }
 
+/******************************************************************************\
+|                                                                              |
+|                                 _example1.scss                               |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                 _example1.scss                               |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+\******************************************************************************/
 /******************************************************************************\
 |                                                                              |
 |                                  _index.scss                                 |
@@ -15171,10 +15204,14 @@ body:not(.binary):not(.flat-menus):not(.flat.auto-menus) .menu-bar > ul.nav-menu
 }
 
 @media (max-width: 480px) {
-  .menu-bar > ul.nav-menus > li > a i {
-    display: none;
+  .menu-bar > ul.nav-menus > li {
+    /*
+    &.help {
+    	display: none;
+    }
+    */
   }
-  .menu-bar > ul.nav-menus > li.help {
+  .menu-bar > ul.nav-menus > li > a i {
     display: none;
   }
 }

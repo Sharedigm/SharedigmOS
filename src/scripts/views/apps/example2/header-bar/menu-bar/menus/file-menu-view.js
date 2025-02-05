@@ -1,10 +1,10 @@
 /******************************************************************************\
 |                                                                              |
-|                             prefs-loadable.js                                |
+|                               file-menu-view.js                              |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines a behavior for loading application preferencess.         |
+|        This is a view for displaying file dropdown menus.                    |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -15,27 +15,16 @@
 |        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
 \******************************************************************************/
 
-export default {
+import FileMenuView from '../../../../../../views/apps/common/header-bar/menu-bar/menus/file-menu-view.js';
+
+export default FileMenuView.extend({
 
 	//
-	// dynamic loading methods
+	// attributes
 	//
 
-export default {
-
-	//
-	// dynamic loading methods
-	//
-
-	loadPrefsFormView: function(appName, options) {
-		let dirname = appName.replace('_', '-');
-
-		import(
-			'../../../' + dirname + '/forms/preferences/preferences-form-view.js'
-		).then((PrefsFormView) => {
-			options.success(PrefsFormView? PrefsFormView.default : undefined);
-		}).catch(error => {
-			options.error(error);
-		});
+	events: {
+		'click .new-window': 'onClickNewWindow',
+		'click .close-window': 'onClickCloseWindow'
 	}
-};
+});

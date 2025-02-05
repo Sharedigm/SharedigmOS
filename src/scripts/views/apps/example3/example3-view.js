@@ -1,10 +1,10 @@
 /******************************************************************************\
 |                                                                              |
-|                             prefs-loadable.js                                |
+|                                example3-view.js                              |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines a behavior for loading application preferencess.         |
+|        This defines an app used as an example accessory app.                 |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -15,27 +15,34 @@
 |        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
 \******************************************************************************/
 
-export default {
+import AppView from '../../../views/apps/common/app-view.js';
+
+export default AppView.extend({
 
 	//
-	// dynamic loading methods
+	// attributes
 	//
 
-export default {
+	name: 'example3',
 
 	//
-	// dynamic loading methods
+	// dialog attributes
 	//
 
-	loadPrefsFormView: function(appName, options) {
-		let dirname = appName.replace('_', '-');
+	size: [300, 300],
 
-		import(
-			'../../../' + dirname + '/forms/preferences/preferences-form-view.js'
-		).then((PrefsFormView) => {
-			options.success(PrefsFormView? PrefsFormView.default : undefined);
-		}).catch(error => {
-			options.error(error);
-		});
+	//
+	// rendering methods
+	//
+
+	onRender: function() {
+
+		// call superclass method
+		//
+		AppView.prototype.onRender.call(this);
+
+		// show content
+		//
+		this.showMessage("Your App Here!");
 	}
-};
+});

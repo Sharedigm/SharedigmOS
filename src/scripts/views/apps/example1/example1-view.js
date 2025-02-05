@@ -1,10 +1,10 @@
 /******************************************************************************\
 |                                                                              |
-|                             prefs-loadable.js                                |
+|                                example1-view.js                              |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines a behavior for loading application preferencess.         |
+|        This defines an app used as an example single column app.             |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -15,27 +15,56 @@
 |        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
 \******************************************************************************/
 
-export default {
+import AppView from '../../../views/apps/common/app-view.js';
+import HeaderBarView from '../../../views/apps/example1/header-bar/header-bar-view.js';
+import FooterBarView from '../../../views/apps/example1/footer-bar/footer-bar-view.js';
+
+export default AppView.extend({
 
 	//
-	// dynamic loading methods
+	// attributes
 	//
 
-export default {
+	name: 'example1',
 
 	//
-	// dynamic loading methods
+	// rendering methods
 	//
 
-	loadPrefsFormView: function(appName, options) {
-		let dirname = appName.replace('_', '-');
+	onRender: function() {
 
-		import(
-			'../../../' + dirname + '/forms/preferences/preferences-form-view.js'
-		).then((PrefsFormView) => {
-			options.success(PrefsFormView? PrefsFormView.default : undefined);
-		}).catch(error => {
-			options.error(error);
-		});
+		// call superclass method
+		//
+		AppView.prototype.onRender.call(this);
+
+		// show child views
+		//
+		this.showHeaderBar();
+		this.showContents();
+		this.showFooterBar();
+
+		// load menus
+		//
+		this.onLoad();
+	},
+
+	showContents: function() {
+		this.showMessage("Your App Here!");
+	},
+
+	//
+	// header bar rendering methods
+	//
+
+	getHeaderBarView: function() {
+		return new HeaderBarView();
+	},
+
+	//
+	// footer bar rendering methods
+	//
+
+	getFooterBarView: function() {
+		return new FooterBarView();
 	}
-};
+});

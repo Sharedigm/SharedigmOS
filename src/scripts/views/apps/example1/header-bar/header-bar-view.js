@@ -1,10 +1,10 @@
 /******************************************************************************\
 |                                                                              |
-|                             prefs-loadable.js                                |
+|                              header-bar-view.js                              |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines a behavior for loading application preferencess.         |
+|        This defines a view used to display an app's header bar.              |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -15,27 +15,30 @@
 |        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
 \******************************************************************************/
 
-export default {
+import HeaderBarView from '../../../../views/apps/common/header-bar/header-bar-view.js';
+import MenuBarView from '../../../../views/apps/example1/header-bar/menu-bar/menu-bar-view.js';
+
+export default HeaderBarView.extend({
 
 	//
-	// dynamic loading methods
+	// attributes
 	//
 
-export default {
+	toolbars: ['menu'],
 
 	//
-	// dynamic loading methods
+	// rendering methods
 	//
 
-	loadPrefsFormView: function(appName, options) {
-		let dirname = appName.replace('_', '-');
+	showToolbar: function(kind) {
+		switch (kind) {
+			case 'menu':
+				this.showMenuBar();
+				break;
+		}
+	},
 
-		import(
-			'../../../' + dirname + '/forms/preferences/preferences-form-view.js'
-		).then((PrefsFormView) => {
-			options.success(PrefsFormView? PrefsFormView.default : undefined);
-		}).catch(error => {
-			options.error(error);
-		});
+	showMenuBar: function() {
+		this.showChildView('menu', new MenuBarView());
 	}
-};
+});

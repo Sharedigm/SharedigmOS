@@ -31,7 +31,17 @@ export default {
 				// callbacks
 				//
 				success: (AppView) => {
-					this.launchApp(appName, AppView, options, launchOptions);
+					if (AppView) {
+						this.launchApp(appName, AppView, options, launchOptions);
+					} else {
+
+						// show alert message dialog
+						//
+						this.alert({
+							title: "App Loading Error",
+							message: "App Not Found."
+						});
+					}
 				},
 
 				error: (error) => {
