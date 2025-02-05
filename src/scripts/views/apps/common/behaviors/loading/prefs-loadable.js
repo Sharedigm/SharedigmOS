@@ -21,12 +21,6 @@ export default {
 	// dynamic loading methods
 	//
 
-export default {
-
-	//
-	// dynamic loading methods
-	//
-
 	loadPrefsFormView: function(appName, options) {
 		let dirname = appName.replace('_', '-');
 

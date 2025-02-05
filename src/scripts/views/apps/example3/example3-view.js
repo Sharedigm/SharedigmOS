@@ -30,6 +30,8 @@ export default AppView.extend({
 	//
 
 	size: [300, 300],
+	resizable: false,
+	maximizable: false,
 
 	//
 	// rendering methods

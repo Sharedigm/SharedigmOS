@@ -60,7 +60,7 @@
 
 		"background_image": null,
 		"background_size": "tile",
-		"background_color": "grey",
+		"background_color": "auto",
 		"background_repeats": 5,
 
 		"desktop_sidebar_transparency": "transparent",

@@ -71,7 +71,7 @@
 	"example1": {
 		"name": "Example1",
 		"icon": "fa fa-rocket",
-		"category": "system",
+		"category": "examples",
 		"platform": "all",
 		"access": "all",
 		"disabled": false,
@@ -82,7 +82,7 @@
 	"example2": {
 		"name": "Example2",
 		"icon": "fa fa-rocket",
-		"category": "system",
+		"category": "examples",
 		"platform": "all",
 		"access": "all",
 		"disabled": false,
@@ -93,7 +93,7 @@
 	"example3": {
 		"name": "Example3",
 		"icon": "fa fa-rocket",
-		"category": "system",
+		"category": "examples",
 		"platform": "all",
 		"access": "all",
 		"disabled": false,

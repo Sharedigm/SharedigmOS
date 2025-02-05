@@ -137,6 +137,30 @@ By default, Sharedigm OS comes with a limited set of apps pre-installed (shown b
 	<p>The Settings Manager app lets you view and modify system settings and app preferences. </p>
 </p>
 
+<p>
+	<a href="https://github.com/Sharedigm/SharedigmAppStore/tree/main/apps/example1">
+		<img src="images/logos/apps/example1.svg" width="80">
+		<b>Example1</b>
+	</a>
+	<p>The Example1 app is a simple example of a single-column app. </p>
+</p>
+
+<p>
+	<a href="https://github.com/Sharedigm/SharedigmAppStore/tree/main/apps/example2">
+		<img src="images/logos/apps/example2.svg" width="80">
+		<b>Example2</b>
+	</a>
+	<p>The Example2 app is a simple example of a two-column app. </p>
+</p>
+
+<p>
+	<a href="https://github.com/Sharedigm/SharedigmAppStore/tree/main/apps/example3">
+		<img src="images/logos/apps/example3.svg" width="80">
+		<b>Example3</b>
+	</a>
+	<p>The Example3 app is a simple example of an accessory app. </p>
+</p>
+
 ## Documentation
 
 A complete User Guide detailing the use of the platform is available at:

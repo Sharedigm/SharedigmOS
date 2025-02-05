@@ -194,4 +194,35 @@
 		</div>
 	</div>
 	<% } %>
+
+	<% apps = application.getApps((app) => { return app.get('category') == 'examples' && !app.get('disabled'); }); %>
+	<% if (apps.length != 0) { %>
+	<div class="section">
+		<div class="row">
+			<div class="col-sm-4">
+				<h2><i class="fa fa-rocket"></i>Example Apps</h2>
+				<p>Examples apps are provided for developers as a set of simple templates containing the core structure of apps to use as a base for the development of new apps. </p>
+				<br />
+			</div>
+			<div class="col-sm-8">
+				<div class="app-icons large icon-grid" style="text-align:center">
+				<% for (let i = 0; i < apps.length; i++) { %>
+				<% let app = apps.at(i); %>
+				<a class="item" href="#apps/<%= app.get('app') %>" style="text-decoration:none">	
+					<div class="row">
+						<div class="icon colored <%= app.get('color') %>">
+							<img src="images/icons/apps/<%= app.get('app') + '.svg' %>" />
+							<i class="<%= app.get('icon') %>"></i>
+						</div>
+					</div>
+					<div class="row">
+						<div class="name"><%= app.get('name') %></div>
+					</div>
+				</a>
+				<% } %>
+				</div>
+			</div>
+		</div>
+	</div>
+	<% } %>
 </div>
