@@ -42,6 +42,7 @@ import FileDisposable from '../../../views/apps/file-browser/mainbar/behaviors/f
 import FileIconView from '../../../views/apps/file-browser/mainbar/files/icons/file-icon-view.js';
 import FooterBarView from '../../../views/apps/file-browser/footer-bar/footer-bar-view.js';
 import ContextMenuView from '../../../views/apps/file-browser/context-menus/context-menu-view.js';
+import PreferencesFormView from '../../../views/apps/file-browser/forms/preferences/preferences-form-view.js'
 import Browser from '../../../utilities/web/browser.js';
 import Url from '../../../utilities/web/url.js';
 import '../../../utilities/scripting/array-utils.js';
@@ -1879,5 +1880,13 @@ export default AppSplitView.extend(_.extend({}, MultiDoc, SelectableContainable,
 
 	root: null,
 	list: [],
-	allowDialogs: true
+	allowDialogs: true,
+
+	//
+	// static getting methods
+	//
+
+	getPreferencesFormView: function(options) {
+		return new PreferencesFormView(options);
+	}
 });

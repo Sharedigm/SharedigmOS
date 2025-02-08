@@ -16,11 +16,10 @@
 \******************************************************************************/
 
 import TileView from '../../../../../../views/items/tiles/tile-view.js';
-import Mappable from '../../../../../../views/maps/behaviors/mappable.js';
 import ItemBadgesView from '../../../../../../views/apps/file-browser/mainbar/files/badges/item-badges-view.js';
 import FileUtils from '../../../../../../utilities/files/file-utils.js';
 
-export default TileView.extend(_.extend({}, Mappable, {
+export default TileView.extend({
 
 	//
 	// attributes
@@ -28,16 +27,11 @@ export default TileView.extend(_.extend({}, Mappable, {
 
 	template: template(`
 		<div class="tile">
-		
+
 			<div class="icon">
 				<%= icon %>
-				<% if (geo_orientation != undefined) { %>
-				<div class="geoorientation marker" style="transform:rotate(<%= Math.round(geo_orientation.heading) %>deg)">
-					<i class="fa fa-location-arrow"></i>
-				</div>
-				<% } %>
 			</div>
-			
+
 			<div class="name" spellcheck="false"><%= name %></div>
 		
 			<% if (owner) { %>
@@ -156,8 +150,7 @@ export default TileView.extend(_.extend({}, Mappable, {
 			name: this.getName(),
 			owner: this.getOwner(),
 			owner_thumbnail_url: this.getOwnerThumbnailUrl(),
-			details: this.getDetails(),
-			geo_orientation: this.getGeoOrientation()
+			details: this.getDetails()
 		};
 	},
 
@@ -179,4 +172,4 @@ export default TileView.extend(_.extend({}, Mappable, {
 			this.options.ondropout(this.parent.getSelectedModels());
 		}
 	}
-}));
+});

@@ -3597,6 +3597,33 @@ body[device=desktop] .help-viewer.app .footer-bar > div:last-child {
 
 /******************************************************************************\
 |                                                                              |
+|                             _profile-viewer.scss                             |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+\******************************************************************************/
+.profile-viewer.app .body > .contents .mainbar .user-panels, .profile-viewer.app .body-region > .contents .mainbar .user-panels {
+  position: relative;
+  padding: 10px;
+  overflow: auto;
+}
+
+@media (min-width: 480px) {
+  .profile-viewer.app .body > .contents .mainbar td.sender, .profile-viewer.app .body > .contents .mainbar td.recipient {
+    width: 33%;
+  }
+}
+/******************************************************************************\
+|                                                                              |
 |                           _settings-browser.scss                             |
 |                                                                              |
 |******************************************************************************|
@@ -3769,6 +3796,22 @@ body[device=phone] .settings-manager.app .desktop.preview .app-preview.audio_pla
 /******************************************************************************\
 |                                                                              |
 |                                 _example1.scss                               |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                 _example2.scss                               |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -14814,7 +14857,7 @@ a.unstyled {
   margin: 5px 0;
   background: none;
 }
-.menu li.divider:last-child, .dropdown-menu li.divider:last-child {
+.menu li.divider:first-child, .menu li.divider:last-child, .dropdown-menu li.divider:first-child, .dropdown-menu li.divider:last-child {
   display: none;
 }
 .menu li.divider:hover, .dropdown-menu li.divider:hover {

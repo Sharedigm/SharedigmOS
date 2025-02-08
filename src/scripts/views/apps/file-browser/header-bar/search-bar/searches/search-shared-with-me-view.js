@@ -107,22 +107,22 @@ export default SearchByTextView.extend({
 	//
 
 	showSelectConnectionsDialog: function() {
-		import(
-			'../../../../../../views/apps/connection-manager/dialogs/connections/select-connections-dialog-view.js'
-		).then((SelectConnectionsDialogView) => {
+		application.loadAppView('connection_manager', {
 
-			// show open dialog
+			// callbacks
 			//
-			this.parent.app.show(new SelectConnectionsDialogView.default({
-				collection: this.collection,
+			success: (ConnectionManagerView) => {
+				ConnectionManagerView.showSelectConnectionsDialog({
+					collection: this.collection,
 
-				// callbacks
-				//
-				select: (items) => {
-					this.setModel(items[0]);
-				}
-			}));
-		});	
+					// callbacks
+					//
+					select: (items) => {
+						this.setModel(items[0]);
+					}
+				});
+			}
+		});
 	},
 
 	//

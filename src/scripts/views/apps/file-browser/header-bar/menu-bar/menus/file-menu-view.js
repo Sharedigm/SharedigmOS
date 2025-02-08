@@ -63,6 +63,7 @@ export default FileMenuView.extend({
 		let isSignedIn = application.isSignedIn();
 		let hasOpenFolders = this.parent.app.hasOpenFolders();
 		let isWindowed = this.parent.app.isWindowed();
+		let hasMapViewer = application.hasApp('map_viewer');
 
 		return {
 			'new-window': true,
@@ -83,7 +84,7 @@ export default FileMenuView.extend({
 			'open-next': isSignedIn,
 			'open-last': isSignedIn,
 			'show-info': true,
-			'set-place': true,
+			'set-place': hasMapViewer,
 			'rename-item': true,
 			'compress-items': true,
 			'expand-item': true,

@@ -17,7 +17,6 @@
 
 import VideoFile from '../../../models/storage/media/video-file.js';
 import Directory from '../../../models/storage/directories/directory.js';
-import Contacts from '../../../collections/contacts/contacts.js';
 import UserPreferences from '../../../models/preferences/user-preferences.js';
 import Items from '../../../collections/storage/items.js';
 import AboutDialogView from '../../../views/dialogs/alerts/about-dialog-view.js';
@@ -242,16 +241,13 @@ export default AboutDialogView.extend(_.extend({}, GoogleContactsImportable, {
 	//
 
 	showGoogleContactsDialog: function(contacts) {
-		import(
-			'../../../views/apps/profile-browser/dialogs/invitations/invite-google-contacts-dialog-view.js'
-		).then((InviteGoogleContactsDialogView) => {
+		application.loadAppView('profile_browser', {
 
-			// show invite google contacts dialog
+			// callbacks
 			//
-			application.show(new InviteGoogleContactsDialogView.default({
-				collection: new Contacts(contacts),
-				message: config.apps.profile_browser.invitation_message
-			}));
+			success: (ProfileBrowserView) => {
+				ProfileBrowserView.inviteGoogleContacts(contacts);
+			}
 		});
 	},
 

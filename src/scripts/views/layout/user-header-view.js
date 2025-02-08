@@ -362,28 +362,30 @@ export default HeaderView.extend({
 	},
 
 	showConnectionRequests: function() {
-		import(
-			'../../views/apps/connection-manager/connection-requests/connection-requests-dropdown-view.js'
-		).then((ConnectionRequestsDropdownView) => {
+		application.loadAppView('connection_manager', {
 
-			// show connection requests dropdown
+			// callbacks
 			//
-			this.showChildView('connection_requests', new ConnectionRequestsDropdownView.default({
-				model: this.model
-			}));
+			success: (ConnectionManager) => {
+
+				// show connection requests dropdown
+				//
+				this.showChildView('connection_requests', ConnectionManager.getConnectionRequestsDropdownView(this.model));
+			}
 		});
 	},
 
 	showNotifications: function() {
-		import(
-			'../../views/apps/notification-center/mainbar/notifications/notifications-dropdown-view.js'
-		).then((NotificationsDropdownView) => {
+		application.loadAppView('notification_center', {
 
-			// show notifications dropdown
+			// callbacks
 			//
-			this.showChildView('notifications', new NotificationsDropdownView.default({
-				model: this.model
-			}));
+			success: (NotificationCenter) => {
+
+				// show notifications dropdown
+				//
+				this.showChildView('notifications', NotificationCenter.getNotificationsDropdownView(this.model));
+			}
 		});
 	},
 
@@ -400,14 +402,14 @@ export default HeaderView.extend({
 	},
 
 	showFindConnectionsDialog: function() {
-		import(
-			'../../views/apps/connection-manager/dialogs/connections/find-connections-dialog-view.js'
-		).then((FindConnectionsDialogView) => {
+		application.loadAppView('connection_manager', {
 
-			// show find connections dialog
+			// callbacks
 			//
-			application.show(new FindConnectionsDialogView.default());
-		});	
+			success: (ConnectionManager) => {
+				ConnectionManager.showFindConnectionsDialog();
+			}
+		});
 	},
 
 	showMyAccount: function() {

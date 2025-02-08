@@ -20,6 +20,7 @@ import HeaderBarView from '../../../views/apps/example2/header-bar/header-bar-vi
 import SideBarView from '../../../views/apps/example2/sidebar/sidebar-view.js';
 import ContentView from '../../../views/apps/example2/mainbar/content-view.js';
 import FooterBarView from '../../../views/apps/example2/footer-bar/footer-bar-view.js';
+import PreferencesFormView from '../../../views/apps/example2/forms/preferences/preferences-form-view.js'
 
 export default AppSplitView.extend({
 
@@ -80,5 +81,14 @@ export default AppSplitView.extend({
 
 	getFooterBarView: function() {
 		return new FooterBarView();
+	}
+}, {
+
+	//
+	// static getting methods
+	//
+
+	getPreferencesFormView: function(options) {
+		return new PreferencesFormView(options);
 	}
 });

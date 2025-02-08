@@ -12,7 +12,7 @@
 	</div>
 
 	<div class="description section">
-		<p>The <%= config.apps['example2'].name %> is a simple example of a two-column app with a mainbar and a sidebar. </p>
+		<p>The <%= config.apps['example2'].name %> app is a simple example of a two-column app with a mainbar and a sidebar. </p>
 	</div>
 
 	<div class="details section">

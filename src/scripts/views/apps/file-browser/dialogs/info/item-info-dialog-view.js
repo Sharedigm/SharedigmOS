@@ -557,7 +557,7 @@ export default InfoDialogView.extend({
 
 	showCopyLinkDialog: function(link) {
 		import(
-			'../../../../../views/apps/web-browser/dialogs/links/copy-link-dialog-view.js'
+			'../../../../../views/apps/file-browser/dialogs/links/copy-link-dialog-view.js'
 		).then((CopyLinkDialogView) => {
 
 			// close dialog

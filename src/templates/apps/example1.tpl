@@ -12,7 +12,7 @@
 	</div>
 
 	<div class="description section">
-		<p>The <%= config.apps['example1'].name %> is a simple example of a single-column app. </p>
+		<p>The <%= config.apps['example1'].name %> app is a simple example of a single-column app. </p>
 	</div>
 
 	<div class="details section">

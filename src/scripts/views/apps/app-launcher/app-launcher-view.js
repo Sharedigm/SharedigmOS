@@ -20,6 +20,7 @@ import AppLaunchable from '../../../views/apps/common/behaviors/opening/app-laun
 import HeaderBarView from '../../../views/apps/app-launcher/header-bar/header-bar-view.js';
 import AppsCarouselView from '../../../views/apps/app-launcher/mainbar/apps-carousel/apps-carousel-view.js';
 import FooterBarView from '../../../views/apps/app-launcher/footer-bar/footer-bar-view.js';
+import PreferencesFormView from '../../../views/apps/app-launcher/forms/preferences/preferences-form-view.js'
 
 export default AppView.extend(_.extend({}, AppLaunchable, {
 
@@ -207,4 +208,13 @@ export default AppView.extend(_.extend({}, AppLaunchable, {
 		//
 		this.constructor.current = null;
 	}
-}));
+}), {
+
+	//
+	// static getting methods
+	//
+
+	getPreferencesFormView: function(options) {
+		return new PreferencesFormView(options);
+	}
+});

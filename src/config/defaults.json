@@ -52,7 +52,13 @@
 		"show_contact": true
 	},
 
-	"releases": {
+	"downloads": {
+		"production": {
+			"2025-02-07": "downloads/SharedigmOS_2025-02-07.zip"
+		},
+		"development": {
+			"GitHub": "https://github.com/Sharedigm/SharedigmOS"
+		}
 	},
 
 	"search": {

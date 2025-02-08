@@ -100,5 +100,18 @@
 		"hidden": false,
 		"args": false,
 		"color": "cyan"
+	},
+	"profile_viewer": {
+		"name": "Profile",
+		"icon": "fa fa-user-circle",
+		"category": "social",
+		"platform": "mobile",
+		"access": "user",
+		"disabled": false,
+		"hidden": false,
+		"args": false,
+		"color": "blue",
+		"avatars_directory": "/Shared/Pictures/Avatars",
+		"cover_photos_directory": "/Shared/Pictures/Desktops"
 	}
 }

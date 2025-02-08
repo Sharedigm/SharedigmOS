@@ -175,15 +175,11 @@ export default DialogView.extend({
 	},
 
 	showFileBrowser: function() {
-		this.showAppView('file_browser', new FileBrowserView({
+		this.showChildApp('file_browser', {
 			model: this.model,
 
 			// options
 			//
-			dialog: this,
-			hidden: {
-				'footer-bar': true
-			},
 			filter: this.filter || this.options.filter,
 			parent: FileBrowserView.root,
 
@@ -197,7 +193,7 @@ export default DialogView.extend({
 			onchange: () => this.onChange(),
 			onselect: () => this.update(),
 			ondeselect: () => this.update()
-		}));
+		});
 	},
 
 	showAddressBar: function() {

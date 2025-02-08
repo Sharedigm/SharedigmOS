@@ -189,9 +189,9 @@ $rounded-divider-border-radius: 7px;
 			margin: calc($divider-height / 2) 0;
 			background: none;
 
-			// hide trailing dividers
+			// hide leading or trailing dividers
 			//
-			&:last-child {
+			&:first-child, &:last-child {
 				display: none;
 			}
 

@@ -29,9 +29,8 @@ export default {
 		});
 	},
 
-	showMessageByChat: function(message, chat) {
+	showMessageByFirstChat: function(message) {
 		application.launch('chat_viewer', {
-			model: chat,
 			message: message
 		});
 	},
@@ -50,23 +49,11 @@ export default {
 	},
 
 	shareLinkByMessage: function(url, options) {
-		import(
-			'../../../../../collections/chats/chats.js'
-		).then((Chats) => {
-			new Chats.default().fetch({
+		let message = (options && options.message? options.message : '') + url;
 
-				// callbacks
-				//
-				success: (collection) => {
-					let message = (options && options.message? options.message : '') + url;
-					let chat = collection.at(0);
-
-					// show first chat
-					//
-					this.showMessageByChat(message, chat);
-				}
-			});
-		});
+		// show first chat
+		//
+		this.showMessageByFirstChat(message);
 	},
 
 	//
@@ -75,7 +62,7 @@ export default {
 
 	showShareByLinkDialog: function(url) {
 		import(
-			'../../../../../views/apps/web-browser/dialogs/links/copy-link-dialog-view.js'
+			'../../../../../views/apps/file-browser/dialogs/links/copy-link-dialog-view.js'
 		).then((CopyLinkDialogView) => {
 
 			// show copy link dialog

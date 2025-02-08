@@ -16,19 +16,18 @@
 \******************************************************************************/
 
 import DialogView from '../../../../../views/dialogs/dialog-view.js';
-import AppLauncherView from '../../../../../views/apps/app-launcher/app-launcher-view.js';
 
 export default DialogView.extend({
 
 	//
 	// attributes
 	//
-	
+
 	className: 'focused modal dialog',
 
 	template: template(`
 		<div class="modal-dialog">
-			
+
 			<div class="modal-header">
 				<div class="heading">
 					<div class="icon">
@@ -39,13 +38,13 @@ export default DialogView.extend({
 					</div>
 				</div>
 			</div>
-		
+
 			<div class="modal-content">
 				<div class="modal-body"></div>
-				
+
 				<div class="modal-footer">
 					<div class="address-bar"></div>
-					
+
 					<div class="buttons">
 						<button class="open btn btn-primary" data-dismiss="modal" disabled>
 							<i class="fa fa-check"></i>Open
@@ -60,7 +59,7 @@ export default DialogView.extend({
 	`),
 
 	regions: {
-		body: {
+		app_launcher: {
 			el: '.modal-body',
 			replaceElement: true
 		}
@@ -73,7 +72,7 @@ export default DialogView.extend({
 	//
 	// dialog attributes
 	//
-	
+
 	icon: '<i class="fa fa-rocket"></i>',
 	title: "Open App",
 
@@ -112,7 +111,7 @@ export default DialogView.extend({
 	},
 
 	onShow: function() {
-		
+
 		// call superclass method
 		//
 		DialogView.prototype.onShow.call(this);
@@ -123,15 +122,8 @@ export default DialogView.extend({
 	},
 
 	showAppLauncher: function() {
-		this.showAppView('body', new AppLauncherView({
+		this.showChildApp('app_launcher', {
 			collection: this.collection,
-			
-			// options
-			//
-			dialog: this,
-			hidden: {
-				'footer-bar': true
-			},
 
 			// state
 			//
@@ -140,7 +132,7 @@ export default DialogView.extend({
 			// callbacks
 			//
 			onopen: (item) => this.onOpen(item)
-		}));
+		});
 	},
 
 	update: function() {
@@ -159,7 +151,7 @@ export default DialogView.extend({
 		// open selected item
 		//
 		if (this.item && this.options.onopen) {
-			this.options.onopen(this.item.model);	
+			this.options.onopen(this.item.model);
 		}
 
 		this.close();
@@ -188,6 +180,6 @@ export default DialogView.extend({
 
 		// resize contents
 		//
-		this.getChildView('body').onResize(event);
+		this.getChildView('app_launcher').onResize(event);
 	}
 });

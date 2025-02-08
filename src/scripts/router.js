@@ -485,43 +485,57 @@ export default Backbone.Router.extend({
 	//
 
 	showPost: function(id) {
-		import(
-			'./views/apps/post-viewer/mainbar/post-info-view.js'
-		).then((PostInfoView) => {
-			this.fetchPost(id, (post) => {
+		application.loadAppView('post_viewer', {
+
+			// callbacks
+			//
+			success: (PostViewerView) => {
 
 				// show post info page
 				//
-				application.showPage(new PostInfoView.default({
-					model: post
-				}));
-			});
+				PostViewerView.showPost(id, {
+
+					// callbacks
+					//
+					error: (response) => {
+
+						// show 404 page
+						//
+						this.showNotFound({
+							message: "Post not found: " + id,
+							response: response
+						});
+					}
+				});
+			}
 		});
 	},
 
 	showGallery: function() {
-		import(
-			'./views/apps/post-viewer/mainbar/post-gallery-view.js'
-		).then((PostGalleryView) => {
+		application.loadAppView('post_viewer', {
 
-			// show post gallery page
+			// callbacks
 			//
-			application.showPage(new PostGalleryView.default(), {
-				nav: 'gallery'
-			});
+			success: (PostViewerView) => {
+
+				// show post gallery page
+				//
+				PostViewerView.showGallery();
+			}
 		});
 	},
 
 	showSearch: function() {
-		Promise.all([
-			import('./views/apps/search-viewer/mainbar/results/search-page-view.js'),
-		]).then(([SearchPageView]) => {
+		application.loadAppView('search_viewer', {
 
-			// show search page
+			// callbacks
 			//
-			application.showPage(new SearchPageView.default(), {
-				nav: 'search'
-			});
+			success: (SearchViewerView) => {
+
+				// show search page
+				//
+				SearchViewerView.showSearch();
+			}
 		});
 	},
 
@@ -662,7 +676,7 @@ export default Backbone.Router.extend({
 			}
 		});
 	},
-	
+
 	showEnterLinkPassword: function(link) {
 		this.showWelcome();
 		import(
@@ -919,10 +933,10 @@ export default Backbone.Router.extend({
 					//
 					this.showNotFound({
 						message: "User not found: " + id,
-						response: response				
+						response: response
 					});
 				}
-			});	
+			});
 		});
 	},
 
@@ -944,33 +958,6 @@ export default Backbone.Router.extend({
 					//
 					this.showNotFound({
 						message: "User not found: " + username,
-						response: response				
-					});
-				}
-			});	
-		});
-	},
-
-	fetchPost: function(id, done) {
-		import(
-			'./models/topics/post.js'
-		).then((Post) => {
-			new Post.default({
-				'id': id
-			}).fetch({
-
-				// callbacks
-				//
-				success: (model) => {
-					done(model);
-				},
-
-				error: (model, response) => {
-
-					// show 404 page
-					//
-					this.showNotFound({
-						message: "Post not found: " + id,
 						response: response				
 					});
 				}

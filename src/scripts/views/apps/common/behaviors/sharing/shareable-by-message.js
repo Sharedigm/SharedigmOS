@@ -100,26 +100,19 @@ export default {
 	//
 
 	showOpenChatsDialog: function(options) {
-		import(
-			'../../../../../views/apps/chat-viewer/dialogs/chats/open-chats-dialog-view.js'
-		).then((OpenChatsDialogView) => {
+		application.loadAppView('chat_viewer', {
+			success: (ChatViewer) => {
+				ChatViewer.showOpenChatsDialog({
 
-			// show open dialog
-			//
-			this.show(new OpenChatsDialogView.default({
-
-				// options
-				//
-				title: "Open Chats",
-
-				// callbacks
-				//
-				onopen: (items) => {
-					if (options && options.onopen) {
-						options.onopen(items);
+					// callbacks
+					//
+					onopen: (items) => {
+						if (options && options.onopen) {
+							options.onopen(items);
+						}
 					}
-				}
-			}));
+				});
+			}
 		});
 	}
 };

@@ -16,11 +16,10 @@
 \******************************************************************************/
 
 import ListItemView from '../../../../../../views/items/lists/list-item-view.js';
-import Mappable from '../../../../../../views/maps/behaviors/mappable.js';
 import ItemBadgesView from '../../../../../../views/apps/file-browser/mainbar/files/badges/item-badges-view.js';
 import FileUtils from '../../../../../../utilities/files/file-utils.js';
 
-export default ListItemView.extend(_.extend({}, Mappable, {
+export default ListItemView.extend({
 
 	//
 	// attributes
@@ -118,8 +117,7 @@ export default ListItemView.extend(_.extend({}, Mappable, {
 			name: this.getName(),
 			owner: this.getOwner(),
 			owner_thumbnail_url: this.getOwnerThumbnailUrl(),
-			details: this.getDetails(),
-			geo_orientation: this.getGeoOrientation()
+			details: this.getDetails()
 		};
 	},
 
@@ -141,4 +139,4 @@ export default ListItemView.extend(_.extend({}, Mappable, {
 			this.options.ondropout(this.parent.getSelectedModels());
 		}
 	}
-}));
+});

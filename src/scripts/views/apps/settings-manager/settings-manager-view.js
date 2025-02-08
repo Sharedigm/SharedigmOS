@@ -18,13 +18,13 @@
 import UserAccount from '../../../models/users/account/user-account.js';
 import UserPreferences from '../../../models/preferences/user-preferences.js';
 import AppSplitView from '../../../views/apps/common/app-split-view.js';
-import PrefsLoadable from '../../../views/apps/common/behaviors/loading/prefs-loadable.js';
 import HeaderBarView from '../../../views/apps/settings-manager/header-bar/header-bar-view.js';
 import SideBarView from '../../../views/apps/settings-manager/sidebar/sidebar-view.js';
 import FooterBarView from '../../../views/apps/settings-manager/footer-bar/footer-bar-view.js';
+import PreferencesFormView from '../../../views/apps/settings-manager/forms/preferences/preferences-form-view.js'
 import Browser from '../../../utilities/web/browser.js';
 
-export default AppSplitView.extend(_.extend({}, PrefsLoadable, {
+export default AppSplitView.extend( {
 
 	//
 	// attributes
@@ -641,16 +641,16 @@ export default AppSplitView.extend(_.extend({}, PrefsLoadable, {
 	},
 
 	showPreferencesForm: function(app, preferences) {
-		this.loadPrefsFormView(app, {
+		application.loadApp(app, {
 
 			// callbacks
 			//
-			success: (PreferencesFormView) => {
+			success: (AppView) => {
 
 				// check for preferences form
 				//
-				if (!PreferencesFormView) {
-					application.error({
+				if (!AppView.getPreferencesFormView) {
+					application.alert({
 						message: 'Preferences form view not found.'
 					});
 					return;
@@ -662,22 +662,13 @@ export default AppSplitView.extend(_.extend({}, PrefsLoadable, {
 
 				// show child view
 				//
-				this.showChildView('content', new PreferencesFormView({
+				this.showChildView('content', AppView.getPreferencesFormView({
 					model: preferences,
 
 					// callbacks
 					//
 					onchange: (key, value) => this.onChangePreferences(key, value)
 				}));
-			},
-
-			error: () => {
-
-				// show error dialog
-				//
-				application.error({
-					message: "Preferences not found."
-				})
 			}
 		});
 	},
@@ -744,4 +735,13 @@ export default AppSplitView.extend(_.extend({}, PrefsLoadable, {
 		//
 		this.constructor.current = null;
 	}
-}));
+}, {
+
+	//
+	// static getting methods
+	//
+
+	getPreferencesFormView: function(options) {
+		return new PreferencesFormView(options);
+	}
+});

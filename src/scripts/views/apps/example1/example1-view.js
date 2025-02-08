@@ -18,6 +18,7 @@
 import AppView from '../../../views/apps/common/app-view.js';
 import HeaderBarView from '../../../views/apps/example1/header-bar/header-bar-view.js';
 import FooterBarView from '../../../views/apps/example1/footer-bar/footer-bar-view.js';
+import PreferencesFormView from '../../../views/apps/example1/forms/preferences/preferences-form-view.js'
 
 export default AppView.extend({
 
@@ -66,5 +67,14 @@ export default AppView.extend({
 
 	getFooterBarView: function() {
 		return new FooterBarView();
+	}
+}, {
+
+	//
+	// static getting methods
+	//
+
+	getPreferencesFormView: function(options) {
+		return new PreferencesFormView(options);
 	}
 });

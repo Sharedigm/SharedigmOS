@@ -348,13 +348,24 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 		return collection;
 	},
 
+	getEnabledApps: function(filter) {
+		let platform = Browser.is_mobile? 'mobile' : 'desktop';
+		return this.getApps((app) => {
+			let accessLevel = app.get('access');
+			let noAccess = (accessLevel == 'none') || (accessLevel == 'admin' && !this.isAdmin()) || (accessLevel == 'user' && this.isAdmin());
+			let isEnabled = [platform, 'all'].contains(app.get('platform')) && !app.get('disabled');
+			let isFiltered = filter? !filter(app) : false;
+			return !noAccess && isEnabled && !isFiltered;
+		});
+	},
+
 	getVisibleApps: function(filter) {
 		let platform = Browser.is_mobile? 'mobile' : 'desktop';
 		return this.getApps((app) => {
 			let accessLevel = app.get('access');
 			let isHidden = app.get('hidden');
 			let noAccess = (accessLevel == 'none') || (accessLevel == 'admin' && !this.isAdmin()) || (accessLevel == 'user' && this.isAdmin());
-			let isEnabled = [platform, 'all'].contains(app.get('platform'));
+			let isEnabled = [platform, 'all'].contains(app.get('platform')) && !app.get('disabled');
 			let isFiltered = filter? !filter(app) : false;
 			return !isHidden && !noAccess && isEnabled && !isFiltered;
 		});

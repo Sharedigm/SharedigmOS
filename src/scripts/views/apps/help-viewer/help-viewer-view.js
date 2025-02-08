@@ -27,6 +27,7 @@ import HelpCoverView from '../../../views/apps/help-viewer/mainbar/help-cover-vi
 import HelpPageView from '../../../views/apps/help-viewer/mainbar/help-page-view.js';
 import HelpSectionView from '../../../views/apps/help-viewer/mainbar/help-section-view.js';
 import FooterBarView from '../../../views/apps/help-viewer/footer-bar/footer-bar-view.js';
+import PreferencesFormView from '../../../views/apps/help-viewer/forms/preferences/preferences-form-view.js'
 import Browser from '../../../utilities/web/browser.js';
 import AddressBar from '../../../utilities/web/address-bar.js';
 
@@ -507,4 +508,13 @@ export default AppSplitView.extend(_.extend({}, LinkShareable, {
 	onClickLink: function(url) {
 		this.showUrl(url);
 	}
-}));
+}), {
+
+	//
+	// static getting methods
+	//
+
+	getPreferencesFormView: function(options) {
+		return new PreferencesFormView(options);
+	}
+});

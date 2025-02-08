@@ -27,140 +27,6 @@ export default ContextMenuView.extend({
 	// attributes
 	//
 
-	items: [
-		{
-			"class": "new-folder",
-			"icon": "fa fa-folder",
-			"name": "New Folder",
-			"shortcut": "command-enter"
-		},
-		{
-			"class": "open-item",
-			"icon": "fa fa-folder-open",
-			"name": "Open",
-			"shortcut": "command-O"
-		},
-		{
-			"class": "open-with",
-			"icon": "fa fa-folder-open",
-			"name": "Open With"
-		},
-		{
-			"class": "open-selected",
-			"icon": "fa fa-folder-open",
-			"name": "Open Selected",
-			"shortcut": "enter"
-		},
-		{
-			"class": "open-in-new-window",
-			"icon": "fa fa-folder-open",
-			"name": "Open in New Window"
-		},
-		{
-			"class": "upload-item",
-			"icon": "fa fa-upload",
-			"name": "Upload",
-			"shortcut": "command-U"
-		},
-		"separator",
-		{
-			"class": "show-info",
-			"icon": "fa fa-info-circle",
-			"name": "Show Info",
-			"shortcut": "command-I"
-		},
-		{
-			"class": "show-on-map",
-			"icon": "fa fa-map",
-			"name": "Show on Map",
-			"shortcut": "command-M"
-		},
-		"separator",
-		{
-			"class": "share",
-			"icon": "fa fa-share",
-			"name": "Share",
-			"menu": [
-				{
-					"class": "share-by-invitation",
-					"icon": "fa fa-user-friends",
-					"name": "By Invitation"
-				},
-				"separator",
-				{
-					"class": "share-by-topic",
-					"icon": "fa fa-newspaper",
-					"name": "By Discussion Topic"
-				},
-				{
-					"class": "share-by-message",
-					"icon": "fa fa-comments",
-					"name": "By Chat Messsage"
-				},
-				"separator",
-				{
-					"class": "share-by-link",
-					"icon": "fa fa-link",
-					"name": "By Link"
-				},
-				{
-					"class": "share-by-email",
-					"icon": "fa fa-envelope",
-					"name": "By Email"
-				}
-			]
-		},
-		"separator",
-		{
-			"class": "rename-item",
-			"icon": "fa fa-font",
-			"name": "Rename",
-			"shortcut": "shift-command-R"
-		},
-		{
-			"class": "compress-item",
-			"icon": "fa fa-compress",
-			"name": "Compress",
-			"shortcut": "shift-command-Z"
-		},
-		{
-			"class": "download-item",
-			"icon": "fa fa-download",
-			"name": "Download",
-			"shortcut": "shift-command-D"
-		},
-		"separator",
-		{
-			"class": "set-profile",
-			"icon": "fa fa-user",
-			"name": "Set Profile Picture"
-		},
-		{
-			"class": "set-background",
-			"icon": "fa fa-desktop",
-			"name": "Set Background Picture"
-		},
-		"separator",
-		{
-			"class": "delete-item",
-			"icon": "fa fa-trash-alt",
-			"name": "Delete",
-			"shortcut": "delete"
-		},
-		{
-			"class": "empty-trash",
-			"icon": "fa fa-trash-alt",
-			"name": "Empty Trash",
-			"shortcut": "command-E"
-		},
-		"separator",
-		{
-			"class": "change-background",
-			"icon": "fa fa-image",
-			"name": "Change Background"
-		}
-	],
-
 	events: _.extend({}, ContextMenuView.prototype.events, {
 		'click .new-folder': 'onClickNewFolder',
 		'click .open-item': 'onClickOpenItem',
@@ -212,6 +78,10 @@ export default ContextMenuView.extend({
 		let hasSelectedFolder = oneSelected && this.parent.getSelectedModel() instanceof Directory;
 		let hasSelectedPicture = oneSelected && this.parent.getSelectedModel() instanceof ImageFile;
 		let isDesktop = this.parent.isDesktop();
+		let hasMapViewer = application.hasApp('map_viewer');
+		let hasConnectionManager = application.hasApp('connection_manager');
+		let hasTopicViewer = application.hasApp('topic_viewer');
+		let hasChatViewer = application.hasApp('chat_viewer');
 
 		return {
 			'new-folder': !hasSelected,
@@ -223,12 +93,29 @@ export default ContextMenuView.extend({
 			'upload-item': !hasSelected,
 			'share': hasSelected,
 			'show-info': hasSelected,
-			'show-on-map': hasSelected,
+			'show-on-map': hasSelected && hasMapViewer,
+
+			// share with connections
+			//
+			'share-by-invitation': hasSelected && hasConnectionManager,
+			'share-by-topic': hasSelected && hasTopicViewer,
+			'share-by-message': hasSelected && hasChatViewer,
+
+			// share with anyone
+			//
+			'share-by-link': oneSelected,
+			'share-by-email': oneSelected,
+
+			// picture options
+			//
+			'set-profile': hasSelectedPicture,
+			'set-background': hasSelectedPicture,
+
+			// other options
+			//
 			'rename-item': hasSelected,
 			'compress-item': hasSelected,
 			'download-item': hasSelected,
-			'set-profile': hasSelectedPicture,
-			'set-background': hasSelectedPicture,
 			'delete-item': hasSelected,
 			'empty-trash': !hasSelected,
 			'change-background': !hasSelected
@@ -367,7 +254,7 @@ export default ContextMenuView.extend({
 	},
 
 	onClickDownloadItem: function() {
-		this.parent.download();
+		this.parent.download(this.parent.getSelectedModels());
 	},
 
 	onClickSetProfile: function() {

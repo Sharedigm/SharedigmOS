@@ -245,8 +245,7 @@ export default LeafView.extend(_.extend({}, DirectoryTreeViewable, {
 			name: this.getName(),
 			owner: this.getOwner(),
 			owner_thumbnail_url: this.getOwnerThumbnailUrl(),
-			details: this.getDetails(),
-			geo_orientation: this.getGeoOrientation()
+			details: this.getDetails()
 		};
 	},
 

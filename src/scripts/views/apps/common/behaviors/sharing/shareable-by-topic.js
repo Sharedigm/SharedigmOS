@@ -42,43 +42,36 @@ export default {
 	//
 
 	shareItemByTopic: function(item) {
-		import(
-			'../../../../../views/apps/topic-viewer/topic-viewer-view.js'
-		).then((TopicViewerView) => {
 
-			// select topics
+		// select topics
+		//
+		this.showOpenTopicsDialog({
+
+			// callbacks
 			//
-			this.showOpenSubscribedTopicsDialog({
-				model: TopicViewerView.default.default_topic,
+			onopen: (topics) => {
 
-				// callbacks
+				// show selected topic and item
 				//
-				onopen: (topics) => {
-
-					// show selected topic
-					//
-					this.showItemByTopic(item, topics[0]);
-				}
-			});
+				this.showItemByTopic(item, topics[0]);
+			}
 		});
 	},
 
 	shareItemsByTopic: function(items) {
-		import(
-			'../../../../../views/apps/topic-viewer/topic-viewer-view.js'
-		).then((TopicViewerView) => {
 
-			// select topics
+		// select topics
+		//
+		this.showOpenTopicsDialog({
+
+			// callbacks
 			//
-			this.showOpenSubscribedTopicsDialog({
-				model: TopicViewerView.default.default_topic,
+			onopen: (topics) => {
 
-				// callbacks
+				// show selected topic and items
 				//
-				onopen: (topics) => {
-					this.showItemsByTopic(items, topics[0]);
-				}
-			});
+				this.showItemsByTopic(items, topics[0]);
+			}
 		});
 	},
 
@@ -106,28 +99,28 @@ export default {
 	// dialog rendering methods
 	//
 
-	showOpenSubscribedTopicsDialog: function(options) {
-		import(
-			'../../../../../views/apps/topic-viewer/dialogs/topics/open-topics-dialog-view.js'
-		).then((OpenTopicsDialogView) => {
+	showOpenTopicsDialog: function(options) {
+		application.loadAppView('topic_viewer', {
 
-			// show open dialog
+			// callbacks
 			//
-			this.show(new OpenTopicsDialogView.default({
+			success: (TopicViewerView) => {
+				TopicViewerView.showOpenTopicsDialog({
 
-				// options
-				//
-				title: "Open Topics",
-				subscribed: true,
+					// options
+					//
+					title: "Open Topics",
+					subscribed: true,
 
-				// callbacks
-				//
-				onopen: (items) => {
-					if (options && options.onopen) {
-						options.onopen(items);
+					// callbacks
+					//
+					onopen: (items) => {
+						if (options && options.onopen) {
+							options.onopen(items);
+						}
 					}
-				}
-			}));
+				});
+			}
 		});
 	}
 };

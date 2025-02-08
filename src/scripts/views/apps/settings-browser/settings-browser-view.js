@@ -20,6 +20,7 @@ import HeaderBarView from '../../../views/apps/settings-browser/header-bar/heade
 import SideBarView from '../../../views/apps/settings-browser/sidebar/sidebar-view.js';
 import MainBarView from '../../../views/apps/settings-browser/mainbar/mainbar-view.js';
 import FooterBarView from '../../../views/apps/settings-browser/footer-bar/footer-bar-view.js';
+import PreferencesFormView from '../../../views/apps/settings-browser/forms/preferences/preferences-form-view.js'
 
 export default AppSplitView.extend({
 
@@ -202,5 +203,14 @@ export default AppSplitView.extend({
 		// clear static attributes
 		//
 		this.constructor.current = null;
+	}
+}, {
+
+	//
+	// static getting methods
+	//
+
+	getPreferencesFormView: function(options) {
+		return new PreferencesFormView(options);
 	}
 });

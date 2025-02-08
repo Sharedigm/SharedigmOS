@@ -16,10 +16,9 @@
 \******************************************************************************/
 
 import TreeViewable from '../../../../../../views/items/trees/tree-viewable.js';
-import Mappable from '../../../../../../views/maps/behaviors/mappable.js';
 import FileUtils from '../../../../../../utilities/files/file-utils.js';
 
-export default _.extend({}, TreeViewable, Mappable, {
+export default _.extend({}, TreeViewable, {
 
 	//
 	// attributes

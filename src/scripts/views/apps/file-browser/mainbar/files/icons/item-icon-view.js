@@ -16,11 +16,10 @@
 \******************************************************************************/
 
 import IconView from '../../../../../../views/items/icons/icon-view.js';
-import Mappable from '../../../../../../views/maps/behaviors/mappable.js';
 import ItemBadgesView from '../../../../../../views/apps/file-browser/mainbar/files/badges/item-badges-view.js';
 import FileUtils from '../../../../../../utilities/files/file-utils.js';
 
-export default IconView.extend(_.extend({}, Mappable, {
+export default IconView.extend({
 
 	//
 	// attributes
@@ -31,12 +30,6 @@ export default IconView.extend(_.extend({}, Mappable, {
 		
 			<div class="icon">
 				<%= icon %>
-
-				<% if (geo_orientation != undefined) { %>
-				<div class="geoorientation marker" style="transform:rotate(<%= Math.round(geo_orientation.heading) %>deg)" data-toggle="tooltip" title="orientation: <%= Math.round(geo_orientation.heading) %> &deg; N">
-					<i class="fa fa-location-arrow"></i>
-				</div>
-				<% } %>
 
 				<% if (owner) { %>
 				<div class="owner small tile" data-toggle="tooltip" data-html="true" title="shared by<br /><%= owner.getName() %>" data-placement="right">
@@ -193,8 +186,7 @@ export default IconView.extend(_.extend({}, Mappable, {
 			name: this.getName(),
 			owner: this.getOwner(),
 			owner_thumbnail_url: this.getOwnerThumbnailUrl(),
-			details: this.getDetails(),
-			geo_orientation: this.getGeoOrientation()
+			details: this.getDetails()
 		};
 	},
 
@@ -216,4 +208,4 @@ export default IconView.extend(_.extend({}, Mappable, {
 			this.options.ondropout(this.parent.getSelectedModels());
 		}
 	}
-}));
+});

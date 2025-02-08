@@ -232,13 +232,13 @@ export default FormView.extend({
 	//
 
 	showSelectPlaceDialog: function(options) {
-		import(
-			'../../../../../views/apps/map-viewer/dialogs/places/select-place-dialog-view.js'
-		).then((SelectPlaceDialogView) => {
+		application.loadAppView('map_viewer', {
 
-			// show select place dialog
+			// callbacks
 			//
-			application.show(new SelectPlaceDialogView.default(options));
+			success: (MapViewerView) => {
+				MapViewerView.showSelectPlaceDialog(options);
+			}
 		});
 	},
 

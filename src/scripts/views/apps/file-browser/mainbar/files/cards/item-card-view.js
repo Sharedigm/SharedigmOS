@@ -16,11 +16,10 @@
 \******************************************************************************/
 
 import CardView from '../../../../../../views/items/cards/card-view.js';
-import Mappable from '../../../../../../views/maps/behaviors/mappable.js';
 import ItemBadgesView from '../../../../../../views/apps/file-browser/mainbar/files/badges/item-badges-view.js';
 import FileUtils from '../../../../../../utilities/files/file-utils.js';
 
-export default CardView.extend(_.extend({}, Mappable, {
+export default CardView.extend({
 
 	//
 	// attributes
@@ -154,8 +153,7 @@ export default CardView.extend(_.extend({}, Mappable, {
 			name: this.getName(),
 			owner: this.getOwner(),
 			owner_thumbnail_url: this.getOwnerThumbnailUrl(),
-			details: this.getDetails(),
-			geo_orientation: this.getGeoOrientation()
+			details: this.getDetails()
 		};
 	},
 
@@ -177,4 +175,4 @@ export default CardView.extend(_.extend({}, Mappable, {
 			this.options.ondropout(this.parent.getSelectedModels());
 		}
 	}
-}));
+});

@@ -34,7 +34,11 @@ export default SearchMenuView.extend({
 	//
 
 	visible: function() {
+		let hasConnectionManager = application.hasApp('connection_manager');
+
 		return {
+			'search-by-shared-with-me': hasConnectionManager,
+			'search-by-shared-by-me': hasConnectionManager,
 			'index-items': true,
 			'unindex-items': true,
 		}

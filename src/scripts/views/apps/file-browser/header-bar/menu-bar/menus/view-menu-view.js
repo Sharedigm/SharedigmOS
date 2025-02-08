@@ -101,14 +101,15 @@ export default ViewMenuView.extend({
 		let hasSpaces = isDesktop && this.parent.app.hasSpaces();
 		let numFiles = this.parent.app.model.get('num_files');
 		let isWindowed = !isDesktop;
+		let hasMapViewer = application.hasApp('map_viewer');
 
 		return _.extend({}, ViewMenuView.prototype.visible.call(this), {
 			'view-gallery': numFiles && numFiles.image > 0,
 			'view-audio': numFiles && numFiles.audio > 0,
 			'view-photo': numFiles && numFiles.image > 0,
 			'view-video': numFiles && numFiles.video > 0,
-			'view-maps': this.parent.app.hasGeolocatedItems(),
-			'map-items': this.parent.app.hasGeolocatedItems(),
+			'view-maps': hasMapViewer,
+			'map-items': hasMapViewer,
 			'toolbars': true,
 
 			// window items

@@ -57,8 +57,20 @@ function compress_scripts() {
 
 function build_scripts() {
 	scripts=$1
+
+	# build compiled version of app-loadable.js
+	#
+	mv ../scripts/views/apps/common/behaviors/loading/app-loadable.js ../scripts/views/apps/common/behaviors/loading/app-loadable.bak.js
+	sh dependencies.sh > ../scripts/views/apps/common/behaviors/loading/app-loadable.js
+
+	# process scripts
+	#
 	bundle_scripts $scripts
 	compress_scripts $scripts
+
+	# restore dynamic version of app-loadable.js
+	#
+	mv ../scripts/views/apps/common/behaviors/loading/app-loadable.bak.js ../scripts/views/apps/common/behaviors/loading/app-loadable.js
 }
 
 #******************************************************************************#

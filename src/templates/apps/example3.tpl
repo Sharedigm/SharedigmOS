@@ -12,7 +12,7 @@
 	</div>
 
 	<div class="description section">
-		<p>The <%= config.apps['example3'].name %> is a simple example of a simple accessory app. </p>
+		<p>The <%= config.apps['example3'].name %> app is a simple example of an accessory app. </p>
 	</div>
 
 	<div class="details section">
