@@ -12,7 +12,7 @@
 |        'LICENSE.txt', which is part of this source code distribution.        |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 @use "../../../../colors/colors";
@@ -21,8 +21,8 @@
 // colors
 //
 
-$light-form-group-color: colors.$medium-grey;
-$light-form-group-label-color: white;
+$light-label-color: colors.$light-grey;
+$light-label-icon-color: var(--primary-color);
 
 //
 // styles
@@ -36,7 +36,11 @@ body:not(.binary).light {
 		//
 		
 		.form-label, .control-label {
-			color: $light-form-group-color;
+			color: $light-label-color;
+
+			i {
+				color: $light-label-icon-color;
+			}
 		}
 	}
 
@@ -48,7 +52,7 @@ body:not(.binary).light {
 			//
 			
 			.form-label, .control-label {
-				color: $light-form-group-label-color;
+				color: white;
 			}
 		}
 	}

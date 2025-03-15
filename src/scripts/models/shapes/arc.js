@@ -7,7 +7,7 @@
 |        This is a definition of a model of a basic arc shape.                 |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 import BaseModel from '../../models/base-model.js';

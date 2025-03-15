@@ -52,6 +52,7 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapApiRoutes('routes/settings.php');
         $this->mapApiRoutes('routes/sharing.php');
         $this->mapApiRoutes('routes/storage.php');
+        $this->mapApiRoutes('routes/media.php');
         $this->mapApiRoutes('routes/users.php');
         $this->mapApiRoutes('routes/utilities.php');
     }

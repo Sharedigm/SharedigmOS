@@ -12,7 +12,7 @@
 |        'LICENSE.txt', which is part of this source code distribution.        |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 @use "../bootstrap/variables";
@@ -27,16 +27,14 @@ $splash-logo-shadow: drop-shadow(10px 10px 10px rgba(black, 20%));
 $text-shadow: 1px 1px 5px rgba(black, 50%);
 $text-size: 1.25em;
 $round-border-radius: 30px;
-$rounded-border-radius: 15px;
+$rounded-border-radius: 10px;
 
 //
 // styles
 //
 
 .welcome.page {
-
 	.contents {
-
 		.masthead {
 			display: flex;
 			flex-grow: 1;
@@ -299,6 +297,30 @@ $rounded-border-radius: 15px;
 		.footer {
 			.info {
 				display: none;
+			}
+		}
+	}
+}
+
+//
+// border styles
+//
+
+body.rounded {
+	.welcome.page {
+		.masthead {
+			.tagline, .description {
+				border-radius: $rounded-border-radius;
+			}
+		}
+	}
+}
+
+body.round {
+	.welcome.page {
+		.masthead {
+			.tagline, .description {
+				border-radius: $round-border-radius;
 			}
 		}
 	}

@@ -12,7 +12,7 @@
 |        'LICENSE.md', which is part of this source code distribution.         |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 import UserProfile from '../../models/users/profile/user-profile.js';
@@ -195,6 +195,12 @@ export default HeaderView.extend({
 		this.$el.find('.my-profile .name').text(name);
 	},
 
+	setAppBarStyles: function(header) {
+		if (header.color) {
+			this.$el.find('.toolbar-app a i').css('color', header.color).addClass('colored');
+		}
+	},
+
 	//
 	// authenticating methods
 	//
@@ -358,7 +364,7 @@ export default HeaderView.extend({
 
 		// apply color to app bar icons
 		//
-		this.setNavStyles(config.branding.header);
+		this.setAppBarStyles(config.branding.header);
 	},
 
 	showConnectionRequests: function() {

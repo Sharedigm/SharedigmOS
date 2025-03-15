@@ -5,7 +5,7 @@
 			"icon": "fa fa-xmark",
 			"name": "Clear All"
 		},
-		"separator",
+		"divider",
 		{
 			"class": "close-window",
 			"icon": "fa fa-circle-xmark",

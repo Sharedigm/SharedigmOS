@@ -7,7 +7,7 @@
 |        This defines a view of a single application card item.                |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 import CardView from '../../../../../views/items/cards/card-view.js';

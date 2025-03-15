@@ -210,6 +210,7 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 		// create sounds
 		//
 		this.createSounds(Object.keys(config.sounds));
+		this.setVolume(config.defaults.settings.volume);
 	},
 
 	//

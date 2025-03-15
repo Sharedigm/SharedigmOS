@@ -12,7 +12,7 @@
 |        'LICENSE.md', which is part of this source code distribution.         |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 import BaseView from '../../views/base-view.js';
@@ -96,10 +96,10 @@ export default BaseView.extend(_.extend({}, PopoverShowable, Validatable, UnitSe
 		//
 		let elements = [];
 		for (let i = 0; i < els.length; i++) {
-			let $el = $(els[i]);
-			let value = $el.val();
+			let el = els[i];
+			let value = $(el).val();
 			if (values.includes(value)) {
-				elements.push($el);
+				elements.push(el);
 			}
 		}
 
@@ -116,7 +116,9 @@ export default BaseView.extend(_.extend({}, PopoverShowable, Validatable, UnitSe
 		//
 		for (let key in values) {
 			let value = values[key];
-			this.setValue(key, value);
+			if (this.setValue) {
+				this.setValue(key, value);
+			}
 		}
 	},
 

@@ -7,7 +7,7 @@
 |        This is a mixin for displaying annotatable selectable views.          |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 import SVGRenderable from '../../../views/svg/behaviors/svg-renderable.js';

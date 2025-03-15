@@ -12,7 +12,7 @@
 |        'LICENSE.md', which is part of this source code distribution.         |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 import ImageFile from '../../models/storage/media/image-file.js';
@@ -90,10 +90,10 @@ export default BaseView.extend({
 						</div>
 						<% } %>
 
-						<% if (config.defaults.search && !config.defaults.search.hidden) { %>
+						<% if (branding.welcome.search) { %>
 						<div class="search row">
 							<div class="input-group">
-								<input type="text" class="form-control" placeholder="<%= config.defaults.search.placeholder || 'Search' %>">
+								<input type="text" class="form-control" placeholder="<%= config.apps.search_viewer.placeholder || 'Search' %>">
 								<div class="input-group-addon btn" data-toggle="tooltip" title="Search <%= application.name %>">
 									<i class="active fa fa-search"></i>
 								</div>

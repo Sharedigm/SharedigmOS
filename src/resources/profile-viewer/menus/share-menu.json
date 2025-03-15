@@ -47,7 +47,7 @@
 				}
 			]
 		},
-		"separator",
+		"divider",
 		{
 			"class": "share-by-link",
 			"icon": "fa fa-link",

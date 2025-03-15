@@ -13,7 +13,7 @@
 |        'LICENSE.md', which is part of this source code distribution.         |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 import BaseView from '../../../../views/base-view.js';
@@ -45,13 +45,10 @@ export default BaseView.extend({
 	},
 
 	//
-	// mouse event handling methods
+	// methods
 	//
 
-	onClickVerify: function() {
-
-		// verify email
-		//
+	verify: function() {
 		this.model.verify({
 
 			// callbacks
@@ -60,40 +57,9 @@ export default BaseView.extend({
 
 				// show notification
 				//
-				application.notify({
-					icon: '<i class="fa fa-envelope"></i>',
-					title: "Email Verified",
-					message: "Your new email address has been verified.",
-
-					// callbacks
-					//
-					accept: () => {
-						if (application.isSignedIn()) {
-							application.session.user.set({
-								user_id: 'current'
-							});
-							application.session.user.fetch({ 
-
-								// callbacks
-								//
-								success: () => {
-
-									// go to user account view
-									//
-									application.navigate('users/current/account', {
-										trigger: true
-									});
-								}
-							});
-						} else {
-
-							// go to user account view
-							//
-							application.navigate('users/current/account', {
-								trigger: true
-							});
-						}
-					}
+				application.alert({
+					title: "Email Changed",
+					message: "Your email address has been changed."
 				});
 			},
 
@@ -107,5 +73,13 @@ export default BaseView.extend({
 				});
 			}
 		});
+	},
+
+	//
+	// mouse event handling methods
+	//
+
+	onClickVerify: function() {
+		this.verify();
 	}
 });

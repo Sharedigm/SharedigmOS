@@ -18,7 +18,7 @@
 			"name": "Duplicate",
 			"shortcut": "shift-command-D"
 		},
-		"separator",
+		"divider",
 		{
 			"class": "paste",
 			"icon": "fa fa-paste",
@@ -31,7 +31,7 @@
 			"name": "Put",
 			"shortcut": "shift-command-V"
 		},
-		"separator",
+		"divider",
 		{
 			"class": "delete",
 			"icon": "fa fa-trash-alt",
@@ -44,7 +44,7 @@
 			"name": "Destroy",
 			"shortcut": "shift-command-delete"
 		},
-		"separator",
+		"divider",
 		{
 			"class": "show-clipboard",
 			"icon": "fa fa-clipboard",

@@ -5,17 +5,17 @@
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines a model of a user's account information. This            |
-|        model is used in conjunction with the User model, which               |
-|        stores a user's personal information.                                 |
+|       This defines a model of a user's account information. This             |
+|       model is used in conjunction with the User model, which                |
+|       stores a user's personal information.                                  |
 |                                                                              |
-|        Author(s): Abe Megahed                                                |
+|       Author(s): Abe Megahed                                                 |
 |                                                                              |
-|        This file is subject to the terms and conditions defined in           |
-|        'LICENSE.txt', which is part of this source code distribution.        |
+|       This file is subject to the terms and conditions defined in            |
+|       'LICENSE.txt', which is part of this source code distribution.         |
 |                                                                              |
 |******************************************************************************|
-|            Copyright (C) 2016-2024, Sharedigm, www.sharedigm.com             |
+|       Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com         |
 \******************************************************************************/
 
 namespace App\Models\Users\Accounts;
@@ -391,6 +391,7 @@ class UserAccount extends TimeStamped
 		//
 		$this->createDefaultGroups();
 		$this->createDefaultTopics();
+		$this->createDefaultFolders();
 	}
 
 	/**
@@ -399,6 +400,12 @@ class UserAccount extends TimeStamped
 	 * @return void
 	 */
 	public function createDefaultFolders() {
+
+		// if user has remote storage, then return
+		//
+		if (UserStorage::where('user_id', '=', $this->user_id)->exists()) {
+			return;
+		}
 
 		// create new user folder
 		//

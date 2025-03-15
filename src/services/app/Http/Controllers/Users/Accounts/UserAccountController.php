@@ -5,15 +5,15 @@
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This is a controller for users's personal account information.        |
+|       This is a controller for users's personal account information.         |
 |                                                                              |
-|        Author(s): Abe Megahed                                                |
+|       Author(s): Abe Megahed                                                 |
 |                                                                              |
-|        This file is subject to the terms and conditions defined in           |
-|        'LICENSE.txt', which is part of this source code distribution.        |
+|       This file is subject to the terms and conditions defined in            |
+|       'LICENSE.txt', which is part of this source code distribution.         |
 |                                                                              |
 |******************************************************************************|
-|            Copyright (C) 2016-2024, Sharedigm, www.sharedigm.com             |
+|       Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com         |
 \******************************************************************************/
 
 namespace App\Http\Controllers\Users\Accounts;
@@ -260,7 +260,7 @@ class UserAccountController extends Controller
 		// check if email has changed
 		//
 		if ($userAccount->email != $email) {
-			if (!$userAccount->isAdmin()) {
+			if (!$userAccount->isAdmin() && config('mail.enabled')) {
 
 				// send verification email
 				//

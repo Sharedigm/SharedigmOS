@@ -7,7 +7,7 @@
 |        This is a utility to draw an infinite line denoting an axis.          |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 import ShapeView from '../../../views/svg/shapes/shape-view.js';

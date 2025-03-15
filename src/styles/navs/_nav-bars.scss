@@ -12,7 +12,7 @@
 |        'LICENSE.txt', which is part of this source code distribution.        |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 @use "../bootstrap/variables";
@@ -50,7 +50,6 @@ $rounded-border-radius: 5px;
 		min-width: $nav-bar-brand-min-width;
 		height: 100%;
 		padding: $nav-bar-brand-padding;
-		margin: auto;
 		flex-shrink: 0;
 
 		.brand {
@@ -313,6 +312,18 @@ $rounded-border-radius: 5px;
 	background-color: black;
 }
 
+#header.center-aligned .navbar {
+	.navbar-brand {
+		justify-content: left;
+	}
+	.navbar-nav {
+		justify-content: center;
+	}
+	.navbar-nav:last-child {
+		justify-content: right;
+	}
+}
+
 body:not(.flat) {
 	.navbar {
 		.navbar-nav {
@@ -448,7 +459,34 @@ body:not(.flat) {
 }
 
 //
-// small styles
+// large navs
+//
+
+@media (min-width: variables.$screen-md-max) {
+	.navbar {
+		.nav.heading li {
+			padding: 0 10px;
+		}
+	}
+}
+
+//
+// medium navs
+//
+
+@media (min-width: variables.$screen-md-min) {
+	#header.center-aligned .navbar {
+		.navbar-brand {
+			flex-grow: 1;
+		}
+		.navbar-nav:last-child {
+			flex-grow: 1;
+		}
+	}
+}
+
+//
+// small navs
 //
 
 @media (max-width: variables.$screen-sm-min) {
@@ -473,7 +511,7 @@ body:not(.flat) {
 }
 
 //
-// extra small styles
+// extra small navs
 //
 
 @media (max-width: variables.$screen-xs-min) {
@@ -498,18 +536,6 @@ body:not(.flat) {
 	#header:not(.user-header) .navbar {
 		.logotype {
 			display: none;
-		}
-	}
-}
-
-//
-// large navs
-//
-
-@media (min-width: variables.$screen-md-max) {
-	.navbar {
-		.nav.heading li {
-			padding: 0 10px;
 		}
 	}
 }

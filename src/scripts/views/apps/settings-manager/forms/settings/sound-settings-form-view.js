@@ -12,7 +12,7 @@
 |        'LICENSE.md', which is part of this source code distribution.         |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 import SettingsFormView from '../../../../../views/apps/common/forms/settings-form-view.js';
@@ -159,10 +159,10 @@ export default SettingsFormView.extend({
 	//
 
 	onClickMuteSounds: function() {
-		application.setMuted(!application.isMuted());
+		application.saveMuted(!application.isMuted());
 	},
 
 	onChangeVolume: function(volume) {
-		application.setVolume(volume);
+		application.saveVolume(volume);
 	}
 });

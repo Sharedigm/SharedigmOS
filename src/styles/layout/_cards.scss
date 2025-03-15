@@ -12,10 +12,22 @@
 |        'LICENSE.txt', which is part of this source code distribution.        |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 @use "../bootstrap/variables";
+
+//
+// variables
+//
+
+$photo-size: 200px;
+$photo-border-width: 5px;
+$photo-border-color: var(--primary-color);
+
+//
+// styles
+//
 
 .cards {
 	> .card {
@@ -29,14 +41,16 @@
 
 		.photo {
 			display: inline-block;
-			width: 200px;
-			height: 200px;
+			width: $photo-size;
+			height: $photo-size;
 			border-radius: 50%;
 			background: var(--primary-color);
 			background-size: cover;
 			background-position: center;
 			overflow: hidden;
-			border: 10px solid var(--primary-color);
+			border-width: $photo-border-width;
+			border-style: solid;
+			border-color: $photo-border-color;
 
 			img {
 				width: 100%;

@@ -12,7 +12,7 @@
 |        'LICENSE.txt', which is part of this source code distribution.        |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 //
@@ -152,6 +152,30 @@ $rounded-border-radius: 10px;
 				&.rounded {
 					border-radius: $rounded-border-radius;
 				}
+			}
+		}
+	}
+}
+
+//
+// border styles
+//
+
+body.rounded {
+	.welcome.modal, .about.modal {
+		.modal-body {
+			.tagline, .description {
+				border-radius: $rounded-border-radius;
+			}
+		}
+	}
+}
+
+body.round {
+	.welcome.modal, .about.modal {
+		.modal-body {
+			.tagline, .description {
+				border-radius: $round-border-radius;
 			}
 		}
 	}

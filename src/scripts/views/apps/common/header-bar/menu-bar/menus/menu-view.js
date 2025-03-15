@@ -12,7 +12,7 @@
 |        'LICENSE.md', which is part of this source code distribution.         |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 import BaseView from '../../../../../../views/base-view.js';
@@ -29,9 +29,9 @@ export default BaseView.extend({
 	className: 'dropdown-menu',
 
 	itemTemplate: template(`
-		<li role="presentation"<% if (itemClass) { %> class="<%= itemClass %>"<% } %><% if (tags) { %> <%= tags %><% } %>>
+		<li role="presentation"<% if (itemClass || state == 'selected' || tags) { %> class="<%= itemClass %><% if (tags) { %> <%= tags %><% } %><% if (state == 'selected') { %> selected<% } %>"<% } %>>
 			<a class="<%= linkClass %><% if (menu) { %> dropdown-toggle<% } %>">
-				<% if (select != undefined) { %>
+				<% if (state == 'selected' || state == 'unselected') { %>
 				<i class="fa fa-check"></i>
 				<% } %>
 
@@ -61,7 +61,7 @@ export default BaseView.extend({
 		</li>
 	`),
 
-	separator: '<li role="separator" class="divider"></li>',
+	divider: '<li role="separator" class="divider"></li>',
 
 	// initial state
 	//
@@ -195,7 +195,7 @@ export default BaseView.extend({
 
 		return true;
 	},
-	
+
 	//
 	// getting methods
 	//
@@ -298,7 +298,7 @@ export default BaseView.extend({
 			this.$el.find(selector).addClass('hidden');
 		}
 	},
-	
+
 	setItemVisible: function(name, visible) {
 		let item = this.getItem(name);
 
@@ -312,7 +312,7 @@ export default BaseView.extend({
 			item.addClass('hidden');
 		}
 
-		// hide / show prev separator if last item
+		// hide / show prev divider if last item
 		//
 		let prev = item.prev();
 		let next = item.next();
@@ -338,7 +338,7 @@ export default BaseView.extend({
 			item.removeClass('hidden');
 		}
 
-		// hide / show prev separator if last item
+		// hide / show prev divider if last item
 		//
 		let prev = item.prev();
 		let next = item.next();
@@ -791,7 +791,7 @@ export default BaseView.extend({
 		return this.itemTemplate({
 			name: item.name,
 			icon: item.icon,
-			select: item.select,
+			state: item.state,
 			itemClass: className,
 			linkClass: item.class,
 			shortcut: this.getShortcutName(item.shortcut),
@@ -811,8 +811,11 @@ export default BaseView.extend({
 		if (items) {
 			for (let i = 0; i < items.length; i++) {
 				let item = items[i];
-				if (item == 'separator') {
-					html += this.separator;
+
+				// add divider or menu item
+				//
+				if (item == 'divider') {
+					html += this.divider;
 				} else {
 					html += this.itemToHtml(item);
 				}
@@ -842,7 +845,7 @@ export default BaseView.extend({
 		// hide / show menu items
 		//
 		this.updateVisible();
-		
+
 		// find shortcuts from DOM
 		//
 		this.keyCodes = this.getShortcutKeyCodes();
@@ -914,19 +917,19 @@ export default BaseView.extend({
 				case 'left': {
 					let submenuLeft = menuLeft - submenuWidth;
 					submenu.addClass('left');
-					
+
 					if (submenuLeft < 0) {
 						submenu.find('.dropdown-menu').css('margin-left', -submenuLeft);
 					} else {
 						submenu.find('.dropdown-menu').css('margin-left', '');
-					}		
+					}
 					break;
 				}
 
 				case 'right': {
 					let submenuRight = menuRight + submenuWidth;
 					submenu.removeClass('left');
-					
+
 					if (submenuRight > containerWidth) {
 						submenu.find('.dropdown-menu').css('margin-left', containerWidth - submenuRight - 1);
 					} else {
@@ -1274,7 +1277,7 @@ export default BaseView.extend({
 				object.menu = this.getDropdownObjects(dropdown);
 			}
 		} else {
-			object = "separator";
+			object = "divider";
 		}
 
 		return object;

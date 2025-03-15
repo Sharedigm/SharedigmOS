@@ -12,7 +12,7 @@
 |        'LICENSE.txt', which is part of this source code distribution.        |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 //
@@ -46,7 +46,18 @@ input {
 //
 
 .controls input[type="color"] {
-	vertical-align: sub;
+	-webkit-appearance: none;
+	width: 50px;
+	height: 20px;
+	border: none;
+	vertical-align: bottom;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
 	border: none;
 }
 
@@ -55,7 +66,8 @@ input {
 //
 
 select {
-	padding: 0 10px;
+	padding: 5px 10px;
+	height: 30px;
 	border-width: 1px;
 	border-style: solid;
 	border-color: unset;
@@ -98,6 +110,7 @@ input[type="file"] {
 
 input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"] {
 	font-size: 1em;
+	height: 30px;
 	padding: 0 10px;
 	line-height: inherit;
 }

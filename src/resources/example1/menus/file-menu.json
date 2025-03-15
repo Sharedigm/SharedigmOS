@@ -6,7 +6,7 @@
 			"name": "New Window",
 			"shortcut": "command-enter"
 		},
-		"separator",
+		"divider",
 		{
 			"class": "close-window",
 			"icon": "fa fa-circle-xmark",

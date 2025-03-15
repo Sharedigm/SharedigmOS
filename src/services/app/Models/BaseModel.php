@@ -1,19 +1,19 @@
 <?php
 /******************************************************************************\
 |                                                                              |
-|                                 BaseModel.php                                |
+|                                BaseModel.php                                 |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines an abstract superclass for models.                       |
+|       This defines an abstract superclass for models.                        |
 |                                                                              |
-|        Author(s): Abe Megahed                                                |
+|       Author(s): Abe Megahed                                                 |
 |                                                                              |
-|        This file is subject to the terms and conditions defined in           |
-|        'LICENSE.txt', which is part of this source code distribution.        |
+|       This file is subject to the terms and conditions defined in            |
+|       'LICENSE.txt', which is part of this source code distribution.         |
 |                                                                              |
 |******************************************************************************|
-|            Copyright (C) 2016-2024, Sharedigm, www.sharedigm.com             |
+|       Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com         |
 \******************************************************************************/
 
 namespace App\Models;

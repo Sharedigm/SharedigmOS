@@ -12,7 +12,7 @@
 |        'LICENSE.txt', which is part of this source code distribution.        |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 @use "../bootstrap/variables";
@@ -76,13 +76,7 @@ $rounded-border-radius: 5px;
 		background-color: unset;
 		border-color: unset;
 		cursor: not-allowed;
-
-		&:hover {
-			color: unset;
-			background-color: unset;
-			border-color: unset;
-			cursor: not-allowed;
-		}
+		pointer-events: none;
 	}
 
 	//

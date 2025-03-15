@@ -12,7 +12,7 @@
 |        'LICENSE.md', which is part of this source code distribution.         |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 import FormModalView from '../../../../views/forms/dialogs/form-modal-view.js';
@@ -100,6 +100,14 @@ export default FormModalView.extend({
 			//
 			success: () => {
 				this.close();
+
+				// show alert
+				//
+				if (this.model.hasChanged('email') && application.isEmailEnabled()) {
+					application.alert({
+						message: "Check your email for a link to change your account's email address."
+					})
+				}
 
 				// perform callback
 				//

@@ -12,7 +12,7 @@
 |        'LICENSE.txt', which is part of this source code distribution.        |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 @use "../../layout/panels";
@@ -168,6 +168,10 @@ $padding: 10px;
 				p {
 					padding: 0 5px;
 				}
+
+				.controls {
+					text-align: center;
+				}
 			}
 		}
 
@@ -175,12 +179,11 @@ $padding: 10px;
 		// spacing between (non-empty) wells
 		//
 
-		/*
 		> div:not(:empty):not(:last-child) {
 			margin-bottom: 10px;
 		}
-		*/
 
+		/*
 		> div:not(:empty) + div:not(:empty) {
 			margin-top: 10px;
 		}
@@ -204,6 +207,7 @@ $padding: 10px;
 		> div:not(:empty) + div:empty + div:empty + div:empty + div:empty + div:empty + div:not(:empty) {
 			margin-top: 10px;
 		}
+		*/
 	}
 
 	//
@@ -231,11 +235,17 @@ $padding: 10px;
 	}
 
 	.nav.menu {
-		a {
-			display: flex;
+		li {
+			a {
+				display: flex;
 
-			.name {
-				flex-grow: 1;
+				.name {
+					flex-grow: 1;
+				}
+			}
+
+			&.disabled {
+				pointer-events: none;
 			}
 		}
 	}

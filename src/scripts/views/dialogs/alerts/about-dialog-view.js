@@ -1,6 +1,6 @@
 /******************************************************************************\
 |                                                                              |
-|                              about-dialog-view.js                            |
+|                             about-dialog-view.js                             |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -13,7 +13,7 @@
 |        'LICENSE.md', which is part of this source code distribution.         |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 import ModalView from '../../../views/dialogs/modal-view.js';
@@ -29,7 +29,7 @@ export default ModalView.extend({
 
 	template: template(`
 		<div class="modal-dialog">
-		
+
 			<div class="modal-header">
 				<div class="heading">
 					<div class="icon">
@@ -40,7 +40,7 @@ export default ModalView.extend({
 					</div>
 				</div>
 			</div>
-		
+
 			<div class="modal-content welcome">
 				<div class="modal-body">
 					<div class="logo">
@@ -65,15 +65,15 @@ export default ModalView.extend({
 							<% } %>
 						</h1>
 						<% } %>
-		
+
 						<% if (branding.welcome.splash.tagline && branding.welcome.splash.tagline.text) { %>
 						<div class="tagline"><%= branding.welcome.splash.tagline.text %></div>
 						<% } %>
-		
+
 						<% if (branding.welcome.splash.description && branding.welcome.splash.description.text) { %>
 						<div class="description"><%= branding.welcome.splash.description.text %></div>
 						<% } %>
-						
+
 						<% if (branding.footer.copyright) { %>
 						<div class="copyright">
 							<span class="year">Copyright &copy; <%= branding.footer.copyright.year %></span>
@@ -82,7 +82,7 @@ export default ModalView.extend({
 						<% } %>
 					</div>
 				</div>
-		
+
 				<div class="modal-footer">
 					<div class="buttons">
 						<button class="ok btn btn-primary" data-dismiss="modal">
@@ -161,13 +161,25 @@ export default ModalView.extend({
 		}
 	},
 
+	setTextBlockStyles: function(element, attributes) {
+		if (!attributes) {
+			return;
+		}
+		if (attributes.color && (attributes.color != 'white' || (attributes.background || attributes.background_color))) {
+			$(element).css('color', attributes.color);
+		}
+		DomUtils.setTextStyles(element, attributes);
+		DomUtils.setBorderStyles(element, attributes);
+		DomUtils.setBackgroundStyles(element, attributes);
+	},
+
 	//
 	// setting methods
 	//
 
 	setDialogStyles: function(styles) {
 		if (styles.tagline) {
-			DomUtils.setTextBlockStyles(this.$el.find('.tagline'), styles.tagline);
+			this.setTextBlockStyles(this.$el.find('.tagline'), styles.tagline);
 		}
 		if (styles.description) {
 			DomUtils.setTextStyles(this.$el.find('.description'), styles.description);

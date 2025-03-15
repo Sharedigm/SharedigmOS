@@ -77,7 +77,7 @@
 				}
 			]
 		},
-		"separator",
+		"divider",
 		{
 			"class": "favorites",
 			"icon": "fa fa-star",
@@ -97,7 +97,7 @@
 				}
 			]
 		},
-		"separator",
+		"divider",
 		{
 			"class": "show-info",
 			"icon": "fa fa-info-circle",
@@ -110,7 +110,7 @@
 			"name": "Set Place",
 			"shortcut": "command-shift-P"
 		},
-		"separator",
+		"divider",
 		{
 			"class": "rename-item",
 			"icon": "fa fa-font",
@@ -135,21 +135,21 @@
 			"name": "Download",
 			"shortcut": "shift-command-D"
 		},
-		"separator",
+		"divider",
 		{
 			"class": "empty-trash",
 			"icon": "fa fa-trash-alt",
 			"name": "Empty Trash",
 			"shortcut": "command-E"
 		},
-		"separator",
+		"divider",
 		{
 			"class": "close-tab",
 			"icon": "fa fa-xmark",
 			"name": "Close Tab",
 			"shortcut": "command-L"
 		},
-		"separator",
+		"divider",
 		{
 			"class": "close-window",
 			"icon": "fa fa-circle-xmark",

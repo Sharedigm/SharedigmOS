@@ -12,7 +12,7 @@
 |        'LICENSE.md', which is part of this source code distribution.         |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 import AudioFile from '../../../../../../models/storage/media/audio-file.js';
@@ -88,6 +88,16 @@ export default DirectoryListItemView.extend({
 				name += ' ';
 			}
 			name += 'video';
+		}
+
+		// add extension
+		//
+		let extension = this.model.getFileExtension().toLowerCase();
+		if (extension != '' && extension != 'content') {
+			if (name != '') {
+				name += ' ';
+			}
+			name += extension;
 		}
 
 		// add 'file item'

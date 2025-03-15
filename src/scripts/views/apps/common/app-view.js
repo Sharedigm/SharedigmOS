@@ -12,7 +12,7 @@
 |        'LICENSE.md', which is part of this source code distribution.         |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 import Item from '../../../models/storage/item.js';
@@ -363,13 +363,13 @@ export default BaseView.extend(_.extend({}, ItemDroppable, Highlightable, Timeab
 
 		// add maximized option
 		//
-		if (preferences.has('maximized')) {
+		if (launchOptions.maximized == undefined && preferences.has('maximized')) {
 			launchOptions.maximized = preferences.get('maximized');
 		}
 
 		// add full screen option
 		//
-		if (preferences.has('full_screen')) {
+		if (launchOptions.full_screen == undefined && preferences.has('full_screen')) {
 			launchOptions.full_screen = preferences.get('full_screen');
 		}
 

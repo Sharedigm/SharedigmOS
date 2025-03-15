@@ -236,7 +236,7 @@
 				"name": "Open",
 				"shortcut": "command-O"
 			},
-			"separator",
+			"divider",
 			{
 				"class": "show-info",
 				"icon": "fa fa-info-circle",
@@ -249,7 +249,7 @@
 				"name": "Export As",
 				"shortcut": "command-S"
 			},
-			"separator",
+			"divider",
 			{
 				"class": "close-window",
 				"icon": "fa fa-circle-xmark",
@@ -265,7 +265,7 @@
 				"icon": "fa fa-info-circle",
 				"name": "About"
 			},
-			"separator",
+			"divider",
 			{
 				"class": "view-app",
 				"icon": "fa fa-question-circle",
@@ -276,7 +276,7 @@
 				"icon": "fa fa-newspaper",
 				"name": "Search Community Help"
 			},
-			"separator",
+			"divider",
 			{
 				"class": "contact-us",
 				"icon": "fa fa-envelope",
@@ -362,7 +362,7 @@
 					}
 				]
 			},
-			"separator",
+			"divider",
 			{
 				"class": "share-by-link",
 				"icon": "fa fa-link",
@@ -381,39 +381,39 @@
 				"class": "show-sidebar",
 				"icon": "fa fa-pause",
 				"name": "Sidebar",
-				"select": true,
+				"state": "unselected",
 				"menu": [
 					{
 						"class": "show-activity-panel",
 						"group": "show-sidebar-panel",
 						"icon": "fa fa-table",
 						"name": "Activity",
-						"select": true
+						"state": "unselected"
 					},
 					{
 						"class": "show-status-panel",
 						"group": "show-sidebar-panel",
 						"icon": "fa fa-signal",
 						"name": "Status",
-						"select": true
+						"state": "unselected"
 					},
 					{
 						"class": "show-actions-panel",
 						"group": "show-sidebar-panel",
 						"icon": "fa fa-play-circle",
 						"name": "Actions",
-						"select": true
+						"state": "unselected"
 					},
 					{
 						"class": "show-mutual-connections-panel",
 						"group": "show-sidebar-panel",
 						"icon": "fa fa-user-friends",
 						"name": "Mutual Connections",
-						"select": true
+						"state": "unselected"
 					}
 				]
 			},
-			"separator",
+			"divider",
 			{
 				"class": "window-size",
 				"icon": "far fa-window-maximize",
@@ -439,12 +439,12 @@
 					}
 				]
 			},
-			"separator",
+			"divider",
 			{
 				"class": "spaces",
 				"icon": "far fa-window-maximize",
 				"name": "Spaces",
-				"select": true,
+				"state": "unselected",
 				"menu": [
 					{
 						"class": "prev-space",
@@ -464,7 +464,7 @@
 				"class": "windows",
 				"icon": "far fa-window-restore",
 				"name": "Windows",
-				"select": true,
+				"state": "unselected",
 				"menu": [
 					{
 						"class": "minimize-all",
@@ -483,9 +483,9 @@
 				"icon": "fa fa-desktop",
 				"name": "Full Screen",
 				"shortcut": "command-up arrow",
-				"select": true
+				"state": "unselected"
 			},
-			"separator",
+			"divider",
 			{
 				"class": "view-preferences",
 				"icon": "fa fa-snowflake",

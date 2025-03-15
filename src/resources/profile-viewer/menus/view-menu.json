@@ -4,39 +4,39 @@
 			"class": "show-sidebar",
 			"icon": "fa fa-pause",
 			"name": "Sidebar",
-			"select": true,
+			"state": "unselected",
 			"menu": [
 				{
 					"class": "show-activity-panel",
 					"group": "show-sidebar-panel",
 					"icon": "fa fa-table",
 					"name": "Activity",
-					"select": true
+					"state": "unselected"
 				},
 				{
 					"class": "show-status-panel",
 					"group": "show-sidebar-panel",
 					"icon": "fa fa-signal",
 					"name": "Status",
-					"select": true
+					"state": "unselected"
 				},
 				{
 					"class": "show-actions-panel",
 					"group": "show-sidebar-panel",
 					"icon": "fa fa-play-circle",
 					"name": "Actions",
-					"select": true
+					"state": "unselected"
 				},
 				{
 					"class": "show-mutual-connections-panel",
 					"group": "show-sidebar-panel",
 					"icon": "fa fa-user-friends",
 					"name": "Mutual Connections",
-					"select": true
+					"state": "unselected"
 				}
 			]
 		},
-		"separator",
+		"divider",
 		{
 			"class": "window-size",
 			"icon": "far fa-window-maximize",
@@ -62,12 +62,12 @@
 				}
 			]
 		},
-		"separator",
+		"divider",
 		{
 			"class": "spaces",
 			"icon": "far fa-window-maximize",
 			"name": "Spaces",
-			"select": true,
+			"state": "unselected",
 			"menu": [
 				{
 					"class": "prev-space",
@@ -87,7 +87,7 @@
 			"class": "windows",
 			"icon": "far fa-window-restore",
 			"name": "Windows",
-			"select": true,
+			"state": "unselected",
 			"menu": [
 				{
 					"class": "minimize-all",
@@ -106,9 +106,9 @@
 			"icon": "fa fa-desktop",
 			"name": "Full Screen",
 			"shortcut": "command-up arrow",
-			"select": true
+			"state": "unselected"
 		},
-		"separator",
+		"divider",
 		{
 			"class": "view-preferences",
 			"icon": "fa fa-snowflake",

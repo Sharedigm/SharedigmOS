@@ -7,7 +7,7 @@
 |        This defines a view of a selectable, unscaled marker element.         |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 import ShapeView from '../../../views/svg/shapes/shape-view.js';

@@ -34,7 +34,7 @@
 			"name": "Upload",
 			"shortcut": "command-U"
 		},
-		"separator",
+		"divider",
 		{
 			"class": "show-info",
 			"icon": "fa fa-info-circle",
@@ -47,7 +47,7 @@
 			"name": "Show on Map",
 			"shortcut": "command-M"
 		},
-		"separator",
+		"divider",
 		{
 			"class": "share",
 			"icon": "fa fa-share",
@@ -58,7 +58,7 @@
 					"icon": "fa fa-user-friends",
 					"name": "By Invitation"
 				},
-				"separator",
+				"divider",
 				{
 					"class": "share-by-topic",
 					"icon": "fa fa-newspaper",
@@ -69,7 +69,7 @@
 					"icon": "fa fa-comments",
 					"name": "By Chat Messsage"
 				},
-				"separator",
+				"divider",
 				{
 					"class": "share-by-link",
 					"icon": "fa fa-link",
@@ -82,7 +82,7 @@
 				}
 			]
 		},
-		"separator",
+		"divider",
 		{
 			"class": "rename-item",
 			"icon": "fa fa-font",
@@ -101,7 +101,7 @@
 			"name": "Download",
 			"shortcut": "shift-command-D"
 		},
-		"separator",
+		"divider",
 		{
 			"class": "set-profile",
 			"icon": "fa fa-user",
@@ -112,7 +112,7 @@
 			"icon": "fa fa-desktop",
 			"name": "Set Background Picture"
 		},
-		"separator",
+		"divider",
 		{
 			"class": "delete-item",
 			"icon": "fa fa-trash-alt",
@@ -125,7 +125,7 @@
 			"name": "Empty Trash",
 			"shortcut": "command-E"
 		},
-		"separator",
+		"divider",
 		{
 			"class": "change-background",
 			"icon": "fa fa-image",

@@ -12,7 +12,7 @@
 |        'LICENSE.md', which is part of this source code distribution.         |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 import MenuView from '../../../../../../views/apps/common/header-bar/menu-bar/menus/menu-view.js';
@@ -60,7 +60,13 @@ export default MenuView.extend({
 		// add file types
 		//
 		if (files) {
-			items.push('separator');
+
+			// add menu divider
+			//
+			items.push('divider');
+
+			// add file menu items
+			//
 			let keys = Object.keys(files);
 			for (let i = 0; i < keys.length; i++) {
 				let key = keys[i];

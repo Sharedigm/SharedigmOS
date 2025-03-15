@@ -12,7 +12,7 @@
 |        'LICENSE.md', which is part of this source code distribution.         |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 import Audio from '../utilities/multimedia/audio.js';
@@ -74,6 +74,24 @@ export default {
 
 	setMuted: function(muted) {
 
+		// set muted setting
+		//
+		this.settings.system.set('mute_sounds', muted);
+	},
+
+	setVolume: function(volume) {
+
+		// set volume setting
+		//
+		this.settings.system.set('volume', volume);
+	},
+
+	//
+	// saving methods
+	//
+
+	saveMuted: function(muted) {
+
 		// save muted setting
 		//
 		this.settings.system.save({
@@ -81,7 +99,7 @@ export default {
 		});
 	},
 
-	setVolume: function(volume) {
+	saveVolume: function(volume) {
 
 		// save volume setting
 		//
@@ -94,7 +112,7 @@ export default {
 	// playing methods
 	//
 
-	play: function(kind) {
+	play: function(kind, options) {
 		if (this.isMuted()) {
 			return;
 		}
@@ -109,10 +127,11 @@ export default {
 		//
 		let sound = this.getSound(kind);
 		if (sound) {
+			let volume = options && options.volume? options.volume : this.getVolume();
 
 			// play sound
 			//
-			sound.setVolume(this.getVolume() / 10);
+			sound.setVolume(volume / 10);
 			sound.play(this.audio);
 		}
 	}

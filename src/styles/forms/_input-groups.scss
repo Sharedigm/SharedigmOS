@@ -12,7 +12,7 @@
 |        'LICENSE.txt', which is part of this source code distribution.        |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 //
@@ -79,7 +79,6 @@ $rounded-border-radius: 5px;
 		background-color: white;
 
 		> select {
-			height: auto;
 			height: 25px;
 			border-radius: 0;
 			border-top: none;
@@ -89,6 +88,10 @@ $rounded-border-radius: 5px;
 				width: 20px;
 				padding: 0 4px;
 			}
+		}
+
+		> .units {
+			min-width: 50px;
 		}
 
 		i {

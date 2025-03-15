@@ -18,15 +18,15 @@
 			"name": "Invert",
 			"shortcut": "shift-command-I"
 		},
-		"separator",
+		"divider",
 		{
 			"class": "select-multiple",
 			"icon": "fa fa-ellipsis-h",
 			"name": "Multiple",
 			"shortcut": "shift-command-M",
-			"select": true
+			"state": "unselected"
 		},
-		"separator",
+		"divider",
 		{
 			"class": "select-first",
 			"icon": "fa fa-fast-backward",
@@ -51,7 +51,7 @@
 			"name": "Last",
 			"shortcut": "down arrow"
 		},
-		"separator",
+		"divider",
 		{
 			"class": "select-before",
 			"icon": "fa fa-long-arrow-left",
@@ -64,7 +64,7 @@
 			"name": "After",
 			"shortcut": "command-0"
 		},
-		"separator",
+		"divider",
 		{
 			"class": "select-files",
 			"icon": "fa fa-file",

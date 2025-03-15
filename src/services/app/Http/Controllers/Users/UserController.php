@@ -5,15 +5,15 @@
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This is a controller for users' authentication information.           |
+|       This is a controller for users' authentication information.            |
 |                                                                              |
-|        Author(s): Abe Megahed                                                |
+|       Author(s): Abe Megahed                                                 |
 |                                                                              |
-|        This file is subject to the terms and conditions defined in           |
-|        'LICENSE.txt', which is part of this source code distribution.        |
+|       This file is subject to the terms and conditions defined in            |
+|       'LICENSE.txt', which is part of this source code distribution.         |
 |                                                                              |
 |******************************************************************************|
-|            Copyright (C) 2016-2024, Sharedigm, www.sharedigm.com             |
+|       Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com         |
 \******************************************************************************/
 
 namespace App\Http\Controllers\Users;
@@ -87,6 +87,24 @@ class UserController extends Controller
 			return response(json_encode($errors), 409);
 		}
 
+		// create user storage
+		//
+		if ($request->has('key')) {
+
+			// create remote user storage
+			//
+			$userStorage = new UserStorage([
+				'id' => Guid::create(),
+				'user_id' => $user->id,
+				'host' => $request->input('host'),
+				'key' => $request->input('key'),
+				'secret' => $request->input('secret'),
+				'region' => $request->input('region'),
+				'bucket' => $request->input('bucket')
+			]);
+			$userStorage->save();
+		}
+
 		// add new user
 		//
 		$user->save();
@@ -114,29 +132,6 @@ class UserController extends Controller
 					$inviter->account->incrementDiskQuota(config('app.invitation_disk_quota_bonus'));
 				}
 			}
-		}
-
-		// create user storage
-		//
-		if ($request->has('key')) {
-
-			// create remote user storage
-			//
-			$userStorage = new UserStorage([
-				'id' => Guid::create(),
-				'user_id' => $user->id,
-				'host' => $request->input('host'),
-				'key' => $request->input('key'),
-				'secret' => $request->input('secret'),
-				'region' => $request->input('region'),
-				'bucket' => $request->input('bucket')
-			]);
-			$userStorage->save();
-		} else {
-
-			// create default folders in local storage
-			//
-			$userAccount->createDefaultFolders();
 		}
 
 		return $user;

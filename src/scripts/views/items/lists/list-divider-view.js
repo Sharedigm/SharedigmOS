@@ -7,7 +7,7 @@
 |        This defines a view of a single list divider item.                    |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 import ListItemView from '../../../views/collections/lists/list-item-view.js';

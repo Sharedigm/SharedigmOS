@@ -12,7 +12,7 @@
 |        'LICENSE.md', which is part of this source code distribution.         |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 import CardView from '../../../../../../views/items/cards/card-view.js';
@@ -65,7 +65,7 @@ export default CardView.extend({
 	//
 
 	className: function() {
-		let id = this.has('id')? this.get('id').replace('_', '-') : undefined;
+		let id = this.has('id')? this.get('id').replace(/_/g, '-') : undefined;
 		return (Browser.is_mobile? '' : 'unflickable ') + id + ' item';
 	},
 

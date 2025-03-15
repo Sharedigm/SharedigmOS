@@ -12,7 +12,7 @@
 |        'LICENSE.md', which is part of this source code distribution.         |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 import File from '../../../../../models/storage/files/file.js';
@@ -156,7 +156,6 @@ export default _.extend({}, MultiDoc, {
 		//
 		if (file) {
 			this.model = file;
-			this.directory = file.parent;
 		}
 
 		// add to currently open list of files

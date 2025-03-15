@@ -12,7 +12,7 @@
 |        'LICENSE.md', which is part of this source code distribution.         |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 import ViewMenuView from '../../../../../../views/apps/common/header-bar/menu-bar/menus/view-menu-view.js';
@@ -102,14 +102,15 @@ export default ViewMenuView.extend({
 		let numFiles = this.parent.app.model.get('num_files');
 		let isWindowed = !isDesktop;
 		let hasMapViewer = application.hasApp('map_viewer');
+		let isMappable = hasMapViewer && this.parent.app.hasGeolocatedItems && this.parent.app.hasGeolocatedItems();
 
 		return _.extend({}, ViewMenuView.prototype.visible.call(this), {
 			'view-gallery': numFiles && numFiles.image > 0,
 			'view-audio': numFiles && numFiles.audio > 0,
 			'view-photo': numFiles && numFiles.image > 0,
 			'view-video': numFiles && numFiles.video > 0,
-			'view-maps': hasMapViewer,
-			'map-items': hasMapViewer,
+			'view-maps': isMappable,
+			'map-items': isMappable,
 			'toolbars': true,
 
 			// window items

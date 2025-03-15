@@ -7,7 +7,7 @@
 |        This is a definition of an svg viewport that may be annotated.        |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 import MultiLayerViewportView from '../../../views/svg/viewports/multilayer-viewport-view.js';

@@ -12,7 +12,7 @@
 |        'LICENSE.md', which is part of this source code distribution.         |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 import BaseView from '../../../../../../views/base-view.js';
@@ -53,7 +53,7 @@ export default BaseView.extend({
 		</div>
 		<% } %>
 
-		<% if (has_index && config.defaults.search && config.defaults.search.index) { %>
+		<% if (has_index && has_search_viewer) { %>
 		<div class="index active badge" data-toggle="tooltip" title="added to search index" data-placement="bottom">
 			<i class="fa fa-list"></i>
 		</div>
@@ -146,6 +146,7 @@ export default BaseView.extend({
 			has_geolocation: this.model.hasGeolocation && this.model.hasGeolocation(),
 			has_geoposition: this.model.hasGeoposition && this.model.hasGeoposition(),
 			has_index: this.model.hasIndex(),
+			has_search_viewer: application.hasApp('search_viewer'),
 			num_indices: this.model.get('num_indices'),
 			num_shares: this.model.get('num_shares'),
 			num_links: this.model.get('num_links'),

@@ -5,7 +5,7 @@
 			"icon": "fa fa-info-circle",
 			"name": "About"
 		},
-		"separator",
+		"divider",
 		{
 			"class": "view-app",
 			"icon": "fa fa-question-circle",
@@ -16,7 +16,7 @@
 			"icon": "fa fa-newspaper",
 			"name": "Search Community Help"
 		},
-		"separator",
+		"divider",
 		{
 			"class": "contact-us",
 			"icon": "fa fa-envelope",

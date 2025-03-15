@@ -7,7 +7,7 @@
 |        This is a set of utilities for handling cascading style sheets.       |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 import '../scripting/string-utils.js';

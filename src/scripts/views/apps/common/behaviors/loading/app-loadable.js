@@ -12,7 +12,7 @@
 |        'LICENSE.md', which is part of this source code distribution.         |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 export default {
@@ -22,7 +22,7 @@ export default {
 	//
 
 	loadAppView: function(appName, options) {
-		let dirname = appName.replace('_', '-');
+		let dirname = appName.replace(/_/g, '-');
 		let filename = dirname + '-view.js';
 
 		import(
