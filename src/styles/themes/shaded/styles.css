@@ -46,63 +46,63 @@ body:not(.binary).colored #desktop.colored,
 body:not(.binary).colored .desktop.preview.colored,
 body:not(.binary).colored #desktop.auto-colored,
 body:not(.binary).colored .desktop.preview.auto-colored {
-  background-color: color-mix(in srgb, #404040 66%, var(--primary-color));
+  background-color: color-mix(in srgb, #404040 50%, var(--primary-color));
 }
 body:not(.binary).colored #desktop.colored.red,
 body:not(.binary).colored .desktop.preview.colored.red, body:not(.binary).colored.red #desktop.auto-colored, body:not(.binary).colored.red .desktop.preview.auto-colored {
-  background-color: #783333;
+  background-color: #932d2d;
 }
 body:not(.binary).colored #desktop.colored.orange,
 body:not(.binary).colored .desktop.preview.colored.orange, body:not(.binary).colored.orange #desktop.auto-colored, body:not(.binary).colored.orange .desktop.preview.auto-colored {
-  background-color: #785633;
+  background-color: #93602d;
 }
 body:not(.binary).colored #desktop.colored.gold,
 body:not(.binary).colored .desktop.preview.colored.gold, body:not(.binary).colored.gold #desktop.auto-colored, body:not(.binary).colored.gold .desktop.preview.auto-colored {
-  background-color: #766635;
+  background-color: #907830;
 }
 body:not(.binary).colored #desktop.colored.yellow,
 body:not(.binary).colored .desktop.preview.colored.yellow, body:not(.binary).colored.yellow #desktop.auto-colored, body:not(.binary).colored.yellow .desktop.preview.auto-colored {
-  background-color: #6b6b40;
+  background-color: #808040;
 }
 body:not(.binary).colored #desktop.colored.green,
 body:not(.binary).colored .desktop.preview.colored.green, body:not(.binary).colored.green #desktop.auto-colored, body:not(.binary).colored.green .desktop.preview.auto-colored {
-  background-color: #415847;
+  background-color: #42644b;
 }
 body:not(.binary).colored #desktop.colored.teal,
 body:not(.binary).colored .desktop.preview.colored.teal, body:not(.binary).colored.teal #desktop.auto-colored, body:not(.binary).colored.teal .desktop.preview.auto-colored {
-  background-color: #375151;
+  background-color: #335a5a;
 }
 body:not(.binary).colored #desktop.colored.aqua,
 body:not(.binary).colored .desktop.preview.colored.aqua, body:not(.binary).colored.aqua #desktop.auto-colored, body:not(.binary).colored.aqua .desktop.preview.auto-colored {
-  background-color: #3c535e;
+  background-color: #3a5c6d;
 }
 body:not(.binary).colored #desktop.colored.cyan,
 body:not(.binary).colored .desktop.preview.colored.cyan, body:not(.binary).colored.cyan #desktop.auto-colored, body:not(.binary).colored.cyan .desktop.preview.auto-colored {
-  background-color: #356781;
+  background-color: #307aa0;
 }
 body:not(.binary).colored #desktop.colored.blue,
 body:not(.binary).colored .desktop.preview.colored.blue, body:not(.binary).colored.blue #desktop.auto-colored, body:not(.binary).colored.blue .desktop.preview.auto-colored {
-  background-color: #354e81;
+  background-color: #3055a0;
 }
 body:not(.binary).colored #desktop.colored.violet,
 body:not(.binary).colored .desktop.preview.colored.violet, body:not(.binary).colored.violet #desktop.auto-colored, body:not(.binary).colored.violet .desktop.preview.auto-colored {
-  background-color: #454158;
+  background-color: #484264;
 }
 body:not(.binary).colored #desktop.colored.magenta,
 body:not(.binary).colored .desktop.preview.colored.magenta, body:not(.binary).colored.magenta #desktop.auto-colored, body:not(.binary).colored.magenta .desktop.preview.auto-colored {
-  background-color: #514158;
+  background-color: #594264;
 }
 body:not(.binary).colored #desktop.colored.brown,
 body:not(.binary).colored .desktop.preview.colored.brown, body:not(.binary).colored.brown #desktop.auto-colored, body:not(.binary).colored.brown .desktop.preview.auto-colored {
-  background-color: #574d42;
+  background-color: #635344;
 }
 body:not(.binary).colored #desktop.colored.grey,
 body:not(.binary).colored .desktop.preview.colored.grey, body:not(.binary).colored.grey #desktop.auto-colored, body:not(.binary).colored.grey .desktop.preview.auto-colored {
-  background-color: #444456;
+  background-color: #474760;
 }
 body:not(.binary).colored #desktop.colored.black,
 body:not(.binary).colored .desktop.preview.colored.black, body:not(.binary).colored.black #desktop.auto-colored, body:not(.binary).colored.black .desktop.preview.auto-colored {
-  background-color: #2a2a2a;
+  background-color: #202020;
 }
 
 /******************************************************************************\
