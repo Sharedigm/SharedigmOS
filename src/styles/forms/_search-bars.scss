@@ -88,6 +88,16 @@ $rounded-border-radius: 5px;
 			}
 		}
 	}
+
+	.search-status {
+		.well {
+			line-height: 25px;
+			
+			.buttons {
+				float: right;
+			}
+		}
+	}
 }
 
 //

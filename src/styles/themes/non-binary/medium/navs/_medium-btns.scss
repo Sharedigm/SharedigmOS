@@ -41,17 +41,14 @@ body:not(.binary) {
 	//
 
 	.btn {
-		@include colored-btns.colored($color);
-		@include colored-btns.label($label-color);
-		@include colored-btns.icon($icon-color);
+		@include colored-btns.colored($color, $label-color, $icon-color);
 
 		//
 		// disabled buttons
 		//
 
 		&:disabled {
-			@include colored-btns.colored($disabled-color);
-			@include colored-btns.labeled($disabled-label-color);
+			@include colored-btns.colored($disabled-color, $disabled-label-color, $disabled-icon-color);
 		}
 	}
 

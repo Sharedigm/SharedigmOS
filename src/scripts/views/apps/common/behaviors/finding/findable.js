@@ -49,7 +49,7 @@ export default {
 			// show find dialog
 			//
 			application.show(new FindDialogView.default(_.extend(this.find.options || {}, {
-				needle: this.getSelected() || this.find.needle,
+				needle: this.find.needle || (this.getSelectedText && this.getSelectedText()),
 
 				// callbacks
 				//

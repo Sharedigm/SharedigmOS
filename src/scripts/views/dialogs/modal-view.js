@@ -61,7 +61,8 @@ export default BaseView.extend(_.extend({}, Positionable, Draggable, Stackable, 
 
 		// keyboard events
 		//
-		'keydown': 'onKeyDown'
+		'keydown': 'onKeyDown',
+		'keyup': 'onKeyUp'
 	},
 
 	//
@@ -372,7 +373,7 @@ export default BaseView.extend(_.extend({}, Positionable, Draggable, Stackable, 
 		if (!this.minimizable) {
 			this.$el.addClass('backdrop');
 		}
-		
+
 		// focus form
 		//
 		if (this.hasChildView('form')) {
@@ -460,6 +461,16 @@ export default BaseView.extend(_.extend({}, Positionable, Draggable, Stackable, 
 		let view = this.getChildView('content');
 		if (view && view.onKeyDown) {
 			view.onKeyDown(event);
+		}
+	},
+
+	onKeyUp: function(event) {
+
+		// delegate key events to modal content
+		//
+		let view = this.getChildView('content');
+		if (view && view.onKeyUp) {
+			view.onKeyUp(event);
 		}
 	},
 

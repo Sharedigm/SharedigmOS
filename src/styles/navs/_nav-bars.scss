@@ -22,10 +22,11 @@
 // variables
 //
 
-$nav-bar-shadow: 0 0 10px rgba(black, 15%);
-$nav-bar-brand-padding: 0 10px;
-$nav-bar-brand-min-width: 40px;
-$nav-bar-brand-logo-height: 20px;
+$shadow: 0 0 10px rgba(black, 15%);
+$brand-padding: 0 10px;
+$brand-min-width: 40px;
+$brand-logo-height: 20px;
+$item-padding: 0 10px;
 $indicator-bar-shadow: 1px 1px 5px rgba(black, 50%);
 $round-border-radius: 30px;
 $rounded-border-radius: 5px;
@@ -43,13 +44,13 @@ $rounded-border-radius: 5px;
 	margin-bottom: 0;
 
 	&.shadowed {
-		box-shadow: $nav-bar-shadow;
+		box-shadow: $shadow;
 	}
 
 	.navbar-brand {
-		min-width: $nav-bar-brand-min-width;
+		min-width: $brand-min-width;
 		height: 100%;
-		padding: $nav-bar-brand-padding;
+		padding: $brand-padding;
 		flex-shrink: 0;
 
 		.brand {
@@ -60,7 +61,7 @@ $rounded-border-radius: 5px;
 
 			.logo {
 				display: flex;
-				height: $nav-bar-brand-logo-height;
+				height: $brand-logo-height;
 				max-height: 100%;
 				margin: auto;
 			}
@@ -197,7 +198,7 @@ $rounded-border-radius: 5px;
 		> li {
 
 			> a {
-				padding: 0 15px;
+				padding: $item-padding;
 				margin: auto;
 
 				> label {
@@ -312,15 +313,22 @@ $rounded-border-radius: 5px;
 	background-color: black;
 }
 
+//
+// center aligned headers
+//
+
 #header.center-aligned .navbar {
 	.navbar-brand {
 		justify-content: left;
+		flex-basis: 10%;
+		min-width: min-content;
 	}
-	.navbar-nav {
+	.navbar-nav.nav {
 		justify-content: center;
 	}
 	.navbar-nav:last-child {
 		justify-content: right;
+		flex-basis: 10%;
 	}
 }
 

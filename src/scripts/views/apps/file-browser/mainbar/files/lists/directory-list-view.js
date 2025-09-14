@@ -48,7 +48,7 @@ export default ListView.extend({
 
 		// apply file list icon styles
 		//
-		this.constructor.applyFileStyles(config.files.files.extensions);
+		this.constructor.applyFileStyles(config.settings.files.files.extensions);
 	}
 }, {
 

@@ -1,0 +1,11 @@
+{
+	"name": "Settings",
+	"icon": "fa fa-cogs",
+	"category": "configuration",
+	"platform": "all",
+	"access": "all",
+	"disabled": false,
+	"hidden": false,
+	"args": false,
+	"color": "grey"
+}

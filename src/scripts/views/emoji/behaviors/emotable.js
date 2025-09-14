@@ -36,9 +36,9 @@ export default {
 
 		// load emoji
 		//
-		if (!config.emoji) {
-			fetch('config/emoji.json').then((response) => response.json()).then((json) => {
-				config.emoji = json;
+		if (!config.settings.emoji) {
+			fetch('settings/emoji.json').then((response) => response.json()).then((json) => {
+				config.settings.emoji = json;
 				this.showEmojiSelector(options);
 			});
 			return;

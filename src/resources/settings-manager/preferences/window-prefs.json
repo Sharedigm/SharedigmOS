@@ -1,0 +1,26 @@
+[
+	{
+		"name": "window-size",
+		"icon": "fa fa-arrows-alt",
+		"text": "Window Size",
+		"kind": "select",
+		"options": {
+			"tiny": "Tiny",
+			"small": "Small",
+			"medium": "Medium",
+			"large": "Large"
+		},
+		"help": "This is the maximum initial size of the application window."
+	},
+	{
+		"name": "window-state",
+		"icon": "fa fa-window-maximize",
+		"text": "Window State",
+		"kind": "multiple-answer",
+		"options": {
+			"maximized": "Maximized",
+			"full-screen": "Full Screen"
+		},
+		"help": "This is the initial state of the application window."
+	}
+]

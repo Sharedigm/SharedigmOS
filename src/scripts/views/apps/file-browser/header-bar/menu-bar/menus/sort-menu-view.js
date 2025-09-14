@@ -24,8 +24,8 @@ export default SortMenuView.extend({
 	//
 
 	events: {
-		'click .sort-by a': 'onClickSortBy',
-		'click .sort-order a': 'onClickSortOrder'
+		'click .sort-kind': 'onClickSortKind',
+		'click .sort-order': 'onClickSortOrder'
 	},
 
 	//
@@ -41,25 +41,23 @@ export default SortMenuView.extend({
 
 	selected: function() {
 		let preferences = this.parent.app.preferences;
-		let sortKind = preferences.get('sort_kind');
-		let sortOrder = preferences.get('sort_order');
 
 		return {
-			'name': sortKind == 'name',
-			'kind': sortKind == 'kind',
-			'size': sortKind == 'size',
-			'create-date': sortKind == 'create_date',
-			'modify-date': sortKind == 'modify_date',
-			'access-date': sortKind == 'access_date',
-			'resolution': sortKind == 'resolution',
-			'make-model': sortKind == 'make_model',
-			'focal-length': sortKind == 'focal_length',
-			'aperture': sortKind == 'aperture',
-			'exposure': sortKind == 'exposure',
-			'iso': sortKind == 'iso',
-			'capture-date': sortKind == 'capture_date',
-			'sort-increasing': sortOrder == 'increasing',
-			'sort-decreasing': sortOrder == 'decreasing'
+			'sort-kind name': preferences.matches('sort_kind', 'name'),
+			'sort-kind kind': preferences.matches('sort_kind', 'kind'),
+			'sort-kind size': preferences.matches('sort_kind', 'size'),
+			'sort-kind create-date': preferences.matches('sort_kind', 'create_date'),
+			'sort-kind modify-date': preferences.matches('sort_kind', 'modify_date'),
+			'sort-kind access-date': preferences.matches('sort_kind', 'access_date'),
+			'sort-kind resolution': preferences.matches('sort_kind', 'resolution'),
+			'sort-kind make-model': preferences.matches('sort_kind', 'make_model'),
+			'sort-kind focal-length': preferences.matches('sort_kind', 'focal_length'),
+			'sort-kind aperture': preferences.matches('sort_kind', 'aperture'),
+			'sort-kind exposure': preferences.matches('sort_kind', 'exposure'),
+			'sort-kind iso': preferences.matches('sort_kind', 'iso'),
+			'sort-kind capture-date': preferences.matches('sort_kind', 'capture_date'),
+			'sort-order increasing': preferences.matches('sort_order', 'increasing'),
+			'sort-order decreasing': preferences.matches('sort_order', 'decreasing')
 		};
 	},
 

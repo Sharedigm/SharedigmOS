@@ -142,9 +142,20 @@ $diffuse-offset: 50%;
 			$color 50%,
 			lighting.darken($color, 10%) 100%) no-repeat;
 
+	// borders
+	//
+	@if ($border-style == inset) {
+		border-color: lighting.lighten($color, 10%);
+	} @else if ($border-style == outset) {
+		border-color: lighting.darken($color, 10%);
+	} @else if ($border-style != none) {
+		border-color: $color;
+	}
+
+	// overlay layer
+	//
 	position: relative;
 	overflow: hidden;
-
 	&:after {
 		position: absolute;
 		content: '';
@@ -177,16 +188,6 @@ $diffuse-offset: 50%;
 				white calc($highlight-offset + $highlight-width / 2 + $border-width),
 				black calc(33% + $border-width)) no-repeat;
 	}
-
-	// borders
-	//
-	@if ($border-style == inset) {
-		border-color: lighting.lighten($color, 10%);
-	} @else if ($border-style == outset) {
-		border-color: lighting.darken($color, 10%);
-	} @else if ($border-style != none) {
-		border-color: $color;
-	}
 }
 
 @mixin vertical-multilayer-shade($color: white, $border-radius: 50%, $border-style: outset, $border-width: 2px) {
@@ -211,9 +212,20 @@ $diffuse-offset: 50%;
 			$color 50%,
 			lighting.darken($color, 10%) 100%) no-repeat;
 
+	// borders
+	//
+	@if ($border-style == inset) {
+		border-color: lighting.lighten($color, 10%);
+	} @else if ($border-style == outset) {
+		border-color: lighting.darken($color, 10%);
+	} @else if ($border-style != none) {
+		border-color: $color;
+	}
+
+	// overlay layer
+	//
 	position: relative;
 	overflow: hidden;
-
 	&:after {
 		position: absolute;
 		content: '';
@@ -245,16 +257,6 @@ $diffuse-offset: 50%;
 				white calc($highlight-offset - $highlight-width / 2 + $border-width),
 				white calc($highlight-offset + $highlight-width / 2 + $border-width),
 				transparent calc(33% + $border-width)) no-repeat;
-	}
-
-	// borders
-	//
-	@if ($border-style == inset) {
-		border-color: lighting.lighten($color, 10%);
-	} @else if ($border-style == outset) {
-		border-color: lighting.darken($color, 10%);
-	} @else if ($border-style != none) {
-		border-color: $color;
 	}
 }
 
@@ -370,9 +372,20 @@ $diffuse-offset: 50%;
 			$color 50%,
 			lighting.darkened($color, 10%) 100%) no-repeat;
 
+	// borders
+	//
+	@if ($border-style == inset) {
+		border-color: lighting.lightened($color, 10%);
+	} @else if ($border-style == outset) {
+		border-color: lighting.darkened($color, 10%);
+	} @else if ($border-style != none) {
+		border-color: $color;
+	}
+
+	// overlay layer
+	//
 	position: relative;
 	overflow: hidden;
-
 	&:after {
 		position: absolute;
 		content: '';
@@ -405,16 +418,6 @@ $diffuse-offset: 50%;
 				white calc($highlight-offset + $highlight-width / 2 + $border-width),
 				black calc(33% + $border-width)) no-repeat;
 	}
-
-	// borders
-	//
-	@if ($border-style == inset) {
-		border-color: lighting.lightened($color, 10%);
-	} @else if ($border-style == outset) {
-		border-color: lighting.darkened($color, 10%);
-	} @else if ($border-style != none) {
-		border-color: $color;
-	}
 }
 
 @mixin vertical-multilayer-shaded($color: white, $border-radius: 50%, $border-style: outset, $border-width: 2px) {
@@ -439,9 +442,20 @@ $diffuse-offset: 50%;
 			$color 50%,
 			lighting.darken($color, 10%) 100%) no-repeat;
 
+	// borders
+	//
+	@if ($border-style == inset) {
+		border-color: lighting.lightened($color, 10%);
+	} @else if ($border-style == outset) {
+		border-color: lighting.darkened($color, 10%);
+	} @else if ($border-style != none) {
+		border-color: $color;
+	}
+
+	// overlay layer
+	//
 	position: relative;
 	overflow: hidden;
-
 	&:after {
 		position: absolute;
 		content: '';
@@ -473,15 +487,5 @@ $diffuse-offset: 50%;
 				white calc($highlight-offset - $highlight-width / 2 + $border-width),
 				white calc($highlight-offset + $highlight-width / 2 + $border-width),
 				transparent calc(33% + $border-width)) no-repeat;
-	}
-
-	// borders
-	//
-	@if ($border-style == inset) {
-		border-color: lighting.lightened($color, 10%);
-	} @else if ($border-style == outset) {
-		border-color: lighting.darkened($color, 10%);
-	} @else if ($border-style != none) {
-		border-color: $color;
 	}
 }

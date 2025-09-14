@@ -76,6 +76,10 @@ $box-shadow: 5px 5px 20px rgba(black, 10%);
 			display: inline-block;
 			text-align: center;
 			vertical-align: middle;
+
+			i {
+				width: auto;
+			}
 		}
 
 		.rotator {
@@ -344,7 +348,7 @@ $box-shadow: 5px 5px 20px rgba(black, 10%);
 //
 
 .thin-menu-bars {
-	.header-bar, .footer-bar {
+	.header-bar {
 		.toolbar {
 			height: 25px;
 

@@ -95,7 +95,7 @@ export default AppView.extend({
 		if (this.hasChildView('sidebar')) {
 			return this.getChildView('sidebar').isVisible();
 		} else {
-			return this.preferences.get('show_sidebar');
+			return this.preferences.includes('panes', 'sidebar');
 		}
 	},
 
@@ -228,6 +228,16 @@ export default AppView.extend({
 				this.setSideBarVisibility(value);
 				break;
 
+			// sidebar options
+			//
+			case 'panes':
+
+				// show / hide sidebar
+				//
+				this.setSideBarVisibility(value.includes('sidebar'));
+				this.getChildView('mainbar').setOption(key, value);
+				break;
+
 			case 'sidebar_size':
 				this.getChildView('contents').setSideBarSize(value);
 				break;
@@ -256,7 +266,7 @@ export default AppView.extend({
 			//		
 			case 'window_size':
 				if (this.dialog) {
-					this.dialog.setSize(config.defaults.dialogs.sizes[value]);
+					this.dialog.setSize(config.settings.defaults.dialogs.sizes[value]);
 				}
 				break;
 	
@@ -320,7 +330,7 @@ export default AppView.extend({
 
 		// show / hide sidebar
 		//
-		if (!this.preferences || this.preferences.get('show_sidebar')) {
+		if (!this.preferences || this.preferences.includes('panes', 'sidebar')) {
 			this.showSideBar();
 		} else {
 			this.getChildView('contents').hideSideBar();

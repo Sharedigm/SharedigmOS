@@ -1,135 +1,133 @@
-{
-	"items": [
-		{
-			"class": "new-folder",
-			"icon": "fa fa-folder",
-			"name": "New Folder",
-			"shortcut": "command-enter"
-		},
-		{
-			"class": "open-item",
-			"icon": "fa fa-folder-open",
-			"name": "Open",
-			"shortcut": "command-O"
-		},
-		{
-			"class": "open-with",
-			"icon": "fa fa-folder-open",
-			"name": "Open With"
-		},
-		{
-			"class": "open-selected",
-			"icon": "fa fa-folder-open",
-			"name": "Open Selected",
-			"shortcut": "enter"
-		},
-		{
-			"class": "open-in-new-window",
-			"icon": "fa fa-folder-open",
-			"name": "Open in New Window"
-		},
-		{
-			"class": "upload-item",
-			"icon": "fa fa-upload",
-			"name": "Upload",
-			"shortcut": "command-U"
-		},
-		"divider",
-		{
-			"class": "show-info",
-			"icon": "fa fa-info-circle",
-			"name": "Show Info",
-			"shortcut": "command-I"
-		},
-		{
-			"class": "show-on-map",
-			"icon": "fa fa-map",
-			"name": "Show on Map",
-			"shortcut": "command-M"
-		},
-		"divider",
-		{
-			"class": "share",
-			"icon": "fa fa-share",
-			"name": "Share",
-			"menu": [
-				{
-					"class": "share-by-invitation",
-					"icon": "fa fa-user-friends",
-					"name": "By Invitation"
-				},
-				"divider",
-				{
-					"class": "share-by-topic",
-					"icon": "fa fa-newspaper",
-					"name": "By Discussion Topic"
-				},
-				{
-					"class": "share-by-message",
-					"icon": "fa fa-comments",
-					"name": "By Chat Messsage"
-				},
-				"divider",
-				{
-					"class": "share-by-link",
-					"icon": "fa fa-link",
-					"name": "By Link"
-				},
-				{
-					"class": "share-by-email",
-					"icon": "fa fa-envelope",
-					"name": "By Email"
-				}
-			]
-		},
-		"divider",
-		{
-			"class": "rename-item",
-			"icon": "fa fa-font",
-			"name": "Rename",
-			"shortcut": "shift-command-R"
-		},
-		{
-			"class": "compress-item",
-			"icon": "fa fa-compress",
-			"name": "Compress",
-			"shortcut": "shift-command-Z"
-		},
-		{
-			"class": "download-item",
-			"icon": "fa fa-download",
-			"name": "Download",
-			"shortcut": "shift-command-D"
-		},
-		"divider",
-		{
-			"class": "set-profile",
-			"icon": "fa fa-user",
-			"name": "Set Profile Picture"
-		},
-		{
-			"class": "set-background",
-			"icon": "fa fa-desktop",
-			"name": "Set Background Picture"
-		},
-		"divider",
-		{
-			"class": "delete-item",
-			"icon": "fa fa-trash-alt",
-			"name": "Delete",
-			"shortcut": "delete"
-		},
-		{
-			"class": "empty-trash",
-			"icon": "fa fa-trash-alt",
-			"name": "Empty Trash",
-			"shortcut": "command-E"
-		},
-		"divider",
-		{
-			"class": "change-background",
-			"icon": "fa fa-image",
-			"name": "Change Background"
-		}
-	]
-}
+[
+	{
+		"name": "new-folder",
+		"icon": "fa fa-folder",
+		"text": "New Folder",
+		"shortcut": "command-enter"
+	},
+	{
+		"name": "open-item",
+		"icon": "fa fa-folder-open",
+		"text": "Open",
+		"shortcut": "command-O"
+	},
+	{
+		"name": "open-with",
+		"icon": "fa fa-folder-open",
+		"text": "Open With"
+	},
+	{
+		"name": "open-selected",
+		"icon": "fa fa-folder-open",
+		"text": "Open Selected",
+		"shortcut": "enter"
+	},
+	{
+		"name": "open-in-new-window",
+		"icon": "fa fa-folder-open",
+		"text": "Open in New Window"
+	},
+	{
+		"name": "upload-item",
+		"icon": "fa fa-upload",
+		"text": "Upload",
+		"shortcut": "command-U"
+	},
+	"divider",
+	{
+		"name": "show-info",
+		"icon": "fa fa-info-circle",
+		"text": "Show Info",
+		"shortcut": "command-I"
+	},
+	{
+		"name": "show-on-map",
+		"icon": "fa fa-map",
+		"text": "Show on Map",
+		"shortcut": "command-M"
+	},
+	"divider",
+	{
+		"name": "share",
+		"icon": "fa fa-share",
+		"text": "Share",
+		"menu": [
+			{
+				"name": "share-by-invitation",
+				"icon": "fa fa-user-friends",
+				"text": "By Invitation"
+			},
+			"divider",
+			{
+				"name": "share-by-topic",
+				"icon": "fa fa-newspaper",
+				"text": "By Discussion Topic"
+			},
+			{
+				"name": "share-by-message",
+				"icon": "fa fa-comments",
+				"text": "By Chat Messsage"
+			},
+			"divider",
+			{
+				"name": "share-by-link",
+				"icon": "fa fa-link",
+				"text": "By Link"
+			},
+			{
+				"name": "share-by-email",
+				"icon": "fa fa-envelope",
+				"text": "By Email"
+			}
+		]
+	},
+	"divider",
+	{
+		"name": "rename-item",
+		"icon": "fa fa-font",
+		"text": "Rename",
+		"shortcut": "shift-command-R"
+	},
+	{
+		"name": "compress-item",
+		"icon": "fa fa-compress",
+		"text": "Compress",
+		"shortcut": "shift-command-Z"
+	},
+	{
+		"name": "download-item",
+		"icon": "fa fa-download",
+		"text": "Download",
+		"shortcut": "shift-command-D"
+	},
+	"divider",
+	{
+		"name": "set-profile",
+		"icon": "fa fa-user",
+		"text": "Set Profile Picture"
+	},
+	{
+		"name": "set-background",
+		"icon": "fa fa-desktop",
+		"text": "Set Background Picture"
+	},
+	"divider",
+	{
+		"name": "delete-item",
+		"icon": "fa fa-trash-alt",
+		"text": "Delete",
+		"shortcut": "delete"
+	},
+	{
+		"name": "empty-trash",
+		"icon": "fa fa-trash-alt",
+		"text": "Empty Trash",
+		"shortcut": "command-E"
+	},
+	"divider",
+	{
+		"name": "change-background",
+		"icon": "fa fa-image",
+		"text": "Change Background"
+	}
+]

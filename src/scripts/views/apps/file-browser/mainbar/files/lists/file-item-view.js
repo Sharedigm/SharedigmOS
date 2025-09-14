@@ -114,24 +114,33 @@ export default DirectoryListItemView.extend({
 	// querying methods
 	//
 
+	hasOption: function(option) {
+		return this.options.preferences? this.options.preferences.includes('options', option) : undefined;
+	},
+
+	hasProperty: function(property) {
+		return this.options.preferences? this.options.preferences.includes('properties', property) : undefined;
+	},
+
 	hasThumbnail: function() {
-		return (!this.options.preferences || this.options.preferences.get('show_thumbnails')) && this.model.hasThumbnail();
+		return this.hasOption('thumbnails') != false;
 	},
 
 	canShowThumbnail: function() {
-		let size = this.get('size');
-		if (size != undefined) {
-			let maxSize = config.apps.file_browser.max_thumbnail_file_size;
-			
-			if (this.model.getFileExtension() == 'svg') {
-				let maxSvgSize = config.apps.file_browser.max_thumbnail_svg_file_size;
-				if (size > maxSvgSize) {
-					return false;
-				}
-			}
+		let extension = this.model.getFileExtension();
+		let size = this.get('size') || 0;
 
-			return size < maxSize;
+		if (extension == 'svg') {
+			if (size < config.apps.file_browser.max_thumbnail_svg_file_size) {
+				return true;
+			}
+		} else if (this.model instanceof ImageFile || this.model instanceof VideoFile || extension == 'pdf') {
+			if (size < config.apps.file_browser.max_thumbnail_file_size) {
+				return true;
+			}
 		}
+
+		return false;
 	},
 	
 	//
@@ -139,7 +148,7 @@ export default DirectoryListItemView.extend({
 	//
 
 	getName: function() {
-		if (this.options.preferences && this.options.preferences.get('show_file_extensions')) {
+		if (this.options.preferences && this.options.preferences.includes('options', 'file_extensions')) {
 			return this.model.getName();
 		} else {
 			return this.model.getBaseName();
@@ -169,11 +178,11 @@ export default DirectoryListItemView.extend({
 	getIconName: function() {
 		let name = this.model.getName().toLowerCase();
 
-		if (config.files.files.names[name]) {
+		if (config.settings.files.files.names[name]) {
 
 			// get icon by file name
 			//
-			return config.files.files.names[name].icon;
+			return config.settings.files.files.names[name].icon;
 		} else {
 
 			// get icon by file extension
@@ -182,10 +191,10 @@ export default DirectoryListItemView.extend({
 
 			// get icon
 			//
-			if (config.files.files.extensions[extension]) {
-				return config.files.files.extensions[extension].icon;
+			if (config.settings.files.files.extensions[extension]) {
+				return config.settings.files.files.extensions[extension].icon;
 			} else {
-				return config.files.files.icon;
+				return config.settings.files.files.icon;
 			}
 		}
 	},
@@ -216,7 +225,7 @@ export default DirectoryListItemView.extend({
 
 		// append extension if hiding extensions
 		//
-		if (!this.options.preferences || !this.options.preferences.get('show_file_extensions')) {
+		if (!this.options.preferences || !this.options.preferences.includes('options', 'file_extensions')) {
 			let extension = this.model.getFileExtension();
 			if (extension) {
 				name = name + '.' + extension;
@@ -248,14 +257,14 @@ export default DirectoryListItemView.extend({
 	getIcon: function(name) {
 		let className;
 
-		if (config.files.files.names[name]) {
-			className = config.files.files.names[name].font;
+		if (config.settings.files.files.names[name]) {
+			className = config.settings.files.files.names[name].font;
 		} else {
 			let extension = FileUtils.getFileExtension(name);
-			if (config.files.files.extensions[extension]) {
-				className = config.files.files.extensions[extension].font;
+			if (config.settings.files.files.extensions[extension]) {
+				className = config.settings.files.files.extensions[extension].font;
 			} else {
-				className = config.files.files.font;
+				className = config.settings.files.files.font;
 			}
 		}
 

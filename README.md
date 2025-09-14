@@ -170,10 +170,9 @@ A complete User Guide detailing the use of the platform is available at:
 
 Please follow the instructions in [https://www.sharedigm.com/#installation](https://www.sharedigm.com/#installation) to install the software on your computer or web server.
 
-<!-- LICENSE -->
 ## License
 
-Distributed under the permissive MIT License which allows urestricted use of the software. The platform is distributed using the open core model where the core operating system is unrestricted but apps built on top of the platform may have other terms associated with them.  See [LICENSE](LICENSE) for more information.
+Distributed under the <a href="https://en.wikipedia.org/wiki/MIT_License">MIT License</a> which allows unrestricted use of the software. See [LICENSE](LICENSE) for more information.
 
 <!-- CONTACT -->
 ## Contact

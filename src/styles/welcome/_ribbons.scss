@@ -1,0 +1,74 @@
+/******************************************************************************\
+|                                                                              |
+|                                 _ribbons.scss                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the SVG DOM element styles for this application.         |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+
+//
+// variables
+//
+
+$shadow: 0 5px 30px rgba(0, 0, 0, 25%);
+
+//
+// styles
+//
+
+.ribbon {
+	position: absolute;
+	margin: 0;
+	width: 100%;
+	text-align: center;
+	right: 0;
+	z-index: 1;
+	transform-origin: top right;
+	transform: rotate(45deg) translate(50%, 75px);
+
+	// thickness
+	//
+	padding: 0;
+
+	// colors
+	//
+	color: white;
+	background: var(--primary-color);
+	box-shadow: $shadow;
+
+	// orientation
+	//
+	&.top.left {
+		top: 0;
+		left: 0;
+		transform: translateX(-100%) rotate(-45deg) translate(50%, 50px);
+	}
+
+	&.top.right {
+		top: 0;
+		right: 0;
+		transform: rotate(45deg) translate(50%, 50px);
+	}
+
+	&.bottom.left {
+		bottom: 0;
+		left: 0;
+		transform: translate(-100%, 0px) rotate(45deg) translate(50%, -50px);
+		transform-origin: bottom right;
+	}
+
+	&.bottom.right {
+		bottom: 0;
+		right: 0;
+		transform: rotate(-45deg) translate(50%, -50px);
+		transform-origin: bottom right;
+	}
+}

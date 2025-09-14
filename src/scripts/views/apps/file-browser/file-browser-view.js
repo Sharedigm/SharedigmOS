@@ -42,7 +42,6 @@ import FileDisposable from '../../../views/apps/file-browser/mainbar/behaviors/f
 import FileIconView from '../../../views/apps/file-browser/mainbar/files/icons/file-icon-view.js';
 import FooterBarView from '../../../views/apps/file-browser/footer-bar/footer-bar-view.js';
 import ContextMenuView from '../../../views/apps/file-browser/context-menus/context-menu-view.js';
-import PreferencesFormView from '../../../views/apps/file-browser/forms/preferences/preferences-form-view.js'
 import Browser from '../../../utilities/web/browser.js';
 import Url from '../../../utilities/web/url.js';
 import '../../../utilities/scripting/array-utils.js';
@@ -208,7 +207,7 @@ export default AppSplitView.extend(_.extend({}, MultiDoc, SelectableContainable,
 
 	numVisibleItems: function() {
 		if (this.hasActiveModel()) {
-			return this.getActiveModel().numVisibleItems(this.preferences.get('show_hidden_files'));
+			return this.getActiveModel().numVisibleItems(this.preferences.includes('options', 'hidden_files'));
 		}
 	},
 
@@ -231,6 +230,12 @@ export default AppSplitView.extend(_.extend({}, MultiDoc, SelectableContainable,
 	getItemView: function(model) {
 		if (this.hasActiveView()) {
 			return this.getActiveView().getItemView(model);
+		}
+	},
+
+	getMapView: function() {
+		if (this.hasActiveView()) {
+			return this.getActiveView().getChildView('items map');
 		}
 	},
 
@@ -1010,7 +1015,7 @@ export default AppSplitView.extend(_.extend({}, MultiDoc, SelectableContainable,
 			// check if we are to open folders in a new window
 			//
 			if (!this.dialog ||
-				this.preferences.get('open_folders_in_new_window') ||
+				this.preferences.matches('open_folders', 'new_window') ||
 				this.preferences.get('view_kind') == 'maps' ||
 				options && options.open_folders_in_new_window) {
 
@@ -1290,7 +1295,7 @@ export default AppSplitView.extend(_.extend({}, MultiDoc, SelectableContainable,
 		// show / hide sidebar view
 		//
 		if (this.isDesktop() && !this.preferences.get('show_desktop_sidebar') ||
-			!this.preferences.get('show_sidebar')) {
+			!this.preferences.includes('panes', 'sidebar')) {
 			this.getChildView('contents').hideSideBar();
 		} else {
 			this.showSideBar();
@@ -1510,19 +1515,6 @@ export default AppSplitView.extend(_.extend({}, MultiDoc, SelectableContainable,
 					//
 					item.render();
 				}
-			}));
-		});
-	},
-	
-	showPreferencesDialog: function() {
-		import(
-			'../../../views/apps/file-browser/dialogs/preferences/preferences-dialog-view.js'
-		).then((PreferencesDialogView) => {
-
-			// show preferences dialog
-			//
-			this.show(new PreferencesDialogView.default({
-				model: this.preferences
 			}));
 		});
 	},
@@ -1880,13 +1872,5 @@ export default AppSplitView.extend(_.extend({}, MultiDoc, SelectableContainable,
 
 	root: null,
 	list: [],
-	allowDialogs: true,
-
-	//
-	// static getting methods
-	//
-
-	getPreferencesFormView: function(options) {
-		return new PreferencesFormView(options);
-	}
+	allowDialogs: true
 });

@@ -24,7 +24,6 @@
 //
 
 @mixin inactive-thumb-shade($color, $hover-color) {
-	-webkit-appearance: none;
 
 	//
 	// Webkit slider thumbs
@@ -76,7 +75,6 @@
 }
 
 @mixin active-thumb-shade($active-color) {
-	-webkit-appearance: none;
 
 	//
 	// Webkit active slider thumbs
@@ -118,9 +116,6 @@
 }
 
 @mixin track-shade($color) {
-	-webkit-appearance: none;
-	box-shadow: none;
-
 	&::-webkit-slider-runnable-track {
 		@include flat.shade($color);
 	}
@@ -131,6 +126,9 @@
 }
 
 @mixin shade($thumb-color, $thumb-hover-color, $thumb-active-color, $track-color) {
+	-webkit-appearance: none;
+	box-shadow: none;
+
 	@include thumb-shade($thumb-color, $thumb-hover-color, $thumb-active-color);
 	@include track-shade($track-color);
 }
@@ -140,7 +138,6 @@
 //
 
 @mixin inactive-thumb-shaded($color, $hover-color) {
-	-webkit-appearance: none;
 
 	//
 	// Webkit slider thumbs
@@ -192,7 +189,6 @@
 }
 
 @mixin active-thumb-shaded($active-color) {
-	-webkit-appearance: none;
 
 	//
 	// Webkit active slider thumbs
@@ -234,9 +230,6 @@
 }
 
 @mixin track-shaded($color) {
-	-webkit-appearance: none;
-	box-shadow: none;
-
 	&::-webkit-slider-runnable-track {
 		@include flat.shaded($color);
 	}
@@ -247,6 +240,9 @@
 }
 
 @mixin shaded($thumb-color, $thumb-hover-color, $thumb-active-color, $track-color) {
+	-webkit-appearance: none;
+	box-shadow: none;
+
 	@include thumb-shaded($thumb-color, $thumb-hover-color, $thumb-active-color);
 	@include track-shaded($track-color);
 }

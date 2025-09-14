@@ -24,7 +24,6 @@ export default MenuBarView.extend({
 	//
 
 	onRender: function() {
-		let isSignedIn = application.isSignedIn();
 
 		// call superclass method
 		//
@@ -32,8 +31,8 @@ export default MenuBarView.extend({
 
 		// hide dropdown menus
 		//
-		if (!isSignedIn) {
-			this.$el.find('.share.dropdown').addClass('disabled');
+		if (!application.isSignedIn()) {
+			this.$el.find('.share.dropdown').hide();
 		}
 	},
 

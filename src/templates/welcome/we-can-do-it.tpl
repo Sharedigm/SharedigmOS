@@ -103,7 +103,7 @@
 
 	<div class="section" style="margin-bottom:-40px">
 		<h2><i class="fa fa-thumbs-down"></i>You Don't Need:</h2>
-		<div class="icons carousel">
+		<div class="icons animated carousel">
 
 			<div class="carousel-cell">
 				<div class="logo">

@@ -43,15 +43,16 @@ $max-opacity: 75%;
 }
 
 @mixin multilayer-shade($color: white, $opacity: $opacity, $max-opacity: $max-opacity) {
-	position: relative;
-	overflow: hidden;
-
 	background:
 
 		// diffuse
 		//
 		colors.fade($color, $opacity);
 
+	// overlay layer
+	//
+	position: relative;
+	overflow: hidden;
 	&:after {
 		position: absolute;
 		content: '';
@@ -90,15 +91,16 @@ $max-opacity: 75%;
 }
 
 @mixin multilayer-shaded($color: white, $opacity: $opacity, $max-opacity: $max-opacity) {
-	position: relative;
-	overflow: hidden;
-
 	background:
 
 		// diffuse
 		//
 		colors.faded($color, $opacity);
 
+	// overlay layer
+	//
+	position: relative;
+	overflow: hidden;
 	&:after {
 		position: absolute;
 		content: '';

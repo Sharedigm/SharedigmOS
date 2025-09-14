@@ -33,8 +33,41 @@ export default UserKeyValues.extend({
 	urlRoot: config.servers.api + '/preferences',
 
 	//
+	// querying methods
+	//
+
+	matches: function(preference, value) {
+		return this.get(preference) == value;
+	},
+
+	includes: function(preference, item) {
+		return this.has(preference) && this.get(preference).includes(item);
+	},
+
+	hasMultiple: function(preference) {
+		return this.has(preference) && this.get(preference).length > 0;
+	},
+
+	//
 	// setting methods
 	//
+
+	addItem: function(preference, item) {
+		let array = this.get(preference);
+		if (!array.includes(item)) {
+			array.push(item);
+		}
+		this.set(preference, array);
+	},
+
+	removeItem: function(preference, item) {
+		let array = this.get(preference);
+		let index = array.indexOf(item);
+		if (index > -1) {
+			array.splice(index, 1);
+		}
+		this.set(preference, array);
+	},
 
 	applyTo: function(view, attributes) {
 		let keys = attributes? Object.keys(attributes) : Object.keys(this.attributes);
@@ -64,7 +97,7 @@ export default UserKeyValues.extend({
 			url: user.url() + '/preferences/' + this.app
 		}, options));
 	},
-	
+
 	//
 	// saving methods
 	//
@@ -97,20 +130,46 @@ export default UserKeyValues.extend({
 	// static methods
 	//
 
+	isValuePerDevice: function(value) {
+		let keys = Object.keys(value)
+		return keys.includes('phone') ||
+			keys.includes('tablet') ||
+			keys.includes('desktop');
+	},
+
+	booleansToArray: function(value, device) {
+		let array = [];
+		let keys = Object.keys(value);
+		for (let i = 0; i < keys.length; i++) {
+			let key = keys[i];
+			if (this.toValue(value[key], device)) {
+				array.push(key);
+			}
+		}
+		return array;
+	},
+
+	toValue: function(value, device) {
+		let isDict = value && typeof value == 'object' && value.length == undefined;
+
+		// check if value is specified per device
+		//
+		if (isDict) {
+			if (this.isValuePerDevice(value)) {
+				return this.toValue(value[device], device);
+			} else {
+				return this.booleansToArray(value, device);
+			}
+		} else {
+			return value;
+		}
+	},
+
 	toKeyValuePairs: function(array, device) {
 		let values = {};
 
 		for (let key in array) {
-			let value = array[key];
-			let isAssociativeArray = value && (typeof value == 'object' && value.length == undefined);
-
-			// check if value is specified per device
-			//
-			if (isAssociativeArray) {
-				values[key] = value[device];
-			} else {
-				values[key] = value;
-			}
+			values[key] = this.toValue(array[key], device);
 		}
 
 		return values;

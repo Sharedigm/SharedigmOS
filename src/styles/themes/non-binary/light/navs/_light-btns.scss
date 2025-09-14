@@ -41,16 +41,14 @@ body:not(.binary).light {
 	//
 
 	.btn {
-		@include colored-btns.colored($color);
-		@include colored-btns.labeled($label-color);
+		@include colored-btns.colored($color, $label-color);
 
 		//
 		// light primary buttons
 		//
 
 		&.btn-primary {
-			@include colored-btns.colored($primary-color);
-			@include colored-btns.labeled($primary-label-color);
+			@include colored-btns.colored($primary-color, $primary-label-color);
 		}
 
 		//
@@ -58,8 +56,7 @@ body:not(.binary).light {
 		//
 
 		&:disabled, &.btn-primary:disabled {
-			@include colored-btns.colored($disabled-color);
-			@include colored-btns.labeled($disabled-label-color);
+			@include colored-btns.colored($disabled-color, $disabled-label-color);
 		}
 	}
 }

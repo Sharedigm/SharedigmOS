@@ -42,7 +42,7 @@ export default MenuView.extend(_.extend({}, AppLaunchable, {
 
 		// set attributes
 		//
-		if (config.defaults.desktop.show_app_launcher) {
+		if (config.settings.desktop.show_app_launcher) {
 			this.apps = this.getApps();
 		}
 		this.tasks = Minimizable.getMinimized();

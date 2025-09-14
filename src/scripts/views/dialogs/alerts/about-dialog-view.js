@@ -103,7 +103,7 @@ export default ModalView.extend({
 	// dialog attributes
 	//
 
-	size: config.defaults.dialogs.sizes.tiny,
+	size: config.settings.defaults.dialogs.sizes.tiny,
 
 	//
 	// constructor
@@ -165,9 +165,17 @@ export default ModalView.extend({
 		if (!attributes) {
 			return;
 		}
-		if (attributes.color && (attributes.color != 'white' || (attributes.background || attributes.background_color))) {
-			$(element).css('color', attributes.color);
+
+		// create copy of attributes
+		//
+		attributes = { ...attributes };
+
+		// don't set color unless setting background color
+		//
+		if (!attributes.background && !attributes.background_color) {
+			attributes.color = null;
 		}
+
 		DomUtils.setTextStyles(element, attributes);
 		DomUtils.setBorderStyles(element, attributes);
 		DomUtils.setBackgroundStyles(element, attributes);
@@ -177,12 +185,16 @@ export default ModalView.extend({
 	// setting methods
 	//
 
-	setDialogStyles: function(styles) {
-		if (styles.tagline) {
-			this.setTextBlockStyles(this.$el.find('.tagline'), styles.tagline);
+	setDialogStyles: function(attributes) {
+		if (attributes.tagline) {
+			attributes = { ...attributes.tagline };
+			attributes.font_size = undefined;
+			this.setTextBlockStyles(this.$el.find('.tagline'), attributes);
 		}
-		if (styles.description) {
-			DomUtils.setTextStyles(this.$el.find('.description'), styles.description);
+		if (attributes.description) {
+			attributes = { ...attributes.description };
+			attributes.font_size = undefined;
+			this.setTextBlockStyles(this.$el.find('.description'), attributes);
 		}
 	},
 
@@ -232,7 +244,7 @@ export default ModalView.extend({
 	setDescriptionStyles: function(description) {
 		if (description.font) {
 			this.$el.find('.tagline').css({
-				'font-family': config.fonts[description.font]['font-family']
+				'font-family': config.settings.fonts[description.font]['font-family']
 			});
 		}
 	},
@@ -243,7 +255,7 @@ export default ModalView.extend({
 
 	templateContext: function() {
 		return {
-			defaults: config.defaults,
+			defaults: config.settings.defaults,
 			branding: config.branding
 		};
 	},

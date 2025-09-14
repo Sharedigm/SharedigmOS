@@ -23,6 +23,6 @@ export default NameSelectorView.extend({
 	// attributes
 	//
 
-	names: Object.keys(config.fonts),
+	names: Object.keys(config.settings.fonts),
 	unselectable: true
 });

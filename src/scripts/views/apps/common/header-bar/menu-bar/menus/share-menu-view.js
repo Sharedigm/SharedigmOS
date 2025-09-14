@@ -24,14 +24,15 @@ export default MenuView.extend({
 	//
 
 	visible: function() {
-		let hasConnectionManager = application.hasApp('connection_manager');
-		let hasTopicViewer = application.hasApp('topic_viewer');
-		let hasChatViewer = application.hasApp('chat_viewer');
+		let hasConnectionManager = application.hasVisibleApp('connection_manager');
+		let hasCommunicator = application.hasVisibleApp('communicator');
+		let hasTopicViewer = application.hasVisibleApp('topic_viewer');
+		let hasChatViewer = application.hasVisibleApp('chat_viewer');
 
 		return {
 			'share-by-invitation': hasConnectionManager,
-			'share-by-topic': hasTopicViewer,
-			'share-by-message': hasChatViewer,
+			'share-by-topic': hasTopicViewer || hasCommunicator,
+			'share-by-message': hasChatViewer || hasCommunicator,
 			'share-by-link': true,
 			'share-by-email': true
 		};
@@ -54,7 +55,7 @@ export default MenuView.extend({
 	//
 
 	getFileItems: function() {
-		let files = config.defaults.sharing.files;
+		let files = config.settings.defaults.sharing.files;
 		let items = [];
 
 		// add file types
@@ -71,9 +72,10 @@ export default MenuView.extend({
 			for (let i = 0; i < keys.length; i++) {
 				let key = keys[i];
 				items.push({
-					class: 'share-attachments',
+					name: key.toLowerCase(),
+					group: 'share-attachments',
 					icon: files[key].icon,
-					name: key
+					text: key.toTitleCase()
 				});
 			}
 		}

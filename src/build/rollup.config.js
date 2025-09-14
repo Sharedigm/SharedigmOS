@@ -9,7 +9,7 @@ export default {
 
 	output: {
 		format: 'es',
-		dir: '../../sharedigm-os-built/scripts',
+		dir: '../../sharedigm-built/scripts',
 		inlineDynamicImports: false,
 		chunkFileNames: '[name].js'
 	},

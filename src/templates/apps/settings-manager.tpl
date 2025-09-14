@@ -1,18 +1,18 @@
-<h1><i class="<%= config.apps['settings_manager'].icon %>"></i><%= config.apps['settings_manager'].name %></h1>
+<h1><i class="<%= config.apps.settings_manager.icon %>"></i><%= config.apps.settings_manager.name %></h1>
 
 <ol class="breadcrumb">
 	<li><a href="#"><i class="fa fa-home"></i>Home</a></li>
 	<li><a href="#apps"><i class="fa fa-rocket"></i>Apps</a></li>
-	<li><i class="fa fa-cog"></i><%= config.apps['settings_manager'].name %></li>
+	<li><i class="fa fa-cog"></i><%= config.apps.settings_manager.name %></li>
 </ol>
 
 <div class="content">
-	<div class="attention icon colored <%= config.apps['settings_manager'].color %>">
-		<img src="images/icons/apps/<%= config.apps['settings_manager'].image || config.apps['settings_manager'].app + '.svg' %>" />
+	<div class="attention icon colored <%= config.apps.settings_manager.color %>">
+		<img src="images/icons/apps/<%= config.apps.settings_manager.image || config.apps.settings_manager.app + '.svg' %>" />
 	</div>
 
 	<div class="description section">
-		<p>The <%= config.apps['settings_manager'].name %> app lets you view and modify system settings and app preferences. </p>
+		<p>The <%= config.apps.settings_manager.name %> app lets you view and modify system settings and app preferences. </p>
 	</div>
 
 	<div class="details section">
@@ -41,11 +41,11 @@
 	
 	<h2><i class="fa fa-desktop"></i>Screen Shots</h2>
 	<div class="figure desktop-only">
-		<a href="images/info/apps/settings-manager/settings-manager.png" target="_blank" class="lightbox" title="<%= config.apps['settings_manager'].name %>"><img class="dialog" src="images/info/apps/settings-manager/settings-manager.png" /></a>
-		<div class="caption"><%= config.apps['settings_manager'].name %></div>
+		<a href="images/info/apps/settings-manager/settings-manager.png" target="_blank" class="lightbox" title="<%= config.apps.settings_manager.name %>"><img class="dialog" src="images/info/apps/settings-manager/settings-manager.png" /></a>
+		<div class="caption"><%= config.apps.settings_manager.name %></div>
 	</div>
 	<div class="figure mobile-only">
-		<a href="images/info/apps/settings-manager/mobile/mobile-settings-manager.png" target="_blank" class="lightbox" title="<%= config.apps['settings_manager'].name %>"><img class="dialog" src="images/info/apps/settings-manager/mobile/mobile-settings-manager.png" /></a>
-		<div class="caption"><%= config.apps['settings_manager'].name %></div>
+		<a href="images/info/apps/settings-manager/mobile/mobile-settings-manager.png" target="_blank" class="lightbox" title="<%= config.apps.settings_manager.name %>"><img class="dialog" src="images/info/apps/settings-manager/mobile/mobile-settings-manager.png" /></a>
+		<div class="caption"><%= config.apps.settings_manager.name %></div>
 	</div>
 </div>

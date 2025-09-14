@@ -43,7 +43,7 @@ body:not(.binary) {
 					.modal-header {
 						.buttons {
 							button {
-								@include colored-btns.label($dialog-button-dark-label-color);
+								@include colored-btns.labeled($dialog-button-dark-label-color);
 							}
 						}
 					}
@@ -60,7 +60,7 @@ body:not(.binary) {
 				.modal-header {
 					.buttons {
 						button:not(:hover) {
-							@include colored-btns.label($dialog-button-dark-label-color);
+							@include colored-btns.labeled($dialog-button-dark-label-color);
 						}
 					}
 				}

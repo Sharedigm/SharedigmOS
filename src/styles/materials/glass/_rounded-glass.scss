@@ -80,8 +80,6 @@ $transmission-strength: 100%;
 }
 
 @mixin multilayer-shade($color: white, $border-style: outset, $border-radius: 10px) {
-	position: relative;
-	overflow: hidden;
 
 	background:
 
@@ -102,6 +100,20 @@ $transmission-strength: 100%;
 	background-color:
 		lighting.darken($color, 30%);
 
+	// borders
+	//
+	@if ($border-style == inset) {
+		border-color: lighting.lighten($color, 10%);
+	} @else if ($border-style == outset) {
+		border-color: lighting.darken($color, 30%);
+	} @else if ($border-style != none) {
+		border-color: $color;
+	}
+
+	// overlay layer
+	//
+	position: relative;
+	overflow: hidden;
 	&:after {
 		position: absolute;
 		content: '';
@@ -127,16 +139,6 @@ $transmission-strength: 100%;
 				transparent 33%,
 				colors.fade(lighting.lighten($color, 20%), $transmission-strength) 75%,
 				colors.fade($color, calc($transmission-strength / 2)) 100%) no-repeat;
-	}
-
-	// borders
-	//
-	@if ($border-style == inset) {
-		border-color: lighting.lighten($color, 10%);
-	} @else if ($border-style == outset) {
-		border-color: lighting.darken($color, 30%);
-	} @else if ($border-style != none) {
-		border-color: $color;
 	}
 }
 
@@ -190,9 +192,6 @@ $transmission-strength: 100%;
 }
 
 @mixin multilayer-shaded($color: white, $border-style: outset, $border-radius: 10px) {
-	position: relative;
-	overflow: hidden;
-
 	background:
 
 		// left shaded
@@ -212,6 +211,20 @@ $transmission-strength: 100%;
 	background-color:
 		lighting.darkened($color, 30%);
 
+	// borders
+	//
+	@if ($border-style == inset) {
+		border-color: lighting.lightened($color, 10%);
+	} @else if ($border-style == outset) {
+		border-color: lighting.darkened($color, 30%);
+	} @else if ($border-style != none) {
+		border-color: $color;
+	}
+
+	// overlay layer
+	//
+	position: relative;
+	overflow: hidden;
 	&:after {
 		position: absolute;
 		content: '';
@@ -237,15 +250,5 @@ $transmission-strength: 100%;
 				transparent 33%,
 				colors.faded(lighting.lighten($color, 20%), $transmission-strength) 75%,
 				colors.faded($color, calc($transmission-strength / 2)) 100%) no-repeat;
-	}
-
-	// borders
-	//
-	@if ($border-style == inset) {
-		border-color: lighting.lightened($color, 10%);
-	} @else if ($border-style == outset) {
-		border-color: lighting.darkened($color, 30%);
-	} @else if ($border-style != none) {
-		border-color: $color;
 	}
 }

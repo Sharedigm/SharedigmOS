@@ -111,7 +111,7 @@ export default DialogView.extend({
 	// dialog attributes
 	//
 
-	size: config.defaults.dialogs.sizes.small,
+	size: config.settings.defaults.dialogs.sizes.small,
 	
 	//
 	// constructor

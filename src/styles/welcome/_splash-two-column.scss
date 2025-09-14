@@ -1,0 +1,76 @@
+/******************************************************************************\
+|                                                                              |
+|                          _splash-two-column.scss                             |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+
+@use "../bootstrap/variables";
+
+//
+// styles
+//
+
+.welcome.page {
+	.splash.two-column {
+		display: flex;
+		flex-direction: column;
+		margin: 0 auto;
+		min-width: 100%;
+
+		.col-md-6 {
+			display: flex;
+			flex-direction: column;
+
+			.contents {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				padding: 0;
+				margin: auto;
+			}
+		}
+	}
+}
+
+//
+// non small styles
+//
+
+@media (min-width: variables.$screen-sm-min) {
+	.welcome.page {
+		.splash.two-column {
+			flex-direction: row;
+
+			.col-md-6 {
+				width: 50%;
+			}
+		}
+	}
+}
+
+//
+// extra small styles
+//
+
+@media (max-width: variables.$screen-sm-min) {
+	.welcome.page {
+		.splash.two-column {
+			.col-md-6 {
+				.search {
+					margin: 0;
+				}
+			}
+		}
+	}
+}

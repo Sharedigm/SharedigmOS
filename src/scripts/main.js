@@ -18,35 +18,52 @@
 // load configuration files
 //
 Promise.all([
+
+	// configs
+	//
 	fetch('config/config.json').then(response => response.json()),
-	fetch('config/apps.json').then(response => response.json()),
 	fetch('config/branding.json').then(response => response.json()),
-	fetch('config/defaults.json').then(response => response.json()),
-	fetch('config/files.json').then(response => response.json()),
-	fetch('config/fonts.json').then(response => response.json()),
-	fetch('config/help.json').then(response => response.json()),
-	fetch('config/keycodes.json').then(response => response.json()),
-	fetch('config/preferences.json').then(response => response.json()),
-	fetch('config/sounds.json').then(response => response.json()),
 	fetch('config/theme.json').then(response => response.json()),
-	fetch('config/welcome.json').then(response => response.json())
+
+	// settings
+	//
+	fetch('settings/settings.json').then(response => response.json()),
+	fetch('apps/apps.json').then(response => response.json()),
+	fetch('apps/preferences.json').then(response => response.json()),
 ]).then((files) => {
 
 	// set globals
 	//
 	let i = 0;
+
+	// load configs
+	//
 	window.config = files[i++];
-	window.config.apps = files[i++];
 	window.config.branding = files[i++];
-	window.config.defaults = files[i++];
-	window.config.files = files[i++];
-	window.config.fonts = files[i++];
-	window.config.help = files[i++];
-	window.config.keycodes = files[i++];
-	window.config.preferences = files[i++];
-	window.config.sounds = files[i++];
 	window.config.theme = files[i++];
-	window.config.welcome = files[i++];
+
+	// load settings
+	//
+	window.config.settings = files[i++];
+	window.config.apps = files[i++];
+	window.config.preferences = files[i++];
+
+	// collapse preferences
+	//
+	let preferences = {}
+	let apps = Object.keys(window.config.preferences);
+	for (let i = 0; i < apps.length; i++) {
+		let app = apps[i];
+		let prefs = window.config.preferences[app];
+		let tabs = Object.keys(prefs);
+		let attributes = {};
+		for (let j = 0; j < tabs.length; j++) {
+			let tab = tabs[j];
+			Object.assign(attributes, prefs[tab]);
+		}
+		preferences[app] = attributes;
+	}
+	window.config.preferences = preferences;
 
 	// load application
 	//

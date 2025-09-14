@@ -42,7 +42,7 @@ export default ButtonView.extend({
 				// load theme
 				//
 				ThemeManagerView.loadTheme(new File({
-					path: config.defaults.themes[index].path
+					path: config.settings.defaults.themes[index].path
 				}), {
 
 					// callbacks
@@ -74,7 +74,7 @@ export default ButtonView.extend({
 	},
 
 	showTheme: function() {
-		if (this.constructor.index < config.defaults.themes.length - 1) {
+		if (this.constructor.index < config.settings.defaults.themes.length - 1) {
 			this.setThemeIndex(this.constructor.index + 1);
 		} else {
 			this.setThemeIndex(0);

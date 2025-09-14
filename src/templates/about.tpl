@@ -45,7 +45,7 @@
 
 	<div class="figure row">
 		<div class="figure col-sm-6">
-			<a href="images/info/desktop/iphone-desktop.png" target="_blank" class="smooth lightbox" title="<%= application.name %> Mobile"><img src="images/info/desktop/iphone-desktop.png" style="width:300px" /></a>
+			<a href="images/info/mobile/iphone.png" target="_blank" class="smooth lightbox" title="<%= application.name %> Mobile"><img src="images/info/mobile/iphone.png" style="width:300px" /></a>
 			<div class="caption"><%= application.name %> Mobile</div>
 		</div>
 	</div>

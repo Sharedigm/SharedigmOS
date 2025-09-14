@@ -59,7 +59,7 @@ export default BaseView.extend({
 		</div>
 		<% } %>
 
-		<% if (num_indices && config.defaults.search && config.defaults.search.index) { %>
+		<% if (num_indices && config.settings.defaults.search && config.settings.defaults.search.index) { %>
 		<div class="indices active badge" data-toggle="tooltip" title="<%= num_indices + " " + (num_indices == 1? "file" : "files") + " in search index"%>" data-placement="bottom">
 			<i class="fa fa-list"></i>
 			<span class="num-indices"><%= num_indices %></span>

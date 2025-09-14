@@ -28,11 +28,20 @@ export default BaseView.extend({
 	tagName: 'ul',
 	className: 'nav nav-menus',
 
-	menuTemplate: template(`
+	template: template(`
+		<% let keys = Object.keys(menus); %>
+		<% for (i = 0; i < menus.length; i++) { %>
+		<% let key = keys[i]; %>
+		<% let menu = menus[key]; %>
+		<% let className = menu.name.replace(/_/g, '-'); %>
+		<% let icon = menu.icon; %>
+		<% let text = menu.text; %>
+		<% let hidden = menu.hidden; %>
 		<li class="<%= className %> dropdown"<% if (hidden) { %> style="display:none"<% } %>>
-			<a class="dropdown-toggle" data-toggle="dropdown"><i class="<%= icon %>"></i><span class="dropdown-title"><%= name %></span></a>
+			<a class="dropdown-toggle" data-toggle="dropdown"><i class="<%= icon %>"></i><span class="dropdown-title"><%= text %></span></a>
 			<div class="dropdown-menu"></div>
 		</li>
+		<% } %>
 	`),
 
 	events: {
@@ -46,6 +55,8 @@ export default BaseView.extend({
 		//
 		'tap .dropdown-toggle': 'onTapDropdown'
 	},
+
+	menus: [],
 
 	//
 	// querying methods
@@ -62,27 +73,6 @@ export default BaseView.extend({
 	getMenu: function(name) {
 		if (this.hasChildView(name)) {
 			return this.getChildView(name).$el.parent();
-		}
-	},
-
-	getMenus: function() {
-		if (this.menus) {
-
-			// get menus from view
-			//
-			return this.menus;
-		} else {
-
-			// get menus from resources
-			//
-			let appView = this.parent.parent;
-			let resources = appView.getResources('menu_bar');
-
-			if (resources) {
-				return resources.menus;
-			} else {
-				return [];
-			}
 		}
 	},
 
@@ -197,42 +187,23 @@ export default BaseView.extend({
 	},
 
 	//
-	// item rendering methods
-	//
-
-	menuToHtml: function(menu) {
-		return this.menuTemplate({
-			className: menu.class,
-			icon: menu.icon,
-			name: menu.name,
-			hidden: menu.hidden
-		});
-	},
-
-	//
 	// rendering methods
 	//
 
-	template: function(data) {
-		return data.view.toHtml(data.view.getMenus());
-	},
-
 	templateContext: function() {
-		return {
-			view: this,
-			menus: this.menus
-		};
-	},
 
-	toHtml: function(menus) {
-		let html = '';
-		if (!menus) {
-			return;
+		// get menus from resources
+		//
+		let appView = this.parent.parent;
+		let resources = appView.getResources('menu_bar');
+
+		if (resources) {
+			this.menus = resources;
 		}
-		for (let i = 0; i < menus.length; i++) {
-			html += this.menuToHtml(menus[i]);
+
+		return {
+			menus: this.menus
 		}
-		return html;
 	},
 
 	onRender: function() {

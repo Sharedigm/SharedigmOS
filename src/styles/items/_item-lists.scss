@@ -169,10 +169,6 @@ $thumbnail-size: 25px;
 			pointer-events: auto;
 			cursor: default;
 
-			&:empty {
-				display: none;
-			}
-
 			// keep on one line
 			//
 			white-space: nowrap;
@@ -184,6 +180,10 @@ $thumbnail-size: 25px;
 			overflow: hidden;
 			text-overflow: ellipsis;
 			hyphens: auto;
+
+			&:empty {
+				display: none;
+			}
 
 			//
 			// editable names

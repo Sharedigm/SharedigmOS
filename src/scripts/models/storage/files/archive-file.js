@@ -53,7 +53,7 @@ export default File.extend({
 	// static attributes
 	//
 
-	extensions: config.files.archives.extensions,
+	extensions: config.settings.files.archives.extensions,
 
 	//
 	// static methods

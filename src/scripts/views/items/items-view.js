@@ -145,12 +145,13 @@ export default BaseView.extend(_.extend({}, SelectableContainable, Scrollable, {
 				this.setTileSize(value);
 				break;
 
-			case 'show_image_names':
-				if (value) {
+			case 'options':
+				if (value && value.includes('image_names')) {
 					this.$el.removeClass('hide-image-names');
 				} else {
 					this.$el.addClass('hide-image-names');
 				}
+				this.update();
 				break;
 
 			case 'map_mode':
@@ -316,7 +317,7 @@ export default BaseView.extend(_.extend({}, SelectableContainable, Scrollable, {
 
 		// show / hide image names
 		//
-		if (this.options.preferences && !this.options.preferences.get('show_image_names')) {
+		if (this.options.preferences && !this.options.preferences.includes('options', 'image_names')) {
 			this.$el.addClass('hide-image-names');
 		}
 	},

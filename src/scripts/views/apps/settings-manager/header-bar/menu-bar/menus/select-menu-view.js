@@ -31,7 +31,7 @@ export default SelectMenuView.extend({
 	},
 
 	enabled: function() {
-		return this.parent.app.preferences.get('show_sidebar');
+		return this.parent.app.preferences.includes('panes', 'sidebar');
 	},
 
 	//

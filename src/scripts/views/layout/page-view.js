@@ -95,16 +95,16 @@ export default BaseView.extend(_.extend({}, Wallpaperable, {
 
 		// init carousels
 		//
-		this.showSectionCarousels();
+		this.showSectionCarousel(this.$el.find('.section .carousel'));
 
 		// loaded
 		//
 		this.onLoad();
 	},
 
-	showSectionCarousels: function() {
-		this.$el.find('.section .carousel').flickity({
-			autoPlay: 1000,
+	showSectionCarousel: function(element) {
+		$(element).flickity({
+			autoPlay: $(element).hasClass('animated')? 1000 : false,
 			wrapAround: true,
 			pageDots: false,
 			prevNextButtons: false,
@@ -129,8 +129,8 @@ export default BaseView.extend(_.extend({}, Wallpaperable, {
 		//
 		if (page.font) {
 			let selector = '> .contents > .content';
-			if (config.defaults.text.content) {
-				selector = selector + ' ' + config.defaults.text.content.join(', ');
+			if (config.settings.defaults.text.content) {
+				selector = selector + ' ' + config.settings.defaults.text.content.join(', ');
 			}
 			DomUtils.setFont(this.$el.find(selector), page.font);
 		}
@@ -161,9 +161,9 @@ export default BaseView.extend(_.extend({}, Wallpaperable, {
 	},
 
 	setHeading1Styles: function(heading1) {
-		if (heading1.font && config.fonts[heading1.font]) {
+		if (heading1.font && config.settings.fonts[heading1.font]) {
 			application.loadFont(heading1.font);
-			this.$el.find('h1').css('font-family', config.fonts[heading1.font]['font-family']);
+			this.$el.find('h1').css('font-family', config.settings.fonts[heading1.font]['font-family']);
 		}
 		if (heading1.font_weight) {
 			this.$el.find('h1').css('font-weight', heading1.font_weight);
@@ -180,9 +180,9 @@ export default BaseView.extend(_.extend({}, Wallpaperable, {
 	},
 
 	setHeading2Styles: function(heading2) {
-		if (heading2.font && config.fonts[heading2.font]) {
+		if (heading2.font && config.settings.fonts[heading2.font]) {
 			application.loadFont(heading2.font);
-			this.$el.find('h2').css('font-family', config.fonts[heading2.font]['font-family']);
+			this.$el.find('h2').css('font-family', config.settings.fonts[heading2.font]['font-family']);
 		}
 		if (heading2.font_weight) {
 			this.$el.find('h2').css('font-weight', heading2.font_weight);
@@ -199,9 +199,9 @@ export default BaseView.extend(_.extend({}, Wallpaperable, {
 	},
 
 	setHeading3Styles: function(heading3) {
-		if (heading3.font && config.fonts[heading3.font]) {
+		if (heading3.font && config.settings.fonts[heading3.font]) {
 			application.loadFont(heading3.font);
-			this.$el.find('h3').css('font-family', config.fonts[heading3.font]['font-family']);
+			this.$el.find('h3').css('font-family', config.settings.fonts[heading3.font]['font-family']);
 		}
 		if (heading3.font_weight) {
 			this.$el.find('h3').css('font-weight', heading3.font_weight);

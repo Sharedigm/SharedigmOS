@@ -50,6 +50,12 @@ export default BaseView.extend({
 	//
 
 	onRender: function() {
+		if (application.isSignedIn()) {
+			this.showPreferences();
+		}
+	},
+
+	showPreferences: function() {
 		this.showChildView('preferences', new PreferencesPanelView({
 			collection: this.collection,
 

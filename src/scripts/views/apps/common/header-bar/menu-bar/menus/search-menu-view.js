@@ -24,7 +24,7 @@ export default MenuView.extend({
 	//
 
 	events: {
-		'click .search-by > a': 'onClickSearchBy'
+		'click .search-kind': 'onClickSearchKind'
 	},
 
 	//
@@ -33,15 +33,9 @@ export default MenuView.extend({
 
 	setSearchKind: function(searchKind) {
 
-		// get class names of searches
+		// update menu
 		//
-		let classNames = this.$el.find('.search-by').map((index, element) => {
-			return $(element).find('a').attr('class');
-		}).get();
-
-		// deselect all search menu items
-		//
-		this.setItemsDeselected(classNames);
+		this.setGroupItemSelected('search_kind', searchKind);
 
 		// set selected search menu item
 		//
@@ -58,13 +52,12 @@ export default MenuView.extend({
 	// mouse event handling methods
 	//
 
-	onClickSearchBy: function(event) {
-		let className = $(event.currentTarget).attr('class');
-		let searchKind = className.replace('search-by-', '').replace(/-/g, '_');
+	onClickSearchKind: function(event) {
+		let searchKind = this.getItemName(event.target);
 
 		// show / hide search
 		//
-		if (!this.isItemSelected(className)) {
+		if (!this.isItemSelected(searchKind)) {
 			let search = [];
 			search[searchKind] = undefined;
 			this.parent.parent.showSearch(search);

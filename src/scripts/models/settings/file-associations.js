@@ -19,10 +19,10 @@ import UserSettings from '../../models/settings/user-settings.js';
 
 function getFileAssociations() {
 	let associations = {};
-	let keys = Object.keys(config.files.files.extensions);
+	let keys = Object.keys(config.settings.files.files.extensions);
 	for (let i = 0; i < keys.length; i++) {
 		let key = keys[i];
-		associations[key] = config.files.files.extensions[key].app;
+		associations[key] = config.settings.files.files.extensions[key].app;
 	}
 	return associations;
 }

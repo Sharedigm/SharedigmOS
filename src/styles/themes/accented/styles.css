@@ -1,6 +1,38 @@
 /******************************************************************************\
 |                                                                              |
-|                                _colors.scss                                  |
+|                                 styles.scss                                  |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                 _index.scss                                  |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                             _accented-apps.scss                              |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -32,7 +64,7 @@
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                             _accented-apps.scss                              |
+|                                _colors.scss                                  |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -165,7 +197,7 @@ body:not(.binary).colored.accented .form-group .form-label i, body:not(.binary).
 
 /******************************************************************************\
 |                                                                              |
-|                             colored-sliders.scss                             |
+|                            _accented-sliders.scss                            |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -181,7 +213,7 @@ body:not(.binary).colored.accented .form-group .form-label i, body:not(.binary).
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                            _accented-sliders.scss                            |
+|                             colored-sliders.scss                             |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -283,6 +315,39 @@ body:not(.binary).colored.accented:not(.dark) .panel .content .title i, body:not
   color: var(--secondary-color) !important;
 }
 
+/******************************************************************************\
+|                                                                              |
+|                            _accented-tables.scss                             |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                  _tables.scss                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                  _tables.scss                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
 /******************************************************************************\
 |                                                                              |
 |                                _layout.scss                                  |
@@ -407,22 +472,22 @@ body > svg {
   transform: translate(-50%, -50%);
 }
 
-.left.aligned {
-  text-align: left;
-}
-
-.center.aligned {
-  text-align: center;
-}
-
-.right.aligned {
-  text-align: right;
-}
-
 .middle.aligned {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.left.aligned {
+  text-align: left !important;
+}
+
+.center.aligned {
+  text-align: center !important;
+}
+
+.right.aligned {
+  text-align: right !important;
 }
 
 .inline {
@@ -649,17 +714,6 @@ hr {
 |                                                                              |
 |        This file is subject to the terms and conditions defined in           |
 |        'LICENSE.txt', which is part of this source code distribution.        |
-|                                                                              |
-|******************************************************************************|
-|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
-\******************************************************************************/
-/******************************************************************************\
-|                                                                              |
-|                                  _tables.scss                                |
-|                                                                              |
-|******************************************************************************|
-|                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
 |                                                                              |
 |******************************************************************************|
 |        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
@@ -916,17 +970,6 @@ table.numbered.count-bubbles td:first-child::before {
     display: none;
   }
 }
-/******************************************************************************\
-|                                                                              |
-|                            _accented-tables.scss                             |
-|                                                                              |
-|******************************************************************************|
-|                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
-|                                                                              |
-|******************************************************************************|
-|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
-\******************************************************************************/
 body:not(.binary).colored.accented:not(.dark) table thead th {
   color: white;
   border-color: var(--secondary-color);
@@ -985,7 +1028,39 @@ body:not(.binary).colored.accented:not(.dark) table thead th:last-child {
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                                 _lighting.scss                               |
+|                                 _index.scss                                  |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                         _accented-flat-buttons.scss                          |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                              _flat-buttons.scss                              |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -1002,6 +1077,22 @@ body:not(.binary).colored.accented:not(.dark) table thead th:last-child {
 /******************************************************************************\
 |                                                                              |
 |                                 _flat.scss                                   |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                 _lighting.scss                               |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -1081,11 +1172,54 @@ body:not(.binary).colored.accented:not(.dark) table thead th:last-child {
 }
 /******************************************************************************\
 |                                                                              |
-|                              _flat-buttons.scss                              |
+|                            _accented-buttons.scss                            |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                            _colored-buttons.scss                             |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
 |        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                  _tables.scss                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                  _buttons.scss                               |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -1167,8 +1301,8 @@ h1 .icon {
   display: inline-block;
   float: left;
   margin-top: 5px;
-  margin-right: 20px;
-  width: 60px;
+  margin-right: 10px;
+  width: auto;
   height: 60px;
   border-radius: 10px;
   border-width: 2px;
@@ -1216,22 +1350,6 @@ h1 .icon i {
   display: block;
 }
 
-/******************************************************************************\
-|                                                                              |
-|                                  _buttons.scss                               |
-|                                                                              |
-|******************************************************************************|
-|                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
-|                                                                              |
-|        Author(s): Abe Megahed                                                |
-|                                                                              |
-|        This file is subject to the terms and conditions defined in           |
-|        'LICENSE.txt', which is part of this source code distribution.        |
-|                                                                              |
-|******************************************************************************|
-|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
-\******************************************************************************/
 button {
   cursor: pointer;
 }
@@ -1328,22 +1446,6 @@ body[device=desktop] button + .popover + .tooltip + button {
 |******************************************************************************|
 |        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
-/******************************************************************************\
-|                                                                              |
-|                            _accented-buttons.scss                            |
-|                                                                              |
-|******************************************************************************|
-|                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
-|                                                                              |
-|        Author(s): Abe Megahed                                                |
-|                                                                              |
-|        This file is subject to the terms and conditions defined in           |
-|        'LICENSE.txt', which is part of this source code distribution.        |
-|                                                                              |
-|******************************************************************************|
-|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
-\******************************************************************************/
 body:not(.binary).colored.accented button:hover {
   /*
   &:active {
@@ -1352,91 +1454,37 @@ body:not(.binary).colored.accented button:hover {
   }
   */
 }
-body:not(.binary).colored.accented button:hover:hover {
+body:not(.binary).colored.accented button:hover:hover, body:not(.binary).colored.accented button:hover.selected {
   background: var(--secondary-color);
   border-color: var(--secondary-color);
-}
-body:not(.binary).colored.accented button:hover.selected {
-  background: var(--secondary-color);
-  border-color: var(--secondary-color);
-}
-body:not(.binary).colored.accented button:hover:hover {
   color: white;
 }
-body:not(.binary).colored.accented button:hover:hover span {
+body:not(.binary).colored.accented button:hover:hover i, body:not(.binary).colored.accented button:hover.selected i {
   color: white;
 }
-body:not(.binary).colored.accented button:hover:hover i {
-  color: white;
-}
-body:not(.binary).colored.accented button:hover:hover svg {
-  fill: white;
-}
-body:not(.binary).colored.accented button:hover.selected {
-  color: white;
-}
-body:not(.binary).colored.accented button:hover.selected span {
-  color: white;
-}
-body:not(.binary).colored.accented button:hover.selected i {
-  color: white;
-}
-body:not(.binary).colored.accented button:hover.selected svg {
+body:not(.binary).colored.accented button:hover:hover svg, body:not(.binary).colored.accented button:hover.selected svg {
   fill: white;
 }
 body:not(.binary).colored.accented button.selected {
+  /*
+  &:active {
+  	background: colors.darken($color, 10%);
+  	border-color: colors.darken($color, 10%);
+  }
+  */
+}
+body:not(.binary).colored.accented button.selected:hover, body:not(.binary).colored.accented button.selected.selected {
   background: color-mix(in srgb, rgb(0, 0, 127) 20%, var(--secondary-color));
   border-color: color-mix(in srgb, rgb(0, 0, 127) 20%, var(--secondary-color));
-}
-body:not(.binary).colored.accented button.selected:hover {
-  background: color-mix(in srgb, rgb(0, 0, 127) 10%, color-mix(in srgb, rgb(0, 0, 127) 20%, var(--secondary-color)));
-  border-color: color-mix(in srgb, rgb(0, 0, 127) 10%, color-mix(in srgb, rgb(0, 0, 127) 20%, var(--secondary-color)));
-}
-body:not(.binary).colored.accented button.selected:active {
-  background: color-mix(in srgb, rgb(0, 0, 127) 20%, color-mix(in srgb, rgb(0, 0, 127) 20%, var(--secondary-color)));
-  border-color: color-mix(in srgb, rgb(0, 0, 127) 20%, color-mix(in srgb, rgb(0, 0, 127) 20%, var(--secondary-color)));
-}
-body:not(.binary).colored.accented button.selected:hover {
   color: white;
 }
-body:not(.binary).colored.accented button.selected:hover span {
+body:not(.binary).colored.accented button.selected:hover i, body:not(.binary).colored.accented button.selected.selected i {
   color: white;
 }
-body:not(.binary).colored.accented button.selected:hover i {
-  color: white;
-}
-body:not(.binary).colored.accented button.selected:hover svg {
-  fill: white;
-}
-body:not(.binary).colored.accented button.selected.selected {
-  color: white;
-}
-body:not(.binary).colored.accented button.selected.selected span {
-  color: white;
-}
-body:not(.binary).colored.accented button.selected.selected i {
-  color: white;
-}
-body:not(.binary).colored.accented button.selected.selected svg {
+body:not(.binary).colored.accented button.selected:hover svg, body:not(.binary).colored.accented button.selected.selected svg {
   fill: white;
 }
 
-/******************************************************************************\
-|                                                                              |
-|                         _accented-flat-buttons.scss                          |
-|                                                                              |
-|******************************************************************************|
-|                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
-|                                                                              |
-|        Author(s): Abe Megahed                                                |
-|                                                                              |
-|        This file is subject to the terms and conditions defined in           |
-|        'LICENSE.txt', which is part of this source code distribution.        |
-|                                                                              |
-|******************************************************************************|
-|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
-\******************************************************************************/
 @supports (color: color-mix(in srgb, white, black)) {
   body:not(.binary).colored.accented.flat-buttons button:hover, body:not(.binary).colored.accented.flat.auto-buttons button:hover {
     background-color: var(--secondary-color);
@@ -1465,6 +1513,22 @@ body:not(.binary).colored.accented button.selected.selected svg {
     border-color: hsl(200, 100%, 66%);
   }
 }
+/******************************************************************************\
+|                                                                              |
+|                              _flat-buttons.scss                              |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
 /******************************************************************************\
 |                                                                              |
 |                         _accented-flat-desktops.scss                         |
@@ -1499,6 +1563,38 @@ body:not(.binary).colored.accented button.selected.selected svg {
 }
 /******************************************************************************\
 |                                                                              |
+|                              _flat-buttons.scss                              |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                      _accented-flat-progress-bars.scss                       |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
 |                        _accented-progress-bars.scss                          |
 |                                                                              |
 |******************************************************************************|
@@ -1517,22 +1613,6 @@ body:not(.binary).colored.accented:not(.dark) .progress .bar {
   background-color: var(--secondary-color);
 }
 
-/******************************************************************************\
-|                                                                              |
-|                      _accented-flat-progress-bars.scss                       |
-|                                                                              |
-|******************************************************************************|
-|                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
-|                                                                              |
-|        Author(s): Abe Megahed                                                |
-|                                                                              |
-|        This file is subject to the terms and conditions defined in           |
-|        'LICENSE.txt', which is part of this source code distribution.        |
-|                                                                              |
-|******************************************************************************|
-|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
-\******************************************************************************/
 @supports (color: color-mix(in srgb, white, black)) {
   body:not(.binary).colored.accented:not(.dark).flat .progress .bar {
     background-color: var(--secondary-color);
@@ -1547,11 +1627,11 @@ body:not(.binary).colored.accented:not(.dark) .progress .bar {
 }
 /******************************************************************************\
 |                                                                              |
-|                           _colored-scrollbars.scss                           |
+|                        _accented-flat-scrollbars.scss                        |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines various CSS styles used in this application.             |
+|        This defines the dom and svg visual styles for this application.      |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -1577,6 +1657,22 @@ body:not(.binary).colored.accented:not(.dark) .progress .bar {
 |******************************************************************************|
 |        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                           _colored-scrollbars.scss                           |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
 body:not(.binary).colored.accented:not(.dark) ::-webkit-scrollbar-thumb:not(:active) {
   background-color: var(--secondary-color);
 }
@@ -1586,11 +1682,11 @@ body:not(.binary).colored.accented:not(.dark) ::-webkit-scrollbar-thumb:not(:act
 
 /******************************************************************************\
 |                                                                              |
-|                           _flat-scrollbars.scss                              |
+|                              _flat-buttons.scss                              |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
+|        This defines various CSS styles used in this application.             |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -1602,7 +1698,7 @@ body:not(.binary).colored.accented:not(.dark) ::-webkit-scrollbar-thumb:not(:act
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                        _accented-flat-scrollbars.scss                        |
+|                           _flat-scrollbars.scss                              |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -1646,7 +1742,7 @@ body:not(.binary).colored.accented:not(.dark) ::-webkit-scrollbar-thumb:not(:act
 }
 /******************************************************************************\
 |                                                                              |
-|                              _flat-sliders.scss                              |
+|                         _accented-flat-sliders.scss                          |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -1662,7 +1758,23 @@ body:not(.binary).colored.accented:not(.dark) ::-webkit-scrollbar-thumb:not(:act
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                         _accented-flat-sliders.scss                          |
+|                              _flat-buttons.scss                              |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                              _flat-sliders.scss                              |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -1677,9 +1789,6 @@ body:not(.binary).colored.accented:not(.dark) ::-webkit-scrollbar-thumb:not(:act
 |        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 @supports (color: color-mix(in srgb, white, black)) {
-  body:not(.binary).colored.accented.flat-sliders input[type=range], body:not(.binary).colored.accented.flat.auto-sliders input[type=range] {
-    -webkit-appearance: none;
-  }
   body:not(.binary).colored.accented.flat-sliders input[type=range]::-webkit-slider-thumb:not(:active), body:not(.binary).colored.accented.flat.auto-sliders input[type=range]::-webkit-slider-thumb:not(:active) {
     background-color: var(--secondary-color);
     border-color: var(--secondary-color);
@@ -1772,9 +1881,6 @@ body:not(.binary).colored.accented:not(.dark) ::-webkit-scrollbar-thumb:not(:act
   }
 }
 @supports not (color: color-mix(in srgb, white, black)) {
-  body:not(.binary).colored.accented.flat-sliders input[type=range], body:not(.binary).colored.accented.flat.auto-sliders input[type=range] {
-    -webkit-appearance: none;
-  }
   body:not(.binary).colored.accented.flat-sliders input[type=range]::-webkit-slider-thumb:not(:active), body:not(.binary).colored.accented.flat.auto-sliders input[type=range]::-webkit-slider-thumb:not(:active) {
     background-color: hsl(200, 100%, 66%);
     border-color: hsl(200, 100%, 66%);
@@ -1884,6 +1990,54 @@ body:not(.binary).colored.accented:not(.dark) ::-webkit-scrollbar-thumb:not(:act
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
+|                          _accented-chalk-btns.scss                           |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                               _chalk-btns.scss                               |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                 _flat.scss                                   |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
 |                               _round-chalk.scss                              |
 |                                                                              |
 |******************************************************************************|
@@ -1932,6 +2086,22 @@ body:not(.binary).colored.accented:not(.dark) ::-webkit-scrollbar-thumb:not(:act
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
+|                            _accented-buttons.scss                            |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
 |                             _accented-btns.scss                              |
 |                                                                              |
 |******************************************************************************|
@@ -1951,6 +2121,18 @@ body:not(.binary).colored.accented .btn:not(.btn-primary):not(.colored):not(:dis
   border-color: var(--secondary-color);
   color: white;
 }
+body:not(.binary).colored.accented .btn:not(.btn-primary):not(.colored):not(:disabled) i {
+  color: white;
+}
+body:not(.binary).colored.accented .btn:not(.btn-primary):not(.colored):not(:disabled) svg {
+  fill: white;
+}
+body:not(.binary).colored.accented .btn:not(.btn-primary):not(.colored):not(:disabled) else i {
+  color: none;
+}
+body:not(.binary).colored.accented .btn:not(.btn-primary):not(.colored):not(:disabled) else svg {
+  fill: none;
+}
 body:not(.binary).colored.accented .btn:not(.btn-primary):not(.colored):not(:disabled):hover {
   background: color-mix(in srgb, rgb(0, 0, 127) 10%, var(--secondary-color));
   border-color: color-mix(in srgb, rgb(0, 0, 127) 10%, var(--secondary-color));
@@ -1959,32 +2141,7 @@ body:not(.binary).colored.accented .btn:not(.btn-primary):not(.colored):not(:dis
   background: color-mix(in srgb, rgb(0, 0, 127) 20%, var(--secondary-color));
   border-color: color-mix(in srgb, rgb(0, 0, 127) 20%, var(--secondary-color));
 }
-body:not(.binary).colored.accented .btn:not(.btn-primary):not(.colored):not(:disabled) span {
-  color: white;
-}
-body:not(.binary).colored.accented .btn:not(.btn-primary):not(.colored):not(:disabled) i {
-  color: white;
-}
-body:not(.binary).colored.accented .btn:not(.btn-primary):not(.colored):not(:disabled) svg {
-  fill: white;
-}
 
-/******************************************************************************\
-|                                                                              |
-|                          _accented-chalk-btns.scss                           |
-|                                                                              |
-|******************************************************************************|
-|                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
-|                                                                              |
-|        Author(s): Abe Megahed                                                |
-|                                                                              |
-|        This file is subject to the terms and conditions defined in           |
-|        'LICENSE.txt', which is part of this source code distribution.        |
-|                                                                              |
-|******************************************************************************|
-|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
-\******************************************************************************/
 @supports (color: color-mix(in srgb, white, black)) {
   body:not(.binary).colored.accented.chalk-buttons .btn:not(.btn-primary):not(.colored):not(:disabled), body:not(.binary).colored.accented.chalk.auto-buttons .btn:not(.btn-primary):not(.colored):not(:disabled) {
     background: radial-gradient(ellipse 50% 25% at 50% 10%, color-mix(in srgb, white 25%, transparent) 0%, color-mix(in srgb, white 25%, transparent) 25%, transparent 100%) no-repeat, linear-gradient(var(--light-direction), color-mix(in srgb, white 10%, transparent) 0%, transparent 50%, color-mix(in srgb, black 10%, transparent) 100%) no-repeat;
@@ -2071,11 +2228,11 @@ body:not(.binary).colored.accented .btn:not(.btn-primary):not(.colored):not(:dis
 }
 /******************************************************************************\
 |                                                                              |
-|                             _rounded-chalk.scss                              |
+|                       _accented-chalk-desktops.scss                          |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
+|        This defines various CSS styles used in this application.             |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -2087,11 +2244,27 @@ body:not(.binary).colored.accented .btn:not(.btn-primary):not(.colored):not(:dis
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                       _accented-chalk-desktops.scss                          |
+|                                 _flat.scss                                   |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
 |        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                             _rounded-chalk.scss                              |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -2121,7 +2294,85 @@ body:not(.binary).colored.accented .btn:not(.btn-primary):not(.colored):not(:dis
 }
 /******************************************************************************\
 |                                                                              |
+|                     _accented-chalk-progress-bars.scss                       |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                 _flat.scss                                   |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
 |                           _long-round-chalk.scss                             |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                      _accented-flat-progress-bars.scss                       |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+@supports (color: color-mix(in srgb, white, black)) {
+  body:not(.binary).colored.accented:not(.dark).chalk .progress .bar {
+    background: linear-gradient(to right, color-mix(in srgb, black 10%, transparent) 0%, transparent 50%) no-repeat, linear-gradient(to left, color-mix(in srgb, black 10%, transparent) 0%, transparent 50%) no-repeat, linear-gradient(to bottom, color-mix(in srgb, white 25%, transparent) 0%, color-mix(in srgb, white 50%, transparent) calc(5% + 2px), color-mix(in srgb, white 50%, transparent) calc(15% + 2px), transparent calc(50% + 2px)) no-repeat, linear-gradient(var(--light-direction), color-mix(in srgb, white 10%, transparent) 0%, transparent 50%, color-mix(in srgb, black 10%, transparent) 100%) no-repeat;
+    background-color: var(--secondary-color);
+    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--secondary-color));
+  }
+}
+@supports not (color: color-mix(in srgb, white, black)) {
+  body:not(.binary).colored.accented:not(.dark).chalk .progress .bar {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.1) 0%, transparent 50%) no-repeat, linear-gradient(to left, rgba(0, 0, 0, 0.1) 0%, transparent 50%) no-repeat, linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.5) calc(5% + 2px), rgba(255, 255, 255, 0.5) calc(15% + 2px), transparent calc(50% + 2px)) no-repeat, linear-gradient(var(--light-direction), rgba(255, 255, 255, 0.1) 0%, transparent 50%, rgba(0, 0, 0, 0.1) 100%) no-repeat;
+    background-color: hsl(200, 100%, 66%);
+    border-color: #4ab1f2;
+  }
+}
+/******************************************************************************\
+|                                                                              |
+|                       _accented-chalk-scrollbars.scss                        |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -2151,20 +2402,33 @@ body:not(.binary).colored.accented .btn:not(.btn-primary):not(.colored):not(:dis
 |******************************************************************************|
 |        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
-@supports (color: color-mix(in srgb, white, black)) {
-  body:not(.binary).colored.accented:not(.dark).chalk .progress .bar {
-    background: linear-gradient(to right, color-mix(in srgb, black 10%, transparent) 0%, transparent 50%) no-repeat, linear-gradient(to left, color-mix(in srgb, black 10%, transparent) 0%, transparent 50%) no-repeat, linear-gradient(to bottom, color-mix(in srgb, white 25%, transparent) 0%, color-mix(in srgb, white 50%, transparent) calc(5% + 2px), color-mix(in srgb, white 50%, transparent) calc(15% + 2px), transparent calc(50% + 2px)) no-repeat, linear-gradient(var(--light-direction), color-mix(in srgb, white 10%, transparent) 0%, transparent 50%, color-mix(in srgb, black 10%, transparent) 100%) no-repeat;
-    background-color: var(--secondary-color);
-    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--secondary-color));
-  }
-}
-@supports not (color: color-mix(in srgb, white, black)) {
-  body:not(.binary).colored.accented:not(.dark).chalk .progress .bar {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.1) 0%, transparent 50%) no-repeat, linear-gradient(to left, rgba(0, 0, 0, 0.1) 0%, transparent 50%) no-repeat, linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.5) calc(5% + 2px), rgba(255, 255, 255, 0.5) calc(15% + 2px), transparent calc(50% + 2px)) no-repeat, linear-gradient(var(--light-direction), rgba(255, 255, 255, 0.1) 0%, transparent 50%, rgba(0, 0, 0, 0.1) 100%) no-repeat;
-    background-color: hsl(200, 100%, 66%);
-    border-color: #4ab1f2;
-  }
-}
+/******************************************************************************\
+|                                                                              |
+|                           _chalk-scrollbars.scss                             |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                  _tables.scss                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
 /******************************************************************************\
 |                                                                              |
 |                               _scrollbars.scss                               |
@@ -2214,23 +2478,7 @@ body:not(.binary).colored.accented .btn:not(.btn-primary):not(.colored):not(:dis
 }
 /******************************************************************************\
 |                                                                              |
-|                           _chalk-scrollbars.scss                             |
-|                                                                              |
-|******************************************************************************|
-|                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
-|                                                                              |
-|        Author(s): Abe Megahed                                                |
-|                                                                              |
-|        This file is subject to the terms and conditions defined in           |
-|        'LICENSE.txt', which is part of this source code distribution.        |
-|                                                                              |
-|******************************************************************************|
-|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
-\******************************************************************************/
-/******************************************************************************\
-|                                                                              |
-|                       _accented-chalk-scrollbars.scss                        |
+|                        _accented-flat-scrollbars.scss                        |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -2276,6 +2524,70 @@ body:not(.binary).colored.accented .btn:not(.btn-primary):not(.colored):not(:dis
     background: linear-gradient(to top, color-mix(in srgb, var(--ambient-color) 10%, #1fb4ff) 0%, transparent 5px) no-repeat, linear-gradient(to bottom, color-mix(in srgb, var(--ambient-color) 10%, #1fb4ff) 0%, transparent 5px) no-repeat, linear-gradient(to right, color-mix(in srgb, white 25%, transparent) 0%, color-mix(in srgb, white 50%, transparent) calc(5% + 2px), color-mix(in srgb, white 50%, transparent) calc(15% + 2px), transparent calc(50% + 2px)) no-repeat, linear-gradient(to right, color-mix(in srgb, var(--light-color) 10%, #1fb4ff) 0%, #1fb4ff 50%, color-mix(in srgb, var(--ambient-color) 10%, #1fb4ff) 100%) no-repeat;
   }
 }
+/******************************************************************************\
+|                                                                              |
+|                         _accented-chalk-sliders.scss                         |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                               _chalk-btns.scss                               |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                              _flat-buttons.scss                              |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                              _chalk-sliders.scss                             |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
 /******************************************************************************\
 |                                                                              |
 |                                  _sliders.scss                               |
@@ -2483,42 +2795,7 @@ input[type=range]::-moz-range-track {
   box-shadow: none;
 }
 
-/******************************************************************************\
-|                                                                              |
-|                              _chalk-sliders.scss                             |
-|                                                                              |
-|******************************************************************************|
-|                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
-|                                                                              |
-|        Author(s): Abe Megahed                                                |
-|                                                                              |
-|        This file is subject to the terms and conditions defined in           |
-|        'LICENSE.txt', which is part of this source code distribution.        |
-|                                                                              |
-|******************************************************************************|
-|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
-\******************************************************************************/
-/******************************************************************************\
-|                                                                              |
-|                         _accented-chalk-sliders.scss                         |
-|                                                                              |
-|******************************************************************************|
-|                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
-|                                                                              |
-|        Author(s): Abe Megahed                                                |
-|                                                                              |
-|        This file is subject to the terms and conditions defined in           |
-|        'LICENSE.txt', which is part of this source code distribution.        |
-|                                                                              |
-|******************************************************************************|
-|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
-\******************************************************************************/
 @supports (color: color-mix(in srgb, white, black)) {
-  body:not(.binary).colored.accented.chalk-sliders input[type=range], body:not(.binary).colored.accented.chalk.auto-sliders input[type=range] {
-    -webkit-appearance: none;
-  }
   body:not(.binary).colored.accented.chalk-sliders input[type=range]::-webkit-slider-thumb:not(:active), body:not(.binary).colored.accented.chalk.auto-sliders input[type=range]::-webkit-slider-thumb:not(:active) {
     background: radial-gradient(ellipse 50% 25% at 50% 10%, color-mix(in srgb, white 25%, transparent) 0%, color-mix(in srgb, white 25%, transparent) 25%, transparent 100%) no-repeat, linear-gradient(var(--light-direction), color-mix(in srgb, white 10%, transparent) 0%, transparent 50%, color-mix(in srgb, black 10%, transparent) 100%) no-repeat;
     background-color: var(--secondary-color);
@@ -2557,9 +2834,6 @@ input[type=range]::-moz-range-track {
   }
 }
 @supports not (color: color-mix(in srgb, white, black)) {
-  body:not(.binary).colored.accented.chalk-sliders input[type=range], body:not(.binary).colored.accented.chalk.auto-sliders input[type=range] {
-    -webkit-appearance: none;
-  }
   body:not(.binary).colored.accented.chalk-sliders input[type=range]::-webkit-slider-thumb:not(:active), body:not(.binary).colored.accented.chalk.auto-sliders input[type=range]::-webkit-slider-thumb:not(:active) {
     background: radial-gradient(ellipse 50% 25% at 50% 10%, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.25) 25%, transparent 100%) no-repeat, linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, transparent 50%, rgba(0, 0, 0, 0.1) 100%) no-repeat;
     background-color: hsl(200, 100%, 66%);
@@ -2615,6 +2889,54 @@ input[type=range]::-moz-range-track {
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
+|                         _accented-plastic-btns.scss                          |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                              _plastic-btns.scss                              |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                 _flat.scss                                   |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
 |                             _round-plastic.scss                              |
 |                                                                              |
 |******************************************************************************|
@@ -2652,22 +2974,6 @@ input[type=range]::-moz-range-track {
 |******************************************************************************|
 |                                                                              |
 |        This defines various CSS styles used in this application.             |
-|                                                                              |
-|        Author(s): Abe Megahed                                                |
-|                                                                              |
-|        This file is subject to the terms and conditions defined in           |
-|        'LICENSE.txt', which is part of this source code distribution.        |
-|                                                                              |
-|******************************************************************************|
-|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
-\******************************************************************************/
-/******************************************************************************\
-|                                                                              |
-|                         _accented-plastic-btns.scss                          |
-|                                                                              |
-|******************************************************************************|
-|                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -2763,11 +3069,11 @@ input[type=range]::-moz-range-track {
 }
 /******************************************************************************\
 |                                                                              |
-|                            _rounded-plastic.scss                             |
+|                      _accented-plastic-desktops.scss                         |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
+|        This defines various CSS styles used in this application.             |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -2779,11 +3085,27 @@ input[type=range]::-moz-range-track {
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                      _accented-plastic-desktops.scss                         |
+|                                 _flat.scss                                   |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
 |        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                            _rounded-plastic.scss                             |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -2813,7 +3135,83 @@ input[type=range]::-moz-range-track {
 }
 /******************************************************************************\
 |                                                                              |
+|                    _accented-plastic-progress-bars.scss                      |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                 _flat.scss                                   |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
 |                          _long-round-plastic.scss                            |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                      _accented-flat-progress-bars.scss                       |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+@supports (color: color-mix(in srgb, white, black)) {
+  body:not(.binary).colored.accented:not(.dark).plastic .progress .bar {
+    background: linear-gradient(to right, color-mix(in srgb, var(--ambient-color) 10%, var(--secondary-color)) 0%, transparent 50%) no-repeat, linear-gradient(to left, color-mix(in srgb, var(--ambient-color) 10%, var(--secondary-color)) 0%, transparent 50%) no-repeat, linear-gradient(to bottom, transparent 0%, color-mix(in srgb, white 100%, transparent) calc(7.5% + 2px), color-mix(in srgb, white 100%, transparent) calc(12.5% + 2px), transparent calc(33% + 2px)) no-repeat, linear-gradient(var(--light-direction), color-mix(in srgb, white 10%, transparent) 0%, transparent 50%, color-mix(in srgb, black 10%, transparent) 100%) no-repeat;
+    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--secondary-color));
+  }
+}
+@supports not (color: color-mix(in srgb, white, black)) {
+  body:not(.binary).colored.accented:not(.dark).plastic .progress .bar {
+    background: linear-gradient(to right, #4ab1f2 0%, transparent 50%) no-repeat, linear-gradient(to left, #4ab1f2 0%, transparent 50%) no-repeat, linear-gradient(to bottom, transparent 0%, white calc(7.5% + 2px), white calc(12.5% + 2px), transparent calc(33% + 2px)) no-repeat, linear-gradient(var(--light-direction), rgba(255, 255, 255, 0.1) 0%, transparent 50%, rgba(0, 0, 0, 0.1) 100%) no-repeat;
+    border-color: #4ab1f2;
+  }
+}
+/******************************************************************************\
+|                                                                              |
+|                      _accented-plastic-scrollbars.scss                       |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -2843,18 +3241,22 @@ input[type=range]::-moz-range-track {
 |******************************************************************************|
 |        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
-@supports (color: color-mix(in srgb, white, black)) {
-  body:not(.binary).colored.accented:not(.dark).plastic .progress .bar {
-    background: linear-gradient(to right, color-mix(in srgb, var(--ambient-color) 10%, var(--secondary-color)) 0%, transparent 50%) no-repeat, linear-gradient(to left, color-mix(in srgb, var(--ambient-color) 10%, var(--secondary-color)) 0%, transparent 50%) no-repeat, linear-gradient(to bottom, transparent 0%, color-mix(in srgb, white 100%, transparent) calc(7.5% + 2px), color-mix(in srgb, white 100%, transparent) calc(12.5% + 2px), transparent calc(33% + 2px)) no-repeat, linear-gradient(var(--light-direction), color-mix(in srgb, white 10%, transparent) 0%, transparent 50%, color-mix(in srgb, black 10%, transparent) 100%) no-repeat;
-    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--secondary-color));
-  }
-}
-@supports not (color: color-mix(in srgb, white, black)) {
-  body:not(.binary).colored.accented:not(.dark).plastic .progress .bar {
-    background: linear-gradient(to right, #4ab1f2 0%, transparent 50%) no-repeat, linear-gradient(to left, #4ab1f2 0%, transparent 50%) no-repeat, linear-gradient(to bottom, transparent 0%, white calc(7.5% + 2px), white calc(12.5% + 2px), transparent calc(33% + 2px)) no-repeat, linear-gradient(var(--light-direction), rgba(255, 255, 255, 0.1) 0%, transparent 50%, rgba(0, 0, 0, 0.1) 100%) no-repeat;
-    border-color: #4ab1f2;
-  }
-}
+/******************************************************************************\
+|                                                                              |
+|                           _chalk-scrollbars.scss                             |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
 /******************************************************************************\
 |                                                                              |
 |                          _plastic-scrollbars.scss                            |
@@ -2873,7 +3275,7 @@ input[type=range]::-moz-range-track {
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                      _accented-plastic-scrollbars.scss                       |
+|                        _accented-flat-scrollbars.scss                        |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -2917,7 +3319,7 @@ input[type=range]::-moz-range-track {
 }
 /******************************************************************************\
 |                                                                              |
-|                             _plastic-sliders.scss                            |
+|                        _accented-plastic-sliders.scss                        |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -2933,7 +3335,55 @@ input[type=range]::-moz-range-track {
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                        _accented-plastic-sliders.scss                        |
+|                              _plastic-btns.scss                              |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                              _flat-buttons.scss                              |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                              _chalk-sliders.scss                             |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                             _plastic-sliders.scss                            |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -2948,9 +3398,6 @@ input[type=range]::-moz-range-track {
 |        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 @supports (color: color-mix(in srgb, white, black)) {
-  body:not(.binary).colored.accented.plastic-sliders input[type=range], body:not(.binary).colored.accented.plastic.auto-sliders input[type=range] {
-    -webkit-appearance: none;
-  }
   body:not(.binary).colored.accented.plastic-sliders input[type=range]::-webkit-slider-thumb:not(:active), body:not(.binary).colored.accented.plastic.auto-sliders input[type=range]::-webkit-slider-thumb:not(:active) {
     background: radial-gradient(ellipse 25% 12% at 50% 10%, color-mix(in srgb, white 100%, transparent) 25%, transparent 100%) no-repeat, radial-gradient(ellipse 50% 25% at 50% 10%, color-mix(in srgb, white 50%, transparent) 0%, color-mix(in srgb, white 50%, transparent) 50%, transparent 100%) no-repeat, linear-gradient(var(--light-direction), color-mix(in srgb, white 10%, transparent) 0%, transparent 50%, color-mix(in srgb, black 10%, transparent) 100%) no-repeat;
     background-color: var(--secondary-color);
@@ -2989,9 +3436,6 @@ input[type=range]::-moz-range-track {
   }
 }
 @supports not (color: color-mix(in srgb, white, black)) {
-  body:not(.binary).colored.accented.plastic-sliders input[type=range], body:not(.binary).colored.accented.plastic.auto-sliders input[type=range] {
-    -webkit-appearance: none;
-  }
   body:not(.binary).colored.accented.plastic-sliders input[type=range]::-webkit-slider-thumb:not(:active), body:not(.binary).colored.accented.plastic.auto-sliders input[type=range]::-webkit-slider-thumb:not(:active) {
     background: radial-gradient(ellipse 25% 12% at 50% 10%, white 25%, transparent 100%) no-repeat, radial-gradient(ellipse 50% 25% at 50% 10%, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 50%, transparent 100%) no-repeat, linear-gradient(var(--light-direction), rgba(255, 255, 255, 0.1) 0%, transparent 50%, rgba(0, 0, 0, 0.1) 100%) no-repeat;
     background-color: hsl(200, 100%, 66%);
@@ -3047,6 +3491,54 @@ input[type=range]::-moz-range-track {
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
+|                          _accented-glass-btns.scss                           |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                               _glass-btns.scss                               |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                 _flat.scss                                   |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
 |                               _round-glass.scss                              |
 |                                                                              |
 |******************************************************************************|
@@ -3084,22 +3576,6 @@ input[type=range]::-moz-range-track {
 |******************************************************************************|
 |                                                                              |
 |        This defines various CSS styles used in this application.             |
-|                                                                              |
-|        Author(s): Abe Megahed                                                |
-|                                                                              |
-|        This file is subject to the terms and conditions defined in           |
-|        'LICENSE.txt', which is part of this source code distribution.        |
-|                                                                              |
-|******************************************************************************|
-|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
-\******************************************************************************/
-/******************************************************************************\
-|                                                                              |
-|                          _accented-glass-btns.scss                           |
-|                                                                              |
-|******************************************************************************|
-|                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -3195,11 +3671,11 @@ input[type=range]::-moz-range-track {
 }
 /******************************************************************************\
 |                                                                              |
-|                             _rounded-glass.scss                              |
+|                       _accented-glass-desktops.scss                          |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
+|        This defines various CSS styles used in this application.             |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -3211,11 +3687,27 @@ input[type=range]::-moz-range-track {
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                       _accented-glass-desktops.scss                          |
+|                                 _flat.scss                                   |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
 |        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                             _rounded-glass.scss                              |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -3245,7 +3737,83 @@ input[type=range]::-moz-range-track {
 }
 /******************************************************************************\
 |                                                                              |
+|                     _accented-glass-progress-bars.scss                       |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                 _flat.scss                                   |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
 |                            _long-round-glass.scss                            |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                      _accented-flat-progress-bars.scss                       |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+@supports (color: color-mix(in srgb, white, black)) {
+  body:not(.binary).colored.accented:not(.dark).glass .progress .bar {
+    background: linear-gradient(to right, color-mix(in srgb, var(--ambient-color) 25%, var(--secondary-color)) 0%, transparent 50%) no-repeat, linear-gradient(to left, color-mix(in srgb, var(--ambient-color) 25%, var(--secondary-color)) 0%, transparent 50%) no-repeat, linear-gradient(to bottom, transparent 0%, color-mix(in srgb, white 100%, transparent) calc(7.5% + 2px), color-mix(in srgb, white 100%, transparent) calc(12.5% + 2px), transparent calc(33% + 2px)) no-repeat, linear-gradient(var(--light-direction), transparent 33%, color-mix(in srgb, var(--light-color) 10%, var(--secondary-color)) calc(70% + 2px), color-mix(in srgb, var(--light-color) 10%, var(--secondary-color)) calc(80% + 2px), var(--secondary-color) 100%) no-repeat, color-mix(in srgb, var(--ambient-color) 30%, var(--secondary-color));
+    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--secondary-color));
+  }
+}
+@supports not (color: color-mix(in srgb, white, black)) {
+  body:not(.binary).colored.accented:not(.dark).glass .progress .bar {
+    background: linear-gradient(to right, #3e94df 0%, transparent 50%) no-repeat, linear-gradient(to left, #3e94df 0%, transparent 50%) no-repeat, linear-gradient(to bottom, transparent 0%, white calc(7.5% + 2px), white calc(12.5% + 2px), transparent calc(33% + 2px)) no-repeat, linear-gradient(var(--light-direction), transparent 33%, #63cbff calc(70% + 2px), #63cbff calc(80% + 2px), hsl(200, 100%, 66%) 100%) no-repeat, #398ad9;
+    border-color: #4ab1f2;
+  }
+}
+/******************************************************************************\
+|                                                                              |
+|                       _accented-glass-scrollbars.scss                        |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -3275,18 +3843,22 @@ input[type=range]::-moz-range-track {
 |******************************************************************************|
 |        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
-@supports (color: color-mix(in srgb, white, black)) {
-  body:not(.binary).colored.accented:not(.dark).glass .progress .bar {
-    background: linear-gradient(to right, color-mix(in srgb, var(--ambient-color) 25%, var(--secondary-color)) 0%, transparent 50%) no-repeat, linear-gradient(to left, color-mix(in srgb, var(--ambient-color) 25%, var(--secondary-color)) 0%, transparent 50%) no-repeat, linear-gradient(to bottom, transparent 0%, color-mix(in srgb, white 100%, transparent) calc(7.5% + 2px), color-mix(in srgb, white 100%, transparent) calc(12.5% + 2px), transparent calc(33% + 2px)) no-repeat, linear-gradient(var(--light-direction), transparent 33%, color-mix(in srgb, var(--light-color) 10%, var(--secondary-color)) calc(70% + 2px), color-mix(in srgb, var(--light-color) 10%, var(--secondary-color)) calc(80% + 2px), var(--secondary-color) 100%) no-repeat, color-mix(in srgb, var(--ambient-color) 30%, var(--secondary-color));
-    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--secondary-color));
-  }
-}
-@supports not (color: color-mix(in srgb, white, black)) {
-  body:not(.binary).colored.accented:not(.dark).glass .progress .bar {
-    background: linear-gradient(to right, #3e94df 0%, transparent 50%) no-repeat, linear-gradient(to left, #3e94df 0%, transparent 50%) no-repeat, linear-gradient(to bottom, transparent 0%, white calc(7.5% + 2px), white calc(12.5% + 2px), transparent calc(33% + 2px)) no-repeat, linear-gradient(var(--light-direction), transparent 33%, #63cbff calc(70% + 2px), #63cbff calc(80% + 2px), hsl(200, 100%, 66%) 100%) no-repeat, #398ad9;
-    border-color: #4ab1f2;
-  }
-}
+/******************************************************************************\
+|                                                                              |
+|                           _chalk-scrollbars.scss                             |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
 /******************************************************************************\
 |                                                                              |
 |                           _glass-scrollbars.scss                             |
@@ -3305,7 +3877,7 @@ input[type=range]::-moz-range-track {
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                       _accented-glass-scrollbars.scss                        |
+|                        _accented-flat-scrollbars.scss                        |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -3349,7 +3921,7 @@ input[type=range]::-moz-range-track {
 }
 /******************************************************************************\
 |                                                                              |
-|                              _glass-sliders.scss                             |
+|                         _accented-glass-sliders.scss                         |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -3365,7 +3937,55 @@ input[type=range]::-moz-range-track {
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                         _accented-glass-sliders.scss                         |
+|                               _glass-btns.scss                               |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                              _flat-buttons.scss                              |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                              _chalk-sliders.scss                             |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                              _glass-sliders.scss                             |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -3380,9 +4000,6 @@ input[type=range]::-moz-range-track {
 |        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 @supports (color: color-mix(in srgb, white, black)) {
-  body:not(.binary).colored.accented.glass-sliders input[type=range], body:not(.binary).colored.accented.glass.auto-sliders input[type=range] {
-    -webkit-appearance: none;
-  }
   body:not(.binary).colored.accented.glass-sliders input[type=range]::-webkit-slider-thumb:not(:active), body:not(.binary).colored.accented.glass.auto-sliders input[type=range]::-webkit-slider-thumb:not(:active) {
     background: radial-gradient(ellipse 25% 12% at 50% 10%, color-mix(in srgb, white 100%, transparent) 25%, transparent 100%) no-repeat, radial-gradient(ellipse 50% 25% at 50% 10%, color-mix(in srgb, white 50%, transparent) 50%, transparent 100%) no-repeat, radial-gradient(ellipse 50% 50% at 50% 85%, color-mix(in srgb, color-mix(in srgb, var(--light-color) 80%, var(--secondary-color)) 100%, transparent) 0%, color-mix(in srgb, color-mix(in srgb, var(--light-color) 10%, var(--secondary-color)) 100%, transparent) 50%, transparent 100%) no-repeat, linear-gradient(var(--light-direction), transparent 33%, color-mix(in srgb, var(--secondary-color) 50%, transparent) 100%) no-repeat;
     background-color: color-mix(in srgb, var(--ambient-color) 30%, var(--secondary-color));
@@ -3421,9 +4038,6 @@ input[type=range]::-moz-range-track {
   }
 }
 @supports not (color: color-mix(in srgb, white, black)) {
-  body:not(.binary).colored.accented.glass-sliders input[type=range], body:not(.binary).colored.accented.glass.auto-sliders input[type=range] {
-    -webkit-appearance: none;
-  }
   body:not(.binary).colored.accented.glass-sliders input[type=range]::-webkit-slider-thumb:not(:active), body:not(.binary).colored.accented.glass.auto-sliders input[type=range]::-webkit-slider-thumb:not(:active) {
     background: radial-gradient(ellipse 25% 12% at 50% 10%, white 25%, transparent 100%) no-repeat, radial-gradient(ellipse 50% 25% at 50% 10%, rgba(255, 255, 255, 0.5) 50%, transparent 100%) no-repeat, radial-gradient(ellipse 50% 50% at 50% 85%, #dcf3ff 0%, #63cbff 50%, transparent 100%) no-repeat, linear-gradient(var(--light-direction), transparent 33%, rgba(82, 197, 255, 0.5) 100%) no-repeat;
     background-color: #398ad9;
@@ -3479,6 +4093,54 @@ input[type=range]::-moz-range-track {
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
+|                          _accented-metal-btns.scss                           |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                               _metal-btns.scss                               |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                 _flat.scss                                   |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
 |                              _round-metal.scss                               |
 |                                                                              |
 |******************************************************************************|
@@ -3516,22 +4178,6 @@ input[type=range]::-moz-range-track {
 |******************************************************************************|
 |                                                                              |
 |        This defines various CSS styles used in this application.             |
-|                                                                              |
-|        Author(s): Abe Megahed                                                |
-|                                                                              |
-|        This file is subject to the terms and conditions defined in           |
-|        'LICENSE.txt', which is part of this source code distribution.        |
-|                                                                              |
-|******************************************************************************|
-|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
-\******************************************************************************/
-/******************************************************************************\
-|                                                                              |
-|                          _accented-metal-btns.scss                           |
-|                                                                              |
-|******************************************************************************|
-|                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -3627,11 +4273,11 @@ input[type=range]::-moz-range-track {
 }
 /******************************************************************************\
 |                                                                              |
-|                            _rounded-metal.scss                               |
+|                       _accented-metal-desktops.scss                          |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
+|        This defines various CSS styles used in this application.             |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -3643,11 +4289,27 @@ input[type=range]::-moz-range-track {
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                       _accented-metal-desktops.scss                          |
+|                                 _flat.scss                                   |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
 |        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                            _rounded-metal.scss                               |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -3677,7 +4339,83 @@ input[type=range]::-moz-range-track {
 }
 /******************************************************************************\
 |                                                                              |
+|                     _accented-metal-progress-bars.scss                       |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                 _flat.scss                                   |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
 |                           _long-round-metal.scss                             |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                      _accented-flat-progress-bars.scss                       |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+@supports (color: color-mix(in srgb, white, black)) {
+  body:not(.binary).colored.accented:not(.dark).metal .progress .bar {
+    background: linear-gradient(to right, color-mix(in srgb, var(--ambient-color) 40%, var(--secondary-color)) 0%, transparent 50%) no-repeat, linear-gradient(to left, color-mix(in srgb, var(--ambient-color) 40%, var(--secondary-color)) 0%, transparent 50%) no-repeat, linear-gradient(to bottom, color-mix(in srgb, var(--light-color) 25%, var(--secondary-color)) 0%, color-mix(in srgb, var(--light-color) 75%, var(--secondary-color)) calc(5% + 2px), color-mix(in srgb, var(--light-color) 75%, var(--secondary-color)) calc(15% + 2px), transparent calc(50% + 2px)) no-repeat, linear-gradient(var(--light-direction), transparent 0%, var(--secondary-color) 25%, transparent 75%) no-repeat, linear-gradient(var(--light-direction), transparent 66%, color-mix(in srgb, var(--light-color) 10%, var(--secondary-color)) 100%) no-repeat, color-mix(in srgb, var(--ambient-color) 50%, var(--secondary-color));
+    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--secondary-color));
+  }
+}
+@supports not (color: color-mix(in srgb, white, black)) {
+  body:not(.binary).colored.accented:not(.dark).metal .progress .bar {
+    background: linear-gradient(to right, #3176cc 0%, transparent 50%) no-repeat, linear-gradient(to left, #3176cc 0%, transparent 50%) no-repeat, linear-gradient(to bottom, #7dd4ff 0%, #d4f1ff calc(5% + 2px), #d4f1ff calc(15% + 2px), transparent calc(50% + 2px)) no-repeat, linear-gradient(var(--light-direction), transparent 0%, hsl(200, 100%, 66%) 25%, transparent 75%) no-repeat, linear-gradient(var(--light-direction), transparent 66%, color-mix(in srgb, var(--light-color) 10%, hsl(200, 100%, 66%)) 100%) no-repeat, #2963bf;
+    border-color: #4ab1f2;
+  }
+}
+/******************************************************************************\
+|                                                                              |
+|                       _accented-metal-scrollbars.scss                        |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -3707,18 +4445,22 @@ input[type=range]::-moz-range-track {
 |******************************************************************************|
 |        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
-@supports (color: color-mix(in srgb, white, black)) {
-  body:not(.binary).colored.accented:not(.dark).metal .progress .bar {
-    background: linear-gradient(to right, color-mix(in srgb, var(--ambient-color) 40%, var(--secondary-color)) 0%, transparent 50%) no-repeat, linear-gradient(to left, color-mix(in srgb, var(--ambient-color) 40%, var(--secondary-color)) 0%, transparent 50%) no-repeat, linear-gradient(to bottom, color-mix(in srgb, var(--light-color) 25%, var(--secondary-color)) 0%, color-mix(in srgb, var(--light-color) 75%, var(--secondary-color)) calc(5% + 2px), color-mix(in srgb, var(--light-color) 75%, var(--secondary-color)) calc(15% + 2px), transparent calc(50% + 2px)) no-repeat, linear-gradient(var(--light-direction), transparent 0%, var(--secondary-color) 25%, transparent 75%) no-repeat, linear-gradient(var(--light-direction), transparent 66%, color-mix(in srgb, var(--light-color) 10%, var(--secondary-color)) 100%) no-repeat, color-mix(in srgb, var(--ambient-color) 50%, var(--secondary-color));
-    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--secondary-color));
-  }
-}
-@supports not (color: color-mix(in srgb, white, black)) {
-  body:not(.binary).colored.accented:not(.dark).metal .progress .bar {
-    background: linear-gradient(to right, #3176cc 0%, transparent 50%) no-repeat, linear-gradient(to left, #3176cc 0%, transparent 50%) no-repeat, linear-gradient(to bottom, #7dd4ff 0%, #d4f1ff calc(5% + 2px), #d4f1ff calc(15% + 2px), transparent calc(50% + 2px)) no-repeat, linear-gradient(var(--light-direction), transparent 0%, hsl(200, 100%, 66%) 25%, transparent 75%) no-repeat, linear-gradient(var(--light-direction), transparent 66%, color-mix(in srgb, var(--light-color) 10%, hsl(200, 100%, 66%)) 100%) no-repeat, #2963bf;
-    border-color: #4ab1f2;
-  }
-}
+/******************************************************************************\
+|                                                                              |
+|                           _chalk-scrollbars.scss                             |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
 /******************************************************************************\
 |                                                                              |
 |                           _metal-scrollbars.scss                             |
@@ -3737,7 +4479,7 @@ input[type=range]::-moz-range-track {
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                       _accented-metal-scrollbars.scss                        |
+|                        _accented-flat-scrollbars.scss                        |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -3781,7 +4523,7 @@ input[type=range]::-moz-range-track {
 }
 /******************************************************************************\
 |                                                                              |
-|                              _metal-sliders.scss                             |
+|                         _accented-metal-sliders.scss                         |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -3797,7 +4539,55 @@ input[type=range]::-moz-range-track {
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                         _accented-metal-sliders.scss                         |
+|                               _metal-btns.scss                               |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                              _flat-buttons.scss                              |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                              _chalk-sliders.scss                             |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                              _metal-sliders.scss                             |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -3812,9 +4602,6 @@ input[type=range]::-moz-range-track {
 |        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 @supports (color: color-mix(in srgb, white, black)) {
-  body:not(.binary).colored.accented.metal-sliders input[type=range], body:not(.binary).colored.accented.metal.auto-sliders input[type=range] {
-    -webkit-appearance: none;
-  }
   body:not(.binary).colored.accented.metal-sliders input[type=range]::-webkit-slider-thumb:not(:active), body:not(.binary).colored.accented.metal.auto-sliders input[type=range]::-webkit-slider-thumb:not(:active) {
     background: radial-gradient(ellipse 50% 25% at 50% 10%, color-mix(in srgb, white 75%, transparent) 0%, color-mix(in srgb, color-mix(in srgb, var(--light-color) 20%, var(--secondary-color)) 75%, transparent) 50%, transparent 100%) no-repeat, radial-gradient(ellipse 50% 25% at 50% 10%, color-mix(in srgb, var(--secondary-color) 100%, transparent) 0%, transparent 100%) no-repeat, linear-gradient(var(--light-direction), transparent 25%, color-mix(in srgb, var(--secondary-color) 50%, transparent) 66%, color-mix(in srgb, var(--light-color) 30%, var(--secondary-color)) 100%) no-repeat;
     background-color: color-mix(in srgb, var(--ambient-color) 50%, var(--secondary-color));
@@ -3853,9 +4640,6 @@ input[type=range]::-moz-range-track {
   }
 }
 @supports not (color: color-mix(in srgb, white, black)) {
-  body:not(.binary).colored.accented.metal-sliders input[type=range], body:not(.binary).colored.accented.metal.auto-sliders input[type=range] {
-    -webkit-appearance: none;
-  }
   body:not(.binary).colored.accented.metal-sliders input[type=range]::-webkit-slider-thumb:not(:active), body:not(.binary).colored.accented.metal.auto-sliders input[type=range]::-webkit-slider-thumb:not(:active) {
     background: radial-gradient(ellipse 50% 25% at 50% 10%, rgba(255, 255, 255, 0.75) 0%, rgba(117, 209, 255, 0.75) 50%, rgba(0, 0, 0, 0) 100%) no-repeat, radial-gradient(ellipse 50% 25% at 50% 10%, #52c5ff 0%, transparent 100%) no-repeat, linear-gradient(var(--light-direction), transparent 25%, rgba(82, 197, 255, 0.5) 66%, #86d6ff 100%) no-repeat;
     background-color: #2963bf;
@@ -3895,11 +4679,27 @@ input[type=range]::-moz-range-track {
 }
 /******************************************************************************\
 |                                                                              |
-|                                 _index.scss                                  |
+|                      _accented-flat-progress-bars.scss                       |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines various CSS styles used in this application.             |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                        _accented-flat-scrollbars.scss                        |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -3956,6 +4756,22 @@ body:not(.binary).colored.accented:not(.dark).tabs-minimal ul.nav-tabs > li:not(
 
 /******************************************************************************\
 |                                                                              |
+|                                 _index.scss                                  |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
 |                          _accented-task-bars.scss                            |
 |                                                                              |
 |******************************************************************************|
@@ -3979,38 +4795,5 @@ body:not(.binary).colored.accented #desktop.accented:not(.task-bar-minimized) .t
 body:not(.binary).colored.accented #desktop.task-bar-minimized:not(.accented) .task-bar .task-list li i {
   color: white !important;
 }
-
-/******************************************************************************\
-|                                                                              |
-|                                 _index.scss                                  |
-|                                                                              |
-|******************************************************************************|
-|                                                                              |
-|        This defines various CSS styles used in this application.             |
-|                                                                              |
-|        Author(s): Abe Megahed                                                |
-|                                                                              |
-|        This file is subject to the terms and conditions defined in           |
-|        'LICENSE.txt', which is part of this source code distribution.        |
-|                                                                              |
-|******************************************************************************|
-|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
-\******************************************************************************/
-/******************************************************************************\
-|                                                                              |
-|                                 styles.scss                                  |
-|                                                                              |
-|******************************************************************************|
-|                                                                              |
-|        This defines various CSS styles used in this application.             |
-|                                                                              |
-|        Author(s): Abe Megahed                                                |
-|                                                                              |
-|        This file is subject to the terms and conditions defined in           |
-|        'LICENSE.txt', which is part of this source code distribution.        |
-|                                                                              |
-|******************************************************************************|
-|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
-\******************************************************************************/
 
 /*# sourceMappingURL=styles.css.map */

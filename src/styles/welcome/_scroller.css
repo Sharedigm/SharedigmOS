@@ -1,0 +1,26 @@
+/******************************************************************************\
+|                                                                              |
+|                                _scroller.scss                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|       This defines various CSS styles used in this application.              |
+|                                                                              |
+|       Author(s): Abe Megahed                                                 |
+|                                                                              |
+|       This file is subject to the terms and conditions defined in            |
+|       'LICENSE.md', which is part of this source code distribution.          |
+|                                                                              |
+|******************************************************************************|
+|       Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com         |
+\******************************************************************************/
+
+body.paused {
+	.welcome {
+		.overlay {
+			.layer {
+				animation-play-state: paused
+			}
+		}
+	}
+}

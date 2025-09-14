@@ -21,7 +21,7 @@
 		</li>
 
 		<li>
-			<h2><i class="fa fa-hand-grab"></i>Mouse Mode Controls</h2>
+			<h2><i class="fa fa-hand"></i>Mouse Mode Controls</h2>
 			<p>The <a href="#apps/image-viewer"><%= config.apps['image_viewer'].name %></a> app includes a set of controls that allow you to use the mouse to pan, zoom, zoom to rect, and to measure size in pixels. <p>
 
 			<div class="figure">

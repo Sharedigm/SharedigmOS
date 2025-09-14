@@ -80,13 +80,13 @@ export default {
 	},
 
 	getMaxWidth: function() {
-		let width = $(window).width() - config.defaults.dialogs.margin[0];
-		return width * config.defaults.dialogs.scale[0];
+		let width = $(window).width() - config.settings.defaults.dialogs.margin[0];
+		return width * config.settings.defaults.dialogs.scale[0];
 	},
 
 	getMaxHeight: function() {
-		let height = $(window).height() - config.defaults.dialogs.margin[1];
-		return height * config.defaults.dialogs.scale[1];
+		let height = $(window).height() - config.settings.defaults.dialogs.margin[1];
+		return height * config.settings.defaults.dialogs.scale[1];
 	},
 
 	getDefaultSize: function(sizes) {
@@ -96,7 +96,7 @@ export default {
 		// find candidate default sizes
 		//
 		if (!sizes) {
-			sizes = config.defaults.dialogs.sizes;
+			sizes = config.settings.defaults.dialogs.sizes;
 		}
 
 		return this.getSizeUpTo(sizes, [maxWidth, maxHeight]);
@@ -156,8 +156,8 @@ export default {
 	shrink: function() {
 		let width = this.$el.find('.body').width();
 		let index = 0;
-		let keys = Object.keys(config.defaults.dialogs.sizes);
-		while (width > config.defaults.dialogs.sizes[keys[index]][0]) {
+		let keys = Object.keys(config.settings.defaults.dialogs.sizes);
+		while (width > config.settings.defaults.dialogs.sizes[keys[index]][0]) {
 			index++;
 		}
 		if (index > 0) {
@@ -166,14 +166,14 @@ export default {
 		if (this.isFullScreen()) {
 			this.exitFullScreen();
 		}
-		this.setSize(config.defaults.dialogs.sizes[keys[index]]);
+		this.setSize(config.settings.defaults.dialogs.sizes[keys[index]]);
 	},
 
 	grow: function() {
 		let width = this.$el.find('.body').width();
 		let index = 0;
-		let keys = Object.keys(config.defaults.dialogs.sizes);
-		while (width > config.defaults.dialogs.sizes[keys[index]][0]) {
+		let keys = Object.keys(config.settings.defaults.dialogs.sizes);
+		while (width > config.settings.defaults.dialogs.sizes[keys[index]][0]) {
 			index++;
 		}
 		if (index < keys.length - 1) {
@@ -182,7 +182,7 @@ export default {
 		if (this.isFullScreen()) {
 			this.exitFullScreen();
 		}
-		this.setSize(config.defaults.dialogs.sizes[keys[index]]);
+		this.setSize(config.settings.defaults.dialogs.sizes[keys[index]]);
 	},
 
 	resetSize: function() {

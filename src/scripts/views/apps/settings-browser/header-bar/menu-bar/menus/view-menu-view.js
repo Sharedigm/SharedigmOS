@@ -27,13 +27,13 @@ export default ViewMenuView.extend({
 
 		// view options
 		//
-		'click .view-kind > a': 'onClickViewKind',
+		'click .view-kind': 'onClickViewKind',
 
 		// sidebar options
 		//
 		'click .show-sidebar': 'onClickShowSidebar',
-		'click .show-sidebar-panel > a': 'onClickShowSideBarPanel',
-		'click .sidebar-view-kind > a': 'onClickSideBarViewKind',
+		'click .sidebar-panels': 'onClickSideBarPanel',
+		'click .sidebar-view-kind': 'onClickSideBarViewKind',
 
 		// window options
 		//
@@ -60,27 +60,24 @@ export default ViewMenuView.extend({
 
 	selected: function() {
 		let preferences = this.parent.app.preferences;
-		let isDesktop = this.parent.app.isDesktop();
-		let viewKind = preferences.get('view_kind');
-		let sidebarViewKind = preferences.get('sidebar_view_kind');
 
 		return {
 
 			// view options
 			//
-			'view-icons': viewKind == 'icons',
-			'view-lists': viewKind == 'lists',
-			'view-cards': viewKind == 'cards',
+			'view-kind icons': preferences.matches('view_kind', 'icons'),
+			'view-kind lists': preferences.matches('view_kind', 'lists'),
+			'view-kind cards': preferences.matches('view_kind', 'cards'),
 
 			// sidebar options
 			//
-			'show-sidebar': isDesktop? preferences.get('show_desktop_sidebar') : preferences.get('show_sidebar'),
+			'show-sidebar': this.parent.app.isDesktop()? preferences.get('show_desktop_sidebar') : preferences.includes('panes', 'sidebar'),
 
 			// sidebar item options
 			//
-			'view-sidebar-icons': sidebarViewKind == 'icons',
-			'view-sidebar-lists': sidebarViewKind == 'lists',
-			'view-sidebar-cards': sidebarViewKind == 'cards'
+			'sidebar-view-kind icons': preferences.matches('sidebar_view_kind', 'icons'),
+			'sidebar-view-kind lists': preferences.matches('sidebar_view_kind', 'lists'),
+			'sidebar-view-kind cards': preferences.matches('sidebar_view_kind', 'cards')
 		}
 	}
 });

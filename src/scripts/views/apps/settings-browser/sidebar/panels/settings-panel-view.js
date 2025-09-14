@@ -169,7 +169,9 @@ export default BaseView.extend({
 
 		// show child views
 		//
-		this.showItems();
+		if (application.isSignedIn()) {
+			this.showItems();
+		}
 	},
 
 	showItems: function() {

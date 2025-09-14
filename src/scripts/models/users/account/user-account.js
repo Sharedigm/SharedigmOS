@@ -89,6 +89,14 @@ export default Timestamped.extend({
 	},
 
 	//
+	// geolocation querying methods
+	//
+
+	hasGeolocation: function() {
+		return this.get('check_in') != null;
+	},
+
+	//
 	// getting methods
 	//
 

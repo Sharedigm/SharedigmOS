@@ -1,0 +1,74 @@
+[
+	{
+		"name": "toolbars",
+		"icon": "fa fa-wrench",
+		"text": "Toolbars",
+		"kind": "multiple-answer",
+		"options": {
+			"nav": "Nav",
+			"sharing": "Sharing"
+		},
+		"help": "This is which toolbars to display."
+	},
+	{
+		"name": "panes",
+		"icon": "fa fa-pause",
+		"text": "Panes",
+		"kind": "multiple-answer",
+		"options": {
+			"sidebar": "Sidebar",
+			"desktop-sidebar": "Desktop Sidebar"
+		},
+		"help": "This is which sidebar panes to display."
+	},
+	{
+		"name": "sidebar-size",
+		"icon": "fa fa-arrows-alt-h",
+		"text": "Sidebar Size (%)",
+		"kind": "range",
+		"options": {
+			"min": 0,
+			"max": 100,
+			"step": 5
+		},
+		"help": "This is the size of the sizebar window pane."
+	},
+	{
+		"name": "sidebar-min-size",
+		"icon": "fa fa-arrows-alt-h",
+		"text": "Sidebar Min Size",
+		"kind": "range",
+		"options": {
+			"min": 0,
+			"max": 100,
+			"step": 5
+		},
+		"help": "This is the minimum size of the sizebar window pane."
+	},
+	{
+		"name": "sidebar-panels",
+		"icon": "fa fa-th-large",
+		"text": "Sidebar Panels",
+		"kind": "multiple-answer",
+		"options": {
+			"clipboard": "Clipboard",
+			"favorites": "Favorites",
+			"location": "Location",
+			"shared": "Shared"
+		},
+		"help": "This is which panels are shown in the sidebar window pane."
+	},
+	{
+		"name": "sidebar-view-kind",
+		"icon": "fa fa-th",
+		"text": "Sidebar Items",
+		"kind": "multiple-choice",
+		"options": {
+			"icons": "Icons",
+			"lists": "Lists",
+			"cards": "Cards",
+			"tiles": "Tiles"
+		},
+		"help": "This is the way sidebar items are displayed."
+	}
+]

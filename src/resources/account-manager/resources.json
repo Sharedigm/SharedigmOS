@@ -1,0 +1,623 @@
+{
+	"file_menu": [
+		{
+			"name": "new-window",
+			"icon": "far fa-window-maximize",
+			"text": "New Window",
+			"shortcut": "command-enter"
+		},
+		{
+			"name": "open-profiles",
+			"icon": "fa fa-folder-open",
+			"text": "Open",
+			"shortcut": "command-O"
+		},
+		"divider",
+		{
+			"name": "show-info",
+			"icon": "fa fa-info-circle",
+			"text": "Show Info",
+			"shortcut": "command-I"
+		},
+		"divider",
+		{
+			"name": "delete-accounts",
+			"icon": "fa fa-trash-alt",
+			"text": "Delete Accounts",
+			"shortcut": "delete"
+		},
+		"divider",
+		{
+			"name": "close-window",
+			"icon": "fa fa-circle-xmark",
+			"text": "Close",
+			"shortcut": "command-L"
+		}
+	],
+	"help_menu": [
+		{
+			"name": "view-about",
+			"icon": "fa fa-info-circle",
+			"text": "About"
+		},
+		"divider",
+		{
+			"name": "view-help",
+			"icon": "fa fa-question-circle",
+			"text": "View Help Pages"
+		},
+		{
+			"name": "view-topic",
+			"icon": "fa fa-newspaper",
+			"text": "Search Community Help"
+		},
+		"divider",
+		{
+			"name": "contact-us",
+			"icon": "fa fa-envelope",
+			"text": "Contact Us"
+		}
+	],
+	"menu_bar": [
+		{
+			"name": "file",
+			"icon": "fa fa-file",
+			"text": "File"
+		},
+		{
+			"name": "select",
+			"icon": "fa fa-mouse-pointer",
+			"text": "Select"
+		},
+		{
+			"name": "view",
+			"icon": "fa fa-eye",
+			"text": "View"
+		},
+		{
+			"name": "sort",
+			"icon": "fa fa-sort",
+			"text": "Sort"
+		},
+		{
+			"name": "help",
+			"icon": "fa fa-question-circle",
+			"text": "Help"
+		}
+	],
+	"select_menu": [
+		{
+			"name": "select-all",
+			"icon": "fa fa-asterisk",
+			"text": "All",
+			"shortcut": "command-A"
+		},
+		{
+			"name": "select-none",
+			"icon": "fa fa-minus",
+			"text": "None",
+			"shortcut": "shift-command-A"
+		},
+		{
+			"name": "select-invert",
+			"icon": "fa fa-random",
+			"text": "Invert",
+			"shortcut": "shift-command-I"
+		},
+		"divider",
+		{
+			"name": "select-multiple",
+			"icon": "fa fa-ellipsis-h",
+			"text": "Multiple",
+			"shortcut": "shift-command-M",
+			"state": "unselected"
+		},
+		"divider",
+		{
+			"name": "select-first",
+			"icon": "fa fa-fast-backward",
+			"text": "First",
+			"shortcut": "up arrow"
+		},
+		{
+			"name": "select-prev",
+			"icon": "fa fa-backward",
+			"text": "Prev",
+			"shortcut": "left arrow"
+		},
+		{
+			"name": "select-next",
+			"icon": "fa fa-forward",
+			"text": "Next",
+			"shortcut": "right arrow"
+		},
+		{
+			"name": "select-last",
+			"icon": "fa fa-fast-forward",
+			"text": "Last",
+			"shortcut": "down arrow"
+		}
+	],
+	"sort_menu": [
+		{
+			"name": "name",
+			"group": "sort-kind",
+			"icon": "fa fa-font",
+			"text": "By Name",
+			"state": "unselected"
+		},
+		"divider",
+		{
+			"name": "location",
+			"group": "sort-kind",
+			"icon": "fa fa-globe-americas",
+			"text": "By Location",
+			"state": "unselected"
+		},
+		{
+			"name": "occupation",
+			"group": "sort-kind",
+			"icon": "fa fa-briefcase",
+			"text": "By Occupation",
+			"state": "unselected"
+		},
+		{
+			"name": "gender",
+			"group": "sort-kind",
+			"icon": "fa fa-transgender",
+			"text": "By Gender",
+			"state": "unselected"
+		},
+		"divider",
+		{
+			"name": "increasing",
+			"group": "sort-order",
+			"icon": "fa fa-sort-amount-up",
+			"text": "Increasing",
+			"state": "unselected"
+		},
+		{
+			"name": "decreasing",
+			"group": "sort-order",
+			"icon": "fa fa-sort-amount-down",
+			"text": "Decreasing",
+			"state": "unselected"
+		}
+	],
+	"view_menu": [
+		{
+			"name": "icons",
+			"group": "view-kind",
+			"icon": "fa fa-th",
+			"text": "Icons",
+			"state": "unselected"
+		},
+		{
+			"name": "names",
+			"group": "view-kind",
+			"icon": "fa fa-align-left",
+			"text": "Names",
+			"state": "unselected"
+		},
+		{
+			"name": "lists",
+			"group": "view-kind",
+			"icon": "fa fa-list",
+			"text": "Lists",
+			"state": "unselected"
+		},
+		{
+			"name": "cards",
+			"group": "view-kind",
+			"icon": "fa fa-id-card",
+			"text": "Cards",
+			"state": "unselected"
+		},
+		{
+			"name": "tiles",
+			"group": "view-kind",
+			"icon": "fa fa-th-large",
+			"text": "Tiles",
+			"state": "unselected"
+		},
+		{
+			"name": "maps",
+			"group": "view-kind",
+			"icon": "fa fa-map",
+			"text": "Maps",
+			"state": "unselected",
+			"menu": [
+				{
+					"name": "map",
+					"group": "map-mode",
+					"icon": "fa fa-map",
+					"text": "Map",
+					"state": "unselected"
+				},
+				{
+					"name": "satellite",
+					"group": "map-mode",
+					"icon": "fa fa-satellite",
+					"text": "Satellite",
+					"state": "unselected"
+				},
+				{
+					"name": "hybrid",
+					"group": "map-mode",
+					"icon": "fa fa-map-marked-alt",
+					"text": "Hybrid",
+					"state": "unselected"
+				},
+				{
+					"name": "streets",
+					"group": "map-mode",
+					"icon": "fa fa-road",
+					"text": "Streets",
+					"state": "unselected"
+				},
+				{
+					"name": "transportation",
+					"group": "map-mode",
+					"icon": "fa fa-bus",
+					"text": "Transportation",
+					"state": "unselected"
+				},
+				{
+					"name": "aeronautical",
+					"group": "map-mode",
+					"icon": "fa fa-plane",
+					"text": "Aeronautical",
+					"state": "unselected"
+				},
+				"divider",
+				{
+					"name": "pan-to",
+					"icon": "fa fa-arrows-alt",
+					"text": "Pan",
+					"menu": [
+						{
+							"name": "pan-north",
+							"icon": "fa fa-arrow-up",
+							"text": "North",
+							"shortcut": "shift-command-up arrow"
+						},
+						{
+							"name": "pan-south",
+							"icon": "fa fa-arrow-down",
+							"text": "South",
+							"shortcut": "shift-command-down arrow"
+						},
+						{
+							"name": "pan-east",
+							"icon": "fa fa-arrow-right",
+							"text": "East",
+							"shortcut": "shift-command-right arrow"
+						},
+						{
+							"name": "pan-west",
+							"icon": "fa fa-arrow-left",
+							"text": "West",
+							"shortcut": "shift-command-left arrow"
+						}
+					]
+				},
+				{
+					"name": "zoom-to",
+					"icon": "fa fa-search",
+					"text": "Zoom",
+					"menu": [
+						{
+							"name": "zoom-in",
+							"icon": "fa fa-search-plus",
+							"text": "Zoom In",
+							"shortcut": "="
+						},
+						{
+							"name": "zoom-out",
+							"icon": "fa fa-search-minus",
+							"text": "Zoom Out",
+							"shortcut": "-"
+						}
+					]
+				},
+				{
+					"name": "reset-view",
+					"icon": "fa fa-undo",
+					"text": "Reset",
+					"shortcut": "shift-command-R"
+				}
+			]
+		},
+		"divider",
+		{
+			"name": "view-details",
+			"icon": "fa fa-tags",
+			"text": "Details",
+			"state": "unselected",
+			"menu": [
+				{
+					"name": "location",
+					"group": "detail-kind",
+					"icon": "fa fa-globe-americas",
+					"text": "Location",
+					"state": "unselected"
+				},
+				{
+					"name": "occupation",
+					"group": "detail-kind",
+					"icon": "fa fa-briefcase",
+					"text": "Occupation",
+					"state": "unselected"
+				},
+				{
+					"name": "gender",
+					"group": "detail-kind",
+					"icon": "fa fa-transgender",
+					"text": "Gender",
+					"state": "unselected"
+				}
+			]
+		},
+		"divider",
+		{
+			"name": "show-toolbars",
+			"icon": "fa fa-wrench",
+			"text": "Toolbars",
+			"state": "unselected",
+			"menu": [
+				{
+					"name": "nav",
+					"group": "toolbars",
+					"icon": "fa fa-sitemap",
+					"text": "Nav",
+					"state": "unselected"
+				}
+			]
+		},
+		{
+			"name": "show-sidebar",
+			"icon": "fa fa-pause",
+			"text": "Sidebar",
+			"state": "unselected",
+			"menu": [
+				{
+					"name": "actions",
+					"group": "sidebar-panels",
+					"icon": "fa fa-play-circle",
+					"text": "Actions",
+					"state": "unselected"
+				}
+			]
+		},
+		"divider",
+		{
+			"name": "window-size",
+			"icon": "far fa-window-maximize",
+			"text": "Window Size",
+			"menu": [
+				{
+					"name": "shrink-window",
+					"icon": "fa fa-minus",
+					"text": "Shrink",
+					"shortcut": "command-["
+				},
+				{
+					"name": "grow-window",
+					"icon": "fa fa-plus",
+					"text": "Grow",
+					"shortcut": "command-]"
+				},
+				{
+					"name": "expand-window",
+					"icon": "fa fa-expand",
+					"text": "Expand",
+					"shortcut": "command-\\"
+				}
+			]
+		},
+		"divider",
+		{
+			"name": "spaces",
+			"icon": "far fa-window-maximize",
+			"text": "Spaces",
+			"state": "unselected",
+			"menu": [
+				{
+					"name": "prev-space",
+					"icon": "fa fa-chevron-left",
+					"text": "Prev",
+					"shortcut": "command-left arrow"
+				},
+				{
+					"name": "next-space",
+					"icon": "fa fa-chevron-right",
+					"text": "Next",
+					"shortcut": "command-right arrow"
+				}
+			]
+		},
+		{
+			"name": "windows",
+			"icon": "far fa-window-restore",
+			"text": "Windows",
+			"state": "unselected",
+			"menu": [
+				{
+					"name": "minimize-all",
+					"icon": "fa fa-window-minimize",
+					"text": "Minimize All"
+				},
+				{
+					"name": "unminimize-all",
+					"icon": "fa fa-window-restore",
+					"text": "Unminimize All"
+				}
+			]
+		},
+		{
+			"name": "view-full-screen",
+			"icon": "fa fa-desktop",
+			"text": "Full Screen",
+			"shortcut": "command-up arrow",
+			"state": "unselected"
+		},
+		"divider",
+		{
+			"name": "view-preferences",
+			"icon": "fa fa-snowflake",
+			"text": "Preferences"
+		}
+	],
+	"display_prefs": [
+		{
+			"name": "toolbars",
+			"icon": "fa fa-wrench",
+			"text": "Toolbars",
+			"kind": "multiple-answer",
+			"options": {
+				"nav": "Nav"
+			},
+			"help": "This is which toolbars to display."
+		},
+		{
+			"name": "panes",
+			"icon": "fa fa-pause",
+			"text": "Panes",
+			"kind": "multiple-answer",
+			"options": {
+				"sidebar": "Sidebar"
+			},
+			"help": "This is which sidebar panes to display."
+		},
+		{
+			"name": "sidebar-size",
+			"icon": "fa fa-arrows-alt-h",
+			"text": "Sidebar Size (%)",
+			"kind": "range",
+			"options": {
+				"min": 0,
+				"max": 100,
+				"step": 5
+			},
+			"help": "This is the size of the sizebar window pane."
+		},
+		{
+			"name": "sidebar-min-size",
+			"icon": "fa fa-arrows-alt-h",
+			"text": "Sidebar Min Size",
+			"kind": "range",
+			"options": {
+				"min": 0,
+				"max": 100,
+				"step": 5
+			},
+			"help": "This is the minimum size of the sizebar window pane."
+		},
+		{
+			"name": "sidebar-panels",
+			"icon": "fa fa-th-large",
+			"text": "Sidebar Panels",
+			"kind": "multiple-answer",
+			"options": {
+				"actions": "Actions"
+			},
+			"help": "This is which panels are shown in the sidebar window pane."
+		}
+	],
+	"general_prefs": [
+		{
+			"name": "view-kind",
+			"icon": "fa fa-paint-brush",
+			"text": "Appearance",
+			"kind": "select",
+			"options": {
+				"icons": "Icons",
+				"names": "Names",
+				"lists": "Lists",
+				"tiles": "Tiles",
+				"cards": "Cards"
+			},
+			"help": "This is how connections are to be visually displayed."
+		},
+		{
+			"name": "detail-kind",
+			"icon": "fa fa-search",
+			"text": "Details",
+			"kind": "select",
+			"options": {
+				"none": "None",
+				"location": "Location",
+				"occupation": "Occupation",
+				"age": "Age",
+				"gender": "Gender"
+			},
+			"help": "This is what details to include about connections."
+		},
+		{
+			"name": "tile-size",
+			"icon": "fa fa-th-large",
+			"text": "Tile Size",
+			"kind": "multiple-choice",
+			"options": {
+				"small": "Small",
+				"medium": "Med",
+				"large": "Large"
+			},
+			"help": "This is what size tiles to display when the appearance is set to tiles."
+		},
+		{
+			"name": "map-mode",
+			"icon": "fa fa-map",
+			"text": "Map Mode",
+			"kind": "select",
+			"options": {
+				"map": "Map",
+				"aerial": "Aerial",
+				"hybrid": "Hybrid"
+			}
+		}
+	],
+	"preferences": [
+		{
+			"name": "general",
+			"icon": "fa fa-check",
+			"text": "General"
+		},
+		{
+			"name": "display",
+			"icon": "fa fa-desktop",
+			"text": "Display"
+		},
+		{
+			"name": "window",
+			"icon": "fa fa-window-maximize",
+			"text": "Window"
+		}
+	],
+	"window_prefs": [
+		{
+			"name": "window-size",
+			"icon": "fa fa-arrows-alt",
+			"text": "Window Size",
+			"kind": "select",
+			"options": {
+				"tiny": "Tiny",
+				"small": "Small",
+				"medium": "Medium",
+				"large": "Large"
+			},
+			"help": "This is the maximum initial size of the application window."
+		},
+		{
+			"name": "window-state",
+			"icon": "fa fa-window-maximize",
+			"text": "Window State",
+			"kind": "multiple-answer",
+			"options": {
+				"maximized": "Maximized",
+				"full-screen": "Full Screen"
+			},
+			"help": "This is the initial state of the application window."
+		}
+	]
+}

@@ -1,0 +1,160 @@
+/******************************************************************************\
+|                                                                              |
+|                          _logotype-two-column.scss                           |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+
+@use "../bootstrap/variables";
+@use "../colors/outlines";
+
+//
+// font sizes
+//
+
+$large-font-size: 4em;
+$medium-large-font-size: 3.5em;
+$medium-font-size: 3em;
+$small-font-size: 2.5em;
+$extra-small-font-size: 3em;
+
+$short-large-font-size: 4em;
+$short-medium-large-font-size: 3em;
+$short-medium-font-size: 2em;
+$short-small-font-size: 2em;
+$short-extra-small-font-size: 4em;
+
+$long-large-font-size: 3em;
+$long-medium-large-font-size: 2em;
+$long-medium-font-size: 2em;
+$long-small-font-size: 2em;
+$long-extra-small-font-size: 2.5em;
+
+//
+// large 
+//
+
+@media (min-width: variables.$screen-lg-min) {
+	.welcome.page {
+		.splash.two-column {
+			.logotype {
+				font-size: $large-font-size;
+
+				&.short {
+					font-size: $short-large-font-size;
+				}
+
+				&.long {
+					font-size: $long-large-font-size;
+				}
+			}
+		}
+	}
+}
+
+//
+// medium large
+//
+
+@media (max-width: variables.$screen-lg-min) {
+	.welcome.page {	
+		.splash.two-column {
+			.logotype {
+				font-size: $medium-large-font-size;
+
+				&.short {
+					font-size: $short-medium-large-font-size;
+				}
+
+				&.long {
+					font-size: $long-medium-large-font-size;
+				}
+			}
+		}
+	}
+}
+
+//
+// medium 
+//
+
+@media (max-width: 1024px) {
+	.welcome.page {		
+		.splash.two-column {
+			.logotype {
+				font-size: $medium-font-size;
+
+				&.short {
+					font-size: $short-medium-font-size;
+				}
+
+				&.long {
+					font-size: $long-medium-font-size;
+				}
+			}
+		}
+	}
+}
+
+//
+// small
+//
+
+@media (max-width: variables.$screen-sm-min) {
+	.welcome.page {
+		.splash.two-column {
+			.logotype {
+				font-size: $small-font-size;
+
+				// text outlines
+				//
+				&.outlined {
+					text-shadow: outlines.$bold-outline;
+				}
+				&.outlined {
+					text-shadow: outlines.$bold-outline;
+				}
+
+				&.short {
+					font-size: $short-small-font-size;
+				}
+
+				&.long {
+					font-size: $long-small-font-size;
+				}
+			}
+		}
+	}
+}
+
+//
+// extra small styles
+//
+
+@media (max-width: variables.$screen-xs-min) {
+	.welcome.page {
+		.splash.two-column {
+			.logotype {
+				font-size: $extra-small-font-size;
+
+				&.short {
+					font-size: $short-extra-small-font-size;
+				}
+
+				&.long {
+					font-size: $long-extra-small-font-size;
+				}
+			}
+		}
+	}
+}

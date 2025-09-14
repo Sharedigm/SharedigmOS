@@ -1,0 +1,80 @@
+[
+	{
+		"name": "view-kind",
+		"icon": "fa fa-paint-brush",
+		"text": "Appearance",
+		"kind": "select",
+		"options": {
+			"icons": "Icons",
+			"names": "Names",
+			"lists": "Lists",
+			"trees": "Trees",
+			"tiles": "Tiles",
+			"cards": "Cards"
+		},
+		"help": "This is how files and folders are to be visually displayed."
+	},
+	{
+		"name": "detail-kind",
+		"icon": "fa fa-search",
+		"text": "Details",
+		"kind": "select",
+		"options": {
+			"none": "None",
+			"size": "Size",
+			"create-date": "Create Date",
+			"modify-date": "Modify Date",
+			"access-date": "Access Date"
+		},
+		"help": "This is what details to include about files and folders."
+	},
+	{
+		"name": "sort-kind",
+		"icon": "fa fa-sort",
+		"text": "Sort By",
+		"kind": "select",
+		"options": {
+			"name": "Name",
+			"kind": "Kind",
+			"size": "Size",
+			"create-date": "Create Date",
+			"modify-date": "Modify Date",
+			"access-date": "Access Date"
+		},
+		"help": "This is how to sort files and folders."
+	},
+	{
+		"name": "sort-order",
+		"icon": "fa fa-order",
+		"text": "Sort Order",
+		"kind": "select",
+		"options": {
+			"increasing": "Increasing",
+			"decreasing": "Decreasing"
+		},
+		"help": "This is how to order files and folders."
+	},
+	{
+		"name": "tile-size",
+		"icon": "fa fa-th-large",
+		"text": "Tile Size",
+		"kind": "multiple-choice",
+		"options": {
+			"small": "Small",
+			"medium": "Medium",
+			"large": "Large"
+		},
+		"help": "This is what size tiles to display when the appearance is set to tiles."
+	},
+	{
+		"name": "open-folders",
+		"icon": "fa fa-folder-open",
+		"text": "Open Folders",
+		"kind": "multiple-choice",
+		"options": {
+			"same-window": "Same Window",
+			"new-window": "New Window"
+		},
+		"help": "This determines how folders are to be displayed when they are opened."
+	}
+]

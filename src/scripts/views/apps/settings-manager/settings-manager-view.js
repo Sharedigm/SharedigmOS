@@ -18,10 +18,10 @@
 import UserAccount from '../../../models/users/account/user-account.js';
 import UserPreferences from '../../../models/preferences/user-preferences.js';
 import AppSplitView from '../../../views/apps/common/app-split-view.js';
+import PreferencesGroupView from '../../../views/apps/common/forms/preferences-group-view.js';
 import HeaderBarView from '../../../views/apps/settings-manager/header-bar/header-bar-view.js';
 import SideBarView from '../../../views/apps/settings-manager/sidebar/sidebar-view.js';
 import FooterBarView from '../../../views/apps/settings-manager/footer-bar/footer-bar-view.js';
-import PreferencesFormView from '../../../views/apps/settings-manager/forms/preferences/preferences-form-view.js'
 import Browser from '../../../utilities/web/browser.js';
 
 export default AppSplitView.extend( {
@@ -366,7 +366,8 @@ export default AppSplitView.extend( {
 
 			// revert app to previous preferences
 			//
-			this.options.app.setOptions(this.getChildView('content').getOriginalValues());
+			let values = this.getChildView('content').getOriginalValues();
+			this.options.app.setOptions(values);
 		} else if (!this.prefs) {
 
 			// revert to previous settings
@@ -647,23 +648,15 @@ export default AppSplitView.extend( {
 			//
 			success: (AppView) => {
 
-				// check for preferences form
-				//
-				if (!AppView.getPreferencesFormView) {
-					application.alert({
-						message: 'Preferences form view not found.'
-					});
-					return;
-				}
-
 				// make a copy of preferences
 				//
 				this.prefs = this.options.prefs.clone();
 
 				// show child view
 				//
-				this.showChildView('content', AppView.getPreferencesFormView({
+				this.showChildView('content', new PreferencesGroupView({
 					model: preferences,
+					resources: AppView.resources,
 
 					// callbacks
 					//
@@ -679,23 +672,6 @@ export default AppSplitView.extend( {
 
 	getFooterBarView: function() {
 		return new FooterBarView();
-	},
-
-	//
-	// dialog rendering methods
-	//
-	
-	showPreferencesDialog: function() {
-		import(
-			'../../../views/apps/settings-manager/dialogs/preferences/preferences-dialog-view.js'
-		).then((PreferencesDialogView) => {
-
-			// show preferences dialog
-			//
-			this.show(new PreferencesDialogView.default({
-				model: this.preferences
-			}));
-		});
 	},
 
 	//
@@ -734,14 +710,5 @@ export default AppSplitView.extend( {
 		// clear static attributes
 		//
 		this.constructor.current = null;
-	}
-}, {
-
-	//
-	// static getting methods
-	//
-
-	getPreferencesFormView: function(options) {
-		return new PreferencesFormView(options);
 	}
 });

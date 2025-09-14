@@ -11,7 +11,7 @@
 
 	<ol>
 		<li>
-			<h2><i class="fa fa-hand-o-up"></i>Just Double-Click</h2>
+			<h2><i class="fa fa-mouse-pointer"></i>Just Double-Click</h2>
 			<p>Normally, the quickest easiest way to open files is simply to double-click them, just as you would with most other operating systems. If the operating system recognizes the file and knows an application that will read the file, then it will open the file using that application.  If it does not have an available application for that file type, then it will issue a notification stating that it can't open this file type. </p>
 
 			<div class="figure">

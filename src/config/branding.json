@@ -3,6 +3,7 @@
 	"title": "Sharedigm",
 
 	"header": {
+		"align": "center",
 
 		"brand": {
 			"logo": {
@@ -19,6 +20,9 @@
 					},
 					"digm": {
 						"color": "hsl(220, 100%, 66%)"
+					},
+					" OS": {
+						"color": ""
 					}
 				}
 			}
@@ -33,6 +37,11 @@
 				"icon": "fa fa-user-circle",
 				"href": "#uses"
 			},
+			"Users": {
+				"icon": "fa fa-users",
+				"href": "#users",
+				"platform": "desktop-only"
+			},
 			"Features": {
 				"icon": "fa fa-lightbulb",
 				"href": "#features"
@@ -44,6 +53,11 @@
 			"Platform": {
 				"icon": "fa fa-laptop",
 				"href": "#platform",
+				"platform": "desktop-only"
+			},
+			"Benefits": {
+				"icon": "fa fa-gift",
+				"href": "#benefits",
 				"platform": "desktop-only"
 			}
 		},
@@ -66,10 +80,42 @@
 
 	"welcome": {
 		"background": "linear-gradient(to bottom, hsl(220, 75%, 0%) 0%, hsla(220, 50%, 50%, 100%) 100%)",
-		"template": "templates/welcome.tpl",
+		"template": "welcome.tpl",
+
+		"ribbons": [{
+			"text": "Open Source",
+			"font": "Futura",
+			"font_weight": "bold",
+			"height": 40,
+			"line_height": 40,
+			"corner": "bottom right",
+			"offset": 60,
+			"url": "#downloads"
+		}, {
+			"text": "Free",
+			"font": "Futura",
+			"font_weight": "bold",
+			"height": 40,
+			"line_height": 40,
+			"corner": "bottom right",
+			"offset": 20,
+			"color": "black",
+			"background": "white",
+			"shadow": "none",
+			"url": "#installation"
+		}, {
+			"text": "&nbsp;",
+			"font": "Futura",
+			"font_weight": "bold",
+			"height": 40,
+			"line_height": 40,
+			"corner": "bottom right",
+			"offset": -20,
+			"shadow": "none"
+		}],
 
 		"carousel": {
-			"template": "templates/welcome/carousel.tpl",
+			"template": "welcome/carousel.tpl",
 			"color": "white"
 		},
 
@@ -85,6 +131,7 @@
 
 				"logotype": {
 					"font": "Syncopate",
+					"long": true,
 
 					"names": {
 						"Share": {
@@ -92,13 +139,16 @@
 						},
 						"digm": {
 							"color": "hsl(220, 100%, 66%)"
+						},
+						" OS": {
+							"color": "white"
 						}
 					}
 				}
 			},
 
 			"tagline": {
-				"text": "Sharing Made Simple",
+				"text": "The OS Made for the 21st Century",
 				"font": "Syncopate",
 				"font_weight": "bold",
 				"color": "white",
@@ -107,10 +157,12 @@
 			},
 
 			"description": {
-				"text": "Self-hostable cloud based <a href='#features/easy-to-use'>operating system</a>, <a href='#uses/file-sharing'>file sharing</a>, and <a href='#uses/social-networking'>social network</a>.",
+				"text": "Cloud based operating system and sharing system.",
 				"color": "white"
 			}
 		},
+
+		"search": false,
 
 		"crawler2": {
 			"scale": 1,
@@ -194,13 +246,16 @@
 						},
 						"digm": {
 							"color": "hsl(220, 100%, 66%)"
+						},
+						" OS": {
+							"color": "white"
 						}
 					}
 				}
 			},
 
 			"tagline": {
-				"text": "Sharing Made Simple",
+				"text": "The OS Made for the 21st Century",
 				"font": "Syncopate",
 				"font_weight": "bold",
 				"color": "white",
@@ -283,7 +338,7 @@
 		"font": "",
 		"color": "white",
 		"copyright": {
-			"year": "2024",
+			"year": "2025",
 			"logo": "images/logos/logo.svg",
 			"entity": "Sharedigm"
 		}

@@ -84,11 +84,13 @@ export default Backbone.Router.extend({
 		'links/expired': 'showLinkExpired',
 		'links/downloaded(?*query_string)': 'showLinkDownloaded',
 		'links/:id/password': 'showEnterLinkPassword',
+		'links/:id(?*query_string)/content': 'showLinkContent',
 		'links/:id(?*query_string)': 'showLink',
 
 		// contact routes
 		//
 		'contact': 'showContact',
+		'notify': 'showNotify',
 
 		// help routes
 		//
@@ -175,10 +177,10 @@ export default Backbone.Router.extend({
 
 			// show welcome dialog to first time users
 			//
-			if (config.welcome && application.session.user.get('is_new')) {
+			if (config.settings.welcome && application.session.user.get('is_new')) {
 				window.setTimeout(() => {
 					this.showWelcomeDialog();
-				}, config.welcome.delay);
+				}, config.settings.welcome.delay);
 			}
 		});
 	},
@@ -540,19 +542,38 @@ export default Backbone.Router.extend({
 	},
 
 	//
-	// link access route handlers
+	// link route handlers
 	//
 
 	showLink: function(id, queryString) {
-		let query = queryString;
-		Promise.all([
-			import('./models/storage/sharing/link.js'),
-			import('./utilities/web/query-string.js')
-		]).then(([Link, QueryString]) => {
+		import(
+			'./utilities/web/query-string.js'
+		).then((QueryString) => {
 
 			// parse query string
 			//
-			let options = QueryString.default.decode(query);
+			let options = QueryString.default.decode(queryString);
+
+			// show Link
+			//
+			this.showLinkById(id, options);
+		});
+	},
+
+	showLinkContent: function(id) {
+		this.showLinkById(id, {
+			content: true
+		});
+	},
+
+	//
+	// link showing methods
+	//
+
+	showLinkById: function(id, options) {
+		import(
+			'./models/storage/sharing/link.js'
+		).then((Link) => {
 
 			// create link
 			//
@@ -591,6 +612,8 @@ export default Backbone.Router.extend({
 			this.showLinkExpired(options);
 		} else if (link.get('protected') && !link.get('authenticated')) {
 			this.showEnterLinkPassword(link, options);
+		} else if (options.content == true) {
+			this.showLinkDesktop(link, options);
 		} else {
 			this.showLinkTarget(link, options);
 		}
@@ -606,6 +629,10 @@ export default Backbone.Router.extend({
 			application.showPage(new LinkInvalidView.default());
 		});
 	},
+
+	//
+	// show link access methods
+	//
 
 	showLinkRestricted: function() {
 		import(
@@ -626,6 +653,24 @@ export default Backbone.Router.extend({
 			// show link expired page
 			//
 			application.showPage(new LinkExpiredView.default());
+		});
+	},
+
+	showEnterLinkPassword: function(link) {
+		this.showWelcome();
+		import(
+			'./views/apps/file-browser/sharing/links/dialogs/link-password-dialog-view.js'
+		).then((LinkPasswordDialogView) => {
+
+			// show link password dialog
+			//
+			application.show(new LinkPasswordDialogView.default({
+				model: link,
+
+				// callbacks
+				//
+				success: () => this.showValidLink(link)
+			}));
 		});
 	},
 
@@ -677,28 +722,6 @@ export default Backbone.Router.extend({
 		});
 	},
 
-	showEnterLinkPassword: function(link) {
-		this.showWelcome();
-		import(
-			'./views/apps/file-browser/sharing/links/dialogs/link-password-dialog-view.js'
-		).then((LinkPasswordDialogView) => {
-
-			// show link password dialog
-			//
-			application.show(new LinkPasswordDialogView.default({
-				model: link,
-
-				// callbacks
-				//
-				success: () => this.showValidLink(link)
-			}));
-		});
-	},
-
-	//
-	// link showing methods
-	//
-
 	showLinkTarget: function(link, options) {
 		Promise.all([
 			import('./models/storage/files/file.js'),
@@ -739,7 +762,7 @@ export default Backbone.Router.extend({
 			//
 			} else if (target instanceof File.default) {
 				if (application.isEmbedded()) {
-					this.showFile(link, options);
+					this.showLinkApplication(link, options);
 				} else {
 					this.showFileLink(link, options);
 				}
@@ -748,20 +771,74 @@ export default Backbone.Router.extend({
 	},
 
 	//
-	// file methods
+	// link application showing methods
 	//
 
-	showFile: function(link, options) {
-		let extension = link.getFileExtension().toLowerCase();
-		let appName = application.settings.associations.get(extension);
+	showLinkDesktopApp: function(link, appName, options) {
+		import(
+			'./views/apps/desktop/desktop-view.js'
+		).then((DesktopView) => {
 
-		application.launch(appName, {
-			model: link.getTarget()
-		}, options);
+			// show desktop file browser
+			//
+			application.show(new DesktopView.default({
+				model: link.getTarget(),
+				collection: application.apps.getByIds([appName]),
+				settings: application.settings.desktop
+			}), options);
+		});
+	},
+
+	showLinkDesktop: function(link, options) {
+		let extension = link.getFileExtension().toLowerCase();
+		let appName = application.settings.associations.get(extension) || 'file_browser';
+		let target = link.getTarget();
+
+		import(
+			'./models/storage/directories/directory.js'
+		).then((Directory) => {
+
+			// set home directory to link
+			//
+			if (target instanceof Directory.default) {
+				application.session.home = new Directory.default({
+					link: link
+				});
+			}
+
+			// show link in desktop
+			//
+			this.showLinkDesktopApp(link, appName, options);
+		});
+	},
+
+	showLinkApplication: function(link, options) {
+		let extension = link.getFileExtension().toLowerCase();
+		let appName = application.settings.associations.get(extension) || 'file_browser';
+		let target = link.getTarget();
+
+		import(
+			'./models/storage/directories/directory.js'
+		).then((Directory) => {
+
+			// set home directory to link
+			//
+			if (target instanceof Directory.default) {
+				application.session.home = new Directory.default({
+					link: link
+				});
+			}
+
+			// show link in new window
+			//
+			application.launch(appName, {
+				model: link.getTarget()
+			}, options);
+		});
 	},
 
 	//
-	// link viewing methods
+	// link page showing methods
 	//
 
 	showFileLink: function(link, options) {
@@ -846,6 +923,19 @@ export default Backbone.Router.extend({
 		});
 	},
 
+	showNotify: function() {
+		import(
+			'./views/contact/notify-view.js'
+		).then((NotifyView) => {
+
+			// show contact page
+			//
+			application.showPage(new NotifyView.default(), {
+				nav: 'contact'
+			});
+		});
+	},
+
 	//
 	// help route methods
 	//
@@ -877,11 +967,17 @@ export default Backbone.Router.extend({
 
 			// show info page
 			//
-			application.showPage(new BaseView({
-				template: template(text)
-			}), {
-				nav: nav
-			});
+			try {
+				application.showPage(new BaseView({
+					template: template(text)
+				}), {
+					nav: nav
+				});
+			} catch(exception) {
+				application.error({
+					message: exception.stack
+				});
+			}
 		});
 	},
 

@@ -1,0 +1,46 @@
+[
+	{
+		"name": "name",
+		"group": "sort-kind",
+		"icon": "fa fa-font",
+		"text": "By Name",
+		"state": "unselected"
+	},
+	"divider",
+	{
+		"name": "location",
+		"group": "sort-kind",
+		"icon": "fa fa-globe-americas",
+		"text": "By Location",
+		"state": "unselected"
+	},
+	{
+		"name": "occupation",
+		"group": "sort-kind",
+		"icon": "fa fa-briefcase",
+		"text": "By Occupation",
+		"state": "unselected"
+	},
+	{
+		"name": "gender",
+		"group": "sort-kind",
+		"icon": "fa fa-transgender",
+		"text": "By Gender",
+		"state": "unselected"
+	},
+	"divider",
+	{
+		"name": "increasing",
+		"group": "sort-order",
+		"icon": "fa fa-sort-amount-up",
+		"text": "Increasing",
+		"state": "unselected"
+	},
+	{
+		"name": "decreasing",
+		"group": "sort-order",
+		"icon": "fa fa-sort-amount-down",
+		"text": "Decreasing",
+		"state": "unselected"
+	}
+]

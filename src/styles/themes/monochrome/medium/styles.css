@@ -1,6 +1,70 @@
 /******************************************************************************\
 |                                                                              |
+|                                 styles.scss                                  |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                 _index.scss                                  |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                          _medium-app-launcher.scss                           |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
 |                                _colors.scss                                  |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                 _images.scss                                 |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -32,7 +96,7 @@
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                                 _images.scss                                 |
+|                          _medium-app-launcher.scss                           |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -254,22 +318,6 @@ body[browser=firefox] img.pixelated {
   transform: skewY(7.5deg) scale(1.1) translateZ(0);
 }
 
-/******************************************************************************\
-|                                                                              |
-|                          _medium-app-launcher.scss                           |
-|                                                                              |
-|******************************************************************************|
-|                                                                              |
-|        This defines various CSS styles used in this application.             |
-|                                                                              |
-|        Author(s): Abe Megahed                                                |
-|                                                                              |
-|        This file is subject to the terms and conditions defined in           |
-|        'LICENSE.txt', which is part of this source code distribution.        |
-|                                                                              |
-|******************************************************************************|
-|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
-\******************************************************************************/
 body:not(.binary).monochrome .app-launcher.app .icon-grid .item .icon,
 body:not(.binary).monochrome .app-icons .item .icon {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25);
@@ -357,7 +405,7 @@ body:not(.binary).monochrome .clock.app .analog.display svg line {
 
 /******************************************************************************\
 |                                                                              |
-|                              _text-colors.scss                               |
+|                          _medium-code-editor.scss                            |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -373,7 +421,7 @@ body:not(.binary).monochrome .clock.app .analog.display svg line {
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                          _medium-code-editor.scss                            |
+|                              _text-colors.scss                               |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -487,7 +535,7 @@ body:not(.binary).monochrome #desktop.medium .desktop.app > .footer-bar .run-men
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                                 _lighting.scss                               |
+|                                 _index.scss                                  |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -503,7 +551,39 @@ body:not(.binary).monochrome #desktop.medium .desktop.app > .footer-bar .run-men
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
+|                         _medium-flat-colored.scss                            |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
 |                                 _flat.scss                                   |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                 _lighting.scss                               |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -581,22 +661,6 @@ body:not(.binary).monochrome #desktop.medium .desktop.app > .footer-bar .run-men
     background-color: var(--primary-color);
   }
 }
-/******************************************************************************\
-|                                                                              |
-|                         _medium-flat-colored.scss                            |
-|                                                                              |
-|******************************************************************************|
-|                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
-|                                                                              |
-|        Author(s): Abe Megahed                                                |
-|                                                                              |
-|        This file is subject to the terms and conditions defined in           |
-|        'LICENSE.txt', which is part of this source code distribution.        |
-|                                                                              |
-|******************************************************************************|
-|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
-\******************************************************************************/
 body:not(.binary).monochrome.flat .colored:not(.btn).red {
   background-color: #8080b3;
   border-color: #8080b3;
@@ -784,7 +848,23 @@ body:not(.binary).monochrome.flat .selected .colored:not(.btn) .gold {
 
 /******************************************************************************\
 |                                                                              |
-|                               _flat-btns.scss                                |
+|                         _medium-flat-desktops.scss                           |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                         _medium-flat-colored.scss                            |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
@@ -800,11 +880,11 @@ body:not(.binary).monochrome.flat .selected .colored:not(.btn) .gold {
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                         _medium-flat-desktops.scss                           |
+|                               _flat-btns.scss                                |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines various CSS styles used in this application.             |
+|        This defines the dom and svg visual styles for this application.      |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -835,6 +915,38 @@ body:not(.binary).monochrome.flat #desktop.medium .desktop.app > .footer-bar .ru
 
 /******************************************************************************\
 |                                                                              |
+|                         _medium-flat-colored.scss                            |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                            _medium-flat-tabs.scss                            |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
 |                              _medium-tabs.scss                               |
 |                                                                              |
 |******************************************************************************|
@@ -860,22 +972,6 @@ body:not(.binary).monochrome.show-tab-close-buttons ul.nav-tabs > li.active i.fa
   background-color: color-mix(in srgb, rgb(0, 0, 127) 10%, #6060a0);
 }
 
-/******************************************************************************\
-|                                                                              |
-|                            _medium-flat-tabs.scss                            |
-|                                                                              |
-|******************************************************************************|
-|                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
-|                                                                              |
-|        Author(s): Abe Megahed                                                |
-|                                                                              |
-|        This file is subject to the terms and conditions defined in           |
-|        'LICENSE.txt', which is part of this source code distribution.        |
-|                                                                              |
-|******************************************************************************|
-|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
-\******************************************************************************/
 body:not(.binary).monochrome.flat-tabs.show-tab-close-buttons ul.nav-tabs > li.active i.fa-times:hover, body:not(.binary).monochrome.flat-tabs.show-tab-close-buttons ul.nav-tabs > li.active i.fa-xmark:hover, body:not(.binary).monochrome.flat.auto-tabs.show-tab-close-buttons ul.nav-tabs > li.active i.fa-times:hover, body:not(.binary).monochrome.flat.auto-tabs.show-tab-close-buttons ul.nav-tabs > li.active i.fa-xmark:hover {
   background-color: #6060a0;
   border-color: #6060a0;
@@ -903,11 +999,91 @@ body:not(.binary).monochrome.flat-tabs.show-tab-close-buttons ul.nav-tabs > li.a
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
+|                         _medium-chalk-colored.scss                           |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                         _medium-flat-colored.scss                            |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                 _chalk.scss                                  |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                 _flat.scss                                   |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
 |                                 _chalk.scss                                  |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
 |        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                 _flat.scss                                   |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -935,6 +1111,22 @@ body:not(.binary).monochrome.flat-tabs.show-tab-close-buttons ul.nav-tabs > li.a
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
+|                                 _flat.scss                                   |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
 |                             _rounded-chalk.scss                              |
 |                                                                              |
 |******************************************************************************|
@@ -951,11 +1143,11 @@ body:not(.binary).monochrome.flat-tabs.show-tab-close-buttons ul.nav-tabs > li.a
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                           _long-round-chalk.scss                             |
+|                                 _flat.scss                                   |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
+|        This defines various CSS styles used in this application.             |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -967,11 +1159,11 @@ body:not(.binary).monochrome.flat-tabs.show-tab-close-buttons ul.nav-tabs > li.a
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                                 _chalk.scss                                  |
+|                           _long-round-chalk.scss                             |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines various CSS styles used in this application.             |
+|        This defines the dom and svg visual styles for this application.      |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -1007,11 +1199,11 @@ body:not(.binary).monochrome.flat-tabs.show-tab-close-buttons ul.nav-tabs > li.a
     border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
   }
   .chalk .shaded.textured, .chalk.chalk.shaded.textured {
-    position: relative;
-    overflow: hidden;
     background: linear-gradient(var(--light-direction), color-mix(in srgb, white 10%, transparent) 0%, transparent 50%) no-repeat;
     background-color: var(--primary-color);
     border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
+    position: relative;
+    overflow: hidden;
   }
   .chalk .shaded.textured:after, .chalk.chalk.shaded.textured:after {
     position: absolute;
@@ -1026,9 +1218,9 @@ body:not(.binary).monochrome.flat-tabs.show-tab-close-buttons ul.nav-tabs > li.a
   .chalk .shaded.textured.round, .chalk.chalk.shaded.textured.round {
     background: linear-gradient(var(--light-direction), color-mix(in srgb, white 10%, transparent) 0%, transparent 50%, color-mix(in srgb, black 10%, transparent) 100%) no-repeat;
     background-color: var(--primary-color);
+    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
     position: relative;
     overflow: hidden;
-    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
   }
   .chalk .shaded.textured.round:after, .chalk.chalk.shaded.textured.round:after {
     position: absolute;
@@ -1047,9 +1239,9 @@ body:not(.binary).monochrome.flat-tabs.show-tab-close-buttons ul.nav-tabs > li.a
   .chalk .shaded.textured.rounded, .chalk.chalk.shaded.textured.rounded {
     background: linear-gradient(var(--light-direction), color-mix(in srgb, white 10%, transparent) 0%, transparent 50%) no-repeat;
     background-color: var(--primary-color);
+    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
     position: relative;
     overflow: hidden;
-    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
   }
   .chalk .shaded.textured.rounded:after, .chalk.chalk.shaded.textured.rounded:after {
     position: absolute;
@@ -1063,9 +1255,9 @@ body:not(.binary).monochrome.flat-tabs.show-tab-close-buttons ul.nav-tabs > li.a
   }
   .chalk .shaded.textured.long.round, .chalk.chalk.shaded.textured.long.round {
     background: linear-gradient(to right, color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color)) 0%, transparent var(--border-radius)) no-repeat, linear-gradient(to left, color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color)) 0%, transparent var(--border-radius)) no-repeat, linear-gradient(var(--light-direction), color-mix(in srgb, var(--light-color) 10%, var(--primary-color)) 0%, var(--primary-color) 50%, color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color)) 100%) no-repeat;
+    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
     position: relative;
     overflow: hidden;
-    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
   }
   .chalk .shaded.textured.long.round:after, .chalk.chalk.shaded.textured.long.round:after {
     position: absolute;
@@ -1081,9 +1273,9 @@ body:not(.binary).monochrome.flat-tabs.show-tab-close-buttons ul.nav-tabs > li.a
   }
   .chalk .shaded.textured.long.round.vertical, .chalk.chalk.shaded.textured.long.round.vertical {
     background: linear-gradient(to right, color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color)) 0%, transparent var(--border-radius)) no-repeat, linear-gradient(to left, color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color)) 0%, transparent var(--border-radius)) no-repeat, linear-gradient(var(--light-direction), color-mix(in srgb, var(--light-color) 10%, var(--primary-color)) 0%, var(--primary-color) 50%, color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color)) 100%) no-repeat;
+    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
     position: relative;
     overflow: hidden;
-    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
   }
   .chalk .shaded.textured.long.round.vertical:after, .chalk.chalk.shaded.textured.long.round.vertical:after {
     position: absolute;
@@ -1130,22 +1322,6 @@ body:not(.binary).monochrome.flat-tabs.show-tab-close-buttons ul.nav-tabs > li.a
     background-color: var(--primary-color);
   }
 }
-/******************************************************************************\
-|                                                                              |
-|                         _medium-chalk-colored.scss                           |
-|                                                                              |
-|******************************************************************************|
-|                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
-|                                                                              |
-|        Author(s): Abe Megahed                                                |
-|                                                                              |
-|        This file is subject to the terms and conditions defined in           |
-|        'LICENSE.txt', which is part of this source code distribution.        |
-|                                                                              |
-|******************************************************************************|
-|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
-\******************************************************************************/
 body:not(.binary).monochrome.chalk .colored:not(.btn).red {
   background: linear-gradient(var(--light-direction), color-mix(in srgb, white 25%, transparent) 0%, transparent 15%) no-repeat, linear-gradient(var(--light-direction), color-mix(in srgb, white 10%, transparent) 0%, transparent 50%) no-repeat;
   background-color: #8080b3;
@@ -2253,11 +2429,11 @@ body:not(.binary).monochrome.chalk .selected .colored:not(.btn) .gold.long.round
 
 /******************************************************************************\
 |                                                                              |
-|                               _chalk-btns.scss                               |
+|                         _medium-chalk-desktops.scss                          |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
+|        This defines various CSS styles used in this application.             |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -2269,11 +2445,11 @@ body:not(.binary).monochrome.chalk .selected .colored:not(.btn) .gold.long.round
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                         _medium-chalk-desktops.scss                          |
+|                               _chalk-btns.scss                               |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines various CSS styles used in this application.             |
+|        This defines the dom and svg visual styles for this application.      |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -2305,6 +2481,22 @@ body:not(.binary).monochrome.chalk #desktop.medium .desktop.app > .footer-bar .r
   border-color: color-mix(in srgb, var(--ambient-color) 10%, color-mix(in srgb, rgb(0, 0, 127) 20%, #8080b3));
 }
 
+/******************************************************************************\
+|                                                                              |
+|                            _medium-flat-tabs.scss                            |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
 /******************************************************************************\
 |                                                                              |
 |                           _medium-chalk-tabs.scss                            |
@@ -2350,11 +2542,91 @@ body:not(.binary).monochrome.chalk-tabs.show-tab-close-buttons ul.nav-tabs > li.
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
+|                        _medium-plastic-colored.scss                          |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                         _medium-flat-colored.scss                            |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                _plastic.scss                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                 _flat.scss                                   |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
 |                             _flat-plastic.scss                               |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
 |        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                 _flat.scss                                   |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -2382,6 +2654,22 @@ body:not(.binary).monochrome.chalk-tabs.show-tab-close-buttons ul.nav-tabs > li.
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
+|                                 _flat.scss                                   |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
 |                            _rounded-plastic.scss                             |
 |                                                                              |
 |******************************************************************************|
@@ -2398,11 +2686,11 @@ body:not(.binary).monochrome.chalk-tabs.show-tab-close-buttons ul.nav-tabs > li.
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                          _long-round-plastic.scss                            |
+|                                 _flat.scss                                   |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
+|        This defines various CSS styles used in this application.             |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -2414,11 +2702,11 @@ body:not(.binary).monochrome.chalk-tabs.show-tab-close-buttons ul.nav-tabs > li.
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                                _plastic.scss                                 |
+|                          _long-round-plastic.scss                            |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines various CSS styles used in this application.             |
+|        This defines the dom and svg visual styles for this application.      |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -2454,10 +2742,10 @@ body:not(.binary).monochrome.chalk-tabs.show-tab-close-buttons ul.nav-tabs > li.
   }
   .plastic .shaded.textured, .plastic.plastic.shaded.textured {
     background: linear-gradient(var(--light-direction), color-mix(in srgb, white 10%, transparent) 0%, transparent 50%, color-mix(in srgb, black 10%, transparent) 100%) no-repeat;
-    position: relative;
-    overflow: hidden;
     background-color: var(--primary-color);
     border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
+    position: relative;
+    overflow: hidden;
   }
   .plastic .shaded.textured:after, .plastic.plastic.shaded.textured:after {
     position: absolute;
@@ -2472,9 +2760,9 @@ body:not(.binary).monochrome.chalk-tabs.show-tab-close-buttons ul.nav-tabs > li.
   .plastic .shaded.textured.round, .plastic.plastic.shaded.textured.round {
     background: linear-gradient(var(--light-direction), color-mix(in srgb, white 10%, transparent) 0%, transparent 50%, color-mix(in srgb, black 10%, transparent) 100%) no-repeat;
     background-color: var(--primary-color);
+    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
     position: relative;
     overflow: hidden;
-    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
   }
   .plastic .shaded.textured.round:after, .plastic.plastic.shaded.textured.round:after {
     position: absolute;
@@ -2492,9 +2780,9 @@ body:not(.binary).monochrome.chalk-tabs.show-tab-close-buttons ul.nav-tabs > li.
   }
   .plastic .shaded.textured.rounded, .plastic.plastic.shaded.textured.rounded {
     background: linear-gradient(var(--light-direction), color-mix(in srgb, var(--light-color) 10%, var(--primary-color)) 0, var(--primary-color) 50%, color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color)) 100%) no-repeat;
+    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
     position: relative;
     overflow: hidden;
-    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
   }
   .plastic .shaded.textured.rounded:after, .plastic.plastic.shaded.textured.rounded:after {
     position: absolute;
@@ -2508,9 +2796,9 @@ body:not(.binary).monochrome.chalk-tabs.show-tab-close-buttons ul.nav-tabs > li.
   }
   .plastic .shaded.textured.long.round, .plastic.plastic.shaded.textured.long.round {
     background: linear-gradient(to right, color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color)) 0%, transparent var(--border-radius)) no-repeat, linear-gradient(to left, color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color)) 0%, transparent var(--border-radius)) no-repeat, linear-gradient(var(--light-direction), color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color)) 0, var(--primary-color) 50%, color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color)) 100%) no-repeat;
+    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
     position: relative;
     overflow: hidden;
-    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
   }
   .plastic .shaded.textured.long.round:after, .plastic.plastic.shaded.textured.long.round:after {
     position: absolute;
@@ -2525,9 +2813,9 @@ body:not(.binary).monochrome.chalk-tabs.show-tab-close-buttons ul.nav-tabs > li.
   }
   .plastic .shaded.textured.long.round.vertical, .plastic.plastic.shaded.textured.long.round.vertical {
     background: linear-gradient(to bottom, color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color)) 0%, transparent var(--border-radius)) no-repeat, linear-gradient(to top, color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color)) 0%, transparent var(--border-radius)) no-repeat, linear-gradient(to right, color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color)) 0, var(--primary-color) 50%, color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color)) 100%) no-repeat;
+    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
     position: relative;
     overflow: hidden;
-    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
   }
   .plastic .shaded.textured.long.round.vertical:after, .plastic.plastic.shaded.textured.long.round.vertical:after {
     position: absolute;
@@ -2573,22 +2861,6 @@ body:not(.binary).monochrome.chalk-tabs.show-tab-close-buttons ul.nav-tabs > li.
     background-color: var(--primary-color);
   }
 }
-/******************************************************************************\
-|                                                                              |
-|                        _medium-plastic-colored.scss                          |
-|                                                                              |
-|******************************************************************************|
-|                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
-|                                                                              |
-|        Author(s): Abe Megahed                                                |
-|                                                                              |
-|        This file is subject to the terms and conditions defined in           |
-|        'LICENSE.txt', which is part of this source code distribution.        |
-|                                                                              |
-|******************************************************************************|
-|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
-\******************************************************************************/
 body:not(.binary).monochrome.plastic .colored:not(.btn).red {
   background: linear-gradient(var(--light-direction), color-mix(in srgb, white 75%, transparent) 0%, transparent 15%) no-repeat, linear-gradient(var(--light-direction), color-mix(in srgb, white 15%, transparent) 0%, transparent 25%) no-repeat, linear-gradient(var(--light-direction), color-mix(in srgb, white 10%, transparent) 0%, transparent 50%) no-repeat;
   background-color: #8080b3;
@@ -3650,11 +3922,11 @@ body:not(.binary).monochrome.plastic .selected .colored:not(.btn) .gold.long.rou
 
 /******************************************************************************\
 |                                                                              |
-|                              _plastic-btns.scss                              |
+|                        _medium-plastic-desktops.scss                         |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
+|        This defines various CSS styles used in this application.             |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -3666,11 +3938,11 @@ body:not(.binary).monochrome.plastic .selected .colored:not(.btn) .gold.long.rou
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                        _medium-plastic-desktops.scss                         |
+|                              _plastic-btns.scss                              |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines various CSS styles used in this application.             |
+|        This defines the dom and svg visual styles for this application.      |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -3702,6 +3974,22 @@ body:not(.binary).monochrome.plastic #desktop.medium .desktop.app > .footer-bar 
   border-color: color-mix(in srgb, var(--ambient-color) 10%, color-mix(in srgb, rgb(0, 0, 127) 20%, #8080b3));
 }
 
+/******************************************************************************\
+|                                                                              |
+|                            _medium-flat-tabs.scss                            |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
 /******************************************************************************\
 |                                                                              |
 |                          _medium-plastic-tabs.scss                           |
@@ -3747,11 +4035,91 @@ body:not(.binary).monochrome.plastic-tabs.show-tab-close-buttons ul.nav-tabs > l
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
+|                         _medium-glass-colored.scss                           |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                         _medium-flat-colored.scss                            |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                 _glass.scss                                  |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                 _flat.scss                                   |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
 |                               _flat-glass.scss                               |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
 |        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                 _flat.scss                                   |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -3779,6 +4147,22 @@ body:not(.binary).monochrome.plastic-tabs.show-tab-close-buttons ul.nav-tabs > l
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
+|                                 _flat.scss                                   |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
 |                             _rounded-glass.scss                              |
 |                                                                              |
 |******************************************************************************|
@@ -3795,11 +4179,11 @@ body:not(.binary).monochrome.plastic-tabs.show-tab-close-buttons ul.nav-tabs > l
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                            _long-round-glass.scss                            |
+|                                 _flat.scss                                   |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
+|        This defines various CSS styles used in this application.             |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -3811,11 +4195,11 @@ body:not(.binary).monochrome.plastic-tabs.show-tab-close-buttons ul.nav-tabs > l
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                                 _glass.scss                                  |
+|                            _long-round-glass.scss                            |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines various CSS styles used in this application.             |
+|        This defines the dom and svg visual styles for this application.      |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -3850,11 +4234,11 @@ body:not(.binary).monochrome.plastic-tabs.show-tab-close-buttons ul.nav-tabs > l
     border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
   }
   .glass .shaded.textured, .glass.glass.shaded.textured {
-    position: relative;
-    overflow: hidden;
     background: linear-gradient(var(--light-direction), transparent 50%, color-mix(in srgb, var(--light-color) 10%, var(--primary-color)) 100%) no-repeat;
     background-color: color-mix(in srgb, color-mix(in srgb, var(--ambient-color) 20%, var(--primary-color)) 100%, transparent);
     border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
+    position: relative;
+    overflow: hidden;
   }
   .glass .shaded.textured:after, .glass.glass.shaded.textured:after {
     position: absolute;
@@ -3869,9 +4253,9 @@ body:not(.binary).monochrome.plastic-tabs.show-tab-close-buttons ul.nav-tabs > l
   .glass .shaded.textured.round, .glass.glass.shaded.textured.round {
     background: radial-gradient(ellipse 50% 50% at 50% 85%, color-mix(in srgb, color-mix(in srgb, var(--light-color) 80%, var(--primary-color)) 100%, transparent) 0%, color-mix(in srgb, color-mix(in srgb, var(--light-color) 10%, var(--primary-color)) 100%, transparent) 50%, transparent 100%) no-repeat;
     background-color: color-mix(in srgb, var(--ambient-color) 30%, var(--primary-color));
+    border-color: color-mix(in srgb, var(--ambient-color) 30%, var(--primary-color));
     position: relative;
     overflow: hidden;
-    border-color: color-mix(in srgb, var(--ambient-color) 30%, var(--primary-color));
   }
   .glass .shaded.textured.round:after, .glass.glass.shaded.textured.round:after {
     position: absolute;
@@ -3889,11 +4273,11 @@ body:not(.binary).monochrome.plastic-tabs.show-tab-close-buttons ul.nav-tabs > l
     border-radius: 50%;
   }
   .glass .shaded.textured.rounded, .glass.glass.shaded.textured.rounded {
-    position: relative;
-    overflow: hidden;
     background: linear-gradient(to right, color-mix(in srgb, color-mix(in srgb, var(--ambient-color) 30%, var(--primary-color)) 50%, transparent) 0%, transparent 10px) no-repeat, linear-gradient(to left, color-mix(in srgb, color-mix(in srgb, var(--ambient-color) 30%, var(--primary-color)) 50%, transparent) 0%, transparent 10px) no-repeat;
     background-color: color-mix(in srgb, var(--ambient-color) 30%, var(--primary-color));
     border-color: color-mix(in srgb, var(--ambient-color) 30%, var(--primary-color));
+    position: relative;
+    overflow: hidden;
   }
   .glass .shaded.textured.rounded:after, .glass.glass.shaded.textured.rounded:after {
     position: absolute;
@@ -3907,10 +4291,10 @@ body:not(.binary).monochrome.plastic-tabs.show-tab-close-buttons ul.nav-tabs > l
     background: linear-gradient(var(--light-direction), transparent 0%, color-mix(in srgb, white 100%, transparent) 12.5%, transparent 25%) no-repeat, linear-gradient(var(--light-direction), transparent 33%, color-mix(in srgb, color-mix(in srgb, var(--light-color) 20%, var(--primary-color)) 100%, transparent) 75%, color-mix(in srgb, var(--primary-color) 50%, transparent) 100%) no-repeat;
   }
   .glass .shaded.textured.long.round, .glass.glass.shaded.textured.long.round {
-    position: relative;
-    overflow: hidden;
     background: linear-gradient(to right, color-mix(in srgb, var(--ambient-color) 25%, var(--primary-color)) 0%, transparent var(--border-radius)) no-repeat, linear-gradient(to left, color-mix(in srgb, var(--ambient-color) 25%, var(--primary-color)) 0%, transparent var(--border-radius)) no-repeat, linear-gradient(var(--light-direction), transparent 33%, color-mix(in srgb, var(--light-color) 10%, var(--primary-color)) calc(70% + 2px), color-mix(in srgb, var(--light-color) 10%, var(--primary-color)) calc(80% + 2px), var(--primary-color) 100%) no-repeat, color-mix(in srgb, var(--ambient-color) 30%, var(--primary-color));
     border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
+    position: relative;
+    overflow: hidden;
   }
   .glass .shaded.textured.long.round:after, .glass.glass.shaded.textured.long.round:after {
     position: absolute;
@@ -3926,9 +4310,9 @@ body:not(.binary).monochrome.plastic-tabs.show-tab-close-buttons ul.nav-tabs > l
   }
   .glass .shaded.textured.long.round.vertical, .glass.glass.shaded.textured.long.round.vertical {
     background: linear-gradient(to bottom, color-mix(in srgb, var(--ambient-color) 25%, var(--primary-color)) 0%, transparent var(--border-radius)) no-repeat, linear-gradient(to top, color-mix(in srgb, var(--ambient-color) 25%, var(--primary-color)) 0%, transparent var(--border-radius)) no-repeat, linear-gradient(to right, transparent 33%, color-mix(in srgb, var(--light-color) 10%, var(--primary-color)) calc(70% + 2px), color-mix(in srgb, var(--light-color) 10%, var(--primary-color)) calc(80% + 2px), var(--primary-color) 100%) no-repeat, color-mix(in srgb, var(--ambient-color) 30%, var(--primary-color));
+    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
     position: relative;
     overflow: hidden;
-    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
   }
   .glass .shaded.textured.long.round.vertical:after, .glass.glass.shaded.textured.long.round.vertical:after {
     position: absolute;
@@ -3974,22 +4358,6 @@ body:not(.binary).monochrome.plastic-tabs.show-tab-close-buttons ul.nav-tabs > l
     background-color: var(--primary-color);
   }
 }
-/******************************************************************************\
-|                                                                              |
-|                         _medium-glass-colored.scss                           |
-|                                                                              |
-|******************************************************************************|
-|                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
-|                                                                              |
-|        Author(s): Abe Megahed                                                |
-|                                                                              |
-|        This file is subject to the terms and conditions defined in           |
-|        'LICENSE.txt', which is part of this source code distribution.        |
-|                                                                              |
-|******************************************************************************|
-|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
-\******************************************************************************/
 body:not(.binary).monochrome.glass .colored:not(.btn).red {
   background: linear-gradient(var(--light-direction), color-mix(in srgb, white 100%, transparent) 0%, transparent 10%) no-repeat, linear-gradient(var(--light-direction), color-mix(in srgb, white 25%, transparent) 0%, transparent 25%) no-repeat, linear-gradient(var(--light-direction), transparent 50%, color-mix(in srgb, color-mix(in srgb, var(--light-color) 10%, #8080b3) 100%, transparent) 100%) no-repeat;
   background-color: color-mix(in srgb, color-mix(in srgb, var(--ambient-color) 20%, #8080b3) 80%, transparent);
@@ -5051,11 +5419,11 @@ body:not(.binary).monochrome.glass .selected .colored:not(.btn) .gold.long.round
 
 /******************************************************************************\
 |                                                                              |
-|                               _glass-btns.scss                               |
+|                         _medium-glass-desktops.scss                          |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
+|        This defines various CSS styles used in this application.             |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -5067,11 +5435,11 @@ body:not(.binary).monochrome.glass .selected .colored:not(.btn) .gold.long.round
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                         _medium-glass-desktops.scss                          |
+|                               _glass-btns.scss                               |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines various CSS styles used in this application.             |
+|        This defines the dom and svg visual styles for this application.      |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -5103,6 +5471,22 @@ body:not(.binary).monochrome.glass #desktop.medium .desktop.app > .footer-bar .r
   border-color: color-mix(in srgb, var(--ambient-color) 30%, color-mix(in srgb, rgb(0, 0, 127) 20%, #8080b3));
 }
 
+/******************************************************************************\
+|                                                                              |
+|                            _medium-flat-tabs.scss                            |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
 /******************************************************************************\
 |                                                                              |
 |                           _medium-glass-tabs.scss                            |
@@ -5148,11 +5532,91 @@ body:not(.binary).monochrome.glass-tabs.show-tab-close-buttons ul.nav-tabs > li.
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
+|                         _medium-metal-colored.scss                           |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                         _medium-flat-colored.scss                            |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                _metal.scss                                   |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                 _flat.scss                                   |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
 |                               _flat-metal.scss                               |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
 |        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
+|                                 _flat.scss                                   |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -5180,6 +5644,22 @@ body:not(.binary).monochrome.glass-tabs.show-tab-close-buttons ul.nav-tabs > li.
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
+|                                 _flat.scss                                   |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+/******************************************************************************\
+|                                                                              |
 |                            _rounded-metal.scss                               |
 |                                                                              |
 |******************************************************************************|
@@ -5196,11 +5676,11 @@ body:not(.binary).monochrome.glass-tabs.show-tab-close-buttons ul.nav-tabs > li.
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                           _long-round-metal.scss                             |
+|                                 _flat.scss                                   |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
+|        This defines various CSS styles used in this application.             |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -5212,11 +5692,11 @@ body:not(.binary).monochrome.glass-tabs.show-tab-close-buttons ul.nav-tabs > li.
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                                _metal.scss                                   |
+|                           _long-round-metal.scss                             |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines various CSS styles used in this application.             |
+|        This defines the dom and svg visual styles for this application.      |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -5251,9 +5731,9 @@ body:not(.binary).monochrome.glass-tabs.show-tab-close-buttons ul.nav-tabs > li.
   }
   .metal .shaded.textured, .metal.metal.shaded.textured {
     background: linear-gradient(var(--light-direction), transparent 0%, color-mix(in srgb, var(--primary-color) 50%, transparent) 66%, var(--primary-color) 100%) no-repeat, color-mix(in srgb, var(--ambient-color) 50%, var(--primary-color));
+    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
     position: relative;
     overflow: hidden;
-    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
   }
   .metal .shaded.textured:after, .metal.metal.shaded.textured:after {
     position: absolute;
@@ -5268,9 +5748,9 @@ body:not(.binary).monochrome.glass-tabs.show-tab-close-buttons ul.nav-tabs > li.
   .metal .shaded.textured.round, .metal.metal.shaded.textured.round {
     background: radial-gradient(ellipse 50% 25% at 50% 10%, color-mix(in srgb, white 75%, transparent) 50%, transparent 100%) no-repeat, radial-gradient(ellipse 50% 25% at 50% 10%, color-mix(in srgb, var(--primary-color) 100%, transparent) 100%, transparent 100%) no-repeat;
     background-color: color-mix(in srgb, var(--ambient-color) 50%, var(--primary-color));
+    border-color: color-mix(in srgb, var(--ambient-color) 30%, var(--primary-color));
     position: relative;
     overflow: hidden;
-    border-color: color-mix(in srgb, var(--ambient-color) 30%, var(--primary-color));
   }
   .metal .shaded.textured.round:after, .metal.metal.shaded.textured.round:after {
     position: absolute;
@@ -5290,9 +5770,9 @@ body:not(.binary).monochrome.glass-tabs.show-tab-close-buttons ul.nav-tabs > li.
   .metal .shaded.textured.rounded, .metal.metal.shaded.textured.rounded {
     background: radial-gradient(ellipse 100% 50% at 50% 10%, var(--primary-color) 0%, transparent 75%) no-repeat, linear-gradient(var(--light-direction), transparent 0%, color-mix(in srgb, var(--primary-color) 50%, transparent) 66%, var(--primary-color) 100%) no-repeat;
     background-color: color-mix(in srgb, var(--ambient-color) 50%, var(--primary-color));
+    border-color: color-mix(in srgb, var(--ambient-color) 20%, var(--primary-color));
     position: relative;
     overflow: hidden;
-    border-color: color-mix(in srgb, var(--ambient-color) 20%, var(--primary-color));
   }
   .metal .shaded.textured.rounded:after, .metal.metal.shaded.textured.rounded:after {
     position: absolute;
@@ -5307,9 +5787,9 @@ body:not(.binary).monochrome.glass-tabs.show-tab-close-buttons ul.nav-tabs > li.
   .metal .shaded.textured.long.round, .metal.metal.shaded.textured.long.round {
     background: linear-gradient(to right, color-mix(in srgb, var(--ambient-color) 40%, var(--primary-color)) 0%, transparent var(--border-radius)) no-repeat, linear-gradient(to left, color-mix(in srgb, var(--ambient-color) 40%, var(--primary-color)) 0%, transparent var(--border-radius)) no-repeat, linear-gradient(to bottom, color-mix(in srgb, var(--light-color) 25%, var(--primary-color)) 0%, color-mix(in srgb, var(--light-color) 75%, var(--primary-color)) calc(5% + 2px), color-mix(in srgb, var(--light-color) 75%, var(--primary-color)) calc(15% + 2px), transparent calc(50% + 2px)) no-repeat, linear-gradient(to bottom, transparent 0%, var(--primary-color) 25%, transparent 75%) no-repeat;
     background-color: color-mix(in srgb, var(--ambient-color) 50%, var(--primary-color));
+    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
     position: relative;
     overflow: hidden;
-    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
   }
   .metal .shaded.textured.long.round:after, .metal.metal.shaded.textured.long.round:after {
     position: absolute;
@@ -5324,9 +5804,9 @@ body:not(.binary).monochrome.glass-tabs.show-tab-close-buttons ul.nav-tabs > li.
   .metal .shaded.textured.long.round.vertical, .metal.metal.shaded.textured.long.round.vertical {
     background: linear-gradient(to bottom, color-mix(in srgb, var(--ambient-color) 40%, var(--primary-color)) 0%, transparent var(--border-radius)) no-repeat, linear-gradient(to top, color-mix(in srgb, var(--ambient-color) 40%, var(--primary-color)) 0%, transparent var(--border-radius)) no-repeat, linear-gradient(to right, transparent 0%, var(--primary-color) 25%, transparent 75%) no-repeat;
     background-color: color-mix(in srgb, var(--ambient-color) 50%, var(--primary-color));
+    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
     position: relative;
     overflow: hidden;
-    border-color: color-mix(in srgb, var(--ambient-color) 10%, var(--primary-color));
   }
   .metal .shaded.textured.long.round.vertical:after, .metal.metal.shaded.textured.long.round.vertical:after {
     position: absolute;
@@ -5372,22 +5852,6 @@ body:not(.binary).monochrome.glass-tabs.show-tab-close-buttons ul.nav-tabs > li.
     background-color: var(--primary-color);
   }
 }
-/******************************************************************************\
-|                                                                              |
-|                         _medium-metal-colored.scss                           |
-|                                                                              |
-|******************************************************************************|
-|                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
-|                                                                              |
-|        Author(s): Abe Megahed                                                |
-|                                                                              |
-|        This file is subject to the terms and conditions defined in           |
-|        'LICENSE.txt', which is part of this source code distribution.        |
-|                                                                              |
-|******************************************************************************|
-|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
-\******************************************************************************/
 body:not(.binary).monochrome.metal .colored:not(.btn).red {
   background: linear-gradient(var(--light-direction), color-mix(in srgb, color-mix(in srgb, var(--light-color) 30%, #8080b3) 100%, transparent) 0%, transparent 3px) no-repeat, linear-gradient(var(--light-direction), color-mix(in srgb, color-mix(in srgb, var(--light-color) 30%, #8080b3) 100%, transparent) 0%, transparent 20%) no-repeat, linear-gradient(to right, transparent 0%, color-mix(in srgb, #8080b3 50%, transparent) 50%, transparent 100%), linear-gradient(to bottom, #8080b3 0%, color-mix(in srgb, var(--ambient-color) 50%, #8080b3) 10%, color-mix(in srgb, var(--light-color) 20%, #8080b3) 100%);
   border-color: color-mix(in srgb, var(--ambient-color) 10%, #8080b3);
@@ -6403,11 +6867,11 @@ body:not(.binary).monochrome.metal .selected .colored:not(.btn) .gold.long.round
 
 /******************************************************************************\
 |                                                                              |
-|                               _metal-btns.scss                               |
+|                         _medium-metal-desktops.scss                          |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines the dom and svg visual styles for this application.      |
+|        This defines various CSS styles used in this application.             |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -6419,11 +6883,11 @@ body:not(.binary).monochrome.metal .selected .colored:not(.btn) .gold.long.round
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                         _medium-metal-desktops.scss                          |
+|                               _metal-btns.scss                               |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines various CSS styles used in this application.             |
+|        This defines the dom and svg visual styles for this application.      |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -6455,6 +6919,22 @@ body:not(.binary).monochrome.metal #desktop.medium .desktop.app > .footer-bar .r
   border-color: color-mix(in srgb, var(--ambient-color) 30%, color-mix(in srgb, rgb(0, 0, 127) 20%, #8080b3));
 }
 
+/******************************************************************************\
+|                                                                              |
+|                            _medium-flat-tabs.scss                            |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines the dom and svg visual styles for this application.      |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
 /******************************************************************************\
 |                                                                              |
 |                           _medium-metal-tabs.scss                            |
@@ -6500,22 +6980,6 @@ body:not(.binary).monochrome.metal-tabs.show-tab-close-buttons ul.nav-tabs > li.
 \******************************************************************************/
 /******************************************************************************\
 |                                                                              |
-|                                 _index.scss                                  |
-|                                                                              |
-|******************************************************************************|
-|                                                                              |
-|        This defines various CSS styles used in this application.             |
-|                                                                              |
-|        Author(s): Abe Megahed                                                |
-|                                                                              |
-|        This file is subject to the terms and conditions defined in           |
-|        'LICENSE.txt', which is part of this source code distribution.        |
-|                                                                              |
-|******************************************************************************|
-|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
-\******************************************************************************/
-/******************************************************************************\
-|                                                                              |
 |                            _medium-nav-bars.scss                             |
 |                                                                              |
 |******************************************************************************|
@@ -6536,27 +7000,11 @@ body:not(.binary).monochrome .navbar .navbar-nav .indicator .bar .inner {
 
 /******************************************************************************\
 |                                                                              |
-|                                 _index.scss                                  |
+|                            _medium-flat-tabs.scss                            |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines various CSS styles used in this application.             |
-|                                                                              |
-|        Author(s): Abe Megahed                                                |
-|                                                                              |
-|        This file is subject to the terms and conditions defined in           |
-|        'LICENSE.txt', which is part of this source code distribution.        |
-|                                                                              |
-|******************************************************************************|
-|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
-\******************************************************************************/
-/******************************************************************************\
-|                                                                              |
-|                                 styles.scss                                  |
-|                                                                              |
-|******************************************************************************|
-|                                                                              |
-|        This defines various CSS styles used in this application.             |
+|        This defines the dom and svg visual styles for this application.      |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |

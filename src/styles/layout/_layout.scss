@@ -156,22 +156,26 @@ body {
 	transform: translate(-50%, -50%);
 }
 
-.left.aligned {
-	text-align: left;
-}
-
-.center.aligned {
-	text-align: center;
-}
-
-.right.aligned {
-	text-align: right;
-}
-
 .middle.aligned {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+}
+
+//
+// text alignment
+//
+
+.left.aligned {
+	text-align: left !important;
+}
+
+.center.aligned {
+	text-align: center !important;
+}
+
+.right.aligned {
+	text-align: right !important;
 }
 
 //

@@ -85,7 +85,7 @@ export default FormView.extend({
 			website_kind: this.getValue('website_kind'),
 			protocol: this.getValue('protocol'),
 			url: this.getValue('url'),
-			website_kinds: config.defaults.websites || {}
+			website_kinds: config.settings.defaults.websites || {}
 		};
 	},
 
@@ -95,7 +95,7 @@ export default FormView.extend({
 
 	templateContext: function() {
 		return {
-			website_kinds: config.defaults.websites
+			website_kinds: config.settings.defaults.websites
 		};
 	}
 });

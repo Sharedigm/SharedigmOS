@@ -4,7 +4,7 @@
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines an abstract base class for form views.                   |
+|        This defines a base class for preferences form views.                 |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -15,19 +15,37 @@
 |        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
-import FormView from '../../../../views/forms/form-view.js';
+import QuestionsFormView from '../../../../views/forms/questions-form-view.js';
 import '../../../../../vendor/bootstrap/js/tab.js';
 
-export default FormView.extend({
+export default QuestionsFormView.extend({
 
 	//
 	// attributes
 	//
 
 	className: 'preferences narrow form-horizontal',
+	preferences: [],
 
 	//
-	// form queryimg methods
+	// constructor
+	//
+
+	initialize: function() {
+
+		// call superclass constructor
+		//
+		QuestionsFormView.prototype.initialize.call(this);
+
+		// set attributes
+		//
+		if (this.options.preferences) {
+			this.preferences = this.options.preferences;
+		}
+	},
+
+	//
+	// querying methods
 	//
 
 	hasChanged: function() {
@@ -39,6 +57,14 @@ export default FormView.extend({
 			}
 		}
 		return false;
+	},
+
+	//
+	// getting methods
+	//
+
+	getQuestions: function() {
+		return this.preferences;
 	},
 
 	getChanged: function() {
@@ -73,16 +99,19 @@ export default FormView.extend({
 
 		// get list of original values for changed attributes
 		//
-		let values = this.getValues();
-		for (let key in values) {
-			let value = values[key];
+		if (this.values) {
+			let values = this.getValues();
+			for (let key in values) {
+				let value = values[key];
 
-			// save value if changed
-			//
-			if (Array.isArray(value)? !value.equals(this.values[key]) : value != this.values[key]) {
-				changed[key] = this.values[key];
-			}			
+				// save value if changed
+				//
+				if (Array.isArray(value)? !value.equals(this.values[key]) : value != this.values[key]) {
+					changed[key] = this.values[key];
+				}
+			}
 		}
+
 		return changed;
 	},
 
@@ -132,24 +161,11 @@ export default FormView.extend({
 	// rendering methods
 	//
 
-	onRender: function() {
-
-		// call superclass method
-		//
-		FormView.prototype.onRender.call(this);
-
-		// set initial form values
-		//
-		if (this.setValue) {
-			this.setValues(this.model.attributes);
-		}
-	},
-
 	onAttach: function() {
 
 		// call superclass method
 		//
-		FormView.prototype.onAttach.call(this);
+		QuestionsFormView.prototype.onAttach.call(this);
 
 		// get initial values
 		//

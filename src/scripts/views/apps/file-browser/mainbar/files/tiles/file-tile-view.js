@@ -96,24 +96,33 @@ export default ItemTileView.extend({
 		return this.parent.options.letterboxed || this.isPdf();
 	},
 
+	hasOption: function(option) {
+		return this.options.preferences? this.options.preferences.includes('options', option) : undefined;
+	},
+
+	hasProperty: function(property) {
+		return this.options.preferences? this.options.preferences.includes('properties', property) : undefined;
+	},
+
 	hasThumbnail: function() {
-		return (!this.options.preferences || this.options.preferences.get('show_thumbnails')) && this.model.hasThumbnail();
+		return this.hasOption('thumbnails') != false;
 	},
 	
 	canShowThumbnail: function() {
-		let size = this.model.get('size');
-		if (size != undefined) {
-			let maxSize = config.apps.file_browser.max_thumbnail_file_size;
-			
-			if (this.isVector()) {
-				let maxSvgSize = config.apps.file_browser.max_thumbnail_svg_file_size;
-				if (size > maxSvgSize) {
-					return false;
-				}
-			}
+		let extension = this.model.getFileExtension();
+		let size = this.get('size') || 0;
 
-			return size < maxSize;
+		if (extension == 'svg') {
+			if (size < config.apps.file_browser.max_thumbnail_svg_file_size) {
+				return true;
+			}
+		} else if (this.model instanceof ImageFile || this.model instanceof VideoFile || extension == 'pdf') {
+			if (size < config.apps.file_browser.max_thumbnail_file_size) {
+				return true;
+			}
 		}
+
+		return false;
 	},
 	
 	//
@@ -121,7 +130,7 @@ export default ItemTileView.extend({
 	//
 
 	getName: function() {
-		if (this.options.preferences && this.options.preferences.get('show_file_extensions')) {
+		if (this.options.preferences && this.options.preferences.includes('options', 'file_extensions')) {
 			return this.model.getName();
 		} else {
 			return this.model.getBaseName();
@@ -152,11 +161,11 @@ export default ItemTileView.extend({
 	getIconName: function() {
 		let name = this.model.getName().toLowerCase();
 
-		if (config.files.files.names[name]) {
+		if (config.settings.files.files.names[name]) {
 
 			// get icon by file name
 			//
-			return config.files.files.names[name].icon;
+			return config.settings.files.files.names[name].icon;
 		} else {
 			
 			// get icon by file extension
@@ -165,10 +174,10 @@ export default ItemTileView.extend({
 
 			// get icon
 			//
-			if (config.files.files.extensions[extension]) {
-				return config.files.files.extensions[extension].icon;
+			if (config.settings.files.files.extensions[extension]) {
+				return config.settings.files.files.extensions[extension].icon;
 			} else {
-				return config.files.files.icon;
+				return config.settings.files.files.icon;
 			}
 		}
 	},
@@ -179,7 +188,7 @@ export default ItemTileView.extend({
 
 	getIconId: function() {
 		let name = this.model.getName().toLowerCase();
-		if (config.files.files.names[name]) {
+		if (config.settings.files.files.names[name]) {
 
 			// get id by file name
 			//
@@ -195,12 +204,12 @@ export default ItemTileView.extend({
 
 	getSvgIcon: function() {
 		let name = this.model.getName().toLowerCase();
-		if (config.files.files.names[name]) {
+		if (config.settings.files.files.names[name]) {
 
 			// get icon by file name
 			//
 			this.id = name + '-file-tile';
-			return this.getSvg(config.servers.images + '/' + this.constructor.getIconPath() + '/' + config.files.files.names[name].icon, this.id);
+			return this.getSvg(config.servers.images + '/' + this.constructor.getIconPath() + '/' + config.settings.files.files.names[name].icon, this.id);
 		} else {
 			
 			// get icon by file extension
@@ -210,10 +219,10 @@ export default ItemTileView.extend({
 
 			// get icon
 			//
-			if (config.files.files.extensions[extension]) {
-				return this.getSvg(config.servers.images + '/' + this.constructor.getIconPath() + '/' + config.files.files.extensions[extension].icon, this.id);
+			if (config.settings.files.files.extensions[extension]) {
+				return this.getSvg(config.servers.images + '/' + this.constructor.getIconPath() + '/' + config.settings.files.files.extensions[extension].icon, this.id);
 			} else {
-				return this.getSvg(config.servers.images + '/' + this.constructor.getIconPath() + '/' + config.files.files.icon, this.id);
+				return this.getSvg(config.servers.images + '/' + this.constructor.getIconPath() + '/' + config.settings.files.files.icon, this.id);
 			}
 		}
 	},
@@ -226,7 +235,7 @@ export default ItemTileView.extend({
 
 		// append extension if hiding extensions
 		//
-		if (!this.options.preferences.get('show_file_extensions')) {
+		if (!this.options.preferences.includes('options', 'file_extensions')) {
 			let extension = this.model.getFileExtension();
 			if (extension) {
 				name = name + '.' + extension;

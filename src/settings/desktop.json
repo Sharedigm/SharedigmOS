@@ -1,0 +1,16 @@
+{
+	"show_app_launcher": true,
+	"preferences": {
+		"desktop_apps": {
+			"phone": ["app_launcher"],
+			"tablet": ["app_launcher"],
+			"desktop": ["file_browser"]
+		},
+		"admin_apps": {
+			"phone": ["app_launcher"],
+			"tablet": ["app_launcher"],
+			"desktop": ["account_manager", "file_browser"]
+		},
+		"pinned_apps": []
+	}
+}

@@ -52,7 +52,7 @@ export default FileTileView.extend(_.extend({}, FileDroppable, {
 	//
 
 	getName: function() {
-		if (this.options.preferences && this.options.preferences.get('show_file_extensions')) {
+		if (this.options.preferences && this.options.preferences.includes('options', 'file_extensions')) {
 			return this.model.getName();
 		} else {
 			return this.model.getBaseName();
@@ -67,10 +67,10 @@ export default FileTileView.extend(_.extend({}, FileDroppable, {
 
 		// get icon
 		//
-		if (config.files.volumes.extensions[extension]) {
-			return config.files.volumes.extensions[extension].icon;
+		if (config.settings.files.volumes.extensions[extension]) {
+			return config.settings.files.volumes.extensions[extension].icon;
 		} else {
-			return config.files.volumes.icon;
+			return config.settings.files.volumes.icon;
 		}
 	},
 

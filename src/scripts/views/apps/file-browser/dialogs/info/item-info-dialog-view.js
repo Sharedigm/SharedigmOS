@@ -109,7 +109,7 @@ export default InfoDialogView.extend({
 	`),
 
 	events: _.extend({}, InfoDialogView.prototype.events, {
-		'click .items + .nav-tabs a': 'onClickItemTab',
+		'click .items + .nav-tabs': 'onClickItemTab',
 
 		// general events
 		//

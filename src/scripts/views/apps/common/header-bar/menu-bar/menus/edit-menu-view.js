@@ -20,7 +20,7 @@ import MenuView from '../../../../../../views/apps/common/header-bar/menu-bar/me
 export default MenuView.extend({
 
 	//
-	// methods
+	// mouse event handling methods
 	//
 
 	onClickCut: function() {

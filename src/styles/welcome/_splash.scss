@@ -1,0 +1,249 @@
+/******************************************************************************\
+|                                                                              |
+|                                _splash.scss                                  |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+
+@use "../bootstrap/variables";
+@use "../layout/performance";
+@use "../colors/text-colors";
+
+//
+// variables
+//
+
+$splash-logo-shadow: drop-shadow(10px 10px 10px rgba(black, 20%));
+$text-shadow: 1px 1px 5px rgba(black, 50%);
+$text-size: 1.25em;
+$description-size: 2em;
+$round-border-radius: 30px;
+$rounded-border-radius: 10px;
+
+//
+// styles
+//
+
+.welcome.page {
+	.splash {
+		display: flex;
+		flex-direction: column;
+		width: 90%;
+		margin: 50px;
+		padding: 20px;
+		justify-content: center;
+		border-radius: 15px;
+
+		// use hardware acceleration
+		//
+		@include performance.acceleration;
+
+		//
+		// splash logo
+		//
+
+		.logo {
+
+			img {
+				max-width: 100%;
+			}
+
+			// logo shadow
+			//
+			&.shadowed {
+				-webkit-filter: $splash-logo-shadow;
+				filter: $splash-logo-shadow;
+			}
+
+			// cursor
+			//
+			&.active {
+				cursor: pointer;
+			}
+		}
+		
+		> a {
+			text-decoration: none;
+		}
+		
+		.greeting {
+			font-size: 1em;
+			color: white;
+			
+			&.shadowed {
+				text-shadow: $text-shadow;
+			}
+		}
+
+		.logo, .logotype, .tagline, .description, .search {
+			margin: 20px auto;	
+		}
+
+		.logotype, .tagline, .description {
+			&.shadowed {
+				text-shadow: $text-shadow;
+			}
+
+			&.round {
+				border-radius: $round-border-radius;
+			}
+
+			&.rounded {
+				border-radius: $rounded-border-radius;
+			}
+		}
+
+		.tagline {
+			display: inline-block;
+			font-size: $text-size;
+			line-height: 1.5em;
+			padding: 5px 20px;
+			margin: 0 auto;
+		}
+
+		.description {
+			width: 75%;
+			font-size: $description-size;
+			line-height: 125%;
+			margin: 20px auto;
+		}
+
+		.search {
+			width: 100%;
+
+			.input-group {
+				max-width: 600px;
+				margin: auto;
+			}
+		}
+
+		a {
+			color: unset !important;
+		}
+	}
+
+	&.full-size {
+		.splash {
+			margin: auto !important;
+		}
+	}
+}
+
+//
+// border styles
+//
+
+body.rounded {
+	.welcome.page {
+		.splash {
+			.tagline, .description {
+				border-radius: $rounded-border-radius;
+			}
+		}
+	}
+}
+
+body.round {
+	.welcome.page {
+		.splash {
+			.tagline, .description {
+				border-radius: $round-border-radius;
+			}
+		}
+	}
+}
+
+//
+// medium styles
+//
+
+@media (max-width: variables.$screen-md-min) {
+	.welcome.page {
+		.splash {
+
+			//
+			// medium spacing
+			//
+
+			.logo, .logotype, .tagline, .description, .search, .buttons {
+				margin: 10px auto;	
+			}
+
+			//
+			// medium descriptions
+			//
+
+			.description {
+				font-size: 150%;
+			}
+		}
+	}
+}
+
+//
+// small styles
+//
+
+@media (max-width: variables.$screen-sm-min) {
+	.welcome.page {
+		.splash {
+			width: 100%;
+			margin: 0;
+			padding: 10px;
+			border-radius: 0;
+
+			//
+			// small descriptions
+			//
+
+			.description {
+				width: 75%;
+			}
+		}
+	}
+}
+
+//
+// extra small styles
+//
+
+@media (max-width: variables.$screen-xs-min) {
+	.welcome.page {
+		.splash {
+
+			//
+			// extra small search bars
+			//
+
+			.search {
+				padding: 0 15px;
+
+				.input-group {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+//
+// mobile styles
+//
+
+body[device="phone"], body[device="tablet"] {
+	.welcome.page {
+		.splash {
+			padding: 0;
+		}
+	}
+}

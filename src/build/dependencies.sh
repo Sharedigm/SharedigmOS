@@ -4,16 +4,16 @@
 #                                                                              #
 #******************************************************************************#
 #                                                                              #
-#        This script creates a script that enumerates the apps in order        #
-#        for the build script to preserve the app directory structure.         #
+#       This script creates a script that enumerates the apps in order         #
+#       for the build script to preserve the app directory structure.          #
 #                                                                              #
-#        Author(s): Abe Megahed                                                #
+#       Author(s): Abe Megahed                                                 #
 #                                                                              #
-#        This file is subject to the terms and conditions defined in           #
-#        'LICENSE.md', which is part of this source code distribution.         #
+#       This file is subject to the terms and conditions defined in            #
+#       'LICENSE.md', which is part of this source code distribution.          #
 #                                                                              #
 #******************************************************************************#
-#        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          #
+#       Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com         #
 #******************************************************************************#
 
 function write_header() {
@@ -32,7 +32,7 @@ cat << EndOfHeader
 |        'LICENSE.md', which is part of this source code distribution.         |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 |******************************************************************************/
 
 EndOfHeader
@@ -69,9 +69,9 @@ function write_app_dependencies() {
 		#
 		dirname=${dirname/\//}
 
-		# remove dot dots
+		# replace all dashes with underscores
 		#
-		appname=${dirname/-/_}
+		appname=${dirname//-/_}
 
 		# skip base apps
 		#

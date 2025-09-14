@@ -132,7 +132,7 @@ export default {
 	},
 
 	clearBackgroundColor: function(element) {
-		let colors = config.defaults.colors;
+		let colors = config.settings.defaults.colors;
 
 		if (!element) {
 			element = this.$el;

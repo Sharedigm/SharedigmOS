@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+	<defs>
+		<style>
+			#user {
+				stroke: white;
+				stroke-width: 20;
+				stroke-linejoin: round;
+			}
+		</style>
+	</defs>
+
+	<g id="user" transform="translate(255, 255) scale(1) translate(-255, -255)">
+		<g transform="translate(50, 50)">
+			<path d="M391.113, 426.667H35.554v-88.892c0-22.746, 8.678-45.495, 26.039-62.848 c17.353-17.357, 40.102-26.039, 62.848-26.039h177.783c22.75, 0, 45.495, 8.678, 62.852, 26.039 c17.353, 17.353, 26.035, 40.102, 26.035, 62.848V426.667z"/>
+			<circle cx="215" cy="135" r="110"/>
+		</g>
+	</g>
+</svg>

@@ -89,6 +89,12 @@ $rounded-divider-border-radius: 7px;
 		li {
 			padding: 0 5px;
 
+			//
+			// panel borders
+			//
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+
 			> form {
 				padding: 5px;
 
@@ -101,12 +107,6 @@ $rounded-divider-border-radius: 7px;
 				padding-top: 0;
 				margin-top: 5px;
 			}
-
-			//
-			// panel borders
-			//
-			border-top-left-radius: 0;
-			border-top-right-radius: 0;
 
 			&:not(:last-child) {
 				border-bottom-left-radius: 0;
@@ -166,6 +166,14 @@ $rounded-divider-border-radius: 7px;
 					display: inline-block !important;
 					visibility: visible !important;
 				}
+			}
+
+			//
+			// counteract bootstrap
+			//
+
+			&.small {
+				font-size: inherit;
 			}
 		}
 		
@@ -811,7 +819,7 @@ body[device="phone"], body[device="tablet"] {
 }
 
 //
-// non-mobile styles
+// non-small styles
 //
 
 @media (min-width: variables.$screen-xs-min) {

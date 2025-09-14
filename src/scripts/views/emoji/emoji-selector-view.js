@@ -129,11 +129,22 @@ export default BaseView.extend({
 	],
 
 	//
+	// constructor
+	//
+
+	initialize: function() {
+
+		// set attributes
+		//
+		this.emoji = config.settings.emoji;
+	},
+
+	//
 	// rendering methods
 	//
 
 	templateContext: function() {
-		let emoji = config.emoji;
+		let emoji = this.emoji;
 
 		for (let i = 0; i < emoji.length; i++) {
 			emoji[i].order = i;
@@ -193,9 +204,9 @@ export default BaseView.extend({
 
 			if (!unique.contains(codePoint) && !this.skinToneModifiers.contains(codePoint)) {
 				if (codePoint.startsWith('1f')) {
-					html += '<a href="' + codePoint + '">' + this.codePointToChar(codePoint) + '</a>';	
+					html += '<a href="' + codePoint + '">' + this.codePointToChar(codePoint) + '</a>';
 					index++;
-					unique.push(codePoint);		
+					unique.push(codePoint);
 				} else {
 					index++;
 				}
@@ -276,7 +287,7 @@ export default BaseView.extend({
 
 	onClickEmoji: function(event) {
 		let description = $(event.target).attr('title');
-		let emoji = config.emoji;
+		let emoji = this.emoji;
 
 		// find emoji by description
 		//

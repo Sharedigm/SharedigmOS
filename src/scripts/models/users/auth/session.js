@@ -17,7 +17,6 @@
 
 import BaseModel from '../../../models/base-model.js';
 import User from '../../../models/users/user.js';
-import Directory from '../../../models/storage/directories/directory.js';
 
 export default BaseModel.extend({
 
@@ -26,6 +25,7 @@ export default BaseModel.extend({
 	//
 
 	url: config.servers.api + '/sessions/current',
+	home: null,
 
 	//
 	// constructor
@@ -36,10 +36,6 @@ export default BaseModel.extend({
 		// set attributes
 		//
 		this.options = options;
-
-		// create new home directory
-		//
-		this.home = new Directory();
 	},
 
 	//
@@ -84,6 +80,7 @@ export default BaseModel.extend({
 	//
 
 	login: function(username, password, options) {
+		this.home = null;
 
 		// initialize the session
 		//
@@ -153,7 +150,7 @@ export default BaseModel.extend({
 					//
 					if (options && options.success) {
 						options.success();
-					}	
+					}
 				}
 			},
 
@@ -167,7 +164,7 @@ export default BaseModel.extend({
 				//
 				if (options && options.error) {
 					options.error();
-				}	
+				}
 			}
 		});
 	},
@@ -177,6 +174,7 @@ export default BaseModel.extend({
 	//
 
 	logout: function(options) {
+		this.home = null;
 
 		// remove guest user
 		//

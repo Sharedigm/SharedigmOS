@@ -54,10 +54,7 @@ $shadow: 3px 3px 7px rgba(black, 33%);
 			> a {
 				display: flex;
 				padding: 5px 10px;
-				border-radius: 0;
-				border-width: 1px;
-				border-style: solid;
-				border-color: transparent;
+				border: none;
 
 				i {
 					margin: auto;
@@ -216,12 +213,28 @@ body:not(.binary):not(.flat-menus):not(.flat.auto-menus) {
 }
 
 //
+// desktop styles
+//
+
+.header-bar {
+	.menu-bar {
+		> ul.nav-menus {
+			display: inline-flex;
+		}	
+	}
+}
+
+//
 // mobile styles
 //
 
 body[device="phone"], body[device="tablet"] {
 	.menu-bar {
 		text-align: center;
+
+		> ul.nav-menus {
+			display: inline-block;
+		}
 	}
 }
 

@@ -85,7 +85,7 @@ export default LinkView.extend({
 
 	openFile: function(link) {
 		application.launch(this.getAppName(), {
-			model: link.getFile()
+			model: link.getTarget()
 		});
 	},
 

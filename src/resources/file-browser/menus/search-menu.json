@@ -1,168 +1,166 @@
-{
-	"items": [
-		{
-			"class": "search-by-name",
-			"group": "search-by",
-			"icon": "fa fa-font",
-			"name": "By Name",
-			"state": "unselected"
-		},
-		{
-			"class": "search-by-kind",
-			"group": "search-by",
-			"icon": "fa fa-file",
-			"name": "By Kind",
-			"state": "unselected"
-		},
-		{
-			"class": "search-by-size",
-			"group": "search-by",
-			"icon": "fa fa-download",
-			"name": "By Size",
-			"state": "unselected"
-		},
-		"divider",
-		{
-			"class": "search-by-keyword",
-			"group": "search-by",
-			"icon": "fa fa-key",
-			"name": "By Keyword",
-			"state": "unselected"
-		},
-		{
-			"class": "search-by-meaning",
-			"group": "search-by",
-			"icon": "fa fa-lightbulb",
-			"name": "By Meaning",
-			"state": "unselected"
-		},
-		"divider",
-		{
-			"class": "search-by-date",
-			"icon": "fa fa-calendar-alt",
-			"name": "By Date",
-			"state": "unselected",
-			"menu": [
-				{
-					"class": "search-by-create-date",
-					"group": "search-by",
-					"icon": "fa fa-magic",
-					"name": "Create Date",
-					"state": "unselected"
-				},
-				{
-					"class": "search-by-modify-date",
-					"group": "search-by",
-					"icon": "fa fa-edit",
-					"name": "Modify Date",
-					"state": "unselected"
-				},
-				{
-					"class": "search-by-access-date",
-					"group": "search-by",
-					"icon": "fa fa-eye",
-					"name": "Access Date",
-					"state": "unselected"
-				}
-			]
-		},
-		{
-			"class": "photo",
-			"icon": "fa fa-image",
-			"name": "By Photo",
-			"state": "unselected",
-			"menu": [
-				{
-					"class": "search-by-resolution",
-					"group": "search-by",
-					"icon": "fa fa-arrows-alt",
-					"name": "Resolution",
-					"state": "unselected"
-				},
-				{
-					"class": "search-by-make-model",
-					"group": "search-by",
-					"icon": "fa fa-camera",
-					"name": "Make / Model",
-					"state": "unselected"
-				},
-				{
-					"class": "search-by-focal-length",
-					"group": "search-by",
-					"icon": "fa fa-arrows-alt-h",
-					"name": "Focal Length",
-					"state": "unselected"
-				},
-				{
-					"class": "search-by-aperture",
-					"group": "search-by",
-					"icon": "fa fa-dot-circle",
-					"name": "Aperture",
-					"state": "unselected"
-				},
-				{
-					"class": "search-by-exposure",
-					"group": "search-by",
-					"icon": "fa fa-clock",
-					"name": "Exposure",
-					"state": "unselected"
-				},
-				{
-					"class": "search-by-iso",
-					"group": "search-by",
-					"icon": "fa fa-film",
-					"name": "ISO",
-					"state": "unselected"
-				},
-				{
-					"class": "search-by-capture-date",
-					"group": "search-by",
-					"icon": "fa fa-calendar-alt",
-					"name": "Capture Date",
-					"state": "unselected"
-				}
-			]
-		},
-		"divider",
-		{
-			"class": "sharing",
-			"icon": "fa fa-share",
-			"name": "By Sharing",
-			"state": "unselected",
-			"menu": [
-				{
-					"class": "search-by-shared-with-me",
-					"group": "search-by",
-					"icon": "fa fa-reply",
-					"name": "Shared with Me",
-					"state": "unselected"
-				},
-				{
-					"class": "search-by-shared-by-me",
-					"group": "search-by",
-					"icon": "fa fa-share",
-					"name": "Shared by Me",
-					"state": "unselected"
-				},
-				{
-					"class": "search-by-links",
-					"group": "search-by",
-					"icon": "fa fa-link",
-					"name": "Links",
-					"state": "unselected"
-				}
-			]
-		},
-		"divider",
-		{
-			"class": "index-items",
-			"icon": "fa fa-list",
-			"name": "Index Items"
-		},
-		{
-			"class": "unindex-items",
-			"icon": "fa fa-close",
-			"name": "Unindex Items"
-		}
-	]
-}
+[
+	{
+		"name": "name",
+		"group": "search-kind",
+		"icon": "fa fa-font",
+		"text": "By Name",
+		"state": "unselected"
+	},
+	{
+		"name": "kind",
+		"group": "search-kind",
+		"icon": "fa fa-file",
+		"text": "By Kind",
+		"state": "unselected"
+	},
+	{
+		"name": "size",
+		"group": "search-kind",
+		"icon": "fa fa-download",
+		"text": "By Size",
+		"state": "unselected"
+	},
+	"divider",
+	{
+		"name": "keyword",
+		"group": "search-kind",
+		"icon": "fa fa-key",
+		"text": "By Keyword",
+		"state": "unselected"
+	},
+	{
+		"name": "meaning",
+		"group": "search-kind",
+		"icon": "fa fa-lightbulb",
+		"text": "By Meaning",
+		"state": "unselected"
+	},
+	"divider",
+	{
+		"name": "date",
+		"icon": "fa fa-calendar-alt",
+		"text": "By Date",
+		"state": "unselected",
+		"menu": [
+			{
+				"name": "create-date",
+				"group": "search-kind",
+				"icon": "fa fa-magic",
+				"text": "Create Date",
+				"state": "unselected"
+			},
+			{
+				"name": "modify-date",
+				"group": "search-kind",
+				"icon": "fa fa-edit",
+				"text": "Modify Date",
+				"state": "unselected"
+			},
+			{
+				"name": "access-date",
+				"group": "search-kind",
+				"icon": "fa fa-eye",
+				"text": "Access Date",
+				"state": "unselected"
+			}
+		]
+	},
+	{
+		"name": "photo",
+		"icon": "fa fa-image",
+		"text": "By Photo",
+		"state": "unselected",
+		"menu": [
+			{
+				"name": "resolution",
+				"group": "search-kind",
+				"icon": "fa fa-arrows-alt",
+				"text": "Resolution",
+				"state": "unselected"
+			},
+			{
+				"name": "make-model",
+				"group": "search-kind",
+				"icon": "fa fa-camera",
+				"text": "Make / Model",
+				"state": "unselected"
+			},
+			{
+				"name": "focal-length",
+				"group": "search-kind",
+				"icon": "fa fa-arrows-alt-h",
+				"text": "Focal Length",
+				"state": "unselected"
+			},
+			{
+				"name": "aperture",
+				"group": "search-kind",
+				"icon": "fa fa-dot-circle",
+				"text": "Aperture",
+				"state": "unselected"
+			},
+			{
+				"name": "exposure",
+				"group": "search-kind",
+				"icon": "fa fa-clock",
+				"text": "Exposure",
+				"state": "unselected"
+			},
+			{
+				"name": "iso",
+				"group": "search-kind",
+				"icon": "fa fa-film",
+				"text": "ISO",
+				"state": "unselected"
+			},
+			{
+				"name": "capture-date",
+				"group": "search-kind",
+				"icon": "fa fa-calendar-alt",
+				"text": "Capture Date",
+				"state": "unselected"
+			}
+		]
+	},
+	"divider",
+	{
+		"name": "sharing",
+		"icon": "fa fa-share",
+		"text": "By Sharing",
+		"state": "unselected",
+		"menu": [
+			{
+				"name": "shared-with-me",
+				"group": "search-kind",
+				"icon": "fa fa-reply",
+				"text": "Shared with Me",
+				"state": "unselected"
+			},
+			{
+				"name": "shared-by-me",
+				"group": "search-kind",
+				"icon": "fa fa-share",
+				"text": "Shared by Me",
+				"state": "unselected"
+			},
+			{
+				"name": "links",
+				"group": "search-kind",
+				"icon": "fa fa-link",
+				"text": "Links",
+				"state": "unselected"
+			}
+		]
+	},
+	"divider",
+	{
+		"name": "index-items",
+		"icon": "fa fa-list",
+		"text": "Index Items"
+	},
+	{
+		"name": "unindex-items",
+		"icon": "fa fa-close",
+		"text": "Unindex Items"
+	}
+]

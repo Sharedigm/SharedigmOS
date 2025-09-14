@@ -351,7 +351,7 @@ export default File.extend({
 	// static attributes
 	//
 
-	extensions: config.files.audio.extensions,
+	extensions: config.settings.files.audio.extensions,
 
 	//
 	// static methods

@@ -28,7 +28,7 @@ export default ViewMenuView.extend({
 		// toolbar options
 		//
 		'click .show-toolbars': 'onClickShowToolbars',
-		'click .show-toolbar > a': 'onClickShowToolbar',
+		'click .toolbars': 'onClickShowToolbar',
 
 		// view options
 		//
@@ -37,7 +37,7 @@ export default ViewMenuView.extend({
 		// sidebar options
 		//
 		'click .show-sidebar': 'onClickShowSidebar',
-		'click .show-sidebar-panel > a': 'onClickShowSideBarPanel',
+		'click .sidebar-panels': 'onClickSideBarPanel',
 
 		// window options
 		//
@@ -64,20 +64,18 @@ export default ViewMenuView.extend({
 
 	selected: function() {
 		let preferences = this.parent.app.preferences;
-		let toolbars = preferences.get('toolbars') || [];
-		let sidebarPanels = preferences.get('sidebar_panels') || [];
 
 		return {
 
 			// toolbar options
 			//
-			'show-toolbars': toolbars.length > 0,
-			'show-nav-bar': toolbars.includes('nav'),
+			'show-toolbars': preferences.hasMultiple('toolbars'),
+			'toolbars nav': preferences.includes('toolbars', 'nav'),
 
 			// sidebar options
 			//
-			'show-sidebar': preferences.get('show_sidebar'),
-			'show-index-panel': sidebarPanels.includes('index')
+			'show-sidebar': preferences.includes('panes', 'sidebar'),
+			'sidebar-panels index': preferences.includes('sidebar_panels', 'index')
 		};	
 	},
 

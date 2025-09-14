@@ -178,7 +178,7 @@ export default File.extend({
 	// static attributes
 	//
 
-	extensions: config.files.videos.extensions,
+	extensions: config.settings.files.videos.extensions,
 
 	//
 	// static methods

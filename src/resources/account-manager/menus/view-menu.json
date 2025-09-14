@@ -1,0 +1,284 @@
+[
+	{
+		"name": "icons",
+		"group": "view-kind",
+		"icon": "fa fa-th",
+		"text": "Icons",
+		"state": "unselected"
+	},
+	{
+		"name": "names",
+		"group": "view-kind",
+		"icon": "fa fa-align-left",
+		"text": "Names",
+		"state": "unselected"
+	},
+	{
+		"name": "lists",
+		"group": "view-kind",
+		"icon": "fa fa-list",
+		"text": "Lists",
+		"state": "unselected"
+	},
+	{
+		"name": "cards",
+		"group": "view-kind",
+		"icon": "fa fa-id-card",
+		"text": "Cards",
+		"state": "unselected"
+	},
+	{
+		"name": "tiles",
+		"group": "view-kind",
+		"icon": "fa fa-th-large",
+		"text": "Tiles",
+		"state": "unselected"
+	},
+	{
+		"name": "maps",
+		"group": "view-kind",
+		"icon": "fa fa-map",
+		"text": "Maps",
+		"state": "unselected",
+		"menu": [
+			{
+				"name": "map",
+				"group": "map-mode",
+				"icon": "fa fa-map",
+				"text": "Map",
+				"state": "unselected"
+			},
+			{
+				"name": "satellite",
+				"group": "map-mode",
+				"icon": "fa fa-satellite",
+				"text": "Satellite",
+				"state": "unselected"
+			},
+			{
+				"name": "hybrid",
+				"group": "map-mode",
+				"icon": "fa fa-map-marked-alt",
+				"text": "Hybrid",
+				"state": "unselected"
+			},
+			{
+				"name": "streets",
+				"group": "map-mode",
+				"icon": "fa fa-road",
+				"text": "Streets",
+				"state": "unselected"
+			},
+			{
+				"name": "transportation",
+				"group": "map-mode",
+				"icon": "fa fa-bus",
+				"text": "Transportation",
+				"state": "unselected"
+			},
+			{
+				"name": "aeronautical",
+				"group": "map-mode",
+				"icon": "fa fa-plane",
+				"text": "Aeronautical",
+				"state": "unselected"
+			},
+			"divider",
+			{
+				"name": "pan-to",
+				"icon": "fa fa-arrows-alt",
+				"text": "Pan",
+				"menu": [
+					{
+						"name": "pan-north",
+						"icon": "fa fa-arrow-up",
+						"text": "North",
+						"shortcut": "shift-command-up arrow"
+					},
+					{
+						"name": "pan-south",
+						"icon": "fa fa-arrow-down",
+						"text": "South",
+						"shortcut": "shift-command-down arrow"
+					},
+					{
+						"name": "pan-east",
+						"icon": "fa fa-arrow-right",
+						"text": "East",
+						"shortcut": "shift-command-right arrow"
+					},
+					{
+						"name": "pan-west",
+						"icon": "fa fa-arrow-left",
+						"text": "West",
+						"shortcut": "shift-command-left arrow"
+					}
+				]
+			},
+			{
+				"name": "zoom-to",
+				"icon": "fa fa-search",
+				"text": "Zoom",
+				"menu": [
+					{
+						"name": "zoom-in",
+						"icon": "fa fa-search-plus",
+						"text": "Zoom In",
+						"shortcut": "="
+					},
+					{
+						"name": "zoom-out",
+						"icon": "fa fa-search-minus",
+						"text": "Zoom Out",
+						"shortcut": "-"
+					}
+				]
+			},
+			{
+				"name": "reset-view",
+				"icon": "fa fa-undo",
+				"text": "Reset",
+				"shortcut": "shift-command-R"
+			}
+		]
+	},
+	"divider",
+	{
+		"name": "view-details",
+		"icon": "fa fa-tags",
+		"text": "Details",
+		"state": "unselected",
+		"menu": [
+			{
+				"name": "location",
+				"group": "detail-kind",
+				"icon": "fa fa-globe-americas",
+				"text": "Location",
+				"state": "unselected"
+			},
+			{
+				"name": "occupation",
+				"group": "detail-kind",
+				"icon": "fa fa-briefcase",
+				"text": "Occupation",
+				"state": "unselected"
+			},
+			{
+				"name": "gender",
+				"group": "detail-kind",
+				"icon": "fa fa-transgender",
+				"text": "Gender",
+				"state": "unselected"
+			}
+		]
+	},
+	"divider",
+	{
+		"name": "show-toolbars",
+		"icon": "fa fa-wrench",
+		"text": "Toolbars",
+		"state": "unselected",
+		"menu": [
+			{
+				"name": "nav",
+				"group": "toolbars",
+				"icon": "fa fa-sitemap",
+				"text": "Nav",
+				"state": "unselected"
+			}
+		]
+	},
+	{
+		"name": "show-sidebar",
+		"icon": "fa fa-pause",
+		"text": "Sidebar",
+		"state": "unselected",
+		"menu": [
+			{
+				"name": "actions",
+				"group": "sidebar-panels",
+				"icon": "fa fa-play-circle",
+				"text": "Actions",
+				"state": "unselected"
+			}
+		]
+	},
+	"divider",
+	{
+		"name": "window-size",
+		"icon": "far fa-window-maximize",
+		"text": "Window Size",
+		"menu": [
+			{
+				"name": "shrink-window",
+				"icon": "fa fa-minus",
+				"text": "Shrink",
+				"shortcut": "command-["
+			},
+			{
+				"name": "grow-window",
+				"icon": "fa fa-plus",
+				"text": "Grow",
+				"shortcut": "command-]"
+			},
+			{
+				"name": "expand-window",
+				"icon": "fa fa-expand",
+				"text": "Expand",
+				"shortcut": "command-\\"
+			}
+		]
+	},
+	"divider",
+	{
+		"name": "spaces",
+		"icon": "far fa-window-maximize",
+		"text": "Spaces",
+		"state": "unselected",
+		"menu": [
+			{
+				"name": "prev-space",
+				"icon": "fa fa-chevron-left",
+				"text": "Prev",
+				"shortcut": "command-left arrow"
+			},
+			{
+				"name": "next-space",
+				"icon": "fa fa-chevron-right",
+				"text": "Next",
+				"shortcut": "command-right arrow"
+			}
+		]
+	},
+	{
+		"name": "windows",
+		"icon": "far fa-window-restore",
+		"text": "Windows",
+		"state": "unselected",
+		"menu": [
+			{
+				"name": "minimize-all",
+				"icon": "fa fa-window-minimize",
+				"text": "Minimize All"
+			},
+			{
+				"name": "unminimize-all",
+				"icon": "fa fa-window-restore",
+				"text": "Unminimize All"
+			}
+		]
+	},
+	{
+		"name": "view-full-screen",
+		"icon": "fa fa-desktop",
+		"text": "Full Screen",
+		"shortcut": "command-up arrow",
+		"state": "unselected"
+	},
+	"divider",
+	{
+		"name": "view-preferences",
+		"icon": "fa fa-snowflake",
+		"text": "Preferences"
+	}
+]

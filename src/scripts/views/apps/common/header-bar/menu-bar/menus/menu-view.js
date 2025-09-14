@@ -29,8 +29,8 @@ export default BaseView.extend({
 	className: 'dropdown-menu',
 
 	itemTemplate: template(`
-		<li role="presentation"<% if (itemClass || state == 'selected' || tags) { %> class="<%= itemClass %><% if (tags) { %> <%= tags %><% } %><% if (state == 'selected') { %> selected<% } %>"<% } %>>
-			<a class="<%= linkClass %><% if (menu) { %> dropdown-toggle<% } %>">
+		<li role="presentation"<% if (item_class || state == 'selected' || tags) { %> class="<%= item_class %><% if (tags) { %> <%= tags %><% } %><% if (state == 'selected') { %> selected<% } %>"<% } %>>
+			<a class="<%= link_class %><% if (menu) { %> dropdown-toggle<% } %>">
 				<% if (state == 'selected' || state == 'unselected') { %>
 				<i class="fa fa-check"></i>
 				<% } %>
@@ -42,7 +42,7 @@ export default BaseView.extend({
 				<%= icons[icon.replace(' icon', '').replace(/-/g, '_')] %>
 				<% } %>
 				<% } %>
-				<%= name %>
+				<%= text %>
 
 				<% if (menu) { %>
 				<i class="fa fa-caret-left"></i>
@@ -50,7 +50,7 @@ export default BaseView.extend({
 				<% } %>
 
 				<% if (shortcut) { %>
-				<span class="<%= shortcutClass %>"><%= shortcut %></span>
+				<span class="<%= shortcut_class %>"><%= shortcut %></span>
 				<% } %>
 			</a>
 			<% if (menu) { %>
@@ -207,10 +207,36 @@ export default BaseView.extend({
 		return originLeft + menuWidth > containerWidth? 'left' : 'right';
 	},
 
+	getItemClassName: function(name) {
+		let classNames = name.replace(/_/g, '-').split(' ');
+		let className = '';
+		for (let i = 0; i < classNames.length; i++) {
+			className += '.' + classNames[i];
+		}
+		return className;
+	},
+
 	getItem: function(name) {
-		let className = name.replace(' ', '.').replace(/_/g, '-');
+		if (!name) {
+			return;
+		}
+		let className = this.getItemClassName(name);
+		return this.$el.find(className).closest('li');
+	},
+
+	getItemName: function(element) {
+		let className = $(element).closest('a').attr('class').trim();
+
+		// get first name
+		//
 		if (className) {
-			return this.$el.find('.' + className).closest('li');
+			className = className.split(' ')[0];
+		}
+
+		// convert class to name
+		//
+		if (className) {
+			return className.replace(/-/g, '_');
 		}
 	},
 
@@ -229,7 +255,7 @@ export default BaseView.extend({
 			let resources = appView.getResources(resourceName);
 
 			if (resources) {
-				return resources.items;
+				return resources;
 			} else {
 				return [];
 			}
@@ -285,6 +311,26 @@ export default BaseView.extend({
 				return $(shortcut).closest('a').attr('class');
 			}
 		}
+	},
+
+	//
+	// group item methods
+	//
+
+	getGroupItems: function(group) {
+		return this.getElementAttributes('.' + group.replace(/_/g, '-'), 'class', (value) => {
+			return value.replace(/-/g, '_').split(' ')[0];
+		});
+	},
+
+	getSelectedGroupItem: function(group) {
+		return this.getSelectedGroupItems(group)[0];
+	},
+
+	getSelectedGroupItems: function(group) {
+		return this.getElementAttributes('.selected > .' + group.replace(/_/g, '-'), 'class', (value) => {
+			return value.replace(/-/g, '_').split(' ')[0];
+		});
 	},
 
 	//
@@ -526,8 +572,7 @@ export default BaseView.extend({
 				//
 				let items = this.$el.find('li a');
 				for (let i = 0; i < items.length; i++) {
-					let className = $(items[i]).attr('class').split(' ')[0];
-					this.setItemEnabled(className, enabled);
+					this.setItemEnabled(this.getItemName(items[i]), enabled);
 				}
 				break;
 			}
@@ -622,6 +667,25 @@ export default BaseView.extend({
 				}
 				break;
 			}
+		}
+	},
+
+	//
+	// choice selection methods
+	//
+
+	setGroupItemSelected: function(group, choice) {
+		let groupClass = '.' + group.replace(/_/g, '-');
+
+		// deselect group items
+		//
+		this.$el.find('.selected ' + groupClass).parent().removeClass('selected');
+
+		// select new choice
+		//
+		if (choice) {
+			let choiceClass = '.' + choice.replace(/_/g, '-');
+			this.$el.find(groupClass + choiceClass).parent().addClass('selected');
 		}
 	},
 
@@ -777,25 +841,29 @@ export default BaseView.extend({
 	},
 
 	itemToHtml: function(item) {
-		let className = item.group || '';
+		let itemClass = '';
+		let linkClass = item.name;
 
 		// add to item class
 		//
 		if (item.menu) {
-			className += (className? ' ' : '') + 'dropdown dropdown-submenu';
+			itemClass += (itemClass? ' ' : '') + 'dropdown dropdown-submenu';
 		}
 		if (item.hidden) {
-			className += (className? ' ' : '') + 'hidden';
+			itemClass += (itemClass? ' ' : '') + 'hidden';
+		}
+		if (item.group) {
+			linkClass += (linkClass? ' ' : '') + item.group.replace(/_/g, '-');
 		}
 
 		return this.itemTemplate({
-			name: item.name,
+			text: item.text,
 			icon: item.icon,
 			state: item.state,
-			itemClass: className,
-			linkClass: item.class,
+			item_class: itemClass,
+			link_class: linkClass,
 			shortcut: this.getShortcutName(item.shortcut),
-			shortcutClass: this.getShortcutClass(item.shortcut),
+			shortcut_class: this.getShortcutClass(item.shortcut),
 			menu: item.menu? this.toHtml(item.menu) : undefined,
 			tags: item.tags? this.tagsToString(item.tags) : undefined,
 			icons: this.constructor.icons
@@ -1274,7 +1342,7 @@ export default BaseView.extend({
 				object.platform = platform;
 			}
 			if (dropdown.length > 0) {
-				object.menu = this.getDropdownObjects(dropdown);
+				object.menu = this.toObjects(dropdown);
 			}
 		} else {
 			object = "divider";
@@ -1283,18 +1351,14 @@ export default BaseView.extend({
 		return object;
 	},
 
-	getDropdownObjects: function(element) {
-		let elements = $(element).find('> li');
-		let items = [];
-		for (let i = 0; i < elements.length; i++) {
-			let item = elements[i];
-			items.push(this.dropdownToObject(item));
-		}
-		return items;
-	},
-
 	toObjects: function(element) {
-		return this.getDropdownObjects(element);
+		let dropdowns = $(element).find('> li');
+		let objects = [];
+		for (let i = 0; i < dropdowns.length; i++) {
+			let dropdown = dropdowns[i];
+			objects.push(this.dropdownToObject(dropdown));
+		}
+		return objects;
 	},
 
 	toJson: function(element) {

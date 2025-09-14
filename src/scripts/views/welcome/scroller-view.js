@@ -53,7 +53,9 @@ export default BaseView.extend({
 
 		// animate with javascript or css
 		//
-		this.animate(this.options);
+		if (this.options.speed) {
+			this.animate(this.options);
+		}
 	},
 
 	animate: function(options) {

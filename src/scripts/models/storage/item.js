@@ -282,7 +282,7 @@ export default BaseModel.extend(_.extend({}, Downloadable, Compressable, Geoloca
 	getAttribute: function(attributeName, preferences) {	
 		switch (attributeName) {
 			case 'size':
-				return this.getSize(preferences? preferences.get('show_hidden_files') : undefined);
+				return this.getSize(preferences? preferences.includes('options', 'hidden_files') : undefined);
 			case 'create_date':
 				return this.getDateString('created_at', preferences? preferences.get('date_format') : undefined);
 			case 'modify_date':

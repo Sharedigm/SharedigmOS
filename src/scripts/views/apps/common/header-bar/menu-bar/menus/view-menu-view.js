@@ -19,31 +19,35 @@ import MenuView from '../../../../../../views/apps/common/header-bar/menu-bar/me
 
 export default MenuView.extend({
 
+	//
+	// attributes
+	//
+
 	events: {
 
 		// view options
 		//
-		'click .view-kind > a': 'onClickViewKind',
-		'click .map-view-kind > a': 'onClickMapViewKind',
-		'click .property-kind > a': 'onClickPropertyKind',
+		'click .view-kind': 'onClickViewKind',
+		'click .map-view-kind': 'onClickMapViewKind',
+		'click .property-kind': 'onClickPropertyKind',
 
 		// details options
 		//
 		'click .view-details': 'onClickViewDetails',
-		'click .detail-kind > a': 'onClickDetailKind',
-		'click .date-format > a': 'onClickDateFormat',
+		'click .detail-kind': 'onClickDetailKind',
+		'click .date-format': 'onClickDateFormat',
 
 		// toolbar options
 		//
 		'click .show-toolbars': 'onClickShowToolbars',
-		'click .show-toolbar > a': 'onClickShowToolbar',
+		'click .toolbars': 'onClickShowToolbar',
 
 		// sidebar options
 		//
 		'click .show-sidebar': 'onClickShowSidebar',
-		'click .show-sidebar-panel > a': 'onClickShowSideBarPanel',
-		'click .sidebar-view-kind > a': 'onClickSideBarViewKind',
-		'click .sidebar-tile-size > a': 'onClickSideBarTileSize',
+		'click .sidebar-panels': 'onClickSideBarPanel',
+		'click .sidebar-view-kind': 'onClickSideBarViewKind',
+		'click .sidebar-tile-size': 'onClickSideBarTileSize',
 
 		// window options
 		//
@@ -78,124 +82,51 @@ export default MenuView.extend({
 	},
 
 	//
-	// getting methods
-	//
-
-	getSelectedSideBarPanels: function() {
-		return this.getElementAttributes('.show-sidebar-panel.selected a', 'class', (value) => {
-			return value.replace('show-', '').replace('-panel', '').replace(/-/g, '_');
-		});
-	},
-
-	getSelectedToolbars: function() {
-		return this.getElementAttributes('.show-toolbar.selected a', 'class', (value) => {
-			return value.replace('show-', '').replace('-bar', '').replace(/-/g, '_');
-		});
-	},
-
-	getSelectedLayers: function() {
-		return this.getElementAttributes('.show-layer.selected a', 'class', (value) => {
-			return value.replace('show-', '').replace('-layer', '').replace(/-/g, '_');
-		});
-	},
-
-	//
-	// setting methods
-	//
-
-	setViewKind: function(viewKind) {
-		this.$el.find('.view-kind.selected').removeClass('selected');
-		this.$el.find('.view-kind .view-' + viewKind).closest('li').addClass('selected');
-	},
-
-	setMapViewKind: function(viewKind) {
-		this.$el.find('.map-view-kind.selected').removeClass('selected');
-		this.$el.find('.view-map-' + viewKind).closest('li').addClass('selected');
-	},
-
-	setSideBarViewKind: function(viewKind) {
-		this.$el.find('.sidebar-view-kind.selected').removeClass('selected');
-		this.$el.find('.view-sidebar-' + viewKind).closest('li').addClass('selected');
-	},
-
-	setSideBarTileSize: function(tileSize) {
-		this.$el.find('.sidebar-tile-size.selected').removeClass('selected');
-		this.$el.find('.' + tileSize + '-tile-size').closest('li').addClass('selected');
-	},
-
-	setDetailKind: function(detailKind, detailValue) {
-		let classNames = this.$el.find('li.detail-kind').map((index, element) => {
-			return $(element).find('a').attr('class');
-		}).get();
-
-		detailKind = detailKind.replace(/_/g, '-');
-		detailValue = detailValue? detailValue.replace(/_/g, '-') : false;
-
-		// update menu
-		//
-		this.setItemsDeselected(classNames);
-		this.setItemSelected('view-' + detailKind, detailValue);
-		this.setItemSelected('view-details', detailValue);
-	},
-
-	setDateFormat: function(dateFormat) {
-		let classNames = this.$el.find('li.date-format').map((index, element) => {
-			return $(element).find('a').attr('class');
-		}).get();
-
-		// update menu
-		//
-		this.setItemsDeselected(classNames);
-		this.setItemSelected('view-' + dateFormat.replace(/_/g, '-'));
-	},
-
-	//
 	// toggling methods
 	//
 
-	toggleOption: function(className) {
-		let option = className.replace(/-/g, '_');
+	toggleOption: function(option) {
 
 		// call superclass method
 		//
-		this.toggleMenuItem(className);
+		this.toggleMenuItem(option);
 
 		// update parent
 		//
-		this.parent.app.setOption(option, this.isItemSelected(className));
+		this.parent.app.setOption(option, this.isItemSelected(option));
 	},
 
-	toggleToolbar: function(className) {
+	toggleToolbar: function(toolbar) {
 
 		// call superclass method
 		//
-		this.toggleMenuItem(className);
+		this.toggleMenuItem('toolbars ' + toolbar);
 
 		// update parent
 		//
-		this.parent.app.setOption('toolbars', this.getSelectedToolbars());
+		this.parent.app.setOption('toolbars', this.getSelectedGroupItems('toolbars'));
 	},
 
-	toggleLayer: function(className) {
+	toggleLayer: function(layer) {
 
 		// call superclass method
 		//
-		this.toggleMenuItem(className);
+		this.toggleMenuItem('layers ' + layer);
 
 		// update parent
 		//
-		this.parent.app.setOption('layers', this.getSelectedLayers());
+		this.parent.app.setOption('layers', this.getSelectedGroupItems('layers'));
 	},
 
-	toggleSideBarPanel: function(className) {
+	toggleSideBarPanel: function(panel) {
 
 		// call superclass method
 		//
-		this.toggleMenuItem(className);
+		this.toggleMenuItem('sidebar-panels ' + panel);
 
 		// update parent
 		//
-		this.parent.app.setOption('sidebar_panels', this.getSelectedSideBarPanels());
+		this.parent.app.setOption('sidebar_panels', this.getSelectedGroupItems('sidebar_panels'));
 	},
 
 	//
@@ -213,8 +144,7 @@ export default MenuView.extend({
 	//
 
 	onClickOption: function(event) {
-		let className = $(event.target).closest('a').attr('class');
-		let option = className? className.replace('dropdown-toggle', '').trim() : undefined;
+		let option = this.getItemName($(event.currentTarget));
 
 		// update menu and app
 		//
@@ -222,69 +152,63 @@ export default MenuView.extend({
 	},
 
 	onClickViewKind: function(event) {
-		let className = $(event.currentTarget).attr('class').split(' ')[0];
-		let viewKind = className? className.replace('view-', '').replace(/-/g, '_').trim() : undefined;
+		let viewKind = this.getItemName($(event.currentTarget));
 
 		// update menu
 		//
-		this.setViewKind(viewKind);
+		this.setGroupItemSelected('view_kind', viewKind);
 
-		// update parent
+		// update app
 		//
 		this.parent.app.setOption('view_kind', viewKind);
 	},
 
 	onClickMapViewKind: function(event) {
-		let className = $(event.currentTarget).attr('class').split(' ')[0];
-		let mapViewKind = className? className.replace('view-map-', '').replace(/-/g, '_') : undefined;
+		let mapViewKind = this.getItemName($(event.currentTarget));
 
 		// update menu
 		//
-		this.setMapViewKind(mapViewKind);
+		this.setGroupItemSelected('map_view_kind', mapViewKind);
 
-		// update parent
+		// update app
 		//
 		this.parent.app.setOption('map_view_kind', mapViewKind);
 	},
 
 	onClickViewDetails: function() {
-		let classNames = this.$el.find('li.detail-kind').map((index, element) => {
-			return $(element).find('a').attr('class');
-		}).get();
+		let detailKinds = this.getSelectedGroupItems('detail_kind');
 
 		// update menu
 		//
-		this.setItemsDeselected(classNames);
+		this.setItemsDeselected(detailKinds);
 		this.setItemSelected('view-details', false);
 
-		// update parent
+		// update app
 		//
 		this.parent.app.setOption('detail_kind', false);
 	},
 
 	onClickDetailKind: function(event) {
-		let className = $(event.currentTarget).attr('class');
-		let detailKind = className.replace('view-', '').replace(/-/g, '_');
-		let detailValue = detailKind != this.parent.app.preferences.get('detail_kind')? detailKind : false;
+		let detailKind = this.getItemName($(event.currentTarget));
 
 		// update menu
 		//
-		this.setDetailKind(detailKind, detailValue);
+		this.setGroupItemSelected('detail_kind', detailKind);
+		this.setItemSelected('view-details', true);
 
-		// update parent
+		// update app
 		//
-		this.parent.app.setOption('detail_kind', detailValue);
+		this.parent.app.setOption('detail_kind', detailKind);
 	},
 
 	onClickDateFormat: function(event) {
-		let className = $(event.currentTarget).attr('class');
-		let dateFormat = className.replace('view-', '').replace(/-/g, '_');
+		let dateFormat = this.getItemName($(event.currentTarget));
 
 		// update menu
 		//
-		this.setDateFormat(dateFormat);
+		this.setGroupItemSelected('date_format', dateFormat);
 
-		// update parent
+		// update app
 		//
 		this.parent.app.setOption('date_format', dateFormat);
 	},
@@ -297,36 +221,34 @@ export default MenuView.extend({
 		this.onClickOption(event);
 	},
 
-	onClickShowSideBarPanel: function(event) {
-		let className = $(event.target).closest('a').attr('class');
+	onClickSideBarPanel: function(event) {
+		let sidebarPanel = this.getItemName($(event.currentTarget));
 
 		// update menu and app
 		//
-		this.toggleSideBarPanel(className);
+		this.toggleSideBarPanel(sidebarPanel);
 	},
 
 	onClickSideBarViewKind: function(event) {
-		let className = $(event.currentTarget).attr('class').split(' ')[0];
-		let sidebarViewKind = className? className.replace('view-sidebar-', '').replace(/-/g, '_') : undefined;
+		let sidebarViewKind = this.getItemName($(event.currentTarget));
 
 		// update menu
 		//
-		this.setSideBarViewKind(sidebarViewKind);
+		this.setGroupItemSelected('sidebar_view_kind', sidebarViewKind);
 
-		// update parent
+		// update app
 		//
 		this.parent.app.setOption('sidebar_view_kind', sidebarViewKind);
 	},
 
 	onClickSideBarTileSize: function(event) {
-		let className = $(event.currentTarget).attr('class').split(' ')[0];
-		let sidebarTileSize = className? className.replace('-tile-size', '').replace(/-/g, '_') : undefined;
+		let sidebarTileSize = this.getItemName($(event.currentTarget));
 
 		// update menu
 		//
-		this.setSideBarTileSize(sidebarTileSize);
+		this.setGroupItemSelected('sidebar_tile_size', sidebarTileSize);
 
-		// update parent
+		// update app
 		//
 		this.parent.app.setOption('sidebar_tile_size', sidebarTileSize);
 	},
@@ -336,7 +258,7 @@ export default MenuView.extend({
 	//
 
 	onClickShowToolbars: function() {
-		let showToolbars = this.isItemSelected('show-toolbars');
+		let showToolbars = this.isItemSelected('show_toolbars');
 
 		// update menu
 		//
@@ -344,15 +266,15 @@ export default MenuView.extend({
 
 		// update app
 		//
-		this.parent.app.setOption('show_toolbars', !showToolbars);
+		this.parent.app.setOption('toolbars', !showToolbars);
 	},
 
 	onClickShowToolbar: function(event) {
-		let className = $(event.target).closest('a').attr('class');
+		let name = this.getItemName($(event.target).closest('a'));
 
 		// update toolbar
 		//
-		this.toggleToolbar(className);
+		this.toggleToolbar(name);
 	},
 
 	//

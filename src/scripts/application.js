@@ -5,7 +5,7 @@
 |******************************************************************************|
 |                                                                              |
 |       This defines the top level view of the application.                    |
-|		                                                                       |
+|                                                                              |
 |       Author(s): Abe Megahed                                                 |
 |                                                                              |
 |       This file is subject to the terms and conditions defined in            |
@@ -18,7 +18,7 @@
 // library imports
 //
 import '../library/underscore/underscore.js';
-import '../library/jquery/jquery-3.6.0.js';
+import '../library/jquery/jquery-3.7.1.js';
 import '../library/backbone/backbone.js';
 import '../library/backbone/marionette/backbone.marionette.js';
 
@@ -78,7 +78,8 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 
 		// keyboard events
 		//
-		'keydown:not([contenteditable="true"])': 'onKeyDown'
+		'keydown:not([contenteditable="true"])': 'onKeyDown',
+		'keyup:not([contenteditable="true"])': 'onKeyUp'
 	},
 
 	settings: {
@@ -98,7 +99,7 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 		dialogs: new DialogSettings()
 	},
 
-	defaults: config.defaults,
+	defaults: config.settings.defaults,
 
 	//
 	// constructor
@@ -143,6 +144,7 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 		// listen for keyboard events
 		//
 		this.listenTo(this.keyboard, 'keydown', this.onKeyDown);
+		this.listenTo(this.keyboard, 'keyup', this.onKeyUp);
 
 		// allow cross domain requests
 		//
@@ -209,8 +211,8 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 
 		// create sounds
 		//
-		this.createSounds(Object.keys(config.sounds));
-		this.setVolume(config.defaults.settings.volume);
+		this.createSounds(Object.keys(config.settings.sounds));
+		this.setVolume(config.settings.defaults.settings.volume);
 	},
 
 	//
@@ -466,9 +468,27 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 		//
 		if (user) {
 			this.loadUserThemeSettings(user, () => {
-				this.loadUserSettings(user, done);
+				this.loadUserSettings(user, () => {
+					this.applyUserSettings();
+
+					if (done) {
+						done();
+					}
+				});
 			});
+		} else {
+			this.applyUserSettings();
+
+			if (done) {
+				done();
+			}
 		}
+	},
+
+	applyUserSettings: function() {
+		this.settings.theme.apply();
+		this.settings.controls.apply();
+		this.settings.dialogs.apply();
 	},
 
 	setProfilePhoto: function(imageFile) {
@@ -564,8 +584,7 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 
 			// callbacks
 			//
-			success: (model) => {
-				model.apply();
+			success: () => {
 
 				// load control settings
 				//
@@ -573,8 +592,7 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 
 					// callbacks
 					//
-					success: (model) => {
-						model.apply();
+					success: () => {
 
 						// load dialog settings
 						//
@@ -582,8 +600,7 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 
 							// callbacks
 							//
-							success: (model) => {
-								model.apply();
+							success: () => {
 
 								// perform callback
 								//
@@ -819,6 +836,23 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 			CssUtils.removeAllHoverStyles();
 		}
 
+		// show message
+		//
+		if (config.branding.welcome.message) {
+			window.setTimeout(() => {
+				import(
+					'./views/dialogs/alerts/message-dialog-view.js'
+				).then((MessageDialogView) => {
+					this.router.fetchTemplate("message", (message) => {
+						this.show(new MessageDialogView.default({
+							message: message,
+							size: [720, 480]
+						}));
+					});
+				});
+			}, 1000);
+		}
+
 		// listen for window resize
 		//
 		$(window).on('resize', (event) => {
@@ -897,9 +931,9 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 	},
 
 	loadFont: function(font) {
-		if (font && font != '' && config.fonts[font]) {
-			let fontName = config.fonts[font]['font-family'];
-			let fontUrl = config.fonts[font].url;
+		if (font && font != '' && config.settings.fonts[font]) {
+			let fontName = config.settings.fonts[font]['font-family'];
+			let fontUrl = config.settings.fonts[font].url;
 			if (fontUrl) {
 				ThemeSettings.loadFont(fontName, fontUrl);
 			}
@@ -1005,15 +1039,12 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 	// keyboard event handling methods
 	//
 
-	onKeyDown: function(event) {
+	handleKeyEvent: function(event, keyEvent) {
 		let activeView = this.getActiveView();
 
 		// check that control keys are not down
 		//
 		if (!event.shiftKey && !event.metaKey && !event.ctrlKey) {
-
-			// check return key
-			//
 			switch (event.keyCode) {
 
 				// return key
@@ -1027,7 +1058,7 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 
 						// trigger primary button
 						//
-						if (buttons.length > 0) {
+						if (keyEvent == 'onKeyUp' && buttons.length > 0) {
 							$(buttons[0]).trigger('click');
 
 							// prevent further handling of event
@@ -1055,8 +1086,8 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 
 		// let active view handle event
 		//
-		if (activeView && activeView.onKeyDown) {
-			if (activeView.onKeyDown(event)) {
+		if (activeView && activeView[keyEvent]) {
+			if (activeView[keyEvent](event)) {
 				return;
 			}
 		}
@@ -1065,12 +1096,20 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 		//
 		if (Keyboard.arrowKeys.contains(event.keyCode) && event.metaKey) {
 			if (activeView instanceof ModalView) {
-				if (this.getChildView('main').onKeyDown(event)) {
+				if (this.getChildView('main')[keyEvent](event)) {
 					return;
 				}
 			}
 			event.preventDefault();
 		}
+	},
+
+	onKeyDown: function(event) {
+		this.handleKeyEvent(event, 'onKeyDown');
+	},
+
+	onKeyUp: function(event) {
+		this.handleKeyEvent(event, 'onKeyUp');
 	},
 
 	//

@@ -55,8 +55,8 @@ export default TableListItemView.extend({
 	events: {
 		'mousedown': 'onMouseDown',
 		'dblclick': 'onDoubleClick',
-		'click .path a': 'onClickPath',
-		'click .recipient a': 'onClickRecipient'
+		'click .path': 'onClickPath',
+		'click .recipient': 'onClickRecipient'
 	},
 
 	//

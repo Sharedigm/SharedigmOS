@@ -101,7 +101,7 @@ export default TreeView.extend(_.extend({}, DirectoryTreeViewable, {
 	//
 
 	getName: function() {
-		if (this.options.preferences.get('show_file_extensions')) {
+		if (this.options.preferences.includes('options', 'file_extensions')) {
 			return this.model.getName();
 		} else {
 			return this.model.getBaseName();	
@@ -126,7 +126,7 @@ export default TreeView.extend(_.extend({}, DirectoryTreeViewable, {
 	viewFilter: function (child) {
 		if (child.isHidden()) {
 			let preferences = child.parent.options.preferences;
-			return preferences? preferences.get('show_hidden_files') : false;
+			return preferences? preferences.includes('options', 'hidden_files') : false;
 		} else {
 			return true;
 		}

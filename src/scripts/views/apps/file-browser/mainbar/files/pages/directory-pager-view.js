@@ -33,7 +33,7 @@ export default PagerView.extend({
 
 	indexOf: function(item) {
 		let index;
-		let showHidden = this.options.preferences.get('show_hidden_files');
+		let showHidden = this.options.preferences.includes('options', 'hidden_files');
 
 		if (showHidden) {
 			index = this.collection.indexOf(item.model);
@@ -56,7 +56,7 @@ export default PagerView.extend({
 	//
 
 	numItems: function() {
-		return this.model.numVisibleItems(this.options.preferences.get('show_hidden_files'));
+		return this.model.numVisibleItems(this.options.preferences.includes('options', 'hidden_files'));
 	},
 
 	//

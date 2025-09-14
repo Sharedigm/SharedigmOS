@@ -1,0 +1,12 @@
+[
+	{
+		"name": "display",
+		"icon": "fa fa-desktop",
+		"text": "Display"
+	},
+	{
+		"name": "window",
+		"icon": "fa fa-window-maximize",
+		"text": "Window"
+	}
+]

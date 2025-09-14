@@ -26,7 +26,7 @@ export default UserSettings.extend({
 	//
 
 	category: Browser.device != 'desktop'? Browser.device + '_' + 'desktop' : 'desktop',
-	defaults: UserSettings.toKeyValuePairs(_.extend({}, config.defaults.desktop.preferences, config.theme.desktop), Browser.device),
+	defaults: UserSettings.toKeyValuePairs(_.extend({}, config.settings.desktop.preferences, config.theme.desktop), Browser.device),
 
 	//
 	// constructor

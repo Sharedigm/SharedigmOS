@@ -24,8 +24,8 @@ export default MenuView.extend({
 	//
 
 	events: {
-		'click .sort-by a': 'onClickSortBy',
-		'click .sort-order a': 'onClickSortOrder'
+		'click .sort-kind': 'onClickSortKind',
+		'click .sort-order': 'onClickSortOrder'
 	},
 
 	//
@@ -34,13 +34,12 @@ export default MenuView.extend({
 
 	selected: function() {
 		let preferences = this.parent.app.preferences;
-		let sortOrder = preferences.get('sort_order');
 
 		// set initial menu state
 		//
 		return {
-			'sort-increasing': sortOrder == 'increasing',
-			'sort-decreasing': sortOrder == 'decreasing'
+			'sort-order increasing': preferences.matches('sort_order', 'increasing'),
+			'sort-order decreasing': preferences.matches('sort_order', 'decreasing')
 		};
 	},
 
@@ -48,31 +47,27 @@ export default MenuView.extend({
 	// mouse event handling methods
 	//
 
-	onClickSortBy: function(event) {
-		let className = $(event.currentTarget).attr('class');
-		let sortKind = className.replace('sort-by-', '').replace(/-/g, '_');
+	onClickSortKind: function(event) {
+		let sortKind = this.getItemName(event.target);
 
 		// update menu
 		//
-		this.$el.find('.sort-by').removeClass('selected');
-		this.$el.find('li .' + className).closest('li').addClass('selected');
+		this.setGroupItemSelected('sort_kind', sortKind);
 
-		// update files
+		// update app
 		//
 		this.parent.app.setOption('sort_kind', sortKind);
 		this.parent.app.getChildView('contents').onChange();
 	},
 
 	onClickSortOrder: function(event) {
-		let className = $(event.currentTarget).attr('class');
-		let sortOrder = className.replace('sort-', '').replace(/-/g, '_');
+		let sortOrder = this.getItemName(event.target);
 
 		// update menu
 		//
-		this.$el.find('.sort-order').removeClass('selected');
-		this.$el.find('li .' + className).closest('li').addClass('selected');
+		this.setGroupItemSelected('sort_order', sortOrder);
 
-		// update files
+		// update app
 		//
 		this.parent.app.setOption('sort_order', sortOrder);
 		this.parent.app.getChildView('contents').onChange();

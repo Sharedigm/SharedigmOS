@@ -323,7 +323,7 @@ export default File.extend({
 	// static attributes
 	//
 
-	extensions: config.files.images.extensions,
+	extensions: config.settings.files.images.extensions,
 
 	//
 	// static methods

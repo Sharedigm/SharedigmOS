@@ -25,5 +25,5 @@ export default UserSettings.extend({
 	//
 
 	category: Browser.device != 'desktop'? Browser.device + '_' + 'system' : 'system',
-	defaults: UserSettings.toKeyValuePairs(config.defaults.settings, Browser.device)
+	defaults: UserSettings.toKeyValuePairs(config.settings.defaults.settings, Browser.device)
 });

@@ -441,7 +441,7 @@ export default File.extend({
 	// static attributes
 	//
 
-	extensions: config.files.maps.extensions,
+	extensions: config.settings.files.maps.extensions,
 	defaultName: 'Untitled.kml',
 
 	//

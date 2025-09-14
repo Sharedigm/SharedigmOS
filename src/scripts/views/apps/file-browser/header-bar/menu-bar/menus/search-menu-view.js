@@ -24,7 +24,7 @@ export default SearchMenuView.extend({
 	//
 
 	events: {
-		'click .search-by > a': 'onClickSearchBy',
+		'click .search-kind': 'onClickSearchKind',
 		'click .index-items': 'onClickIndexItems',
 		'click .unindex-items': 'onClickUnindexItems'
 	},
@@ -55,24 +55,23 @@ export default SearchMenuView.extend({
 
 	selected: function() {
 		let preferences = this.parent.app.preferences;
-		let searchKind = preferences.get('search_kind');
 
 		return {
-			'name': searchKind == 'name',
-			'kind': searchKind == 'kind',
-			'size': searchKind == 'size',
-			'keyword': searchKind == 'keyword',
-			'meaning': searchKind == 'meaning',
-			'create-date': searchKind == 'create_date',
-			'modify-date': searchKind == 'modify_date',
-			'access-date': searchKind == 'access_date',
-			'resolution': searchKind == 'resolution',
-			'make-model': searchKind == 'make_model',
-			'focal-length': searchKind == 'focal_length',
-			'aperture': searchKind == 'aperture',
-			'exposure': searchKind == 'exposure',
-			'iso': searchKind == 'iso',
-			'capture-date': searchKind == 'capture_date'
+			'search-kind name': preferences.matches('search_kind', 'name'),
+			'search-kind kind': preferences.matches('search_kind', 'kind'),
+			'search-kind size': preferences.matches('search_kind', 'size'),
+			'search-kind keyword': preferences.matches('search_kind', 'keyword'),
+			'search-kind meaning': preferences.matches('search_kind', 'meaning'),
+			'search-kind create-date': preferences.matches('search_kind', 'create_date'),
+			'search-kind modify-date': preferences.matches('search_kind', 'modify_date'),
+			'search-kind access-date': preferences.matches('search_kind', 'access_date'),
+			'search-kind resolution': preferences.matches('search_kind', 'resolution'),
+			'search-kind make-model': preferences.matches('search_kind', 'make_model'),
+			'search-kind focal-length': preferences.matches('search_kind', 'focal_length'),
+			'search-kind aperture': preferences.matches('search_kind', 'aperture'),
+			'search-kind exposure': preferences.matches('search_kind', 'exposure'),
+			'search-kind iso': preferences.matches('search_kind', 'iso'),
+			'search-kind capture-date': preferences.matches('search_kind', 'capture_date')
 		};
 	},
 

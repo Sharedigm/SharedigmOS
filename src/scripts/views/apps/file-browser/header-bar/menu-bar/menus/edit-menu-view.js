@@ -156,7 +156,7 @@ export default EditMenuView.extend({
 
 	onClickCut: function() {
 		this.parent.app.cutSelected({
-			confirm: this.parent.app.preferences.get('show_clipboard_confirm'),
+			confirm: this.parent.app.preferences.matches('clipboard_confirm', 'confirm'),
 
 			// callbacks
 			//
@@ -166,7 +166,7 @@ export default EditMenuView.extend({
 
 	onClickCopy: function() {
 		this.parent.app.copySelected({
-			confirm: this.parent.app.preferences.get('show_clipboard_confirm'),
+			confirm: this.parent.app.preferences.matches('clipboard_confirm', 'confirm'),
 
 			// callbacks
 			//

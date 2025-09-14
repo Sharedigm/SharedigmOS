@@ -19,62 +19,38 @@
 // variables
 //
 
-$white-outline: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white, -1px 0 white, 1px 0 white, 0 1px white, 0 -1px white;
-$black-outline: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black, -1px 0 black, 1px 0 black, 0 1px black, 0 -1px black;
+$outline: -1px -1px 0 var(--outline-color), 1px -1px 0 var(--outline-color), -1px 1px 0 var(--outline-color), 1px 1px 0 var(--outline-color), -1px 0 var(--outline-color), 1px 0 var(--outline-color), 0 1px var(--outline-color), 0 -1px var(--outline-color);
 
-$white-bold-outline: -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white, 2px 2px 0 white, -2px 0 white, 2px 0 white, 0 2px white, 0 -2px white;
-$black-bold-outline: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black, -2px 0 black, 2px 0 black, 0 2px black, 0 -2px black;
+$bold-outline: -2px -2px 0 var(--outline-color), 2px -2px 0 var(--outline-color), -2px 2px 0 var(--outline-color), 2px 2px 0 var(--outline-color), -2px 0 var(--outline-color), 2px 0 var(--outline-color), 0 2px var(--outline-color), 0 -2px var(--outline-color);
 
-$white-extra-bold-outline: -3px -3px 0 white, 3px -3px 0 white, -3px 3px 0 white, 3px 3px 0 white, -3px 0 white, 3px 0 white, 0 3px white, 0 -3px white;
-$black-extra-bold-outline: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -3px 0 black, 3px 0 black, 0 3px black, 0 -3px black;
+$extra-bold-outline: -3px -3px 0 var(--outline-color), 3px -3px 0 var(--outline-color), -3px 3px 0 var(--outline-color), 3px 3px 0 var(--outline-color), -3px 0 var(--outline-color), 3px 0 var(--outline-color), 0 3px var(--outline-color), 0 -3px var(--outline-color);
 
-$white-ultra-bold-outline: -4px -4px 0 white, 4px -4px 0 white, -4px 4px 0 white, 4px 4px 0 white, -4px 0 white, 4px 0 white, 0 4px white, 0 -4px white;
-$black-ultra-bold-outline: -4px -4px 0 black, 4px -4px 0 black, -4px 4px 0 black, 4px 4px 0 black, -4px 0 black, 4px 0 black, 0 4px black, 0 -4px black;
+$ultra-bold-outline: -4px -4px 0 var(--outline-color), 4px -4px 0 var(--outline-color), -4px 4px 0 var(--outline-color), 4px 4px 0 var(--outline-color), -4px 0 var(--outline-color), 4px 0 var(--outline-color), 0 4px var(--outline-color), 0 -4px var(--outline-color);
 
 //
 // mixins
 //
 
-@mixin white-outline {
-	text-shadow: $white-outline;
+@mixin outline {
+	text-shadow: $outline;
 }
 
-@mixin black-outline {
-	text-shadow: $black-outline;
+@mixin bold-outline {
+	text-shadow: $bold-outline;
 }
 
-@mixin white-bold-outline {
-	text-shadow: $white-bold-outline;
+@mixin extra-bold-outline {
+	text-shadow: $extra-bold-outline;
 }
 
-@mixin black-bold-outline {
-	text-shadow: $black-bold-outline;
-}
-
-@mixin white-extra-bold-outline {
-	text-shadow: $white-extra-bold-outline;
-}
-
-@mixin black-extra-bold-outline {
-	text-shadow: $black-extra-bold-outline;
-}
-
-@mixin white-ultra-bold-outline {
-	text-shadow: $white-ultra-bold-outline;
-}
-
-@mixin black-ultra-bold-outline {
-	text-shadow: $black-ultra-bold-outline;
+@mixin ultra-bold-outline {
+	text-shadow: $ultra-bold-outline;
 }
 
 //
 // styles
 //
 
-.white-outlined {
-	text-shadow: $white-outline;
-}
-
-.black-outlined {
-	text-shadow: $black-outline;
+.outlined {
+	text-shadow: $outline;
 }

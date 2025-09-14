@@ -36,7 +36,7 @@ export default OpenItemsDialogView.extend({
 		// check if hidden
 		//
 		if (child.options.preferences) {
-			if (!child.options.preferences.get('show_hidden_files') && child.isHidden()) {
+			if (!child.options.preferences.includes('options', 'hidden_files') && child.isHidden()) {
 				return false;
 			}
 		}

@@ -52,14 +52,14 @@ export default BaseView.extend({
 
 	templateContext: function() {
 		return {
-			description: config.defaults.contact.description
+			description: config.settings.defaults.contact.description
 		};
 	},
 
 	onRender: function() {
 		this.showChildView('form', new ContactFormView({
-			subjects: config.defaults.contact.subjects,
-			label: config.defaults.contact.label
+			subjects: config.settings.defaults.contact.subjects,
+			label: config.settings.defaults.contact.label
 		}));
 	}
 });

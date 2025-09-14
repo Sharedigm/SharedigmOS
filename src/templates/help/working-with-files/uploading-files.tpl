@@ -11,7 +11,7 @@
 
 	<ol>
 		<li>
-			<h2><i class="fa fa-hand-grab"></i>Drag and Drop Uploading</h2>
+			<h2><i class="fa fa-hand"></i>Drag and Drop Uploading</h2>
 			<p>The quickest and easiest way to upload files to your <%= application.name %> account is through drag and drop.  Simply drag files or folders from your operating system's Desktop and drop them onto your <%= application.name %> <a href="#help/getting-started/using-desktop">Desktop</a> or to a <a href="#apps/file-browser">File Browser</a> window.</p>
 
 			<div class="figure">

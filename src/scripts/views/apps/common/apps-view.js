@@ -39,6 +39,21 @@ export default BaseView.extend({
 	// getting methods
 	//
 
+	getApps: function(apps) {
+		let array = [];
+		for (let i = 0; i < apps.length; i++) {
+			let app = config.apps[apps[i]];
+			if (app) {
+				array.push(apps[i]);
+			} else {
+				application.error({
+					message: "Could not find app named '" + apps[i] + "'."
+				});
+			}
+		}
+		return array;
+	},
+
 	getAppIcons: function(apps) {
 		let icons = [];
 		for (let i = 0; i < apps.length; i++) {
@@ -101,7 +116,7 @@ export default BaseView.extend({
 
 	templateContext: function() {
 		return {
-			apps: this.options.apps,
+			apps: this.getApps(this.options.apps),
 			icons: this.getAppIcons(this.options.apps),
 			images: this.getAppImages(this.options.apps),
 			names: this.getAppAliases(this.options.apps),

@@ -1,0 +1,82 @@
+{
+	"account_manager": {
+		"name": "Accounts",
+		"icon": "fa fa-users",
+		"category": "configuration",
+		"platform": "all",
+		"access": "admin",
+		"disabled": false,
+		"hidden": false,
+		"args": true,
+		"color": "grey"
+	},
+	"app_launcher": {
+		"name": "Apps",
+		"icon": "fa fa-rocket",
+		"category": "system",
+		"platform": "all",
+		"access": "all",
+		"disabled": false,
+		"hidden": false,
+		"args": false,
+		"color": "orange"
+	},
+	"file_browser": {
+		"name": "Files",
+		"icon": "fa fa-folder",
+		"category": "system",
+		"platform": "all",
+		"access": "all",
+		"disabled": false,
+		"hidden": false,
+		"args": false,
+		"color": "cyan",
+		"favorites": {
+			"#1": "~/",
+			"#2": "Documents/",
+			"#3": "Pictures/",
+			"#4": "Profile/",
+			"#5": "Music/",
+			"#6": "Videos/",
+			"#7": "Trash/"
+		},
+		"shared_directory": "/Shared",
+		"max_thumbnail_file_size": 100000000,
+		"max_thumbnail_svg_file_size": 1000000,
+		"share_invitation_message": "Check this out!"
+	},
+	"help_viewer": {
+		"name": "Help",
+		"icon": "fa fa-question-circle",
+		"category": "system",
+		"platform": "all",
+		"access": "all",
+		"disabled": false,
+		"hidden": false,
+		"args": true,
+		"color": "red"
+	},
+	"settings_browser": {
+		"name": "Settings",
+		"icon": "fa fa-cogs",
+		"category": "configuration",
+		"platform": "all",
+		"access": "all",
+		"disabled": false,
+		"hidden": false,
+		"args": false,
+		"color": "grey"
+	},
+	"settings_manager": {
+		"name": "Settings Manager",
+		"icon": "fa fa-cog",
+		"category": "configuration",
+		"platform": "all",
+		"access": "all",
+		"disabled": false,
+		"hidden": true,
+		"args": false,
+		"color": "grey",
+		"upgrade_account_url": "#contact"
+	}
+}

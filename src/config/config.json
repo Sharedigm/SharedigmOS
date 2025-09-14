@@ -1,18 +1,30 @@
 {
 	"servers": {
-		"authentication": "/services/public/api",
-		"api": "/services/public/api",
+		"authentication": "http://localhost/sharedigm-server/public/api",
+		"api": "http://localhost/sharedigm-server/public/api",
+		"images": "images"
+	},
+
+	"servers (local)": {
+		"authentication": "http://localhost/sharedigm-server/public/api",
+		"api": "http://localhost/sharedigm-server/public/api",
+		"images": "images"
+	},
+
+	"servers (remote)": {
+		"authentication": "https://www.sharedigm.com/public/api",
+		"api": "http://www.sharedigm.com/public/api",
 		"images": "images"
 	},
 
 	"storage": {
 		"dropbox": {
-			"appKey": "Your API Key Here"
+			"appKey": "qum9scemxpdx70s"
 		},
 
 		"google": {
-			"developerKey": "Your Developer Key Here",
-			"clientId": "Your Client ID Here"
+			"developerKey": "AIzaSyBXDjIsp_jO3RT9vkKsxP9YVLKlDeT2nkA",
+			"clientId": "48944764740-82n2hrkh382uckaktssqqhf2oesdck8b.apps.googleusercontent.com"
 		}
 	},
 
@@ -35,7 +47,7 @@
 
 		"accuweather": {
 			"server": "https://api.accuweather.com/maps/v1/models/gfs/zxy",
-			"appKey": "Your API Key Here"
+			"appKey": "de13920f574d420984d3080b1fa6132b"
 		},
 
 		"aviationweather": {
@@ -44,14 +56,14 @@
 
 		"mapbox": {
 			"server": "https://a.tiles.mapbox.com/v4/mapbox.terrain-rgb",
-			"appKey": "Your API Key Here"
+			"appKey": "pk.eyJ1IjoiYW1lZ2FoZWQiLCJhIjoiY2w5MzlzdG50MXJvYzN1cGN0M3F0dGFpcSJ9.M2Ryya5rKKi258HfE5ssYg"
 		}
 	},
 
 	"geocoding": {
 		"google": {
 			"server": "https://maps.googleapis.com/maps/api/geocode/json",
-			"apiKey": "Your API Key Here"
+			"apiKey": "AIzaSyBhaKrkC_e5g-6MQH_LmbwtPeU1E3W6Z_0"
 		},
 
 		"us_census": {
@@ -63,7 +75,7 @@
 	"autocomplete": {
 		"google": {
 			"server": "https://maps.googleapis.com/maps/api/place/autocomplete/json",
-			"apiKey": "Your API Key Here"
+			"apiKey": "AIzaSyBhaKrkC_e5g-6MQH_LmbwtPeU1E3W6Z_0"
 		}
 	},
 	

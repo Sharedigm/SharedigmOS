@@ -39,7 +39,7 @@ export default AppsView.extend({
 	`),
 
 	events: {
-		'click a': 'onClickLink'
+		'click': 'onClickLink'
 	},
 
 	tooltips: {

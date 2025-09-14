@@ -125,7 +125,7 @@ export default DialogView.extend({
 		let maxWidth = DialogView.prototype.getMaxWidth.call(this);
 		if (this.app.preferences.has('window_size')) {
 			let windowSize = this.app.preferences.get('window_size');
-			let size = config.defaults.dialogs.sizes[windowSize];
+			let size = config.settings.defaults.dialogs.sizes[windowSize];
 			if (size[0] < maxWidth) {
 				maxWidth = size[0];
 			}
@@ -137,7 +137,7 @@ export default DialogView.extend({
 		let maxHeight = DialogView.prototype.getMaxHeight.call(this);
 		if (this.app.preferences.has('window_size')) {
 			let windowSize = this.app.preferences.get('window_size');
-			let size = config.defaults.dialogs.sizes[windowSize];
+			let size = config.settings.defaults.dialogs.sizes[windowSize];
 			if (size[1] < maxHeight) {
 				maxHeight = size[1];
 			}

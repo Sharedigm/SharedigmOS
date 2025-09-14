@@ -1,0 +1,202 @@
+{
+	"colors": [
+		"red", "orange", "gold", "yellow", "green", "teal", "aqua", "cyan", "blue", "violet",
+		"magenta", "raspberry", "brown", "grey"
+	],
+
+	"contact": {
+		"description": "For questions and comments, please fill out the contact form below: ",
+		"subjects": [
+			"Question",
+			"Comment",
+			"Feature Request",
+			"Setting Up My Own Instance",
+			"Bug Report",
+			"Other"
+		],
+		"label": "Submit Question"
+	},
+
+	"dialogs": {
+		"sizes": {
+			"tiny": [600, 400],
+			"small": [720, 480],
+			"medium": [900, 600],
+			"large": [1200, 800]
+		},
+		"scale": [0.75, 0.75],
+		"margin": [100, 100]
+	},
+
+	"help": {
+		"show_app": true,
+		"show_pdf": false,
+		"show_topic": "Sharedigm",
+		"show_contact": true
+	},
+
+	"settings": {
+		"enable_notifications": true,
+		"mute_sounds": false,
+		"volume": 1
+	},
+
+	"sharing": {
+		"emoji": true,
+		"files": {
+			"Files": {
+				"icon": "fa fa-file",
+				"directory": ""
+			},
+			"Audio": {
+				"icon": "fa fa-volume-up",
+				"directory": "Audio/"
+			},
+			"Music": {
+				"icon": "fa fa-music",
+				"directory": "Music/"
+			},
+			"Pictures": {
+				"icon": "fa fa-image",
+				"directory": "Pictures/"
+			},
+			"Videos": {
+				"icon": "fa fa-video",
+				"directory": "Videos/"
+			},
+			"Maps": {
+				"icon": "fa fa-map",
+				"directory": "Maps/"
+			}
+		},
+		"uploads": true,
+		"locations": true
+	},
+
+	"text": {
+
+		"titles": [
+			".title", ".jqplot-title",
+			".app-bar",
+			".context-menu",
+			".heading",
+			".popover-title",
+			".dropzone",
+			".app th", ".modal th", 
+			".app .help.message"
+		],
+
+		"labels": [
+			"label",
+			".header label",
+			".dropdown .form-label",
+			".app .form-label", ".modal .form-label",
+			".app .control-label", ".modal .control-label",
+			".menu-bar .dropdown-toggle",
+			".menu-bar .dropdown-menu li a",
+			".nav-tabs",
+			".btn",
+			"input",
+			"select"
+		],
+
+		"headings": [
+			"h1", "h2", "h3"
+		],
+
+		"content": [
+			"p", ".section li"
+		]
+	},
+
+	"websites": {
+		"Categories": {
+			"homepage": {
+				"icon": "fa fa-home",
+				"label": "Homepage"
+			},
+			"blog": {
+				"icon": "fa fa-comment",
+				"label": "Blog"						
+			},
+			"business": {
+				"icon": "fa fa-money-bill",
+				"label": "Business"						
+			},
+			"photos": {
+				"icon": "fa fa-camera",
+				"label": "Photos"						
+			},
+			"videos": {
+				"icon": "fa fa-video",
+				"label": "Videos"						
+			},
+			"music": {
+				"icon": "fa fa-music",
+				"label": "Music"						
+			},
+			"portfolio": {
+				"icon": "fa fa-briefcase",
+				"label": "Portfolio"						
+			},
+			"interest": {
+				"icon": "fa fa-smile",
+				"label": "Interest"						
+			},
+			"social": {
+				"icon": "fa fa-users",
+				"label": "Social"						
+			}
+		},
+		"Commercial": {
+			"etsy": {
+				"icon": "fab fa-etsy",
+				"label": "Etsy"						
+			},
+			"facebook": {
+				"icon": "fab fa-facebook-official",
+				"label": "Facebook"						
+			},
+			"flickr": {
+				"icon": "fab fa-flickr",
+				"label": "Flickr"						
+			},
+			"github": {
+				"icon": "fab fa-github",
+				"label": "GitHub"						
+			},
+			"instagram": {
+				"icon": "fab fa-instagram",
+				"label": "Instagram"						
+			},
+			"linkedin": {
+				"icon": "fab fa-linkedin-square",
+				"label": "LinkedIn"						
+			},
+			"pinterest": {
+				"icon": "fab fa-pinterest",
+				"label": "Pinterest"						
+			},
+			"snapchat": {
+				"icon": "fab fa-snapchat-ghost",
+				"label": "Snapchat"						
+			},
+			"twitter": {
+				"icon": "fab fa-twitter-square",
+				"label": "Twitter"						
+			},
+			"vimeo": {
+				"icon": "fab fa-vimeo",
+				"label": "Vimeo"						
+			},
+			"wordpress": {
+				"icon": "fab fa-wordpress",
+				"label": "Wordpress"						
+			},
+			"youtube": {
+				"icon": "fab fa-youtube",
+				"label": "YouTube"						
+			}
+		}
+	}
+}

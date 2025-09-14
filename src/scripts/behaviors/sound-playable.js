@@ -34,7 +34,7 @@ export default {
 		for (let i = 0; i < names.length; i++) {
 			let name = names[i];
 			this.sounds[name] = new Sound({
-				url: config.sounds[name]
+				url: config.settings.sounds[name]
 			});
 		}
 	},

@@ -25,86 +25,85 @@
 body:not(.binary).colored {
 	.colored.btn, .colored.btn:focus, 
 	.colored.btn:active, .colored.btn:active:focus {
-		@include colored-btns.labeled(white);
 
 		&.red {
-			@include colored-btns.colored(colors.$medium-red);
+			@include colored-btns.colored(colors.$medium-red, white);
 		}
 
 		&.red-orange {
-			@include colored-btns.colored(colors.$medium-red-orange);
+			@include colored-btns.colored(colors.$medium-red-orange, white);
 		}
 
 		&.orange {
-			@include colored-btns.colored(colors.$medium-orange);
+			@include colored-btns.colored(colors.$medium-orange, white);
 		}
 
 		&.yellow {
-			@include colored-btns.colored(colors.$medium-yellow);
+			@include colored-btns.colored(colors.$medium-yellow, white);
 		}
 
 		&.lime {
-			@include colored-btns.colored(colors.$medium-lime);
+			@include colored-btns.colored(colors.$medium-lime, white);
 		}
 
 		&.green {
-			@include colored-btns.colored(colors.$medium-green);
+			@include colored-btns.colored(colors.$medium-green, white);
 		}
 
 		&.teal {
-			@include colored-btns.colored(colors.$medium-teal);
+			@include colored-btns.colored(colors.$medium-teal, white);
 		}
 
 		&.aqua {
-			@include colored-btns.colored(colors.$medium-aqua);
+			@include colored-btns.colored(colors.$medium-aqua, white);
 		}
 
 		&.cyan {
-			@include colored-btns.colored(colors.$medium-cyan);
+			@include colored-btns.colored(colors.$medium-cyan, white);
 		}
 
 		&.blue {
-			@include colored-btns.colored(colors.$medium-blue);
+			@include colored-btns.colored(colors.$medium-blue, white);
 		}
 
 		&.indigo {
-			@include colored-btns.colored(colors.$medium-indigo);
+			@include colored-btns.colored(colors.$medium-indigo, white);
 		}
 
 		&.violet {
-			@include colored-btns.colored(colors.$medium-violet);
+			@include colored-btns.colored(colors.$medium-violet, white);
 		}
 
 		&.plum {
-			@include colored-btns.colored(colors.$medium-plum);
+			@include colored-btns.colored(colors.$medium-plum, white);
 		}
 
 		&.purple {
-			@include colored-btns.colored(colors.$medium-purple);
+			@include colored-btns.colored(colors.$medium-purple, white);
 		}
 
 		&.magenta {
-			@include colored-btns.colored(colors.$medium-magenta);
+			@include colored-btns.colored(colors.$medium-magenta, white);
 		}
 
 		&.raspberry {
-			@include colored-btns.colored(colors.$medium-raspberry);
+			@include colored-btns.colored(colors.$medium-raspberry, white);
 		}
 
 		&.brown {
-			@include colored-btns.colored(colors.$medium-brown);
+			@include colored-btns.colored(colors.$medium-brown, white);
 		}
 
 		&.grey {
-			@include colored-btns.colored(colors.$medium-grey);
+			@include colored-btns.colored(colors.$medium-grey, white);
 		}
 
 		&.black {
-			@include colored-btns.colored(colors.$medium-black);
+			@include colored-btns.colored(colors.$medium-black, white);
 		}
 
 		&.white {
-			@include colored-btns.colored(colors.$medium-white);
+			@include colored-btns.colored(colors.$medium-white, white);
 		}
 	}
 }

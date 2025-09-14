@@ -79,6 +79,16 @@ $highlight-voffset: 10%;
 	//
 	background-color: $color;
 
+	// borders
+	//
+	@if ($border-style == inset) {
+		border-color: lighting.lighten($color, 10%);
+	} @else if ($border-style == outset) {
+		border-color: lighting.darken($color, 10%);
+	} @else if ($border-style != none) {
+		border-color: $color;
+	}
+
 	// overlay
 	//
 	position: relative;
@@ -107,16 +117,6 @@ $highlight-voffset: 10%;
 	&:not(.long):after {
 		transform: scale(-1) rotate(var(--light-direction));
 		border-radius: 50%;
-	}
-
-	// borders
-	//
-	@if ($border-style == inset) {
-		border-color: lighting.lighten($color, 10%);
-	} @else if ($border-style == outset) {
-		border-color: lighting.darken($color, 10%);
-	} @else if ($border-style != none) {
-		border-color: $color;
 	}
 }
 
@@ -170,7 +170,17 @@ $highlight-voffset: 10%;
 	//
 	background-color: $color;
 
-	// overlay
+	// borders
+	//
+	@if ($border-style == inset) {
+		border-color: lighting.lightened($color, 10%);
+	} @else if ($border-style == outset) {
+		border-color: lighting.darkened($color, 10%);
+	} @else if ($border-style != none) {
+		border-color: $color;
+	}
+
+	// overlay layer
 	//
 	position: relative;
 	overflow: hidden;
@@ -198,15 +208,5 @@ $highlight-voffset: 10%;
 	&:not(.long):after {
 		transform: scale(-1) rotate(to bottom);
 		border-radius: 50%;
-	}
-
-	// borders
-	//
-	@if ($border-style == inset) {
-		border-color: lighting.lightened($color, 10%);
-	} @else if ($border-style == outset) {
-		border-color: lighting.darkened($color, 10%);
-	} @else if ($border-style != none) {
-		border-color: $color;
 	}
 }

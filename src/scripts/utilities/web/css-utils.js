@@ -4,10 +4,15 @@
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This is a set of utilities for handling cascading style sheets.       |
+|       This is a set of utilities for handling cascading style sheets.        |
+|                                                                              |
+|       Author(s): Abe Megahed                                                 |
+|                                                                              |
+|       This file is subject to the terms and conditions defined in            |
+|       'LICENSE.md', which is part of this source code distribution.          |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+|       Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com         |
 \******************************************************************************/
 
 import '../scripting/string-utils.js';
@@ -88,6 +93,22 @@ export default {
 		}
 		
 		return style;
+	},
+
+	addNamedCssRule: function(name, selector, attributes) {
+
+		// add dictionary of styles
+		//
+		if (!document.custom_styles) {
+			document.custom_styles = [];
+		}
+
+		// if not found, add new style
+		//
+		if (!document.custom_styles.includes(name)) {
+			this.addCssRule(selector, attributes);
+			document.custom_styles.push(name);
+		}
 	},
 
 	addCssRules: function(cssRules) {

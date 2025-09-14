@@ -1,19 +1,19 @@
-<h1><i class="<%= config.apps['app_launcher'].icon %>"></i><%= config.apps['app_launcher'].name %></h1>
+<h1><i class="<%= config.apps.app_launcher.icon %>"></i><%= config.apps.app_launcher.name %></h1>
 
 <ol class="breadcrumb">
 	<li><a href="#"><i class="fa fa-home"></i>Home</a></li>
 	<li><a href="#apps"><i class="fa fa-rocket"></i>Apps</a></li>
-	<li><i class="fa fa-rocket"></i><%= config.apps['app_launcher'].name %></li>
+	<li><i class="fa fa-rocket"></i><%= config.apps.app_launcher.name %></li>
 </ol>
 
 <div class="content">
 
-	<div class="attention icon colored <%= config.apps['app_launcher'].color %>">
-		<img src="images/icons/apps/<%= config.apps['app_launcher'].image || config.apps['app_launcher'].app + '.svg' %>" />
+	<div class="attention icon colored <%= config.apps.app_launcher.color %>">
+		<img src="images/icons/apps/<%= config.apps.app_launcher.image || config.apps.app_launcher.app + '.svg' %>" />
 	</div>
 
 	<div class="description section">
-		<p>The <%= config.apps['app_launcher'].name %> app is used to launch (start / run) other apps. </p>
+		<p>The <%= config.apps.app_launcher.name %> app is used to launch (start / run) other apps. </p>
 	</div>
 
 	<div class="details section">
@@ -44,11 +44,11 @@
 
 	<h2><i class="fa fa-desktop"></i>Screen Shots</h2>
 	<div class="figure desktop-only">
-		<a href="images/info/apps/app-launcher/app-launcher.png" target="_blank" class="lightbox" title="<%= config.apps['app_launcher'].name %>"><img class="dialog" src="images/info/apps/app-launcher/app-launcher.png" /></a>
-		<div class="caption"><%= config.apps['app_launcher'].name %></div>
+		<a href="images/info/apps/app-launcher/app-launcher.png" target="_blank" class="lightbox" title="<%= config.apps.app_launcher.name %>"><img class="dialog" src="images/info/apps/app-launcher/app-launcher.png" /></a>
+		<div class="caption"><%= config.apps.app_launcher.name %></div>
 	</div>
 	<div class="figure mobile-only">
-		<a href="images/info/apps/app-launcher/mobile/mobile-app-launcher.png" target="_blank" class="lightbox" title="<%= config.apps['app_launcher'].name %>"><img src="images/info/apps/app-launcher/mobile/mobile-app-launcher.png" /></a>
-		<div class="caption"><%= config.apps['app_launcher'].name %></div>
+		<a href="images/info/apps/app-launcher/mobile/mobile-app-launcher.png" target="_blank" class="lightbox" title="<%= config.apps.app_launcher.name %>"><img src="images/info/apps/app-launcher/mobile/mobile-app-launcher.png" /></a>
+		<div class="caption"><%= config.apps.app_launcher.name %></div>
 	</div>
 </div>

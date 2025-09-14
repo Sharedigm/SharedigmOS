@@ -167,5 +167,6 @@ $rounded-border-radius: 5px;
 .gallery.inline {
 	.images a.jpictura.item.lightbox img {
 		margin: 10px 0;
+		max-width: 100%;
 	}
 }

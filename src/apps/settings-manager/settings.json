@@ -1,0 +1,12 @@
+{
+	"name": "Settings Manager",
+	"icon": "fa fa-cog",
+	"category": "configuration",
+	"platform": "all",
+	"access": "all",
+	"disabled": false,
+	"hidden": true,
+	"args": false,
+	"color": "grey",
+	"upgrade_account_url": "#contact"
+}

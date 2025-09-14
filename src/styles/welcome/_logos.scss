@@ -1,0 +1,183 @@
+/******************************************************************************\
+|                                                                              |
+|                                 _logos.scss                                  |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+
+@use "../bootstrap/variables";
+
+//
+// extra large styles
+//
+
+@media (min-width: variables.$screen-lg-min) {
+	.welcome.page {
+		.splash {
+
+			//
+			// large logo image
+			//
+
+			.logo.small {
+				img {
+					height: 150px;
+				}
+			}
+
+			.logo, .logo.medium {
+				img {
+					height: 200px;
+				}
+			}
+
+			.logo.large {
+				img {
+					height: 250px;
+				}			
+			}
+		}
+	}
+}
+
+//
+// large styles
+//
+
+@media (max-width: variables.$screen-lg-min) {
+	.welcome.page {
+		.splash {
+
+			//
+			// large logo image
+			//
+
+			.logo.small {
+				img {
+					height: 125px;
+				}
+			}
+
+			.logo, .logo.medium {
+				img {
+					height: 150px;
+				}
+			}
+
+			.logo.large {
+				img {
+					height: 200px;
+				}			
+			}
+		}
+	}
+}
+
+//
+// medium styles
+//
+
+@media (max-width: variables.$screen-md-min) {
+	.welcome.page {		
+		.splash {
+
+			//
+			// medium logo image
+			//
+
+			.logo.small {
+				img {
+					height: 100px;
+				}
+			}
+
+			.logo, .logo.medium {
+				img {
+					height: 125px;
+				}
+			}
+
+			.logo.large {
+				img {
+					height: 175px;
+				}
+			}
+		}
+	}
+}
+
+//
+// small styles
+//
+
+@media (max-width: variables.$screen-sm-min) {
+	.welcome.page {
+		.splash {
+
+			//
+			// small logos
+			//
+
+			.logo.small {
+				img {
+					height: 75px;
+				}
+			}
+
+			.logo, .logo.medium {
+				img {
+					height: 100px;
+				}
+			}
+
+			.logo.large {
+				img {
+					height: 150px;
+				}		
+			}
+		}
+	}
+}
+
+//
+// extra small logos
+//
+
+@media (max-width: variables.$screen-xs-min) {
+	.welcome.page {
+		.splash {
+
+			//
+			// small logos
+			//
+
+			.logo.small {
+				img {
+					height: 75px;
+				}
+			}
+
+			.logo, .logo.medium {
+				img {
+					height: 100px;
+				}
+			}
+
+			.logo.large {
+				img {
+					height: 125px;
+				}		
+			}
+		}
+	}
+}

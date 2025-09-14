@@ -32,8 +32,8 @@ export default ViewMenuView.extend({
 		// sidebar options
 		//
 		'click .show-sidebar': 'onClickShowSidebar',
-		'click .show-sidebar-panel > a': 'onClickShowSideBarPanel',
-		'click .sidebar-view-kind > a': 'onClickSideBarViewKind',
+		'click .sidebar-panels': 'onClickSideBarPanel',
+		'click .sidebar-view-kind': 'onClickSideBarViewKind',
 
 		// window options
 		//
@@ -76,33 +76,30 @@ export default ViewMenuView.extend({
 
 	selected: function() {
 		let preferences = this.parent.parent.app.preferences;
-		let detailKind = preferences.get('detail_kind');
-		let sidebarPanels = preferences.get('sidebar_panels') || [];
-		let sidebarViewKind = preferences.get('sidebar_view_kind');
 
 		return {
 
 			// detail options
 			//
-			'view-profile': detailKind == 'profile',
-			'view-posts': detailKind == 'posts',
-			'view-connections': detailKind == 'connections',
-			'view-sharing': detailKind == 'sharing',
+			'detail-kind profile': preferences.matches('detail_kind', 'profile'),
+			'detail-kind posts': preferences.matches('detail_kind', 'posts'),
+			'detail-kind connections': preferences.matches('detail_kind', 'connections'),
+			'detail-kind sharing': preferences.matches('detail_kind', 'sharing'),
 
 			// sidebar options
 			//
-			'show-sidebar': preferences.get('show_sidebar'),
-			'show-activity-panel': sidebarPanels.includes('activity'),
-			'show-status-panel': sidebarPanels.includes('status'),
-			'show-actions-panel': sidebarPanels.includes('actions'),
-			'show-mutual-connections-panel': sidebarPanels.includes('mutual_connections'),
+			'show-sidebar': preferences.includes('panes', 'sidebar'),
+			'sidebar-panels activity': preferences.includes('sidebar_panels', 'activity'),
+			'sidebar-panels status': preferences.includes('sidebar_panels', 'status'),
+			'sidebar-panels actions': preferences.includes('sidebar_panels', 'actions'),
+			'sidebar-panels mutual-connections': preferences.includes('sidebar_panels', 'mutual_connections'),
 
 			// sidebar item options
 			//
-			'view-sidebar-icons': sidebarViewKind == 'icons',
-			'view-sidebar-lists': sidebarViewKind == 'lists',
-			'view-sidebar-cards': sidebarViewKind == 'cards',
-			'view-sidebar-tiles': sidebarViewKind == 'tiles'
+			'sidebar-view-kind icons': preferences.matches('sidebar_view_kind', 'icons'),
+			'sidebar-view-kind lists': preferences.matches('sidebar_view_kind', 'lists'),
+			'sidebar-view-kind cards': preferences.matches('sidebar_view_kind', 'cards'),
+			'sidebar-view-kind tiles': preferences.matches('sidebar_view_kind', 'tiles')
 		};
 	}
 });

@@ -32,7 +32,7 @@ export default DirectoryItemView.extend({
 	//
 
 	getName: function() {
-		if (this.options.preferences && this.options.preferences.get('show_file_extensions')) {
+		if (this.options.preferences && this.options.preferences.includes('options', 'file_extensions')) {
 			return this.model.getName();
 		} else {
 			return this.model.getBaseName();

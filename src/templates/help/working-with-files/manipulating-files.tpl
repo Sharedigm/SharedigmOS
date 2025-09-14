@@ -38,7 +38,7 @@
 		</li>
 
 		<li>
-			<h2><i class="fa fa-hand-grab"></i>Moving Files</h2>
+			<h2><i class="fa fa-hand"></i>Moving Files</h2>
 			<p>To move files, simply select the items that you would like to move, then drag them to the folder where you would like to move them. When you drag the items over a folder, it will be highlighted.  When you release the move button, the files will be moved to the highlighted destination folder. </p>
 
 			<div class="figure">

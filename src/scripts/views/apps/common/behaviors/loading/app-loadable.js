@@ -28,9 +28,26 @@ export default {
 		import(
 			'../../../' + dirname + '/' + filename
 		).then((AppView) => {
-			options.success(AppView? AppView.default : undefined);
+
+			// perform callback
+			//
+			if (options.success) {
+				options.success(AppView? AppView.default : undefined);
+			}
 		}).catch(error => {
-			options.error(error);
+
+			// perform callback
+			//
+			if (options.error) {
+				options.error(error);
+
+			// show error dialog
+			//
+			} else {
+				application.error({
+					message: 'Could not load app ' + appName + ': ' + error.stack
+				});
+			}
 		});
 	}
 };

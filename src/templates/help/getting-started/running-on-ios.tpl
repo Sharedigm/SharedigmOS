@@ -23,7 +23,7 @@
 					<p><label>Run from the Home Screen</label><br />You can create an icon on your home screen that launches the <%= application.name %> web application. </p>
 
 					<div class="figure row">
-						<div class="figure col-xs-12 col-sm-6" style="float:none">
+						<div class="figure col-xs-12 col-sm-9" style="float:none">
 							<a href="images/help/getting-started/running-on-ios/app-on-home-screen.png" target="_blank" class="lightbox" title="<%= application.name %> on the Home Screen"><img src="images/help/getting-started/running-on-ios/app-on-home-screen.png" /></a>
 							<div class="caption"><%= application.name %> on the Home Screen</div>
 						</div>
@@ -54,7 +54,7 @@
 					<p>Start your Safari web browser and navigate to the <%= application.name %> web site (<a href="<%= location.hostname %>"><%= location.hostname %></a>). </p>
 
 					<div class="figure row">
-						<div class="figure col-xs-12 col-sm-6" style="float:none">
+						<div class="figure col-xs-12 col-sm-9" style="float:none">
 							<a href="images/help/getting-started/running-on-ios/app-in-safari.png" target="_blank" class="lightbox" title="<%= application.name %> in Safari"><img src="images/help/getting-started/running-on-ios/app-in-safari.png" /></a>
 							<div class="caption"><%= application.name %> in Safari</div>
 						</div>
@@ -66,7 +66,7 @@
 					<p>Click the middle icon on the bottom toolbar in Safari to open the web page options. </p>
 
 					<div class="figure row">
-						<div class="figure col-xs-12 col-sm-6" style="float:none">
+						<div class="figure col-xs-12 col-sm-9" style="float:none">
 							<a href="images/help/getting-started/running-on-ios/web-page-options.png" target="_blank" class="lightbox" title="Web Page Options"><img src="images/help/getting-started/running-on-ios/web-page-options.png" /></a>
 							<div class="caption">Web Page Options</div>
 						</div>
@@ -78,7 +78,7 @@
 					<p>On the web page options screen, click on the "Add to Home Screen" button.  Shorten the name and then click the "done" button.  You should now see <%= application.name %> on your home screen. </p>
 
 					<div class="figure row">
-						<div class="figure col-xs-12 col-sm-6" style="float:none">
+						<div class="figure col-xs-12 col-sm-9" style="float:none">
 							<a href="images/help/getting-started/running-on-ios/add-to-home-screen.png" target="_blank" class="lightbox" title="Add to Home Screen"><img src="images/help/getting-started/running-on-ios/add-to-home-screen.png" /></a>
 							<div class="caption">Add to Home Screen</div>
 						</div>

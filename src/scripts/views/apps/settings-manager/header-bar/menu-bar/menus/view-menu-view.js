@@ -28,8 +28,8 @@ export default ViewMenuView.extend({
 		// sidebar options
 		//
 		'click .show-sidebar': 'onClickShowSidebar',
-		'click .show-sidebar-panel > a': 'onClickShowSideBarPanel',
-		'click .sidebar-view-kind > a': 'onClickSideBarViewKind',
+		'click .sidebar-panels': 'onClickSideBarPanel',
+		'click .sidebar-view-kind': 'onClickSideBarViewKind',
 
 		// window options
 		//
@@ -62,21 +62,19 @@ export default ViewMenuView.extend({
 
 	selected: function() {
 		let preferences = this.parent.app.preferences;
-		let sidebarPanels = preferences.get('sidebar_panels') || [];
-		let sidebarViewKind = preferences.get('sidebar_view_kind');
 
 		return {
 
 			// sidebar options
 			//
-			'show-sidebar': preferences.get('show_sidebar'),
-			'show-settings-panel': sidebarPanels.includes('settings'),
-			'show-preferences-panel': sidebarPanels.includes('preferences'),
+			'show-sidebar': preferences.includes('panes', 'sidebar'),
+			'sidebar-panels settings': preferences.includes('sidebar_panels', 'settings'),
+			'sidebar-panels preferences': preferences.includes('sidebar_panels', 'preferences'),
 
 			// sidebar item options
 			//
-			'view-sidebar-icons': sidebarViewKind == 'icons',
-			'view-sidebar-lists': sidebarViewKind == 'lists'
+			'sidebar-view-kind icons': preferences.matches('sidebar_view_kind', 'icons'),
+			'sidebar-view-kind lists': preferences.matches('sidebar_view_kind', 'lists')
 		};	
 	}
 });

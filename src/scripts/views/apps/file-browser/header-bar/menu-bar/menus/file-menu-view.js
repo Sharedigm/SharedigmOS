@@ -122,7 +122,7 @@ export default FileMenuView.extend({
 			'open-favorites': true,
 			'upload-item': true,
 			'favorites': true,
-			'add-favorites': true,
+			'add-favorites': isSignedIn,
 			'remove-favorites': hasSelectedFavorites,
 			'open-first': !hasSelected && !viewingMap,
 			'open-prev': hasSelectedFavorites && !viewingMap,

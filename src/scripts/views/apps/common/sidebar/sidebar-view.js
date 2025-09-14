@@ -96,7 +96,7 @@ export default PanelsView.extend(_.extend({}, Scrollable, {
 
 			// skip these panels
 			//
-			if (panel == 'files' || panel == 'favorites') {
+			if (panel == 'favorites') {
 				continue;
 			}
 			if (panel == 'info' && this.options.info_kind != 'auto') {

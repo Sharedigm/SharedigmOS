@@ -1,18 +1,18 @@
 #******************************************************************************#
 #                                                                              #
-#                             make-resourcess.sh                               #
+#                              make-resources.sh                               #
 #                                                                              #
 #******************************************************************************#
 #                                                                              #
-#        This script concatenates each apps resources into a single file.      #
+#       This script concatenates each apps resources into a single file.       #
 #                                                                              #
-#        Author(s): Abe Megahed                                                #
+#       Author(s): Abe Megahed                                                 #
 #                                                                              #
-#        This file is subject to the terms and conditions defined in           #
-#        'LICENSE.md', which is part of this source code distribution.         #
+#       This file is subject to the terms and conditions defined in            #
+#       'LICENSE.md', which is part of this source code distribution.          #
 #                                                                              #
 #******************************************************************************#
-#        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          #
+#       Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com         #
 #******************************************************************************#
 
 function add_file {
@@ -33,7 +33,7 @@ function add_file {
 
 	# get resource name from filename
 	#
-	resource=${filename/-/_}
+	resource=${filename//-/_}
 
 	# get file contents
 	#
@@ -52,16 +52,22 @@ function add_file {
 
 function concat_app_resources {
 	app=$1
-	target=$app/resources.json
-	echo "Processing $app resources..."
 
+	# find app dirname
+	#
+	app=${app//_/-}
+	target=$app/resources.json
+
+	# concat app resources
+	#
+	echo "Processing $app resources..."
 	echo '{}' > $target
 	for filepath in $app/*/*.json; do
 		add_file
 	done
 }
 
-function process_apps {
+function concat_apps_resources {
 
 	# iterate over all apps
 	#
@@ -92,7 +98,7 @@ function concat_all_resources {
 
 		# get resource name from filename
 		#
-		appname=${dirname/-/_}
+		appname=${dirname//-/_}
 
 		# get path to resources
 		#
@@ -110,6 +116,27 @@ function concat_all_resources {
 	done
 }
 
+#
+# main
+#
+
+# check command line arguments
+#
+if [ $# -lt 1 ] ; then
+	echo "Usage: sh make-resources.sh <APPNAME || all>"
+	exit 0
+fi
+
+# parse command line arguments
+#
+app=$1
+
 # concatenate resources for each app
 #
-process_apps
+if [ $app != 'all' ]; then
+	concat_app_resources $app
+else
+	concat_apps_resources
+fi
+
+concat_all_resources

@@ -21,7 +21,7 @@
 // variables
 //
 
-$controls-height: 30px;
+$controls-height: 32px;
 
 //
 // styles
@@ -127,6 +127,7 @@ $controls-height: 30px;
 			border-width: 1px;
 			border-style: solid;
 			margin-right: 10px;
+			line-height: 1em;
 
 			+ label {
 				margin-top: 7px;

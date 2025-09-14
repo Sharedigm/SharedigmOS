@@ -50,18 +50,15 @@ body:not(.binary).colored {
 						button {
 
 							&.minimize {
-								@include colored-btns.colored($minimize-button-color);
-								@include colored-btns.labeled($button-label-color);
+								@include colored-btns.colored($minimize-button-color, $button-label-color);
 							}
 
 							&.maximize, &.unmaximize {
-								@include colored-btns.colored($maximize-button-color);
-								@include colored-btns.labeled($button-label-color);
+								@include colored-btns.colored($maximize-button-color, $button-label-color);
 							}
 
 							&.close-btn {
-								@include colored-btns.colored($close-button-color);
-								@include colored-btns.labeled($button-label-color);
+								@include colored-btns.colored($close-button-color, $button-label-color);
 							}
 						}
 					}
@@ -78,18 +75,15 @@ body:not(.binary).colored {
 						button {
 
 							&.minimize {
-								@include colored-btns.colored($unfocused-button-color);
-								@include colored-btns.labeled($unfocused-button-label-color);
+								@include colored-btns.colored($unfocused-button-color, $unfocused-button-label-color);
 							}
 
 							&.maximize, &.unmaximize {
-								@include colored-btns.colored($unfocused-button-color);
-								@include colored-btns.labeled($unfocused-button-label-color);
+								@include colored-btns.colored($unfocused-button-color, $unfocused-button-label-color);
 							}
 
 							&.close-btn {
-								@include colored-btns.colored($unfocused-button-color);
-								@include colored-btns.labeled($unfocused-button-label-color);
+								@include colored-btns.colored($unfocused-button-color, $unfocused-button-label-color);
 							}			
 						}
 					}
@@ -108,15 +102,15 @@ body:not(.binary).colored {
 						button {
 
 							&.minimize {
-								@include colored-btns.colored($minimize-button-color);
+								@include colored-btns.colored($minimize-button-color, white);
 							}
 
 							&.maximize, &.unmaximize {
-								@include colored-btns.colored($maximize-button-color);
+								@include colored-btns.colored($maximize-button-color, white);
 							}
 
 							&.close-btn {
-								@include colored-btns.colored($close-button-color);
+								@include colored-btns.colored($close-button-color, white);
 							}
 						}
 					}

@@ -118,7 +118,7 @@ export default AboutDialogView.extend(_.extend({}, GoogleContactsImportable, {
 		application.launch('image_viewer', {
 			model: file,
 			preferences: UserPreferences.create('image_viewer', {
-				show_sidebar: false
+				panes: []
 			}),
 			slide_show: true
 		}, options);
@@ -163,7 +163,7 @@ export default AboutDialogView.extend(_.extend({}, GoogleContactsImportable, {
 		application.launch('video_player', {
 			model: file,
 			preferences: UserPreferences.create('video_player', {
-				show_sidebar: false
+				panes: []
 			}),
 			autoplay: true
 		}, options);
@@ -230,8 +230,8 @@ export default AboutDialogView.extend(_.extend({}, GoogleContactsImportable, {
 
 	templateContext: function() {
 		return {
-			welcome: config.welcome,
-			defaults: config.defaults,
+			welcome: config.settings.welcome,
+			defaults: config.settings.defaults,
 			branding: config.branding
 		};
 	},
@@ -256,11 +256,11 @@ export default AboutDialogView.extend(_.extend({}, GoogleContactsImportable, {
 	//
 
 	onClickViewVideo: function() {
-		this.showVideo(config.welcome.options.view_video.path);
+		this.showVideo(config.settings.welcome.options.view_video.path);
 	},
 
 	onClickViewSlideShow: function() {
-		this.showSlideShow(config.welcome.options.view_slide_show.path);
+		this.showSlideShow(config.settings.welcome.options.view_slide_show.path);
 	},
 
 	onClickSetTheme: function() {

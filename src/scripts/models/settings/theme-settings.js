@@ -45,8 +45,8 @@ export default UserSettings.extend({
 	//
 
 	getFontFamily: function(systemFont) {
-		if (systemFont && config.fonts[systemFont]) {
-			return config.fonts[systemFont]['font-family'];
+		if (systemFont && config.settings.fonts[systemFont]) {
+			return config.settings.fonts[systemFont]['font-family'];
 		} else {
 			return '';
 		}
@@ -68,16 +68,16 @@ export default UserSettings.extend({
 	},
 
 	getFontSize: function(systemFont, fontSize) {
-		if (systemFont && config.fonts[systemFont]) {
-			return config.fonts[systemFont]['font-size'] + this.getFontIncrement(fontSize) + 'px';
+		if (systemFont && config.settings.fonts[systemFont]) {
+			return config.settings.fonts[systemFont]['font-size'] + this.getFontIncrement(fontSize) + 'px';
 		} else {
 			return '';
 		}
 	},
 
 	getFontWeight: function(systemFont) {
-		if (systemFont && config.fonts[systemFont]) {
-			return config.fonts[systemFont]['font-weight'];
+		if (systemFont && config.settings.fonts[systemFont]) {
+			return config.settings.fonts[systemFont]['font-weight'];
 		} else {
 			return '';
 		}
@@ -235,19 +235,15 @@ export default UserSettings.extend({
 
 		// set new highlight color
 		//
-		if (highlightColor && highlightColor != 'none') {
-			if (highlightColor.startsWith('#') ||
-				highlightColor.startsWith('rgb') ||
-				highlightColor.startsWith('hsl')) {
-				$('body').css({
-					'--primary-color': highlightColor
-				});
-			} else {
-				$('body').addClass(highlightColor);
-				$('body').css({
-					'--primary-color': ''
-				});
-			}
+		if (config.settings.defaults.colors.contains(highlightColor)) {
+			$('body').addClass(highlightColor);
+			$('body').css({
+				'--primary-color': ''
+			});
+		} else {
+			$('body').css({
+				'--primary-color': highlightColor
+			});
 		}
 	},
 
@@ -259,26 +255,22 @@ export default UserSettings.extend({
 
 		// set new accent color
 		//
-		if (accentColor && accentColor != 'none') {
+		if (config.settings.defaults.colors.contains(accentColor)) {
 			$('body').addClass('accented');
-			if (accentColor.startsWith('#') ||
-				accentColor.startsWith('rgb') ||
-				accentColor.startsWith('hsl')) {
-				$('body').css({
-					'--secondary-color': accentColor
-				});
-			} else {
-				$('body').addClass(accentColor + '-accented');
-				$('body').css({
-					'--secondary-color': ''
-				});
-			}
+			$('body').addClass(accentColor + '-accented');
+			$('body').css({
+				'--secondary-color': ''
+			});
+		} else {
+			$('body').css({
+				'--secondary-color': accentColor
+			});
 		}
 	},
 
 	removeHighlightColors: function(colors) {
 		if (!colors) {
-			colors = config.defaults.colors;
+			colors = config.settings.defaults.colors;
 		}
 		if (!colors) {
 			return;
@@ -291,7 +283,7 @@ export default UserSettings.extend({
 
 	removeAccentColors: function(colors) {
 		if (!colors) {
-			colors = config.defaults.colors;
+			colors = config.settings.defaults.colors;
 		}
 		if (!colors) {
 			return;
@@ -432,7 +424,7 @@ export default UserSettings.extend({
 	//
 
 	removeIconTint: function() {
-		let colors = config.defaults.colors;
+		let colors = config.settings.defaults.colors;
 
 		$('body').removeClass('tinted');
 		$('body').removeClass('auto-tinted');
@@ -536,7 +528,7 @@ export default UserSettings.extend({
 			return;
 		}
 
-		let font = config.fonts[systemFont];
+		let font = config.settings.fonts[systemFont];
 
 		$('body').css({
 			'font-family': this.getFontFamily(systemFont),
@@ -557,20 +549,20 @@ export default UserSettings.extend({
 
 		// check for font and selector
 		//
-		if (!headingFont || (headingFont == 'none') || !config.defaults.text || !config.defaults.text.headings) {
+		if (!headingFont || (headingFont == 'none') || !config.settings.defaults.text || !config.settings.defaults.text.headings) {
 			return;
 		}
 
 		// load font
 		//
-		let font = config.fonts[headingFont];
+		let font = config.settings.fonts[headingFont];
 		if (font && font.url) {
 			this.constructor.loadFont(headingFont, font.url);
 		}
 
 		// add new selector style rules
 		//
-		$(CssUtils.addCssRule(config.defaults.text.headings.join(', '), {
+		$(CssUtils.addCssRule(config.settings.defaults.text.headings.join(', '), {
 			'font-family': this.getFontFamily(headingFont)
 		})).addClass('heading-font-css');
 	},
@@ -589,20 +581,20 @@ export default UserSettings.extend({
 
 		// check for font and selector
 		//
-		if (!titleFont || (titleFont == 'none') || !config.defaults.text || !config.defaults.text.titles) {
+		if (!titleFont || (titleFont == 'none') || !config.settings.defaults.text || !config.settings.defaults.text.titles) {
 			return;
 		}
 
 		// load font
 		//
-		let font = config.fonts[titleFont];
+		let font = config.settings.fonts[titleFont];
 		if (font && font.url) {
 			this.constructor.loadFont(titleFont, font.url);
 		}
 
 		// add new selector style rules
 		//
-		$(CssUtils.addCssRule(config.defaults.text.titles.join(', '), {
+		$(CssUtils.addCssRule(config.settings.defaults.text.titles.join(', '), {
 			'font-family': this.getFontFamily(titleFont),
 			'font-size': this.getFontSize(titleFont, fontSize),
 			'font-weight': this.getFontWeight(titleFont)
@@ -623,20 +615,20 @@ export default UserSettings.extend({
 
 		// check for font and selector
 		//
-		if (!labelFont || (labelFont == 'none') || !config.defaults.text || !config.defaults.text.labels) {
+		if (!labelFont || (labelFont == 'none') || !config.settings.defaults.text || !config.settings.defaults.text.labels) {
 			return;
 		}
 
 		// load font
 		//
-		let font = config.fonts[labelFont];
+		let font = config.settings.fonts[labelFont];
 		if (font && font.url) {
 			this.constructor.loadFont(labelFont, font.url);
 		}
 
 		// add new selector style rules
 		//
-		$(CssUtils.addCssRule(config.defaults.text.labels.join(', '), {
+		$(CssUtils.addCssRule(config.settings.defaults.text.labels.join(', '), {
 			'font-family': this.getFontFamily(labelFont),
 			'font-size': this.getFontSize(labelFont, fontSize),
 			'font-weight': this.getFontWeight(labelFont)

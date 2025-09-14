@@ -65,7 +65,7 @@ export default BaseView.extend({
 	//
 
 	onRender: function() {
-		let pinnedApps = config.defaults.desktop.preferences.pinned_apps;
+		let pinnedApps = config.settings.desktop.preferences.pinned_apps;
 		
 		// show child views
 		//

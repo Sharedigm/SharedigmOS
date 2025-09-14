@@ -27,10 +27,10 @@ export default MenuView.extend({
 
 	visible: function() {
 		return {
-			'view-about-info': application.hasApp('help_viewer'),
-			'view-app': application.hasApp('help_viewer') && config.defaults.help.show_app,
-			'view-topic': application.hasApp('topic_viewer') && config.defaults.help.show_topic,
-			'contact-us': config.defaults.help.show_contact
+			'view-about': application.hasApp('help_viewer'),
+			'view-help': application.hasApp('help_viewer') && config.settings.defaults.help.show_app,
+			'view-topic': application.hasApp('topic_viewer') && config.settings.defaults.help.show_topic,
+			'contact-us': config.settings.defaults.help.show_contact
 		};
 	},
 
@@ -81,7 +81,7 @@ export default MenuView.extend({
 	showHelpFile: function() {
 		application.launch('pdf_viewer', {
 			model: new File({
-				path: config.defaults.help.docs
+				path: config.settings.defaults.help.docs
 			})
 		});
 	},
@@ -106,11 +106,11 @@ export default MenuView.extend({
 	// mouse event handling methods
 	//
 
-	onClickViewAboutInfo: function() {
+	onClickViewAbout: function() {
 		this.showHelp(this.getUrl());
 	},
 
-	onClickViewApp: function() {
+	onClickViewHelp: function() {
 		this.showHelp();
 	},
 
@@ -123,7 +123,7 @@ export default MenuView.extend({
 			'../../../../../../models/topics/topic.js'
 		).then((Topic) => {
 			this.showHelpTopic(new Topic.default({
-				name: config.defaults.help.topic
+				name: config.settings.defaults.help.topic
 			}));
 		});
 	},

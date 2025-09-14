@@ -27,35 +27,32 @@ export default ViewMenuView.extend({
 
 		// view options
 		//
-		'click .view-kind > a': 'onClickViewKind',
-		'click .map-view-kind > a': 'onClickMapViewKind',
+		'click .view-kind': 'onClickViewKind',
+		'click .map-view-kind': 'onClickMapViewKind',
 
 		// toolbar options
 		//
 		'click .show-toolbars': 'onClickShowToolbars',
-		'click .show-toolbar > a': 'onClickShowToolbar',
+		'click .toolbars': 'onClickShowToolbar',
 
 		// item options
 		//
-		'click .show-hidden-files': 'onClickShowHiddenFiles',
-		'click .show-thumbnails': 'onClickOption',
-		'click .show-image-names': 'onClickOption',
-		'click .show-file-extensions': 'onClickOption',
+		'click .show-options': 'onClickShowOptions',
 
 		// property options
 		//
-		'click li.show-properties > a': 'onClickShowProperties',
-		'click li.show-property > a': 'onClickShowProperty',
+		'click .show-properties': 'onClickShowProperties',
+		'click .properties': 'onClickShowProperty',
 
 		// details options
 		//
 		'click .view-details': 'onClickViewDetails',
-		'click .detail-kind > a': 'onClickDetailKind',
-		'click .date-format > a': 'onClickDateFormat',
+		'click .detail-kind': 'onClickDetailKind',
+		'click .date-format': 'onClickDateFormat',
 
 		// map options
 		//
-		'click .map-mode > a': 'onClickMapMode',
+		'click .map-mode': 'onClickMapMode',
 		'click .pan-north': 'onClickPanNorth',
 		'click .pan-south': 'onClickPanSouth',
 		'click .pan-east': 'onClickPanEast',
@@ -63,15 +60,16 @@ export default ViewMenuView.extend({
 		'click .zoom-in': 'onClickZoomIn',
 		'click .zoom-out': 'onClickZoomOut',
 		'click .reset-view': 'onClickResetView',
-		'click .map-item-kind > a': 'onClickMapItemKind',
+		'click .map-item-kind': 'onClickMapItemKind',
 		'click .show-item-names': 'onClickOption',
 		'click .show-geo-orientations': 'onClickOption',
 
 		// sidebar options
 		//
 		'click .show-sidebar': 'onClickShowSidebar',
-		'click .show-sidebar-panel > a': 'onClickShowSideBarPanel',
-		'click .sidebar-view-kind > a': 'onClickSideBarViewKind',
+		'click .sidebar-panels': 'onClickSideBarPanel',
+		'click .sidebar-view-kind': 'onClickSideBarViewKind',
+		'click .sidebar-tile-size': 'onClickSideBarTileSize',
 
 		// window options
 		//
@@ -141,156 +139,139 @@ export default ViewMenuView.extend({
 
 	selected: function() {
 		let preferences = this.parent.app.preferences;
-		let isDesktop = this.parent.app.isDesktop();
-		let viewKind = preferences.get('view_kind');
-		let mapMode = preferences.get('map_mode');
-		let toolbars = preferences.get('toolbars') || [];
-		let properties = preferences.get('properties') || [];
-		let detailKind = preferences.get('detail_kind');
-		let dateFormat = preferences.get('date_format');
-		let mapViewKind = preferences.get('map_view_kind');
-		let sidebarPanels = preferences.get('sidebar_panels') || [];
-		let sidebarViewKind = preferences.get('sidebar_view_kind');
 
 		return {
 
 			// view options
 			//
-			'view-icons': viewKind == 'icons',
-			'view-names': viewKind == 'names',
-			'view-lists': viewKind == 'lists',
-			'view-trees': viewKind == 'trees',
-			'view-cards': viewKind == 'cards',
-			'view-tiles': viewKind == 'tiles',
-			'view-pages': viewKind == 'pages',
-			'view-gallery': viewKind == 'gallery',
-			'view-maps': viewKind == 'maps',
+			'view-kind icons': preferences.matches('view_kind', 'icons'),
+			'view-kind names': preferences.matches('view_kind', 'names'),
+			'view-kind lists': preferences.matches('view_kind', 'lists'),
+			'view-kind trees': preferences.matches('view_kind', 'trees'),
+			'view-kind cards': preferences.matches('view_kind', 'cards'),
+			'view-kind tiles': preferences.matches('view_kind', 'tiles'),
+			'view-kind pages': preferences.matches('view_kind', 'pages'),
+			'view-kind gallery': preferences.matches('view_kind', 'gallery'),
+			'view-kind maps': preferences.matches('view_kind', 'maps'),
 
 			// map options
 			//
-			'view-map': mapMode == 'map',
-			'view-aerial': mapMode == 'aerial',
-			'view-satellite': mapMode == 'satellite',
-			'view-hybrid': mapMode == 'hybrid',
-			'view-streets': mapMode == 'streets',
-			'view-transportation': mapMode == 'transportation',
-			'view-sectional': mapMode == 'sectional',
-			'view-ifrlo': mapMode == 'ifrlo',
-			'view-ifrhi': mapMode == 'ifrhi',
+			'map-mode map': preferences.matches('map_mode', 'map'),
+			'map-mode aerial': preferences.matches('map_mode', 'aerial'),
+			'map-mode satellite': preferences.matches('map_mode', 'satellite'),
+			'map-mode hybrid': preferences.matches('map_mode', 'hybrid'),
+			'map-mode streets': preferences.matches('map_mode', 'streets'),
+			'map-mode transportation': preferences.matches('map_mode', 'transportation'),
+			'map-mode sectional': preferences.matches('map_mode', 'sectional'),
+			'map-mode ifrlo': preferences.matches('map_mode', 'ifrlo'),
+			'map-mode ifrhi': preferences.matches('map_mode', 'ifrhi'),
 
 			// toolbar options
 			//
-			'show-toolbars': toolbars.length > 0,
-			'show-nav-bar': toolbars.includes('nav'),
-			'show-sharing-bar': toolbars.includes('sharing'),
-			'show-indexing-bar': toolbars.includes('indexing'),
+			'show-toolbars': preferences.hasMultiple('toolbars'),
+			'toolbars nav': preferences.includes('toolbars', 'nav'),
+			'toolbars sharing': preferences.includes('toolbars', 'sharing'),
+			'toolbars indexing': preferences.includes('toolbars', 'indexing'),
 
 			// item attributes
 			//
-			'show-hidden-files': preferences.get('show_hidden_files') == true,
-			'show-file-extensions': preferences.get('show_file_extensions') == true,
-			'show-thumbnails': preferences.get('show_thumbnails') == true,
-			'show-image-names': preferences.get('show_image_names') == true,
+			'show-options hidden_files': preferences.includes('options', 'hidden_files'),
+			'show-options file_extensions': preferences.includes('options', 'file_extensions'),
+			'show-options thumbnails': preferences.includes('options', 'thumbnails'),
+			'show-options image_names': preferences.includes('options', 'image_names'),
 
 			// item properties
 			//
-			'show-properties': properties.length > 0,
-			'show-places': properties.includes('places'),
-			'show-links': properties.includes('links'),
-			'show-shares': properties.includes('shares'),
-			'show-owners': properties.includes('owners'),
-			'show-indices': properties.includes('indices'),
+			'show_properties': preferences.hasMultiple('properties'),
+			'properties places': preferences.includes('properties', 'places'),
+			'properties links': preferences.includes('properties', 'links'),
+			'properties shares': preferences.includes('properties', 'shares'),
+			'properties owners': preferences.includes('properties', 'owners'),
+			'properties indices': preferences.includes('properties', 'indices'),
 
-			// map item options
+			// map options
 			//
-			'view-map-icons': mapViewKind == 'icons',
-			'view-map-lists': mapViewKind == 'lists',
-			'view-map-cards': mapViewKind == 'cards',
-			'view-map-tiles': mapViewKind == 'tiles',
-			'view-map-pages': mapViewKind == 'pages',
-			'show-item-names': preferences.get('show_item_names'),
-			'show-geo-orientations': preferences.get('show_geo_orientations'),
+			'map-options grid': preferences.includes('map_options', 'grid'),
+			'map-options smoothing': preferences.includes('map_options', 'smoothing'),
+			'map-options item-names': preferences.includes('map_options', 'item_names'),
+			'map-options geo-orientations': preferences.includes('map_options', 'geo_orientations'),
+
+			// map view kind
+			//
+			'map-view-kind icons': preferences.matches('map_view_kind', 'icons'),
+			'map-view-kind lists': preferences.matches('map_view_kind', 'lists'),
+			'map-view-kind cards': preferences.matches('map_view_kind', 'cards'),
+			'map-view-kind tiles': preferences.matches('map_view_kind', 'tiles'),
+			'map-view-kind pages': preferences.matches('map_view_kind', 'pages'),
 
 			// detail options
 			//
-			'view-details': typeof detailKind == 'string' && detailKind != '',
-			'view-size': detailKind == 'size',
-			'view-create-date': detailKind == 'create_date',
-			'view-modify-date': detailKind == 'modify_date',
-			'view-access-date': detailKind == 'access_date',
-			'view-date-only': dateFormat == 'date_only',
-			'view-day-date': dateFormat == 'day_date',
-			'view-time-only': dateFormat == 'time_only',
-			'view-date-time': dateFormat == 'date_time',
-			'view-day-date-time': dateFormat == 'day_date_time' || !dateFormat,
-			'view-resolution': detailKind == 'resolution',
-			'view-make-model': detailKind == 'make_model',
-			'view-focal-length': detailKind == 'focal_length',
-			'view-exposure': detailKind == 'exposure',
-			'view-aperture': detailKind == 'aperture',
-			'view-iso': detailKind == 'iso',
-			'view-capture-date': detailKind == 'capture_date',
+			'view-details': preferences.has('detail_kind'),
+			'detail-kind size': preferences.matches('detail_kind', 'size'),
+			'detail-kind create_date': preferences.matches('detail_kind', 'create_date'),
+			'detail-kind modify_date': preferences.matches('detail_kind', 'modify_date'),
+			'detail-kind access_date': preferences.matches('detail_kind', 'access_date'),
+
+			// date format options
+			//
+			'date-format date_only': preferences.matches('date_format', 'date_only'),
+			'date-format day_date': preferences.matches('date_format', 'day_date'),
+			'date-format time_only': preferences.matches('date_format', 'time_only'),
+			'date-format date_time': preferences.matches('date_format', 'date_time'),
+			'date-format day_date_time': preferences.matches('date_format', 'day_date_time'),
+
+			// photo options
+			//
+			'detail-kind resolution': preferences.matches('detail_kind', 'resolution'),
+			'detail-kind make_model': preferences.matches('detail_kind', 'make_model'),
+			'detail-kind focal_length': preferences.matches('detail_kind','focal_length'),
+			'detail-kind exposure': preferences.matches('detail_kind', 'exposure'),
+			'detail-kind aperture': preferences.matches('detail_kind', 'aperture'),
+			'detail-kind iso': preferences.matches('detail_kind', 'iso'),
+			'detail-kind capture_date': preferences.matches('detail_kind', 'capture_date'),
 
 			// sidebar options
 			//
-			'show-sidebar': isDesktop? preferences.get('show_desktop_sidebar') : preferences.get('show_sidebar'),
-			'show-clipboard-panel': sidebarPanels.includes('clipboard'),
-			'show-favorites-panel': sidebarPanels.includes('favorites'),
-			'show-files-panel': sidebarPanels.includes('files'),
-			'show-shared-panel': sidebarPanels.includes('shared'),
+			'show-sidebar': this.parent.app.isDesktop()? preferences.get('show_desktop_sidebar') : preferences.includes('panes', 'sidebar'),
+			'sidebar-panels clipboard': preferences.includes('sidebar_panels', 'clipboard'),
+			'sidebar-panels favorites': preferences.includes('sidebar_panels', 'favorites'),
+			'sidebar-panels files': preferences.includes('sidebar_panels', 'files'),
+			'sidebar-panels shared': preferences.includes('sidebar_panels', 'shared'),
 
 			// sidebar item options
 			//
-			'view-sidebar-icons': sidebarViewKind == 'icons',
-			'view-sidebar-lists': sidebarViewKind == 'lists',
-			'view-sidebar-trees': sidebarViewKind == 'trees',
-			'view-sidebar-cards': sidebarViewKind == 'cards',
-			'view-sidebar-tiles': sidebarViewKind == 'tiles'
+			'sidebar-view-kind icons': preferences.matches('sidebar_view_kind', 'icons'),
+			'sidebar-view-kind lists': preferences.matches('sidebar_view_kind', 'lists'),
+			'sidebar-view-kind trees': preferences.matches('sidebar_view_kind', 'trees'),
+			'sidebar-view-kind cards': preferences.matches('sidebar_view_kind', 'cards'),
+			'sidebar-view-kind tiles': preferences.matches('sidebar_view_kind', 'tiles')
 		};
-	},
-
-	//
-	// getting methods
-	//
-
-	getProperties: function() {
-		return this.getElementAttributes('.show-properties li a', 'class', (value) => {
-			return value.replace('show-', '').replace(/-/g, '_');
-		});
-	},
-
-	getSelectedProperties: function() {
-		return this.getElementAttributes('.show-properties li.selected a', 'class', (value) => {
-			return value.replace('show-', '').replace('-bar', '').replace(/-/g, '_');
-		});
 	},
 
 	//
 	// setting methods
 	//
 
-	setOption: function(className, value) {
-		let option = className.replace(/-/g, '_');
+	setOption: function(option, value) {
 
 		// call superclass method
 		//
-		this.setItemSelected(className, value);
+		this.setItemSelected(option, value);
 
 		// update parent
 		//
 		this.parent.app.setOption(option, value);
 	},
 
-	toggleOption: function(className) {
-		let option = className.replace(/-/g, '_');
+	toggleOption: function(option) {
 
 		// call superclass method
 		//
-		this.toggleMenuItem(className);
+		this.toggleMenuItem(option);
 
 		// update parent
 		//
-		this.parent.app.setOption(option, this.isItemSelected(className));
+		this.parent.app.setOption(option, this.isItemSelected(option));
 	},
 
 	toggleProperty: function(property) {
@@ -301,12 +282,7 @@ export default ViewMenuView.extend({
 
 		// update parent
 		//
-		this.parent.app.setOption('properties', this.getSelectedProperties());
-	},
-
-	setMapMode: function(mapMode) {
-		this.$el.find('li.map-mode').removeClass('selected');
-		this.$el.find('li .view-' + mapMode).closest('li').addClass('selected');
+		this.parent.app.setOption('properties', this.getSelectedGroupItems('properties'));
 	},
 
 	//
@@ -333,17 +309,13 @@ export default ViewMenuView.extend({
 	//
 
 	onClickMapMode: function(event) {
-		let className = $(event.currentTarget).attr('class').split(' ')[0];
-		let mapMode = className.replace('view-', '').replace(/-/g, '_');
+		let mapMode = this.getItemName(event.target)
 
 		// update menu
 		//
-		this.setMapMode(mapMode);
-		if (!this.isItemSelected('view-maps')) {
-			this.setViewKind('maps');
-		}
+		this.setGroupItemSelected('map_mode', mapMode);
 
-		// update parent
+		// update app
 		//
 		this.parent.app.setOption('map_mode', mapMode);
 	},
@@ -357,36 +329,36 @@ export default ViewMenuView.extend({
 	//
 
 	onClickPanNorth: function() {
-		let itemsView = this.parent.app.getActiveView().getChildView('items');
-		if (itemsView && itemsView.hasChildView('map')) {
-			itemsView.getChildView('map').panToDirection('north', {
+		let mapView = this.parent.app.getMapView();
+		if (mapView) {
+			mapView.panToDirection('north', {
 				duration: 1000
 			});
 		}
 	},
 
 	onClickPanSouth: function() {
-		let itemsView = this.parent.app.getActiveView().getChildView('items');
-		if (itemsView && itemsView.hasChildView('map')) {
-			itemsView.getChildView('map').panToDirection('south', {
+		let mapView = this.parent.app.getMapView();
+		if (mapView) {
+			mapView.panToDirection('south', {
 				duration: 1000
 			});
 		}
 	},
 
 	onClickPanEast: function() {
-		let itemsView = this.parent.app.getActiveView().getChildView('items');
-		if (itemsView && itemsView.hasChildView('map')) {
-			itemsView.getChildView('map').panToDirection('east', {
+		let mapView = this.parent.app.getMapView();
+		if (mapView) {
+			mapView.panToDirection('east', {
 				duration: 1000
 			});
 		}
 	},
 	
 	onClickPanWest: function() {
-		let itemsView = this.parent.app.getActiveView().getChildView('items');
-		if (itemsView && itemsView.hasChildView('map')) {
-			itemsView.getChildView('map').panToDirection('west', {
+		let mapView = this.parent.app.getMapView();
+		if (mapView) {
+			mapView.panToDirection('west', {
 				duration: 1000
 			});
 		}
@@ -397,18 +369,18 @@ export default ViewMenuView.extend({
 	//
 
 	onClickZoomIn: function() {
-		let itemsView = this.parent.app.getActiveView().getChildView('items');
-		if (itemsView && itemsView.hasChildView('map')) {
-			itemsView.getChildView('map').zoomIn({
+		let mapView = this.parent.app.getMapView();
+		if (mapView) {
+			mapView.zoomIn({
 				duration: 1000
 			});
 		}
 	},
 
 	onClickZoomOut: function() {
-		let itemsView = this.parent.app.getActiveView().getChildView('items');
-		if (itemsView && itemsView.hasChildView('map')) {
-			itemsView.getChildView('map').zoomOut({
+		let mapView = this.parent.app.getMapView();
+		if (mapView) {
+			mapView.zoomOut({
 				duration: 1000
 			});
 		}
@@ -418,37 +390,40 @@ export default ViewMenuView.extend({
 	// view option event handling methods
 	//
 
+	onClickShowOptions: function(event) {
+		let itemName = this.getItemName($(event.currentTarget));
+
+		// update menu
+		//
+		this.toggleMenuItem('show-options ' + itemName);
+
+		// update view
+		//
+		this.parent.app.setOption('options', this.getSelectedGroupItems('show-options'));
+	},
+
 	onClickShowProperties: function() {
-		let showProperties = this.isItemSelected('show-properties');
 
 		// update menu
 		//
 		this.toggleMenuItem('show-properties');
-		if (!showProperties) {
-			this.$el.find('.show-properties li').addClass('selected');
-		} else {
-			this.$el.find('.show-properties li').removeClass('selected');
-		}
 
-		// update view
+		// update app
 		//
-		this.parent.app.setOption('properties', showProperties? [] : this.getProperties());
+		let showProperties = this.isItemSelected('show-properties');
+		this.parent.app.setOption('properties', showProperties? this.getSelectedGroupItems('properties') : false);
 	},
 
 	onClickShowProperty: function(event) {
-		let className = $(event.currentTarget).attr('class');
+		let itemName = this.getItemName($(event.currentTarget));
 
 		// update menu
 		//
-		this.toggleMenuItem(className);
+		this.toggleMenuItem('properties ' + itemName);
 
 		// update view
 		//
-		this.parent.app.setOption('properties', this.getSelectedProperties());
-	},
-
-	onClickShowHiddenFiles: function() {
-		this.toggleOption('show-hidden-files');
+		this.parent.app.setOption('properties', this.getSelectedGroupItems('properties'));
 	},
 
 	onClickShowMagnified: function() {

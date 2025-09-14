@@ -66,16 +66,14 @@ body:not(.binary).dark {
 	//
 
 	.btn {
-		@include colored-btns.dark-colored($color);
-		@include colored-btns.labeled($label-color);
+		@include colored-btns.dark-colored($color, $label-color);
 
 		//
 		// dark primary buttons
 		//
 
 		&.btn-primary {
-			@include colored-btns.dark-colored($primary-color);
-			@include colored-btns.labeled($primary-label-color);
+			@include colored-btns.dark-colored($primary-color, $primary-label-color);
 		}
 
 		//
@@ -83,8 +81,7 @@ body:not(.binary).dark {
 		//
 
 		&:disabled, &.btn-primary:disabled {
-			@include colored-btns.dark-colored($disabled-color);
-			@include colored-btns.labeled($disabled-label-color);
+			@include colored-btns.dark-colored($disabled-color, $disabled-label-color);
 		}
 	}
 

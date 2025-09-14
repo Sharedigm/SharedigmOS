@@ -1,0 +1,39 @@
+{
+	"general": {
+		"view_kind": {
+			"phone": "cards",
+			"tablet": "cards",
+			"desktop": "icons"
+		},
+	},
+	"display": {
+		"panes": {
+			"sidebar": true
+		},
+		"sidebar_size": {
+			"phone": 0,
+			"tablet": 35,
+			"desktop": 35
+		},
+		"sidebar_min_size": {
+			"phone": 0,
+			"tablet": 175,
+			"desktop": 175
+		},
+		"sidebar_panels": {
+			"settings": true
+		},
+		"sidebar_view_kind": {
+			"phone": "cards",
+			"tablet": "cards",
+			"desktop": "icons"
+		}
+	},
+	"window": {
+		"window_size": "medium",
+		"window_state": {
+			"maximized": false,
+			"full_screen": false	
+		}
+	}
+}

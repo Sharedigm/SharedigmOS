@@ -59,20 +59,12 @@ export default ToolbarContainerView.extend({
 	setToolbarVisible: function(kind, value) {
 		if (value) {
 			if (this.hasChildView(kind)) {
-				this.setToolbarRegionVisible(kind, true);
+				this.setChildViewVisible(kind, true);
 			} else {
 				this.showToolbar(kind);
 			}
 		} else if (this.hasChildView(kind)) {
-			this.setToolbarRegionVisible(kind, false);
-		}
-	},
-
-	setToolbarRegionVisible: function(kind, visible) {
-		if (visible) {
-			this.getRegion(kind).$el.removeClass('hidden');
-		} else {
-			this.getRegion(kind).$el.addClass('hidden');
+			this.setChildViewVisible(kind, false);
 		}
 	},
 
@@ -90,6 +82,14 @@ export default ToolbarContainerView.extend({
 			}
 		} else {
 			this.setAllToolbarsVisible(visible);
+		}
+	},
+
+	setChildViewVisible: function(kind, visible) {
+		if (visible) {
+			this.getChildView(kind).$el.removeClass('hidden');
+		} else {
+			this.getChildView(kind).$el.addClass('hidden');
 		}
 	},
 

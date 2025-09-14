@@ -17,16 +17,18 @@
 
 import App from '../../../../models/apps/app.js';
 import Apps from '../../../../collections/apps/apps.js';
-import PreferencesFormView from '../../../../views/apps/common/forms/preferences-form-view.js';
+import FormView from '../../../../views/forms/form-view.js';
 import AppIconsView from '../../../../views/apps/common/items/icons/app-icons-view.js';
+import PreferencesFormView from '../../../../views/apps/common/forms/preferences-form-view.js';
 
-export default PreferencesFormView.extend({
+export default FormView.extend({
 
 	//
 	// attributes
 	//
 
-	className: 'preferences form-vertical',
+	tagName: 'form',
+	className: 'form-vertical',
 
 	template: template(`
 		<div class="app-icons"></div>
@@ -37,11 +39,12 @@ export default PreferencesFormView.extend({
 			<% let tab = tabs[i]; %>
 			<% let name = tab.name; %>
 			<% let icon = tab.icon; %>
-			<% let className = name.toLowerCase().replace(/ /g, '-'); %>
+			<% let text = tab.text; %>
+			<% let className = name.replace(/_/g, '-'); %>
 			<li role="presentation" class="<%= className %>-tab<% if (i == 0) { %> active<% } %>">
 				<a role="tab" data-toggle="tab" href=".<%= className %>-prefs">
 					<i class="<%= icon %>"></i>
-					<label><%= name %></label>
+					<label><%= text %></label>
 				</a>
 			</li>
 			<% } %>
@@ -52,7 +55,7 @@ export default PreferencesFormView.extend({
 			<% let tab = tabs[i]; %>
 			<% let name = tab.name; %>
 			<% let icon = tab.icon; %>
-			<% let className = name.toLowerCase().replace(/ /g, '-'); %>
+			<% let className = name.replace(/_/g, '-'); %>
 			<div role="tabpanel" class="<%= className %>-prefs tab-pane<% if (i == 0) { %> active<% } %>">
 			</div>
 			<% } %>
@@ -63,7 +66,24 @@ export default PreferencesFormView.extend({
 	tabs: [],
 
 	//
-	// form queryimg methods
+	// constructor
+	//
+
+	initialize: function() {
+
+		// get tabs from resources
+		//
+		let resources = this.options.resources;
+
+		// set attributes
+		//
+		if (resources) {
+			this.tabs = resources.preferences;
+		}
+	},
+
+	//
+	// querying methods
 	//
 
 	hasChanged: function() {
@@ -80,6 +100,10 @@ export default PreferencesFormView.extend({
 		return false;
 	},
 
+	//
+	// getting methods
+	//
+
 	getValues: function() {
 
 		// concatenate values from all child views
@@ -95,8 +119,32 @@ export default PreferencesFormView.extend({
 		return values;
 	},
 
+	getOriginalValues: function() {
+
+		// concatenate original values from all child views
+		//
+		let values = {};
+		let childNames = Object.keys(this.regions);
+		for (let i = 0; i < childNames.length; i++) {
+			let childView = this.getChildView(childNames[i]);
+			if (childView && childView.getValues) {
+				values = _.extend(values, childView.getOriginalValues());
+			}
+		}
+		return values;
+	},
+
+	getActiveTab: function() {
+		let className = this.$el.find('.nav-tabs li.active').attr('class');
+		return className.replace('active', '').replace('-tab', '').replace(/-/g, '_').trim();
+	},
+
+	getActiveView: function() {
+		return this.getChildView(this.getActiveTab());
+	},
+
 	//
-	// form methods
+	// setting methods
 	//
 
 	setOption: function(key, value) {
@@ -127,12 +175,19 @@ export default PreferencesFormView.extend({
 				replaceElement: true
 			}
 		};
-		for (let i = 0; i < this.tabs.length; i++) {
-			let tab = this.tabs[i];
-			let region = tab.name.toLowerCase().replace(/ /g, '_');
-			let className = region.replace(/_/g, '-');
-			regions[region] = '.' + className + '-prefs';
+
+		// add tab regions
+		//
+		if (this.options.resources) {
+			let tabs = this.options.resources.preferences;
+			for (let i = 0; i < tabs.length; i++) {
+				let tab = tabs[i];
+				let region = tab.name.toLowerCase().replace(/ /g, '_');
+				let className = region.replace(/_/g, '-');
+				regions[region] = '.' + className + '-prefs';
+			}
 		}
+
 		return regions;
 	},
 
@@ -143,16 +198,50 @@ export default PreferencesFormView.extend({
 		};
 	},
 
-	showAppIcon: function(appName) {
+	onRender: function() {
+
+		// show header icon
+		//
+		this.showAppIcon();
+
+		// show tabs
+		//
+		this.showTabs();
+	},
+
+	showAppIcon: function() {
 		this.showChildView('item', new AppIconsView({
 			collection: new Apps(new App(
-				config.apps[appName]
+				config.apps[this.model.app]
 			)),
 
 			// capabilities
 			//
 			selectable: false
 		}));
+	},
+
+	showTab: function(tab) {
+		let region = tab;
+		let options = this.options.resources[tab.replace(/-/g, '_') + '_prefs'];
+		let preferences = options? options : {};
+
+		if (this.hasRegion(region)) {
+			this.showChildView(region, new PreferencesFormView({
+				model: this.model,
+				preferences: preferences,
+
+				// callbacks
+				//
+				onchange: this.options.onchange
+			}));
+		}
+	},
+
+	showTabs: function() {
+		for (let i = 0; i < this.tabs.length; i++) {
+			this.showTab(this.tabs[i].name);
+		}
 	},
 
 	update: function() {
@@ -165,6 +254,17 @@ export default PreferencesFormView.extend({
 			} else {
 				this.$el.find('.sidebar-tab').hide();
 			}
+		}
+	},
+
+	//
+	// keyboard event handling methods
+	//
+
+	onKeyDown: function(event) {
+		let activeView = this.getActiveView();
+		if (activeView && activeView.onKeyDown) {
+			activeView.onKeyDown(event);
 		}
 	}
 });

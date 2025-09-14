@@ -122,7 +122,7 @@ export default ItemsView.extend(_.extend({}, FileCopyable, {
 	filter: function (child) {
 		if (child.isHidden()) {
 			let preferences = child.parent.options.preferences;
-			return preferences? preferences.get('show_hidden_files') : false;
+			return preferences? preferences.includes('options', 'hidden_files') : false;
 		} else {
 			return true;
 		}

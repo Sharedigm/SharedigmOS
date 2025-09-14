@@ -28,13 +28,15 @@ $map-icon-shadow: drop-shadow(2px 2px 2px rgba(black, 25%));
 //
 
 .item {
-	.geoorientation.marker {
+	.geo-orientation.marker {
 
 		// only show geo-orientation markers on map
 		//
 		display: none;
 
 		i {
+			color: white;
+			
 			&.fa-location-arrow {
 				transform: rotate(-45deg);
 			}
@@ -88,7 +90,7 @@ $map-icon-shadow: drop-shadow(2px 2px 2px rgba(black, 25%));
 	.item {
 		position: absolute;
 
-		.geoorientation.marker {
+		.geo-orientation.marker {
 			display: inline-block;
 		}
 
@@ -281,7 +283,7 @@ $map-icon-shadow: drop-shadow(2px 2px 2px rgba(black, 25%));
 	}
 
 	&.hide-geo-orientations {
-		.geoorientation.marker {
+		.geo-orientation.marker {
 			display: none !important;
 		}
 	}

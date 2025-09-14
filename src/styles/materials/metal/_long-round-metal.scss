@@ -174,6 +174,16 @@ $specular-strength: 100%;
 	//
 	background-color: lighting.darken($color, 50%);
 
+	// borders
+	//
+	@if ($border-style == inset) {
+		border-color: lighting.lighten($color, 10%);
+	} @else if ($border-style == outset) {
+		border-color: lighting.darken($color, 10%);
+	} @else if ($border-style != none) {
+		border-color: $color;
+	}
+
 	// overlay layer
 	//
 	position: relative;
@@ -207,16 +217,6 @@ $specular-strength: 100%;
 				transparent 66%,
 				lighting.lighten($color, 10%) 100%) no-repeat;
 	}
-
-	// borders
-	//
-	@if ($border-style == inset) {
-		border-color: lighting.lighten($color, 10%);
-	} @else if ($border-style == outset) {
-		border-color: lighting.darken($color, 10%);
-	} @else if ($border-style != none) {
-		border-color: $color;
-	}
 }
 
 @mixin vertical-multilayer-shade($color: white, $border-radius: 50%, $border-style: outset, $border-width: 2px) {
@@ -244,6 +244,16 @@ $specular-strength: 100%;
 	// diffuse
 	//
 	background-color: lighting.darken($color, 50%);
+
+	// borders
+	//
+	@if ($border-style == inset) {
+		border-color: lighting.lighten($color, 10%);
+	} @else if ($border-style == outset) {
+		border-color: lighting.darken($color, 10%);
+	} @else if ($border-style != none) {
+		border-color: $color;
+	}
 
 	// overlay layer
 	//
@@ -286,16 +296,6 @@ $specular-strength: 100%;
 			linear-gradient(to right,
 				transparent 66%,
 				lighting.lighten($color, 10%) 100%) no-repeat;
-	}
-
-	// borders
-	//
-	@if ($border-style == inset) {
-		border-color: lighting.lighten($color, 10%);
-	} @else if ($border-style == outset) {
-		border-color: lighting.darken($color, 10%);
-	} @else if ($border-style != none) {
-		border-color: $color;
 	}
 }
 
@@ -443,6 +443,16 @@ $specular-strength: 100%;
 	//
 	background-color: lighting.darkened($color, 50%);
 
+	// borders
+	//
+	@if ($border-style == inset) {
+		border-color: lighting.lightened($color, 10%);
+	} @else if ($border-style == outset) {
+		border-color: lighting.darkened($color, 10%);
+	} @else if ($border-style != none) {
+		border-color: $color;
+	}
+
 	// overlay layer
 	//
 	position: relative;
@@ -476,16 +486,6 @@ $specular-strength: 100%;
 				transparent 66%,
 				lighting.lightened($color, 10%) 100%) no-repeat;
 	}
-
-	// borders
-	//
-	@if ($border-style == inset) {
-		border-color: lighting.lightened($color, 10%);
-	} @else if ($border-style == outset) {
-		border-color: lighting.darkened($color, 10%);
-	} @else if ($border-style != none) {
-		border-color: $color;
-	}
 }
 
 @mixin vertical-multilayer-shaded($color: white, $border-radius: 50%, $border-style: outset, $border-width: 2px) {
@@ -513,6 +513,16 @@ $specular-strength: 100%;
 	// diffuse
 	//
 	background-color: lighting.darkened($color, 50%);
+
+	// borders
+	//
+	@if ($border-style == inset) {
+		border-color: lighting.lightened($color, 10%);
+	} @else if ($border-style == outset) {
+		border-color: lighting.darkened($color, 10%);
+	} @else if ($border-style != none) {
+		border-color: $color;
+	}
 
 	// overlay layer
 	//
@@ -555,15 +565,5 @@ $specular-strength: 100%;
 			linear-gradient(to right,
 				transparent 66%,
 				lighting.lightened($color, 10%) 100%) no-repeat;
-	}
-
-	// borders
-	//
-	@if ($border-style == inset) {
-		border-color: lighting.lightened($color, 10%);
-	} @else if ($border-style == outset) {
-		border-color: lighting.darkened($color, 10%);
-	} @else if ($border-style != none) {
-		border-color: $color;
 	}
 }

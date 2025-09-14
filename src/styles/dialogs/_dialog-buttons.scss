@@ -66,15 +66,15 @@ $mobile-min-dialog-button-width: buttons.$mobile-min-width;
 					margin: auto;
 					margin-top: -1px;
 
+					// counter Bootstrap
+					//
+					opacity: 1;
+
 					// dialog button spacing
 					//
 					&:not([style*="display:none"]) + button {
 						margin-left: 10px;
 					}
-
-					// counter Bootstrap
-					//
-					opacity: 1;
 
 					&:first-child {
 						margin-left: 0;

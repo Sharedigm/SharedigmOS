@@ -32,7 +32,6 @@ import HeaderBarView from '../../../views/apps/profile-viewer/header-bar/header-
 import UserPanelsView from '../../../views/apps/profile-viewer/mainbar/user-panels-view.js';
 import SideBarView from '../../../views/apps/profile-viewer/sidebar/sidebar-view.js';
 import FooterBarView from '../../../views/apps/profile-viewer/footer-bar/footer-bar-view.js';
-import PreferencesFormView from '../../../views/apps/profile-viewer/forms/preferences/preferences-form-view.js'
 
 export default AppSplitView.extend(_.extend({}, ItemOpenable, ConnectionShareable, LinkShareable, {
 
@@ -738,19 +737,6 @@ export default AppSplitView.extend(_.extend({}, ItemOpenable, ConnectionShareabl
 		});
 	},
 
-	showPreferencesDialog: function() {
-		import(
-			'../../../views/apps/profile-viewer/dialogs/preferences/preferences-dialog-view.js'
-		).then((PreferencesDialogView) => {
-
-			// show preferences dialog
-			//
-			this.show(new PreferencesDialogView.default({
-				model: this.preferences
-			}));
-		});
-	},
-
 	showCheckInDialog: function(options) {
 		application.loadAppView('map_viewer', {
 
@@ -834,13 +820,4 @@ export default AppSplitView.extend(_.extend({}, ItemOpenable, ConnectionShareabl
 			this.openFile(item.model);
 		}
 	}
-}), {
-
-	//
-	// static getting methods
-	//
-
-	getPreferencesFormView: function(options) {
-		return new PreferencesFormView(options);
-	}
-});
+}));

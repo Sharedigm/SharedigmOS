@@ -119,7 +119,7 @@ export default BaseView.extend({
 		let keys = this.getLayers();
 		for (let i = 0; i < keys.length; i++) {
 			let key = keys[i];
-			let visible = layers.length > 0? layers.includes('crosshairs') : layers;
+			let visible = layers.length > 0? layers.includes(key) : layers;
 			this.setLayerVisibility(key, visible);
 		}
 	},

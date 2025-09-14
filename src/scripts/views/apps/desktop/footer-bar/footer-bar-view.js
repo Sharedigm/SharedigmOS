@@ -82,8 +82,8 @@ export default ToolbarContainerView.extend({
 	//
 
 	onRender: function() {
-		let show_run_menu = config.defaults.desktop.show_app_launcher && this.options.show_apps != false;
-		let show_pinned_apps = config.defaults.desktop.preferences.pinned_apps && this.options.show_apps != false;
+		let show_run_menu = config.settings.desktop.show_app_launcher && this.options.show_apps != false;
+		let show_pinned_apps = config.settings.desktop.preferences.pinned_apps && this.options.show_apps != false;
 
 		// for mobile, don't show both run menu and pinned apps
 		//

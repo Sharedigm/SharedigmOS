@@ -1,0 +1,198 @@
+/******************************************************************************\
+|                                                                              |
+|                                _logotype.scss                                |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+
+@use "../bootstrap/variables";
+@use "../colors/outlines";
+
+//
+// variables
+//
+
+$brand-shadow: 3px 3px 10px rgba(black, 50%);
+
+//
+// font sizes
+//
+
+$large-font-size: 7em;
+$medium-font-size: 6em;
+$small-font-size: 5em;
+$extra-small-font-size: 4em;
+$tiny-font-size: 3em;
+
+$short-large-font-size: 8em;
+$short-medium-font-size: 7em;
+$short-small-font-size: 6em;
+$short-extra-small-font-size: 5em;
+$short-tiny-font-size: 4em;
+
+$long-large-font-size: 6em;
+$long-medium-font-size: 5em;
+$long-small-font-size: 4em;
+$long-extra-small-font-size: 3em;
+$long-tiny-font-size: 2em;
+
+//
+// styles
+//
+
+.welcome.page {
+	.splash {
+		.logotype {
+			margin: auto;
+			margin-top: 0;
+			border-bottom: none;
+
+			// add shadows
+			//
+			&.shadowed {
+				text-shadow: $brand-shadow;
+			}
+
+			// brand components
+			//
+			span {
+				line-height: 1em;
+
+				// text outlines
+				//
+				&.outlined {
+					text-shadow: outlines.$extra-bold-outline;
+				}
+				&.outlined {
+					text-shadow: outlines.$extra-bold-outline;
+				}
+			}
+
+			&.multiword {
+				span {
+					display: inline-block;
+				}
+			}
+		}
+	}
+}
+
+//
+// large 
+//
+
+@media (min-width: variables.$screen-md-max) {
+	.welcome.page {
+		.splash {
+			.logotype {
+				font-size: $large-font-size;
+
+				&.short {
+					font-size: $short-large-font-size;
+				}
+
+				&.long {
+					font-size: $long-large-font-size;
+				}
+			}
+		}
+	}
+}
+
+//
+// medium 
+//
+
+@media (max-width: variables.$screen-md-max) {
+	.welcome.page {		
+		.splash {
+			.logotype {
+				font-size: $medium-font-size;
+
+				&.short {
+					font-size: $short-medium-font-size;
+				}
+
+				&.long {
+					font-size: $long-medium-font-size;
+				}
+			}
+		}
+	}
+}
+
+//
+// small
+//
+
+@media (max-width: variables.$screen-sm-max) {
+	.welcome.page {
+		.splash {
+			.logotype {
+				font-size: $small-font-size;
+
+				&.short {
+					font-size: $short-small-font-size;
+				}
+
+				&.long {
+					font-size: $long-small-font-size;
+				}
+			}
+		}
+	}
+}
+
+//
+// extra small styles
+//
+
+@media (max-width: 900px) {
+	.welcome.page {
+		.splash {
+			.logotype {
+				font-size: $extra-small-font-size;
+
+				&.short {
+					font-size: $short-extra-small-font-size;
+				}
+
+				&.long {
+					font-size: $long-extra-small-font-size;
+				}
+			}
+		}
+	}
+}
+
+//
+// tiny styles
+//
+
+@media (max-width: variables.$screen-xs-max) {
+	.welcome.page {
+		.splash {
+			.logotype {
+				font-size: $tiny-font-size;
+
+				&.short {
+					font-size: $short-tiny-font-size;
+				}
+
+				&.long {
+					font-size: $long-tiny-font-size;
+				}
+			}
+		}
+	}
+}

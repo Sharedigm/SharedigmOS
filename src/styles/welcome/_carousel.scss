@@ -1,0 +1,160 @@
+/******************************************************************************\
+|                                                                              |
+|                                _welcome.scss                                 |
+|                                                                              |
+|******************************************************************************|
+|                                                                              |
+|        This defines various CSS styles used in this application.             |
+|                                                                              |
+|        Author(s): Abe Megahed                                                |
+|                                                                              |
+|        This file is subject to the terms and conditions defined in           |
+|        'LICENSE.txt', which is part of this source code distribution.        |
+|                                                                              |
+|******************************************************************************|
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+\******************************************************************************/
+
+@use "../bootstrap/variables";
+@use "../layout/performance";
+@use "../colors/text-colors";
+
+//
+// variables
+//
+
+$caption-size: 1.25em;
+
+//
+// styles
+//
+
+.welcome.page {
+	.masthead {
+		.carousel {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			height: 100%;
+			margin: auto;
+
+			.flickity-viewport {
+				height: 100%;
+			}
+
+			.carousel-cell {
+				display: flex;
+				width: 100%;
+				justify-content: center;
+
+				// cover if image is provided
+				//
+				background-size: cover;
+				background-position: center;
+
+				&:not(:first-child) {
+					flex-direction: column;
+					height: 100%;
+					text-align: center;
+
+					iframe {
+						position: relative;
+						width: 90%;
+						height: 90%;
+						margin: 5%;
+						border-width: 1px;
+						border-style: solid;
+						border-color: rgba(127,127,127,0.25);
+						border-radius: 15px;
+
+						& + .caption {
+							position: absolute;
+							top: 10%;
+							left: 5%;
+							margin-top: -40px;
+						}
+					}
+				}
+
+				> .container {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					height: 100%;
+					padding: 50px 65px;
+
+					> img {
+						max-height: calc(100% - 50px);
+						max-width: 100%;
+						margin-left: auto;
+						margin-right: auto;
+					}
+				} 
+
+				> .background {
+					pointer-events: none;
+				}
+
+				.caption {
+					font-size: $caption-size;
+					margin-top: 10px;
+
+					img {
+						height: 50px;
+					}
+				}
+			}
+
+			.flickity-page-dots {
+				position: absolute;
+				padding: 10px;
+				pointer-events: none;
+				bottom: 0;
+
+				.dot {
+					pointer-events: auto;
+				}
+			}
+		}
+	}
+
+	.masthead.viewport-relative {
+		.carousel {
+			.flickity-viewport {
+				height: 100% !important;
+			}
+
+			.carousel-cell {
+				height: 100% !important;
+			}
+		}
+	}
+
+	//
+	// content carousels
+	//
+
+	.apps .flickity-viewport {
+		height: 150px !important;
+	}
+}
+
+//
+// extra small styles
+//
+
+@media (max-width: variables.$screen-xs-min) {
+	.welcome.page {
+		.masthead {
+			.carousel {
+				iframe + .caption {
+					display: none;
+				}
+
+				.flickity-page-dots {
+					bottom: 10px;
+				}
+			}
+		}
+	}
+}

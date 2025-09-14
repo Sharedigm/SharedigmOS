@@ -129,7 +129,7 @@ export default BaseView.extend(_.extend({}, ItemDroppable, Highlightable, Timeab
 			// set dialog window size
 			//
 			if (config.apps[this.name].window_size) {
-				this.size = config.defaults.dialogs.sizes[config.apps[this.name].window_size];
+				this.size = config.settings.defaults.dialogs.sizes[config.apps[this.name].window_size];
 			}
 		}
 
@@ -225,11 +225,16 @@ export default BaseView.extend(_.extend({}, ItemDroppable, Highlightable, Timeab
 	//
 
 	getApp: function() {
-		return this.preferences.app;
+		if (this.preferences) {
+			return this.preferences.app;
+		}
 	},
 
 	getName: function() {
-		return config.apps[this.getApp()].name;
+		let app = this.getApp();
+		if (app && config.apps[app]) {
+			return config.apps[app].name;
+		}
 	},
 
 	getPageOrientation: function() {
@@ -333,7 +338,7 @@ export default BaseView.extend(_.extend({}, ItemDroppable, Highlightable, Timeab
 			// window options
 			//
 			case 'window_size':
-				this.dialog.setSize(config.defaults.dialogs.sizes[value]);
+				this.dialog.setSize(config.settings.defaults.dialogs.sizes[value]);
 				break;
 
 			// other options
@@ -363,14 +368,14 @@ export default BaseView.extend(_.extend({}, ItemDroppable, Highlightable, Timeab
 
 		// add maximized option
 		//
-		if (launchOptions.maximized == undefined && preferences.has('maximized')) {
-			launchOptions.maximized = preferences.get('maximized');
+		if (launchOptions.maximized == undefined) {
+			launchOptions.maximized = preferences.includes('window_state', 'maximized');
 		}
 
 		// add full screen option
 		//
-		if (launchOptions.full_screen == undefined && preferences.has('full_screen')) {
-			launchOptions.full_screen = preferences.get('full_screen');
+		if (launchOptions.full_screen == undefined) {
+			launchOptions.full_screen = preferences.includes('window_state', 'full_screen');
 		}
 
 		return launchOptions;

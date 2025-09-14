@@ -155,7 +155,7 @@ export default TreeView.extend(_.extend({}, DirectoryTreeViewable, FileDroppable
 	viewFilter: function (child) {
 		if (child.isHidden()) {
 			let preferences = child.parent.options.preferences;
-			return preferences? preferences.get('show_hidden_files') : false;
+			return preferences? preferences.includes('options', 'hidden_files') : false;
 		} else {
 			return true;
 		}
@@ -209,11 +209,11 @@ export default TreeView.extend(_.extend({}, DirectoryTreeViewable, FileDroppable
 		let className;
 
 		if (this.model.isAudioAlbum()) {
-			className = config.files.folders.albums.audio.font;
+			className = config.settings.files.folders.albums.audio.font;
 		} else if (this.model.isImageAlbum()) {
-			className = config.files.folders.albums.image.font;
+			className = config.settings.files.folders.albums.image.font;
 		} else if (this.model.isVideoAlbum()) {
-			className = config.files.folders.albums.video.font;
+			className = config.settings.files.folders.albums.video.font;
 		} else if (this.model.isEmpty()) {
 			className = this.isCollapsed()? this.emptyFolderIcon : this.emptyFolderOpenIcon;
 		} else {
@@ -225,7 +225,7 @@ export default TreeView.extend(_.extend({}, DirectoryTreeViewable, FileDroppable
 
 	getIcon: function() {
 		let name = this.getName().toTitleCase();
-		let icons = config.files.folders.names[name];
+		let icons = config.settings.files.folders.names[name];
 
 		// return special, custom or default icon
 		//
@@ -271,7 +271,7 @@ export default TreeView.extend(_.extend({}, DirectoryTreeViewable, FileDroppable
 
 		// apply file list icon styles
 		//
-		DirectoryListView.applyFileStyles(config.files.files.extensions);
+		DirectoryListView.applyFileStyles(config.settings.files.files.extensions);
 	},
 
 	//

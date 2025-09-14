@@ -98,9 +98,20 @@ $specular-voffset: 10%;
 	background-color:
 		lighting.darken($color, 50%);
 
+	// borders
+	//
+	@if ($border-style == inset) {
+		border-color: lighting.lighten($color, 10%);
+	} @else if ($border-style == outset) {
+		border-color: lighting.darken($color, 20%);
+	} @else if ($border-style != none) {
+		border-color: $color;
+	}
+
+	// overlay layer
+	//
 	position: relative;
 	overflow: hidden;
-
 	&:after {
 		position: absolute;
 		content: '';
@@ -131,16 +142,6 @@ $specular-voffset: 10%;
 				lighting.lighten($color, 90%) 0%,
 				lighting.lighten($color, 30%) 25%,
 				transparent 50%) no-repeat;
-	}
-
-	// borders
-	//
-	@if ($border-style == inset) {
-		border-color: lighting.lighten($color, 10%);
-	} @else if ($border-style == outset) {
-		border-color: lighting.darken($color, 20%);
-	} @else if ($border-style != none) {
-		border-color: $color;
 	}
 }
 
@@ -213,9 +214,20 @@ $specular-voffset: 10%;
 	background-color:
 		lighting.darkened($color, 50%);
 
+	// borders
+	//
+	@if ($border-style == inset) {
+		border-color: lighting.lightened($color, 10%);
+	} @else if ($border-style == outset) {
+		border-color: lighting.darkened($color, 20%);
+	} @else if ($border-style != none) {
+		border-color: $color;
+	}
+
+	// overlay layer
+	//
 	position: relative;
 	overflow: hidden;
-
 	&:after {
 		position: absolute;
 		content: '';
@@ -246,15 +258,5 @@ $specular-voffset: 10%;
 				lighting.lightened($color, 90%) 0%,
 				lighting.lightened($color, 30%) 25%,
 				transparent 50%) no-repeat;
-	}
-
-	// borders
-	//
-	@if ($border-style == inset) {
-		border-color: lighting.lightened($color, 10%);
-	} @else if ($border-style == outset) {
-		border-color: lighting.darkened($color, 20%);
-	} @else if ($border-style != none) {
-		border-color: $color;
 	}
 }

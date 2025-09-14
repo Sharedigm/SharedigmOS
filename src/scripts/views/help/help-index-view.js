@@ -56,7 +56,7 @@ export default BaseView.extend({
 			name: 'Table of Contents',
 			url: '#help',
 			top: true,
-			items: Section.parse(config.help.items, '#help')
+			items: Section.parse(config.settings.help.items, '#help')
 		});
 	},
 
@@ -66,8 +66,8 @@ export default BaseView.extend({
 
 	templateContext: function() {
 		return {
-			version: config.help.version,
-			description: config.help.description
+			version: config.settings.help.version,
+			description: config.settings.help.description
 		};
 	},
 

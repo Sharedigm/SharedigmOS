@@ -193,7 +193,7 @@ export default File.extend(_.extend({}, Containable, Countable, Nestable, {
 	// static attributes
 	//
 
-	extensions: Object.keys(config.files.volumes.extensions),
+	extensions: Object.keys(config.settings.files.volumes.extensions),
 
 	//
 	// static methods

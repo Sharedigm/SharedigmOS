@@ -42,13 +42,11 @@ body:not(.binary).colored.accented {
 
 	button {
 		&:hover {
-			@include colored-buttons.colored($hover-color);
-			@include colored-buttons.labeled($label-color);
+			@include colored-buttons.colored($hover-color, $label-color);
 		}
 
 		&.selected {
-			@include colored-btns.colored($selected-color);
-			@include colored-buttons.labeled($label-color);
+			@include colored-buttons.colored($selected-color, $label-color);
 		}
 	}
 }

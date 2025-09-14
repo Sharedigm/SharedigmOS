@@ -168,7 +168,7 @@ export default PostFormView.extend({
 			thumbnail_size: this.thumbnailSize + 'px',
 			message: HtmlUtils.textToHtml(this.model.get('message')),
 			privacy: this.model.get('public')? 'public' : 'connections',
-			sharing: config.defaults.sharing,
+			sharing: config.settings.defaults.sharing,
 
 			// capabilities
 			//

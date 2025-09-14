@@ -1,0 +1,88 @@
+{
+	"general": {
+		"view_kind": {
+			"phone": "cards",
+			"tablet": "cards",
+			"desktop": "icons"
+		},
+		"tile_size": "medium",
+		"detail_kind": {
+			"phone": "size",
+			"tablet": "size",
+			"desktop": null
+		},
+		"date_format": "date_only",
+		"sort_kind": "name",
+		"sort_order": "increasing",
+		"open_folders": "same_window",
+		"share_invitation_message": "Check this out!",
+		"toolbars": {
+			"nav": true,
+			"sharing": false
+		}
+	},
+	"display": {
+		"panes": {
+			"sidebar": true,
+			"desktop_sidebar": false
+		},
+		"sidebar_size": {
+			"phone": 0,
+			"tablet": 25,
+			"desktop": 25
+		},
+		"sidebar_min_size": {
+			"phone": 0,
+			"tablet": 175,
+			"desktop": 175
+		},
+		"sidebar_panels": {
+			"clipboard": false,
+			"favorites": true,
+			"files": false,
+			"shared": true
+		},
+		"sidebar_view_kind": {
+			"phone": "lists",
+			"tablet": "lists",
+			"desktop": "lists"
+		},
+	},
+	"window": {
+		"window_size": "medium",
+		"window_state": {
+			"maximized": false,
+			"full_screen": false	
+		}
+	},
+	"files": {
+		"properties": {
+			"places": true,
+			"links": true,
+			"shares": true,
+			"owners": true,
+			"indices": true
+		},
+		"options": {
+			"hidden_files": false,
+			"file_extensions": false,
+			"thumbnails": true,
+			"image_names": true
+		},
+		"clipboard_confirm": "replace"
+	},
+	"maps": {
+		"map_mode": "hybrid",
+		"map_view_kind": {
+			"phone": "icons",
+			"tablet": "icons",
+			"desktop": "icons"
+		},
+		"show_item_names": true,
+		"show_geo_orientations": true
+	},
+	"slide_show": {
+		"slide_duration": 2,
+		"slide_looping": true
+	}
+}

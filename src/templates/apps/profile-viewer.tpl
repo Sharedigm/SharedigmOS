@@ -1,18 +1,18 @@
-<h1><i class="<%= config.apps['profile_viewer'].icon %>"></i><%= config.apps['profile_viewer'].name %></h1>
+<h1><i class="<%= config.apps.profile_viewer.icon %>"></i><%= config.apps.profile_viewer.name %></h1>
 
 <ol class="breadcrumb">
 	<li><a href="#"><i class="fa fa-home"></i>Home</a></li>
 	<li><a href="#apps"><i class="fa fa-rocket"></i>Apps</a></li>
-	<li><i class="fa fa-user"></i><%= config.apps['profile_viewer'].name %></li>
+	<li><i class="fa fa-user"></i><%= config.apps.profile_viewer.name %></li>
 </ol>
 
 <div class="content">
-	<div class="attention icon colored <%= config.apps['profile_viewer'].color %>">
-		<img src="images/icons/apps/<%= config.apps['profile_viewer'].image || config.apps['profile_viewer'].app + '.svg' %>" />
+	<div class="attention icon colored <%= config.apps.profile_viewer.color %>">
+		<img src="images/icons/apps/<%= config.apps.profile_viewer.image || config.apps.profile_viewer.app + '.svg' %>" />
 	</div>
 
 	<div class="description section">
-		<p>The <%= config.apps['profile_viewer'].name %> app is used to view personal profile information about you or your connections. </p>
+		<p>The <%= config.apps.profile_viewer.name %> app is used to view personal profile information about you or your connections. </p>
 	</div>
 
 	<div class="details section">
@@ -54,11 +54,11 @@
 	
 	<h2><i class="fa fa-desktop"></i>Screen Shots</h2>
 	<div class="figure desktop-only">
-		<a href="images/info/apps/profile-viewer/profile-viewer.png" target="_blank" class="lightbox" title="<%= config.apps['profile_viewer'].name %>"><img class="dialog" src="images/info/apps/profile-viewer/profile-viewer.png" /></a>
-		<div class="caption"><%= config.apps['profile_viewer'].name %></div>
+		<a href="images/info/apps/profile-viewer/profile-viewer.png" target="_blank" class="lightbox" title="<%= config.apps.profile_viewer.name %>"><img class="dialog" src="images/info/apps/profile-viewer/profile-viewer.png" /></a>
+		<div class="caption"><%= config.apps.profile_viewer.name %></div>
 	</div>
 	<div class="figure mobile-only">
-		<a href="images/info/apps/profile-viewer/mobile/mobile-profile-viewer.png" target="_blank" class="lightbox" title="<%= config.apps['profile_viewer'].name %>"><img src="images/info/apps/profile-viewer/mobile/mobile-profile-viewer.png" /></a>
-		<div class="caption"><%= config.apps['profile_viewer'].name %></div>
+		<a href="images/info/apps/profile-viewer/mobile/mobile-profile-viewer.png" target="_blank" class="lightbox" title="<%= config.apps.profile_viewer.name %>"><img src="images/info/apps/profile-viewer/mobile/mobile-profile-viewer.png" /></a>
+		<div class="caption"><%= config.apps.profile_viewer.name %></div>
 	</div>
 </div>

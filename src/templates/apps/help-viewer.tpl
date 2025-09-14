@@ -1,18 +1,18 @@
-<h1><i class="<%= config.apps['help_viewer'].icon %>"></i><%= config.apps['help_viewer'].name %></h1>
+<h1><i class="<%= config.apps.help_viewer.icon %>"></i><%= config.apps.help_viewer.name %></h1>
 
 <ol class="breadcrumb">
 	<li><a href="#"><i class="fa fa-home"></i>Home</a></li>
 	<li><a href="#apps"><i class="fa fa-rocket"></i>Apps</a></li>
-	<li><i class="fa fa-question-circle"></i><%= config.apps['help_viewer'].name %></li>
+	<li><i class="fa fa-question-circle"></i><%= config.apps.help_viewer.name %></li>
 </ol>
 
 <div class="content">
-	<div class="attention icon colored <%= config.apps['help_viewer'].color %>">
-		<img src="images/icons/apps/<%= config.apps['help_viewer'].image || config.apps['help_viewer'].app + '.svg' %>" />
+	<div class="attention icon colored <%= config.apps.help_viewer.color %>">
+		<img src="images/icons/apps/<%= config.apps.help_viewer.image || config.apps.help_viewer.app + '.svg' %>" />
 	</div>
 
 	<div class="description section">
-		<p>The <%= config.apps['help_viewer'].name %> app lets you browse the online help pages. </p>
+		<p>The <%= config.apps.help_viewer.name %> app lets you browse the online help pages. </p>
 	</div>
 
 	<div class="details section">
@@ -37,11 +37,11 @@
 
 	<h2><i class="fa fa-desktop"></i>Screen Shots</h2>
 	<div class="figure desktop-only">
-		<a href="images/info/apps/help-viewer/help-viewer.png" target="_blank" class="lightbox" title="<%= config.apps['help_viewer'].name %>"><img class="dialog" src="images/info/apps/help-viewer/help-viewer.png" /></a>
-		<div class="caption"><%= config.apps['help_viewer'].name %></div>
+		<a href="images/info/apps/help-viewer/help-viewer.png" target="_blank" class="lightbox" title="<%= config.apps.help_viewer.name %>"><img class="dialog" src="images/info/apps/help-viewer/help-viewer.png" /></a>
+		<div class="caption"><%= config.apps.help_viewer.name %></div>
 	</div>
 	<div class="figure mobile-only">
-		<a href="images/info/apps/help-viewer/mobile/mobile-help-viewer.png" target="_blank" class="lightbox" title="<%= config.apps['help_viewer'].name %>"><img src="images/info/apps/help-viewer/mobile/mobile-help-viewer.png" /></a>
-		<div class="caption"><%= config.apps['help_viewer'].name %></div>
+		<a href="images/info/apps/help-viewer/mobile/mobile-help-viewer.png" target="_blank" class="lightbox" title="<%= config.apps.help_viewer.name %>"><img src="images/info/apps/help-viewer/mobile/mobile-help-viewer.png" /></a>
+		<div class="caption"><%= config.apps.help_viewer.name %></div>
 	</div>
 </div>

@@ -63,9 +63,6 @@ $diffuse-width: 50%;
 }
 
 @mixin multilayer-shade($color: white, $border-style: outset) {
-	position: relative;
-	overflow: hidden;
-
 	background:
 
 		// diffuse
@@ -78,6 +75,20 @@ $diffuse-width: 50%;
 	//
 	background-color: $color;
 
+	// borders
+	//
+	@if ($border-style == inset) {
+		border-color: lighting.lighten($color, 10%);
+	} @else if ($border-style == outset) {
+		border-color: lighting.darken($color, 10%);
+	} @else if ($border-style != none) {
+		border-color: $color;
+	}
+
+	// overlay layer
+	//
+	position: relative;
+	overflow: hidden;
 	&:after {
 		position: absolute;
 		content: '';
@@ -94,16 +105,6 @@ $diffuse-width: 50%;
 			linear-gradient(var(--light-direction),
 				colors.fade(white, $specular-strength) 0%,
 				transparent $specular-width) no-repeat;
-	}
-
-	// borders
-	//
-	@if ($border-style == inset) {
-		border-color: lighting.lighten($color, 10%);
-	} @else if ($border-style == outset) {
-		border-color: lighting.darken($color, 10%);
-	} @else if ($border-style != none) {
-		border-color: $color;
 	}
 }
 
@@ -142,9 +143,6 @@ $diffuse-width: 50%;
 }
 
 @mixin multilayer-shaded($color: white, $border-style: outset) {
-	position: relative;
-	overflow: hidden;
-
 	background:
 
 		// diffuse
@@ -157,6 +155,20 @@ $diffuse-width: 50%;
 	//
 	background-color: $color;
 
+	// borders
+	//
+	@if ($border-style == inset) {
+		border-color: lighting.lightened($color, 10%);
+	} @else if ($border-style == outset) {
+		border-color: lighting.darkened($color, 10%);
+	} @else if ($border-style != none) {
+		border-color: $color;
+	}
+
+	// overlay layer
+	//
+	position: relative;
+	overflow: hidden;
 	&:after {
 		position: absolute;
 		content: '';
@@ -173,15 +185,5 @@ $diffuse-width: 50%;
 			linear-gradient(to bottom,
 				colors.faded(white, $specular-strength) 0%,
 				transparent $specular-width) no-repeat;
-	}
-
-	// borders
-	//
-	@if ($border-style == inset) {
-		border-color: lighting.lightened($color, 10%);
-	} @else if ($border-style == outset) {
-		border-color: lighting.darkened($color, 10%);
-	} @else if ($border-style != none) {
-		border-color: $color;
 	}
 }

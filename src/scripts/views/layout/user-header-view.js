@@ -269,7 +269,7 @@ export default HeaderView.extend({
 
 	templateContext: function() {
 		return {
-			defaults: config.defaults,
+			defaults: config.settings.defaults,
 			branding: config.branding,
 			nav: this.options.nav,
 			thumbnail_url: this.getThumbnailUrl(),
@@ -295,6 +295,13 @@ export default HeaderView.extend({
 		} else {
 			this.hideStorageIndicator();
 		}
+
+		// add tooltip triggers
+		//
+		this.addTooltips();
+	},
+
+	onAttach: function() {
 		if (!Browser.is_mobile) {
 
 			// show connection requests dropdown
@@ -309,10 +316,6 @@ export default HeaderView.extend({
 				this.showNotifications();
 			}
 		}
-
-		// add tooltip triggers
-		//
-		this.addTooltips();
 	},
 
 	updateProfilePhoto: function() {
@@ -376,7 +379,9 @@ export default HeaderView.extend({
 
 				// show connection requests dropdown
 				//
-				this.showChildView('connection_requests', ConnectionManager.getConnectionRequestsDropdownView(this.model));
+				if (this.hasRegion('connection_requests')) {
+					this.showChildView('connection_requests', ConnectionManager.getConnectionRequestsDropdownView(this.model));
+				}
 			}
 		});
 	},
@@ -390,7 +395,9 @@ export default HeaderView.extend({
 
 				// show notifications dropdown
 				//
-				this.showChildView('notifications', NotificationCenter.getNotificationsDropdownView(this.model));
+				if (this.hasRegion('notifications')) {
+					this.showChildView('notifications', NotificationCenter.getNotificationsDropdownView(this.model));
+				}
 			}
 		});
 	},

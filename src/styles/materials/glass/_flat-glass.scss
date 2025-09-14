@@ -74,9 +74,6 @@ $reflected-size: 50%;
 }
 
 @mixin multilayer-shade($color: white, $border-style: outset, $opacity: 100%) {
-	position: relative;
-	overflow: hidden;
-
 	background:
 
 		// reflected
@@ -85,6 +82,24 @@ $reflected-size: 50%;
 			transparent 50%,
 			lighting.lighten($color, 10%) 100%) no-repeat;
 
+	// transmitted
+	//
+	background-color: colors.fade(lighting.darken($color, 20%), $opacity);
+
+	// borders
+	//
+	@if ($border-style == inset) {
+		border-color: lighting.lighten($color, 10%);
+	} @else if ($border-style == outset) {
+		border-color: lighting.darken($color, 10%);
+	} @else if ($border-style != none) {
+		border-color: $color;
+	}
+
+	// overlay layer
+	//
+	position: relative;
+	overflow: hidden;
 	&:after {
 		position: absolute;
 		content: '';
@@ -107,20 +122,6 @@ $reflected-size: 50%;
 			linear-gradient(var(--light-direction),
 				colors.fade(white, $specular-strength) 0%,
 				transparent 20%) no-repeat;
-	}
-
-	// transmitted
-	//
-	background-color: colors.fade(lighting.darken($color, 20%), $opacity);
-
-	// borders
-	//
-	@if ($border-style == inset) {
-		border-color: lighting.lighten($color, 10%);
-	} @else if ($border-style == outset) {
-		border-color: lighting.darken($color, 10%);
-	} @else if ($border-style != none) {
-		border-color: $color;
 	}
 }
 
@@ -165,9 +166,6 @@ $reflected-size: 50%;
 }
 
 @mixin multilayer-shaded($color: white, $border-style: outset, $opacity: 100%) {
-	position: relative;
-	overflow: hidden;
-
 	background:
 
 		// reflected
@@ -176,6 +174,24 @@ $reflected-size: 50%;
 			colors.faded($color, 0%) 50%,
 			lighting.lightened($color, 10%) 100%) no-repeat;
 
+	// transmitted
+	//
+	background-color: colors.faded(lighting.darkened($color, 20%), $opacity);
+
+	// borders
+	//
+	@if ($border-style == inset) {
+		border-color: lighting.lightened($color, 10%);
+	} @else if ($border-style == outset) {
+		border-color: lighting.darkened($color, 10%);
+	} @else if ($border-style != none) {
+		border-color: $color;
+	}
+
+	// overlay layer
+	//
+	position: relative;
+	overflow: hidden;
 	&:after {
 		position: absolute;
 		content: '';
@@ -198,19 +214,5 @@ $reflected-size: 50%;
 			linear-gradient(var(--light-direction),
 				colors.faded(white, $specular-strength) 0%,
 				transparent 20%) no-repeat;
-	}
-
-	// transmitted
-	//
-	background-color: colors.faded(lighting.darkened($color, 20%), $opacity);
-
-	// borders
-	//
-	@if ($border-style == inset) {
-		border-color: lighting.lightened($color, 10%);
-	} @else if ($border-style == outset) {
-		border-color: lighting.darkened($color, 10%);
-	} @else if ($border-style != none) {
-		border-color: $color;
 	}
 }

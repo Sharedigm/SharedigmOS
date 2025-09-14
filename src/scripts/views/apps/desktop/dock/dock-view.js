@@ -99,7 +99,7 @@ export default BaseView.extend(_.extend({}, AppLaunchable, {
 
 		// show child views
 		//
-		if (this.options.show_app_icons && config.defaults.desktop.show_app_launcher) {
+		if (this.options.show_app_icons && config.settings.desktop.show_app_launcher) {
 			this.showAppIcons();
 		}
 		this.showTaskIcons();

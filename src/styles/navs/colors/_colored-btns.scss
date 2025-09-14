@@ -22,9 +22,36 @@
 // mixins
 //
 
-@mixin colored($color) {
+@mixin colored($color, $label-color, $icon-color: none) {
 	background: $color;
 	border-color: $color;
+	color: $label-color;
+
+	//
+	// icon colors
+	//
+
+	@if ($icon-color == none) {
+		i {
+			color: $label-color;
+		}
+
+		svg {
+			fill: $label-color;
+		}
+	} else {
+		i {
+			color: $icon-color;
+		}
+
+		svg {
+			fill: $icon-color;
+		}
+	}
+
+	//
+	// button states
+	//
 
 	&:hover {
 		background: colors.darken($color, 10%);
@@ -37,9 +64,36 @@
 	}
 }
 
-@mixin dark-colored($color) {
+@mixin dark-colored($color, $label-color, $icon-color: none) {
 	background: $color;
 	border-color: $color;
+	color: $label-color;
+
+	//
+	// icon colors
+	//
+
+	@if ($icon-color == none) {
+		i {
+			color: $label-color;
+		}
+
+		svg {
+			fill: $label-color;
+		}
+	} else {
+		i {
+			color: $icon-color;
+		}
+
+		svg {
+			fill: $icon-color;
+		}
+	}
+
+	//
+	// button states
+	//
 
 	&:hover {
 		background: colors.lighten($color, 10%);
@@ -52,29 +106,22 @@
 	}
 }
 
-//
-// styled button labels
-//
-
-@mixin label($color) {
-	color: $color;
+@mixin labeled($labelColor) {
+	color: $labelColor;
 
 	span {
-		color: $color;
+		color: $labelColor;
 	}
-}
 
-@mixin icon($color) {
+	//
+	// icon colors
+	//
+
 	i {
-		color: $color;
+		color: $labelColor;
 	}
 
 	svg {
-		fill: $color;
+		fill: $labelColor;
 	}
-}
-
-@mixin labeled($color) {
-	@include label($color);
-	@include icon($color);
 }

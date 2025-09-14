@@ -1,17 +1,15 @@
-{
-	"items": [
-		{
-			"class": "new-window",
-			"icon": "fa fa-file",
-			"name": "New Window",
-			"shortcut": "command-enter"
-		},
-		"divider",
-		{
-			"class": "close-window",
-			"icon": "fa fa-circle-xmark",
-			"name": "Close",
-			"shortcut": "command-L"
-		}
-	]
-}
+[
+	{
+		"name": "new-window",
+		"icon": "fa fa-file",
+		"text": "New Window",
+		"shortcut": "command-enter"
+	},
+	"divider",
+	{
+		"name": "close-window",
+		"icon": "fa fa-circle-xmark",
+		"text": "Close",
+		"shortcut": "command-L"
+	}
+]

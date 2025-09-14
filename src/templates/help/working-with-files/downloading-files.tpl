@@ -11,7 +11,7 @@
 
 	<ol>
 		<li>
-			<h2><i class="fa fa-hand-grab"></i>Drag and Drop Downloading</h2>
+			<h2><i class="fa fa-hand"></i>Drag and Drop Downloading</h2>
 			<p>The quickest and easiest way to download files to your <%= application.name %> account is through drag and drop.  Simply drag files or folders from your <%= application.name %> <a href="#help/getting-started/using-desktop">Desktop</a> or a <a href="#apps/file-browser">File Browser</a> window and drop them onto your operating system's Desktop.  Your web browser will then download the file to your local file system, placing it in the folder that it uses for downloads.</p>
 
 			<div class="figure">

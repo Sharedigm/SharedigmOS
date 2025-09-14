@@ -1,18 +1,18 @@
-<h1><i class="<%= config.apps['file_browser'].icon %>"></i><%= config.apps['file_browser'].name %></h1>
+<h1><i class="<%= config.apps.file_browser.icon %>"></i><%= config.apps.file_browser.name %></h1>
 
 <ol class="breadcrumb">
 	<li><a href="#"><i class="fa fa-home"></i>Home</a></li>
 	<li><a href="#apps"><i class="fa fa-rocket"></i>Apps</a></li>
-	<li><i class="fa fa-file"></i><%= config.apps['file_browser'].name %></li>
+	<li><i class="fa fa-file"></i><%= config.apps.file_browser.name %></li>
 </ol>
 
 <div class="content">
-	<div class="attention icon colored <%= config.apps['file_browser'].color %>">
-		<img src="images/icons/apps/<%= config.apps['file_browser'].image || config.apps['file_browser'].app + '.svg' %>" />
+	<div class="attention icon colored <%= config.apps.file_browser.color %>">
+		<img src="images/icons/apps/<%= config.apps.file_browser.image || config.apps.file_browser.app + '.svg' %>" />
 	</div>
 
 	<div class="description section">
-		<p>The <%= config.apps['file_browser'].name %> app lets you view, arrange, open, and manage your files. </p>
+		<p>The <%= config.apps.file_browser.name %> app lets you view, arrange, open, and manage your files. </p>
 	</div>
 
 	<div class="details section">
@@ -44,11 +44,11 @@
 	
 	<h2><i class="fa fa-desktop"></i>Screen Shots</h2>
 	<div class="figure desktop-only">
-		<a href="images/info/apps/file-browser/file-browser.png" target="_blank" class="lightbox" title="<%= config.apps['file_browser'].name %>"><img class="dialog" src="images/info/apps/file-browser/file-browser.png" /></a>
-		<div class="caption"><%= config.apps['file_browser'].name %></div>
+		<a href="images/info/apps/file-browser/file-browser.png" target="_blank" class="lightbox" title="<%= config.apps.file_browser.name %>"><img class="dialog" src="images/info/apps/file-browser/file-browser.png" /></a>
+		<div class="caption"><%= config.apps.file_browser.name %></div>
 	</div>
 	<div class="figure mobile-only">
-		<a href="images/info/apps/file-browser/mobile/mobile-file-browser.png" target="_blank" class="lightbox" title="<%= config.apps['file_browser'].name %>"><img src="images/info/apps/file-browser/mobile/mobile-file-browser.png" /></a>
-		<div class="caption"><%= config.apps['file_browser'].name %></div>
+		<a href="images/info/apps/file-browser/mobile/mobile-file-browser.png" target="_blank" class="lightbox" title="<%= config.apps.file_browser.name %>"><img src="images/info/apps/file-browser/mobile/mobile-file-browser.png" /></a>
+		<div class="caption"><%= config.apps.file_browser.name %></div>
 	</div>
 </div>

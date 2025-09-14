@@ -1,0 +1,36 @@
+[
+	{
+		"name": "panes",
+		"icon": "fa fa-pause",
+		"text": "Panes",
+		"kind": "multiple-answer",
+		"options": {
+			"sidebar": "Sidebar"
+		},
+		"help": "This is which sidebar panes to display."
+	},
+	{
+		"name": "sidebar-size",
+		"icon": "fa fa-arrows-alt-h",
+		"text": "Sidebar Size (%)",
+		"kind": "range",
+		"options": {
+			"min": 0,
+			"max": 100,
+			"step": 5
+		},
+		"help": "This is the size of the sizebar window pane."
+	},
+	{
+		"name": "sidebar-min-size",
+		"icon": "fa fa-arrows-alt-h",
+		"text": "Sidebar Min Size",
+		"kind": "range",
+		"options": {
+			"min": 0,
+			"max": 500,
+			"step": 25
+		},
+		"help": "This is the minimum size of the sizebar window pane."
+	}
+]

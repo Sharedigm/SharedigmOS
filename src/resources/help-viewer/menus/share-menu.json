@@ -1,9 +1,7 @@
-{
-	"items": [
-		{
-			"class": "share-by-link",
-			"icon": "fa fa-link",
-			"name": "By Link"
-		}
-	]
-}
+[
+	{
+		"name": "share-by-link",
+		"icon": "fa fa-link",
+		"text": "By Link"
+	}
+]

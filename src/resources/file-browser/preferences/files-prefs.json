@@ -1,0 +1,39 @@
+[
+	{
+		"name": "properties",
+		"icon": "fa fa-list",
+		"text": "Properties",
+		"kind": "multiple-answer",
+		"options": {
+			"places": "Places",
+			"links": "Links",
+			"shares": "Shares",
+			"indices": "Indices"
+		},
+		"help": "This determines which properties are to be shown or hidden."
+	},
+	{
+		"name": "options",
+		"icon": "fa fa-check",
+		"text": "Options",
+		"kind": "multiple-answer",
+		"options": {
+			"hidden-files": "Hidden Files",
+			"file-extensions": "File Extensions",
+			"thumbnails": "Thumbnails",
+			"image-names": "Image Names"
+		},
+		"help": "This determines which options are to be shown or hidden."
+	},
+	{
+		"name": "clipboard-confirm",
+		"icon": "fa fa-clipboard",
+		"text": "Clipboard ",
+		"kind": "multiple-choice",
+		"options": {
+			"replace": "Replace",
+			"confirm": "Confirm"
+		},
+		"help": "This determines what to do if an item to be cut or copied already exists on the clipboard."
+	}
+]

@@ -1,0 +1,45 @@
+{
+	"general": {
+		"view_kind": {
+			"phone": "cards",
+			"tablet": "cards",
+			"desktop": "icons"
+		},
+		"detail_kind": "location",
+		"tile_size": "medium",
+		"date_format": "date_only",
+		"sort_kind": "name",
+		"sort_order": "increasing",
+		"map_mode": "hybrid",
+		"map_view_kind": "icons",
+		"toolbars": {
+			"nav": true,
+			"search": true
+		},
+	},
+	"display": {
+		"panes": {
+			"sidebar": true
+		},
+		"sidebar_size": {
+			"phone": 0,
+			"tablet": 25,
+			"desktop": 25
+		},
+		"sidebar_min_size": {
+			"phone": 0,
+			"tablet": 175,
+			"desktop": 175
+		},
+		"sidebar_panels": {
+			"actions": true
+		}
+	},
+	"window": {
+		"window_size": "medium",
+		"window_state": {
+			"maximized": false,
+			"full_screen": false
+		}
+	}
+}

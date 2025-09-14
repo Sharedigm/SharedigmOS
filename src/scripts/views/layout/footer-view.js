@@ -81,7 +81,7 @@ export default BaseView.extend({
 		}
 		if (attributes.font) {
 			$(element).find('.branding').css({
-				'font-family': config.fonts[attributes.font]['font-family']
+				'font-family': config.settings.fonts[attributes.font]['font-family']
 			});	
 		}
 	},

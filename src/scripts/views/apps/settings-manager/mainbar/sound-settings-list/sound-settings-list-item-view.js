@@ -60,7 +60,7 @@ export default TableListItemView.extend({
 
 	templateContext: function() {
 		return {
-			options: Object.keys(config.sounds)
+			options: Object.keys(config.settings.sounds)
 		};
 	},
 

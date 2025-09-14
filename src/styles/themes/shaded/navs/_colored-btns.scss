@@ -36,27 +36,15 @@ body:not(.binary) {
 			//
 
 			&.success {
-				@include colored-buttons.colored(special-colors.$success-color);
-
-				&:hover {
-					@include colored-buttons.labeled(white);
-				}
+				@include colored-buttons.colored(special-colors.$success-color, white);
 			}
 
 			&.caution {
-				@include colored-buttons.colored(special-colors.$caution-color);
-
-				&:hover {
-					@include colored-buttons.labeled(white);
-				}
+				@include colored-buttons.colored(special-colors.$caution-color, white);
 			}
 
 			&.warning {
-				@include colored-buttons.colored(special-colors.$warning-color);
-
-				&:hover {
-					@include colored-buttons.labeled(white);
-				}
+				@include colored-buttons.colored(special-colors.$warning-color, white);
 			}
 		}
 	}

@@ -67,10 +67,10 @@ export default HelpPageView.extend({
 
 	templateContext: function() {
 		return {
-			logo: config.help.logo.src,
+			logo: config.settings.help.logo.src,
 			logotype: config.branding.welcome.splash.brand.logotype,
-			name: config.help.name,
-			version: config.help.version
+			name: config.settings.help.name,
+			version: config.settings.help.version
 		};
 	},
 
@@ -78,12 +78,11 @@ export default HelpPageView.extend({
 
 		// set logo styles
 		//
-		DomUtils.setBackgroundStyles(this.$el.find('.logo'), config.help.logo);
-		DomUtils.setBorderStyles(this.$el.find('.logo'), config.help.logo);
+		this.setLogoStyles(this.$el.find('.logo'), config.settings.help.logo);
 
 		// set logo image styles
 		//
-		if (config.help.logo.rendering == 'pixelated') {
+		if (config.settings.help.logo.rendering == 'pixelated') {
 			this.$el.find('img').addClass('pixelated');
 		}
 
@@ -94,26 +93,36 @@ export default HelpPageView.extend({
 				config.branding.welcome.splash.brand.logotype.font) {
 				application.loadFont(config.branding.welcome.splash.brand.logotype.font);
 			}
-			this.setLogoTypeStyles(config.branding.welcome.splash.brand.logotype);
+			this.setLogoTypeStyles(this.$el.find('.brand'), config.branding.welcome.splash.brand.logotype);
 		}
 	},
 
-	setLogoTypeStyles: function(logotype) {
-		if (!logotype) {
+	setLogoStyles: function(element, attributes) {
+		if (!attributes) {
+			return;
+		}
+
+		DomUtils.setBlockStyles(element, attributes);
+		DomUtils.setBorderStyles(element, attributes);
+		DomUtils.setBackgroundStyles(element, attributes);
+	},
+
+	setLogoTypeStyles: function(element, attributes) {
+		if (!attributes) {
 			return;
 		}
 
 		// set font styles
 		//
-		DomUtils.setTitleStyles(this.$el.find('.brand'), logotype);
+		DomUtils.setTitleStyles(element, attributes);
 
 		// set logotype name styles
 		//
-		if (logotype.names) {
-			let elements = this.$el.find('.brand > span');
-			let keys = Object.keys(logotype.names);
+		if (attributes.names) {
+			let elements = $(element).find('> span');
+			let keys = Object.keys(attributes.names);
 			for (let i = 0; i < keys.length; i++) {
-				DomUtils.setTitleStyles($(elements[i]), logotype.names[keys[i]]);
+				DomUtils.setTitleStyles($(elements[i]), attributes.names[keys[i]]);
 			}
 		}
 	},

@@ -1,0 +1,21 @@
+[
+	{
+		"name": "slide-duration",
+		"icon": "fa fa-clock",
+		"text": "Slide Duration (s)",
+		"kind": "range",
+		"options": {
+			"min": 1,
+			"max": 10,
+			"step": 1
+		},
+		"help": "This is how long to display each image when in slide show mode."
+	},
+	{
+		"name": "slide-looping",
+		"icon": "fa fa-redo",
+		"text": "Slide Looping",
+		"kind": "true-false",
+		"help": "This is whether or not to play the slide show in a repeating loop."
+	}
+]

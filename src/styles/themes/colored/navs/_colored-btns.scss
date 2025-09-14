@@ -49,12 +49,10 @@ body:not(.binary).colored.colored {
 		//
 
 		&.btn-primary {
-			@include colored-btns.colored($primary-color);
-			@include colored-btns.labeled($primary-label-color);
+			@include colored-btns.colored($primary-color, $primary-label-color);
 
 			&:disabled {
-				@include colored-btns.colored($disabled-primary-color);
-				@include colored-btns.labeled($disabled-primary-label-color);
+				@include colored-btns.colored($disabled-primary-color, $disabled-primary-label-color);
 			}
 		}
 	}
@@ -66,18 +64,15 @@ body:not(.binary).colored.colored {
 	.btn:not(.btn-primary):not(.colored):not(:disabled) {
 
 		&.success {
-			@include colored-buttons.colored(colored-forms.$success-color);
-			@include colored-buttons.labeled(white);
+			@include colored-buttons.colored(colored-forms.$success-color, white);
 		}
 
 		&.caution {
-			@include colored-buttons.colored(colored-forms.$caution-color);
-			@include colored-buttons.labeled(white);
+			@include colored-buttons.colored(colored-forms.$caution-color, white);
 		}
 
 		&.warning {
-			@include colored-buttons.colored(colored-forms.$warning-color);
-			@include colored-buttons.labeled(white);
+			@include colored-buttons.colored(colored-forms.$warning-color, white);
 		}
 	}
 }

@@ -40,6 +40,9 @@ export default {
 		if (!numFiles) {
 			return this.get('is_empty');
 		}
+		if (!numDirectories) {
+			numDirectories = {};
+		}
 
 		// set optional parameter defaults
 		//

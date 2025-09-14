@@ -1,19 +1,17 @@
-{
-	"menus": [
-		{
-			"class": "file",
-			"icon": "fa fa-file",
-			"name": "File"
-		},
-		{
-			"class": "view",
-			"icon": "fa fa-eye",
-			"name": "View"
-		},
-		{
-			"class": "help",
-			"icon": "fa fa-question-circle",
-			"name": "Help"
-		}
-	]
-}
+[
+	{
+		"name": "file",
+		"icon": "fa fa-file",
+		"text": "File"
+	},
+	{
+		"name": "view",
+		"icon": "fa fa-eye",
+		"text": "View"
+	},
+	{
+		"name": "help",
+		"icon": "fa fa-question-circle",
+		"text": "Help"
+	}
+]

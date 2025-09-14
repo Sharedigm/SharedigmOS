@@ -1,44 +1,42 @@
-{
-	"menus": [
-		{
-			"class": "file",
-			"icon": "fa fa-file",
-			"name": "File"
-		},
-		{
-			"class": "edit",
-			"icon": "fa fa-pencil-alt",
-			"name": "Edit"
-		},
-		{
-			"class": "select",
-			"icon": "fa fa-mouse-pointer",
-			"name": "Select"
-		},
-		{
-			"class": "view",
-			"icon": "fa fa-eye",
-			"name": "View"
-		},
-		{
-			"class": "sort",
-			"icon": "fa fa-sort",
-			"name": "Sort"
-		},
-		{
-			"class": "search",
-			"icon": "fa fa-search",
-			"name": "Search"
-		},
-		{
-			"class": "share",
-			"icon": "fa fa-share",
-			"name": "Share"
-		},
-		{
-			"class": "help",
-			"icon": "fa fa-question-circle",
-			"name": "Help"
-		}
-	]
-}
+[
+	{
+		"name": "file",
+		"icon": "fa fa-file",
+		"text": "File"
+	},
+	{
+		"name": "edit",
+		"icon": "fa fa-pencil-alt",
+		"text": "Edit"
+	},
+	{
+		"name": "select",
+		"icon": "fa fa-mouse-pointer",
+		"text": "Select"
+	},
+	{
+		"name": "view",
+		"icon": "fa fa-eye",
+		"text": "View"
+	},
+	{
+		"name": "sort",
+		"icon": "fa fa-sort",
+		"text": "Sort"
+	},
+	{
+		"name": "search",
+		"icon": "fa fa-search",
+		"text": "Search"
+	},
+	{
+		"name": "share",
+		"icon": "fa fa-share",
+		"text": "Share"
+	},
+	{
+		"name": "help",
+		"icon": "fa fa-question-circle",
+		"text": "Help"
+	}
+]

@@ -64,7 +64,7 @@ export default FormModalView.extend({
 	// dialog attributes
 	//
 
-	size: config.defaults.dialogs.sizes.tiny,
+	size: config.settings.defaults.dialogs.sizes.tiny,
 
 	//
 	// setting methods

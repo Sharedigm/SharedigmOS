@@ -289,7 +289,7 @@ export default BaseView.extend({
 		//
 		if (config.branding.page.header2 && config.branding.page.header2.font) {
 			application.loadFont(config.branding.page.header2.font);
-			this.$el.find('h2').css('font-family', config.fonts[config.branding.page.header2.font]['font-family']);
+			this.$el.find('h2').css('font-family', config.settings.fonts[config.branding.page.header2.font]['font-family']);
 			if (config.branding.page.header2.size) {
 				this.$el.find('h2').css('font-size', config.branding.page.header2.size);
 			}

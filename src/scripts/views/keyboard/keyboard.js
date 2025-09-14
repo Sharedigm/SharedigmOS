@@ -101,7 +101,7 @@ export default BaseModel.extend({
 	// static attributes
 	//
 
-	keyCodes: config.keycodes,
+	keyCodes: config.settings.keycodes,
 	arrowKeys: [],
 
 	//

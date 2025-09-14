@@ -293,7 +293,7 @@ export default ModelView.extend(_.extend({}, Collapsable, Selectable, FileDownlo
 			model: imageFile,
 			collection: new Items([imageFile]),
 			defaults: {
-				show_sidebar: false
+				panes: []
 			}
 		});
 	},

@@ -1,0 +1,11 @@
+{
+	"name": "Accounts",
+	"icon": "fa fa-users",
+	"category": "configuration",
+	"platform": "all",
+	"access": "admin",
+	"disabled": false,
+	"hidden": false,
+	"args": true,
+	"color": "grey"
+}

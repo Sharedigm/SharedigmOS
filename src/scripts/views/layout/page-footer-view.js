@@ -4,15 +4,15 @@
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines a page footer and associated content.                    |
+|       This defines a page footer and associated content.                     |
 |                                                                              |
-|        Author(s): Abe Megahed                                                |
+|       Author(s): Abe Megahed                                                 |
 |                                                                              |
-|        This file is subject to the terms and conditions defined in           |
-|        'LICENSE.md', which is part of this source code distribution.         |
+|       This file is subject to the terms and conditions defined in            |
+|       'LICENSE.md', which is part of this source code distribution.          |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
+|       Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com         |
 \******************************************************************************/
 
 import FooterView from '../../views/layout/footer-view.js';
@@ -117,12 +117,14 @@ export default FooterView.extend({
 	//
 
 	setLogoStyles: function(element, attributes) {
-		if (attributes.background) {
-			$(element).css('background', attributes.background);
+		if (!attributes) {
+			return;
 		}
 
+		DomUtils.setBlockStyles(element, attributes);
 		DomUtils.setBorderStyles(element, attributes);
 		DomUtils.setImageStyles(element, attributes);
+		DomUtils.setBackgroundStyles(element, attributes);
 
 		// allow image clipping
 		//

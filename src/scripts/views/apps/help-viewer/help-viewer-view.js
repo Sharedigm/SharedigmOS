@@ -27,7 +27,6 @@ import HelpCoverView from '../../../views/apps/help-viewer/mainbar/help-cover-vi
 import HelpPageView from '../../../views/apps/help-viewer/mainbar/help-page-view.js';
 import HelpSectionView from '../../../views/apps/help-viewer/mainbar/help-section-view.js';
 import FooterBarView from '../../../views/apps/help-viewer/footer-bar/footer-bar-view.js';
-import PreferencesFormView from '../../../views/apps/help-viewer/forms/preferences/preferences-form-view.js'
 import Browser from '../../../utilities/web/browser.js';
 import AddressBar from '../../../utilities/web/address-bar.js';
 
@@ -55,7 +54,7 @@ export default AppSplitView.extend(_.extend({}, LinkShareable, {
 		this.model = new Section({
 			url: '#help',
 			top: true,
-			items: Section.parse(config.help.items, '#help', this.index)
+			items: Section.parse(config.settings.help.items, '#help', this.index)
 		});
 	},
 
@@ -483,23 +482,6 @@ export default AppSplitView.extend(_.extend({}, LinkShareable, {
 	getFooterBarView: function() {
 		return new FooterBarView();
 	},
-	
-	//
-	// dialog rendering methods
-	//
-
-	showPreferencesDialog: function() {
-		import(
-			'../../../views/apps/help-viewer/dialogs/preferences/preferences-dialog-view.js'
-		).then((PreferencesDialogView) => {
-
-			// show preferences dialog
-			//
-			this.show(new PreferencesDialogView.default({
-				model: this.preferences
-			}));
-		});
-	},
 
 	//
 	// mouse event handling methods
@@ -508,13 +490,4 @@ export default AppSplitView.extend(_.extend({}, LinkShareable, {
 	onClickLink: function(url) {
 		this.showUrl(url);
 	}
-}), {
-
-	//
-	// static getting methods
-	//
-
-	getPreferencesFormView: function(options) {
-		return new PreferencesFormView(options);
-	}
-});
+}));

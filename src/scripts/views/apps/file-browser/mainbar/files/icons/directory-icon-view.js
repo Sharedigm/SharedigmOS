@@ -109,21 +109,21 @@ export default ItemIconView.extend(_.extend({}, FileDroppable, {
 
 	getDefaultIconName: function() {
 		if (this.model.isAudioAlbum()) {
-			return config.files.folders.albums.audio.icon;
+			return config.settings.files.folders.albums.audio.icon;
 		} else if (this.model.isImageAlbum()) {
-			return config.files.folders.albums.image.icon;
+			return config.settings.files.folders.albums.image.icon;
 		} else if (this.model.isVideoAlbum()) {
-			return config.files.folders.albums.video.icon;
+			return config.settings.files.folders.albums.video.icon;
 		} else if (this.model.isEmpty()) {
-			return config.files.folders.icon[0];
+			return config.settings.files.folders.icon[0];
 		} else {
-			return config.files.folders.icon[1];
+			return config.settings.files.folders.icon[1];
 		}
 	},
 
 	getIconName: function() {
 		let name = this.model.getName().toTitleCase();
-		let icons = config.files.folders.names[name];
+		let icons = config.settings.files.folders.names[name];
 
 		// return special, custom or default icon name
 		//
@@ -196,7 +196,7 @@ export default ItemIconView.extend(_.extend({}, FileDroppable, {
 
 	getIconId: function() {
 		let name = this.model.getName().toTitleCase();
-		let icons = config.files.folders.names[name];
+		let icons = config.settings.files.folders.names[name];
 		
 		// return special, custom or default icon id
 		//

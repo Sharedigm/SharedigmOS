@@ -151,15 +151,15 @@ export default DirectoryListItemView.extend(_.extend({}, FileDroppable, {
 		let className;
 
 		if (this.model.isAudioAlbum()) {
-			className = config.files.folders.albums.audio.font;
+			className = config.settings.files.folders.albums.audio.font;
 		} else if (this.model.isImageAlbum()) {
-			className = config.files.folders.albums.image.font;
+			className = config.settings.files.folders.albums.image.font;
 		} else if (this.model.isVideoAlbum()) {
-			className = config.files.folders.albums.video.font;
+			className = config.settings.files.folders.albums.video.font;
 		} else if (this.model.isEmpty()) {
-			className = config.files.folders.font[0];
+			className = config.settings.files.folders.font[0];
 		} else {
-			className = config.files.folders.font[1];
+			className = config.settings.files.folders.font[1];
 		}
 
 		return '<i class="' + className + '"></i>';
@@ -167,7 +167,7 @@ export default DirectoryListItemView.extend(_.extend({}, FileDroppable, {
 
 	getIcon: function() {
 		let name = this.model.getName().toTitleCase();
-		let icons = config.files.folders.names[name];
+		let icons = config.settings.files.folders.names[name];
 
 		// return special, custom or default icon
 		//

@@ -80,6 +80,14 @@ form {
 	.percentage::after {
 		content: "%"
 	}
+
+	//
+	// multiple forms
+	//
+
+	& + form {
+		margin-top: 10px;
+	}
 }
 
 //

@@ -24,8 +24,8 @@ export default HelpMenuView.extend({
 	//
 
 	events: {
-		'click .view-about-info': 'onClickViewAboutInfo',
-		'click .view-app': 'onClickViewApp',
+		'click .view-about': 'onClickViewAbout',
+		'click .view-help': 'onClickViewHelp',
 		'click .view-topic': 'onClickViewTopic',
 		'click .contact-us': 'onClickContactUs'
 	}

@@ -1,28 +1,26 @@
-{
-	"items": [
-		{
-			"class": "select-first",
-			"icon": "fa fa-fast-backward",
-			"name": "First",
-			"shortcut": "up arrow"
-		},
-		{
-			"class": "select-prev",
-			"icon": "fa fa-backward",
-			"name": "Prev",
-			"shortcut": "left arrow"
-		},
-		{
-			"class": "select-next",
-			"icon": "fa fa-forward",
-			"name": "Next",
-			"shortcut": "right arrow"
-		},
-		{
-			"class": "select-last",
-			"icon": "fa fa-fast-forward",
-			"name": "Last",
-			"shortcut": "down arrow"
-		}
-	]
-}
+[
+	{
+		"name": "select-first",
+		"icon": "fa fa-fast-backward",
+		"text": "First",
+		"shortcut": "up arrow"
+	},
+	{
+		"name": "select-prev",
+		"icon": "fa fa-backward",
+		"text": "Prev",
+		"shortcut": "left arrow"
+	},
+	{
+		"name": "select-next",
+		"icon": "fa fa-forward",
+		"text": "Next",
+		"shortcut": "right arrow"
+	},
+	{
+		"name": "select-last",
+		"icon": "fa fa-fast-forward",
+		"text": "Last",
+		"shortcut": "down arrow"
+	}
+]

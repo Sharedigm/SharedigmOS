@@ -221,6 +221,7 @@ $page-icon-size: 200px;
 		.tip {
 			h3 {
 				float: left;
+				margin: 0;
 				margin-right: 20px;
 
 				.icon i {
@@ -346,7 +347,7 @@ $page-icon-size: 200px;
 
 			.icon {
 				display: flex; 
-				height: 200px; 
+				max-height: 200px; 
 
 				i {
 					font-size: 6em;
@@ -561,7 +562,7 @@ $page-icon-size: 200px;
 				}
 
 				i {
-					margin-right: 5px;
+					margin-left: 5px;
 				}
 			}
 		}
@@ -619,7 +620,7 @@ $page-icon-size: 200px;
 }
 
 //
-// non-mobile styles
+// non-small styles
 //
 
 @media (min-width: variables.$screen-xs-min) {

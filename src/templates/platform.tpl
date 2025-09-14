@@ -19,32 +19,15 @@
 	<div class="section">
 		<div class="row">
 			<div class="col-sm-6">
-				<a href="https://dreamachines.ai" target="_blank">
-					<h2><div class="icon"><img src="images/logos/dreamachines.png"></div>Dreamachines.ai</h2>
+				<a href="https://rocketkitty.org" target="_blank">
+					<h2><div class="icon"><img src="images/logos/rocketkitty.png"></div>RocketKitty.org</h2>
 				</a>
-				<p>Explore your dreams using AI image generation technology. Dreamachines allows you to access a variety of image generation engines all from a single, easy to use user interface.  <%= application.name %> allows to you generate, manage, and share your images from a single location. </p>
+				<p>RocketKitty is a family of free, friendly, self-hostable cloud-based storage and sharing platforms. </p>
 			</div>
 			<div class="col-sm-6">
 				<div class="figure">
-					<a href="images/info/platform/dreamachines.png" target="_blank" class="lightbox" title="Dreamachines.ai"><img src="images/info/platform/dreamachines.png" /></a>
-					<div class="caption">Dreamachines.ai</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="section">
-		<div class="row">
-			<div class="col-sm-6">
-				<a href="https://opticexplorer.com" target="_blank">
-					<h2><div class="icon"><img src="images/logos/opticexplorer.png"></div>OpticExplorer.com</h2>
-				</a>
-				<p>OpticExplorer is a cloud based optical simulation and design application.  It allows you to simulate and design optical systems using just your web browser.  You can even run it on your tablet or phone. </p>
-			</div>
-			<div class="col-sm-6">
-				<div class="figure">
-					<a href="images/info/platform/opticexplorer.png" target="_blank" class="lightbox" title="OpticExplorer.com"><img src="images/info/platform/opticexplorer.png" /></a>
-					<div class="caption">OpticExplorer.com</div>
+					<a href="images/info/platform/rocketkitty.png" target="_blank" class="lightbox" title="RocketKitty.org"><img src="images/info/platform/rocketkitty.png" /></a>
+					<div class="caption">RocketKitty.org</div>
 				</div>
 			</div>
 		</div>
@@ -70,15 +53,15 @@
 	<div class="section">
 		<div class="row">
 			<div class="col-sm-6">
-				<a href="https://rocketkitty.org" target="_blank">
-					<h2><div class="icon"><img src="images/logos/rocketkitty.png"></div>RocketKitty.org</h2>
+				<a href="https://opticexplorer.com" target="_blank">
+					<h2><div class="icon"><img src="images/logos/opticexplorer.png"></div>OpticExplorer.com</h2>
 				</a>
-				<p>RocketKitty is a family of free, friendly, self-hostable cloud-based storage and sharing platforms. </p>
+				<p>OpticExplorer is a cloud based optical simulation and design application.  It allows you to simulate and design optical systems using just your web browser.  You can even run it on your tablet or phone. </p>
 			</div>
 			<div class="col-sm-6">
 				<div class="figure">
-					<a href="images/info/platform/rocketkitty.png" target="_blank" class="lightbox" title="RocketKitty.org"><img src="images/info/platform/rocketkitty.png" /></a>
-					<div class="caption">RocketKitty.org</div>
+					<a href="images/info/platform/opticexplorer.png" target="_blank" class="lightbox" title="OpticExplorer.com"><img src="images/info/platform/opticexplorer.png" /></a>
+					<div class="caption">OpticExplorer.com</div>
 				</div>
 			</div>
 		</div>
@@ -87,7 +70,24 @@
 	<div class="section">
 		<div class="row">
 			<div class="col-sm-6">
-				<a href="https://cloudintosh.com" target="_blank">
+				<a href="https://dreamachines.ai" target="_blank">
+					<h2><div class="icon"><img src="images/logos/dreamachines.png"></div>Dreamachines.ai</h2>
+				</a>
+				<p>Explore your dreams using AI image generation technology. Dreamachines allows you to access a variety of image generation engines all from a single, easy to use user interface.  <%= application.name %> allows to you generate, manage, and share your images from a single location. </p>
+			</div>
+			<div class="col-sm-6">
+				<div class="figure">
+					<a href="images/info/platform/dreamachines.png" target="_blank" class="lightbox" title="Dreamachines.ai"><img src="images/info/platform/dreamachines.png" /></a>
+					<div class="caption">Dreamachines.ai</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="section">
+		<div class="row">
+			<div class="col-sm-6">
+				<a href="https://cloudintosh.sharedigm.com" target="_blank">
 					<h2><div class="icon"><img src="images/logos/cloudintosh.png"></div>Cloudintosh.com</h2>
 				</a>
 				<p>Cloudintosh combines the power of <%= application.name %> with the familiar look and feel of your favorite desktop or mobile operating system! </p>
@@ -104,7 +104,7 @@
 	<div class="section">
 		<div class="row">
 			<div class="col-sm-6">
-				<a href="https://windows3000.com" target="_blank">
+				<a href="https://windows3000.sharedigm.com" target="_blank">
 					<h2><div class="icon"><img src="images/logos/windows3000.png"></div>Windows3000.com</h2>
 				</a>
 				<p>Windows3000 combines the power of <%= application.name %> with the familiar look and feel of the world's most popular desktop operating system! </p>

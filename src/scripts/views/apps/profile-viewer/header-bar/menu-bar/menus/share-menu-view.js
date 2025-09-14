@@ -108,7 +108,7 @@ export default ShareMenuView.extend({
 
 	onClickShareAttachments: function(event) {
 		let key = $(event.target).closest('a').text().trim();
-		let files = config.defaults.sharing.files[key];
+		let files = config.settings.defaults.sharing.files[key];
 		let directory = application.getDirectory(files.directory);
 		this.parent.app.shareWithSelected({
 			model: directory

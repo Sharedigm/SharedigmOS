@@ -211,6 +211,7 @@ export default AppView.extend(_.extend({}, Wallpaperable, AppLoadable, {
 		// show app in desktop body
 		//
 		this.showChildView('body', new AppView({
+			model: config.apps[appName].args? this.model : undefined,
 
 			// options
 			//
@@ -264,28 +265,39 @@ export default AppView.extend(_.extend({}, Wallpaperable, AppLoadable, {
 
 				// load user preferences
 				//
-				this.loadPreferences(appName, {
+				if (application.isSignedIn()) {
+					this.loadPreferences(appName, {
 
-					// callbacks
-					//
-					success: (preferences) => {
-						this.preferences = preferences;
-
-						// check if view still exists
+						// callbacks
 						//
-						if (this.isDestroyed()) {
-							return;
+						success: (preferences) => {
+							this.preferences = preferences;
+
+							// check if view still exists
+							//
+							if (this.isDestroyed()) {
+								return;
+							}
+
+							// update view
+							//
+							this.showAppView(appName, AppView);
+
+							// apply dialog styles
+							//
+							application.settings.dialogs.apply();
 						}
+					});
+				} else {
 
-						// update view
-						//
-						this.showAppView(appName, AppView);
+					// update view
+					//
+					this.showAppView(appName, AppView);
 
-						// apply dialog styles
-						//
-						application.settings.dialogs.apply();
-					}
-				});
+					// apply dialog styles
+					//
+					application.settings.dialogs.apply();
+				}
 			},
 
 			error: () => {

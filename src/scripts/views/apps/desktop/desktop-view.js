@@ -61,8 +61,8 @@ export default AppView.extend(_.extend({}, Wallpaperable, {
 
 		// set attributes
 		//
-		if (!this.model) {
-			this.model = application.getDirectory();
+		if (!this.collection) {
+			this.collection = this.getDesktopApps();
 		}
 		if (this.options.settings) {
 			this.settings = this.options.settings;
@@ -82,7 +82,11 @@ export default AppView.extend(_.extend({}, Wallpaperable, {
 	},
 
 	isCurrentApp: function(appName) {
-		return appName == this.getCurrentApp().getApp();
+		if (this.collection.length == 1) {
+			return appName == this.collection.at(0).id;
+		} else {
+			return appName == this.getCurrentApp().getApp();
+		}
 	},
 
 	hasClock: function() {
@@ -120,7 +124,7 @@ export default AppView.extend(_.extend({}, Wallpaperable, {
 	//
 
 	getUser: function() {
-		if (this.model.has('link')) {
+		if (this.model && this.model.has('link')) {
 			return this.model.get('link').get('user');
 		} else {
 			return application.session.user;
@@ -518,10 +522,6 @@ export default AppView.extend(_.extend({}, Wallpaperable, {
 			//
 			success: (model) => {
 
-				// apply desktop settings
-				//
-				this.settings.apply(this);
-
 				// perform callback
 				//
 				if (options && options.success) {
@@ -562,18 +562,35 @@ export default AppView.extend(_.extend({}, Wallpaperable, {
 	//
 
 	onRender: function() {
-		this.fetchSettings({
+		if (application.isSignedIn()) {
+			this.fetchSettings({
 
-			// callbacks
+				// callbacks
+				//
+				success: () => {
+
+					// apply desktop settings
+					//
+					this.settings.apply(this);
+
+					// render
+					//
+					this.showDesktopSpaces();
+				}
+			});
+		} else {
+
+			// apply desktop settings
 			//
-			success: () => {
-				this.showDesktopSpaces();
-			}
-		});
+			this.settings.apply(this);
+
+			// render
+			//
+			this.showDesktopSpaces();
+		}
 	},
 
 	showDesktopSpaces: function() {
-		this.collection = this.getDesktopApps();
 		this.showAppsBar();
 		this.showSpaces();
 		this.showLaunchers(this.settings.get('launcher_style'));

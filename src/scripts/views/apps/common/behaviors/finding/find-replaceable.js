@@ -68,7 +68,7 @@ export default _.extend({}, Findable, {
 				// options
 				//
 				replacement: this.find.replacement,
-				needle: this.find.needle || this.getSelected(),
+				needle: this.find.needle || (this.getSelectedText && this.getSelectedText()),
 
 				// callbacks
 				//

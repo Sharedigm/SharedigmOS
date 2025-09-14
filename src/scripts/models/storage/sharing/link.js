@@ -84,7 +84,7 @@ export default Timestamped.extend({
 		return FileUtils.getFileExtension(this.getPath());
 	},
 
-	getFile: function() {
+	getTarget: function() {
 		let path = this.get('target').get('path');
 		let ItemClass = Items.toItemClass(path);
 		return new ItemClass(_.extend({}, this.get('target').attributes, {

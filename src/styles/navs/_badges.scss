@@ -65,13 +65,13 @@ $rounded-border-radius: 5px;
 	}
 
 	.group {
+		white-space: nowrap;
+
 		.icon {
 			margin: 0;
 			padding: 0;
 			height: 15px;
 		}
-
-		white-space: nowrap;
 	}
 }
 

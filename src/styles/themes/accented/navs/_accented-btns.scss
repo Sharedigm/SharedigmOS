@@ -39,7 +39,6 @@ body:not(.binary).colored.accented {
 	//
 
 	.btn:not(.btn-primary):not(.colored):not(:disabled) {
-		@include colored-btns.colored($color);
-		@include colored-btns.labeled($label-color);
+		@include colored-btns.colored($color, $label-color);
 	}
 }

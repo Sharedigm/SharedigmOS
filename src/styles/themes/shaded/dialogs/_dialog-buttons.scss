@@ -46,18 +46,15 @@ body:not(.binary).colored.colored {
 					button {
 
 						&.minimize {
-							@include colored-buttons.colored($minimize-button-color);
-							@include colored-buttons.labeled($minimize-button-label-color);
+							@include colored-buttons.colored($minimize-button-color, $minimize-button-label-color);
 						}
 
 						&.maximize, &.unmaximize {
-							@include colored-buttons.colored($maximize-button-color);
-							@include colored-buttons.labeled($maximize-button-label-color);
+							@include colored-buttons.colored($maximize-button-color, $maximize-button-label-color);
 						}
 
 						&.close-btn {
-							@include colored-buttons.colored($close-button-color);
-							@include colored-buttons.labeled($close-button-label-color);
+							@include colored-buttons.colored($close-button-color, $close-button-label-color);
 						}
 					}
 				}
